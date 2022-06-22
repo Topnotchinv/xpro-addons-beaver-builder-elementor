@@ -178,7 +178,12 @@ class Xpro_Beaver_Modules_List
         ),
         'xpro-woo-product-price' => array(
             'slug' => 'xpro_woo_product_price',
-            'title' => 'Testimonial',
+            'title' => 'Woo - Product Price',
+            'package' => 'free',
+        ),
+        'xpro-woo-product-images' => array(
+            'slug' => 'xpro_woo_product_images',
+            'title' => 'Woo - Product Images',
             'package' => 'free',
         ),
         'tnit-accordion' => array(
