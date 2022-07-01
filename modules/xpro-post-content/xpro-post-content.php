@@ -17,8 +17,8 @@ if (!class_exists('XPROPostContentModule')) {
         public function __construct()
         {
             parent::__construct(array(
-                'name'          => __('Post Content', 'xpro-addons'),
-                'description'   => __('An example for coding new modules.', 'xpro-addons'),
+                'name'          => __('Post Content', 'xpro-bb-addons'),
+                'description'   => __('An example for coding new modules.', 'xpro-bb-addons'),
                 'group'         => XPRO_Plugins_Helper::$branding_modules,
                 'category'      => XPRO_Plugins_Helper::$themer_modules,
                 'dir'           => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-post-content/',
@@ -79,18 +79,18 @@ if (!class_exists('XPROPostContentModule')) {
      */
     FLBuilder::register_module('XPROPostContentModule', array(
         'general'       => array(
-            'title'         => __('General', 'xpro-addons'),
+            'title'         => __('General', 'xpro-bb-addons'),
             'sections'      => array(
                 'content'       => array(
-                    'title'         => __('General', 'xpro-addons'),
+                    'title'         => __('General', 'xpro-bb-addons'),
                     'fields'        => array(
                         'content_type' => array(
                             'type'          => 'select',
-                            'label'         => __('Content Type', 'xpro-addons'),
+                            'label'         => __('Content Type', 'xpro-bb-addons'),
                             'default'       => 'full',
                             'options'       => array(
-                                'excerpt'      => __('Excerpt', 'xpro-addons'),
-                                'full'      => __('Full Content', 'xpro-addons')
+                                'excerpt'      => __('Excerpt', 'xpro-bb-addons'),
+                                'full'      => __('Full Content', 'xpro-bb-addons')
                             ),
                             'toggle'        => array(
                                 'excerpt'      => array(
@@ -100,7 +100,7 @@ if (!class_exists('XPROPostContentModule')) {
                         ),
                         'limit' => array(
                             'type'         => 'unit',
-                            'label'        => __('Excerpt', 'xpro-addons'),
+                            'label'        => __('Excerpt', 'xpro-bb-addons'),
                             'responsive' => true,
                             'default' => 10,
                             'slider' => true,
@@ -111,7 +111,7 @@ if (!class_exists('XPROPostContentModule')) {
                             ),
                         ),
                         'align' => array(
-                            'type'    => __('align', 'xpro-addons'),
+                            'type'    => __('align', 'xpro-bb-addons'),
                             'label'   => 'Alignment',
                             'default' => 'left',
                             'responsive' => true,
@@ -121,10 +121,10 @@ if (!class_exists('XPROPostContentModule')) {
             )
         ),
         'style'       => array(
-            'title'         => __('Style', 'xpro-addons'),
+            'title'         => __('Style', 'xpro-bb-addons'),
             'sections'      => array(
                 'title'       => array(
-                    'title'         => __('Title', 'xpro-addons'),
+                    'title'         => __('Title', 'xpro-bb-addons'),
                     'fields'        => array(
                         'content_typography' => array(
                             'type'       => 'typography',
@@ -137,7 +137,7 @@ if (!class_exists('XPROPostContentModule')) {
                         ),
                         'content_color' => array(
                             'type'          => 'color',
-                            'label'         => __('Color', 'xpro-addons'),
+                            'label'         => __('Color', 'xpro-bb-addons'),
                             'show_reset'    => true,
                             'show_alpha'    => true,
                             'preview'       => array(
@@ -148,11 +148,11 @@ if (!class_exists('XPROPostContentModule')) {
                         ),
                         'link_content_type' => array(
                             'type'          => 'select',
-                            'label'         => __('Color Type', 'xpro-addons'),
+                            'label'         => __('Color Type', 'xpro-bb-addons'),
                             'default'       => 'before-title',
                             'options'       => array(
-                                'normal'      => __('Normal', 'xpro-addons'),
-                                'hover'      => __('Hover', 'xpro-addons')
+                                'normal'      => __('Normal', 'xpro-bb-addons'),
+                                'hover'      => __('Hover', 'xpro-bb-addons')
                             ),
                             'toggle'        => array(
                                 'normal'      => array(
@@ -165,7 +165,7 @@ if (!class_exists('XPROPostContentModule')) {
                         ),
                         'link_color' => array(
                             'type'          => 'color',
-                            'label'         => __('Link Color', 'xpro-addons'),
+                            'label'         => __('Link Color', 'xpro-bb-addons'),
                             'show_reset'    => true,
                             'show_alpha'    => true,
                             'preview'       => array(
@@ -176,7 +176,7 @@ if (!class_exists('XPROPostContentModule')) {
                         ),
                         'link_hv_color' => array(
                             'type'          => 'color',
-                            'label'         => __('Link Color', 'xpro-addons'),
+                            'label'         => __('Link Color', 'xpro-bb-addons'),
                             'show_reset'    => true,
                             'show_alpha'    => true,
                             'preview'       => array(

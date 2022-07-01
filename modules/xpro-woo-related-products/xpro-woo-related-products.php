@@ -12,8 +12,8 @@ if (class_exists('WooCommerce')) {
 		public function __construct()
 		{
 			parent::__construct(array(
-				'name'            => __('Woo Related Product', 'xpro-addons'),
-				'description' 	  => __('Displays related product.', 'xpro-addons'),
+				'name'            => __('Woo Related Product', 'xpro-bb-addons'),
+				'description' 	  => __('Displays related product.', 'xpro-bb-addons'),
 				'group'           => XPRO_Plugins_Helper::$branding_modules,
 				'category'        => XPRO_Plugins_Helper::$themer_modules,
 				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-related-products/',
@@ -74,8 +74,8 @@ if (class_exists('WooCommerce')) {
 		public function __construct()
 		{
 			parent::__construct(array(
-				'name'            => __('Woo Related Product', 'xpro-addons'),
-				'description' 	  => __('Displays related product.', 'xpro-addons'),
+				'name'            => __('Woo Related Product', 'xpro-bb-addons'),
+				'description' 	  => __('Displays related product.', 'xpro-bb-addons'),
 				'group'           => XPRO_Plugins_Helper::$branding_modules,
 				'category'        => XPRO_Plugins_Helper::$themer_modules,
 				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-related-products/',
@@ -461,10 +461,10 @@ if (class_exists('WooCommerce')) {
 			),
 		),
 		'typo'       => array(
-			'title'         => __('Typography', 'xpro-addons'),
+			'title'         => __('Typography', 'xpro-bb-addons'),
 			'sections'      => array(
 				'title'       => array(
-					'title'         => __('Typography', 'xpro-addons'),
+					'title'         => __('Typography', 'xpro-bb-addons'),
 					'fields'        => array(
 						'heading_typography' => array(
 							'type'       => 'typography',

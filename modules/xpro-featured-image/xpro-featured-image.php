@@ -15,8 +15,8 @@ if ( ! class_exists( 'XproFeaturedImageModule' ) ) {
         public function __construct()
         {
             parent::__construct(array(
-                'name'            => __( 'Featured Image', 'xpro-addons' ),
-                'description' 	  => __( 'An awesome addition by Xpro team!', 'xpro-addons' ),
+                'name'            => __( 'Featured Image', 'xpro-bb-addons' ),
+                'description' 	  => __( 'An awesome addition by Xpro team!', 'xpro-bb-addons' ),
                 'group'           => XPRO_Plugins_Helper::$branding_modules,
                 'category'        => XPRO_Plugins_Helper::$themer_modules,
                 'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-featured-image/',
@@ -44,10 +44,10 @@ if ( ! class_exists( 'XproFeaturedImageModule' ) ) {
      */
     FLBuilder::register_module('XproFeaturedImageModule', array(
         'general'       => array(
-            'title'         => __('General', 'xpro-addons'),
+            'title'         => __('General', 'xpro-bb-addons'),
             'sections'      => array(
                 'general'       => array(
-                    'title'         => __('General', 'xpro-addons'),
+                    'title'         => __('General', 'xpro-bb-addons'),
                     'fields'        => array(
                         'featured_image_thumbnail' => array(
                             'type'          => 'photo-sizes',
@@ -59,20 +59,20 @@ if ( ! class_exists( 'XproFeaturedImageModule' ) ) {
             )
         ),
         'style'       => array(
-            'title'         => __('Style', 'xpro-addons'),
+            'title'         => __('Style', 'xpro-bb-addons'),
             'sections'      => array(
                 'general'       => array(
-                    'title'         => __('Image', 'xpro-addons'),
+                    'title'         => __('Image', 'xpro-bb-addons'),
                     'fields'        => array(
                         'featured_alignment' => array(
                             'type'    => 'align',
-                            'label'   => __( 'Alignment', 'xpro-addons' ),
+                            'label'   => __( 'Alignment', 'xpro-bb-addons' ),
                             'default' => 'left',
                             'responsive'  => true,
                         ),
                         'featured_width' => array(
                             'type'         => 'unit',
-                            'label'        => __( 'Width', 'xpro-addons' ),
+                            'label'        => __( 'Width', 'xpro-bb-addons' ),
                             'units'          => array( 'px', '%' ),
                             'responsive'   => true,
                             'slider'    => true,
@@ -85,7 +85,7 @@ if ( ! class_exists( 'XproFeaturedImageModule' ) ) {
                         ),
                         'featured_max_width' => array(
                             'type'         => 'unit',
-                            'label'        => __( 'Max-Width', 'xpro-addons' ),
+                            'label'        => __( 'Max-Width', 'xpro-bb-addons' ),
                             'units'          => array( 'px', '%' ),
                             'slider'    => true,
                             'responsive'   => true,
@@ -98,7 +98,7 @@ if ( ! class_exists( 'XproFeaturedImageModule' ) ) {
                         ),
                         'featured_height' => array(
                             'type'         => 'unit',
-                            'label'        => __( 'Height', 'xpro-addons' ),
+                            'label'        => __( 'Height', 'xpro-bb-addons' ),
                             'units'          => array( 'px', '%' ),
                             'slider'    => true,
                             'responsive'   => true,
@@ -111,7 +111,7 @@ if ( ! class_exists( 'XproFeaturedImageModule' ) ) {
                         ),
                         'featured_image_opacity' => array(
                             'type'         => 'unit',
-                            'label'        => __( 'Opacity', 'xpro-addons' ),
+                            'label'        => __( 'Opacity', 'xpro-bb-addons' ),
                             'slider' => array(
                                 'min'  	=> 0,
                                 'max'  	=> 1,

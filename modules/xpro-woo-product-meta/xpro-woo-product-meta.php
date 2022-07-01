@@ -13,8 +13,8 @@ if (class_exists('WooCommerce')) {
 		public function __construct()
 		{
 			parent::__construct(array(
-				'name'            => __('Woo Product Meta', 'xpro-addons'),
-				'description' 	  => __('Displays the meta info for the current product.', 'xpro-addons'),
+				'name'            => __('Woo Product Meta', 'xpro-bb-addons'),
+				'description' 	  => __('Displays the meta info for the current product.', 'xpro-bb-addons'),
 				'group'           => XPRO_Plugins_Helper::$branding_modules,
 				'category'        => XPRO_Plugins_Helper::$themer_modules,
 				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-meta/',
@@ -74,8 +74,8 @@ if (class_exists('WooCommerce')) {
 		public function __construct()
 		{
 			parent::__construct(array(
-				'name'            => __('Woo Product Meta', 'xpro-addons'),
-				'description' 	  => __('Displays the meta info for the current product.', 'xpro-addons'),
+				'name'            => __('Woo Product Meta', 'xpro-bb-addons'),
+				'description' 	  => __('Displays the meta info for the current product.', 'xpro-bb-addons'),
 				'group'           => XPRO_Plugins_Helper::$branding_modules,
 				'category'        => XPRO_Plugins_Helper::$themer_modules,
 				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-meta/',
@@ -112,20 +112,20 @@ if (class_exists('WooCommerce')) {
 						),
 						'show_sku' => array(
 							'type'    => 'select',
-							'label'   => __('Display SKU?', 'xpro-addons'),
+							'label'   => __('Display SKU?', 'xpro-bb-addons'),
 							'default' => 'yes',
 							'options' => array(
-								'yes'   => __('Yes', 'xpro-addons'),
-								'no'     => __('No', 'xpro-addons'),
+								'yes'   => __('Yes', 'xpro-bb-addons'),
+								'no'     => __('No', 'xpro-bb-addons'),
 							),
 						),
 						'show_taxonomy' => array(
 							'type'    => 'select',
-							'label'   => __('Display Taxonomy?', 'xpro-addons'),
+							'label'   => __('Display Taxonomy?', 'xpro-bb-addons'),
 							'default' => 'yes',
 							'options' => array(
-								'yes'   => __('Yes', 'xpro-addons'),
-								'no'     => __('No', 'xpro-addons'),
+								'yes'   => __('Yes', 'xpro-bb-addons'),
+								'no'     => __('No', 'xpro-bb-addons'),
 							),
 						),
 						'meta_title_color' => array(
@@ -213,10 +213,10 @@ if (class_exists('WooCommerce')) {
 			),
 		),
 		'typo'       => array(
-			'title'         => __('Typography', 'xpro-addons'),
+			'title'         => __('Typography', 'xpro-bb-addons'),
 			'sections'      => array(
 				'title'       => array(
-					'title'         => __('Meta', 'xpro-addons'),
+					'title'         => __('Meta', 'xpro-bb-addons'),
 					'fields'        => array(
 						'meta_heading' => array(
 							'type'       => 'typography',

@@ -16,8 +16,8 @@ if (!class_exists('XPROPostCommentsModule')) {
         public function __construct()
         {
             parent::__construct(array(
-                'name'          => __('Post Comments', 'xpro-addons'),
-                'description'   => __('An example for coding new modules.', 'xpro-addons'),
+                'name'          => __('Post Comments', 'xpro-bb-addons'),
+                'description'   => __('An example for coding new modules.', 'xpro-bb-addons'),
                 'group'         => XPRO_Plugins_Helper::$branding_modules,
                 'category'      => XPRO_Plugins_Helper::$themer_modules,
                 'dir'           => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-post-comments/',
@@ -80,21 +80,21 @@ if (!class_exists('XPROPostCommentsModule')) {
      */
     FLBuilder::register_module('XPROPostCommentsModule', array(
         'general'       => array(
-            'title'         => __('General', 'xpro-addons'),
+            'title'         => __('General', 'xpro-bb-addons'),
             'sections'      => array(
                 'content'       => array(
-                    'title'         => __('Comments', 'xpro-addons'),
+                    'title'         => __('Comments', 'xpro-bb-addons'),
                     'fields'        => array(
                         'comments_type' => array(
                             'type'          => 'select',
-                            'label'         => __('Notice', 'xpro-addons'),
+                            'label'         => __('Notice', 'xpro-bb-addons'),
                             'default'       => 'info',
-                            'help'          => __('When Actual comments will not show it will show the reason', 'xpro-addons'),
+                            'help'          => __('When Actual comments will not show it will show the reason', 'xpro-bb-addons'),
                             'options'       => array(
-                                'info'      => __('Info', 'xpro-addons'),
-                                'danger'      => __('Danger', 'xpro-addons'),
-                                'success'      => __('Success', 'xpro-addons'),
-                                'warning'      => __('Warning', 'xpro-addons'),
+                                'info'      => __('Info', 'xpro-bb-addons'),
+                                'danger'      => __('Danger', 'xpro-bb-addons'),
+                                'success'      => __('Success', 'xpro-bb-addons'),
+                                'warning'      => __('Warning', 'xpro-bb-addons'),
                             ),
                         ),
                     ),

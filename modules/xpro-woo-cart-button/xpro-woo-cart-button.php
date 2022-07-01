@@ -14,7 +14,7 @@ if (class_exists('WooCommerce')) {
 		{
 			parent::__construct(array(
 				'name'            => __('Woo Product Add to Cart', 'xpro'),
-				'description' 	  => __('Displays the cart button for the current product', 'xpro-addons'),
+				'description' 	  => __('Displays the cart button for the current product', 'xpro-bb-addons'),
 				'group'           => XPRO_Plugins_Helper::$branding_modules,
 				'category'        => XPRO_Plugins_Helper::$themer_modules,
 				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-cart-button/',
@@ -76,7 +76,7 @@ if (class_exists('WooCommerce')) {
 		{
 			parent::__construct(array(
 				'name'            => __('Woo Product Add to Cart', 'xpro'),
-				'description' 	  => __('Displays the cart button for the current product', 'xpro-addons'),
+				'description' 	  => __('Displays the cart button for the current product', 'xpro-bb-addons'),
 				'group'           => XPRO_Plugins_Helper::$branding_modules,
 				'category'        => XPRO_Plugins_Helper::$themer_modules,
 				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-cart-button/',
@@ -107,12 +107,12 @@ if (class_exists('WooCommerce')) {
 						),
 						'btn_bg_type'        => array(
 							'type'    => 'select',
-							'label'   => __('Button Background Type', 'xpro-addons'),
+							'label'   => __('Button Background Type', 'xpro-bb-addons'),
 							'default' => 'bg-color',
 							'options' => array(
-								'none'        => __('None', 'xpro-addons'),
-								'bg-color'        => __('Background Color', 'xpro-addons'),
-								'bg-gradient'             => __('Background Gradient', 'xpro-addons'),
+								'none'        => __('None', 'xpro-bb-addons'),
+								'bg-color'        => __('Background Color', 'xpro-bb-addons'),
+								'bg-gradient'             => __('Background Gradient', 'xpro-bb-addons'),
 							),
 							'toggle'  => array(
 								'bg-color'  => array(
@@ -145,12 +145,12 @@ if (class_exists('WooCommerce')) {
 						),
 						'btn_bg_hv_type'        => array(
 							'type'    => 'select',
-							'label'   => __('Button Background Hover Type', 'xpro-addons'),
+							'label'   => __('Button Background Hover Type', 'xpro-bb-addons'),
 							'default' => 'bg-color',
 							'options' => array(
-								'none'        => __('None', 'xpro-addons'),
-								'bg-color'        => __('Background Color', 'xpro-addons'),
-								'bg-gradient'             => __('Background Gradient', 'xpro-addons'),
+								'none'        => __('None', 'xpro-bb-addons'),
+								'bg-color'        => __('Background Color', 'xpro-bb-addons'),
+								'bg-gradient'             => __('Background Gradient', 'xpro-bb-addons'),
 							),
 							'toggle'  => array(
 								'bg-color'  => array(
@@ -251,10 +251,10 @@ if (class_exists('WooCommerce')) {
 			),
 		),
 		'typo'       => array(
-			'title'         => __('Typography', 'xpro-addons'),
+			'title'         => __('Typography', 'xpro-bb-addons'),
 			'sections'      => array(
 				'title'       => array(
-					'title'         => __('Typography', 'xpro-addons'),
+					'title'         => __('Typography', 'xpro-bb-addons'),
 					'fields'        => array(
 						'button_typography' => array(
 							'type'       => 'typography',

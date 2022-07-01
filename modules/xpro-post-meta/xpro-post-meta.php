@@ -15,8 +15,8 @@ if (!class_exists('XPROPostMetaModule')) {
         public function __construct()
         {
             parent::__construct(array(
-                'name'          => __('Post Meta', 'xpro-addons'),
-                'description'   => __('An example for coding new modules.', 'xpro-addons'),
+                'name'          => __('Post Meta', 'xpro-bb-addons'),
+                'description'   => __('An example for coding new modules.', 'xpro-bb-addons'),
                 'group'         => XPRO_Plugins_Helper::$branding_modules,
                 'category'      => XPRO_Plugins_Helper::$themer_modules,
                 'dir'           => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-post-meta/',
@@ -79,10 +79,10 @@ if (!class_exists('XPROPostMetaModule')) {
      */
     FLBuilder::register_module('XPROPostMetaModule', array(
         'general'       => array(
-            'title'         => __('General', 'xpro-addons'),
+            'title'         => __('General', 'xpro-bb-addons'),
             'sections'      => array(
                 'content'       => array(
-                    'title'         => __('', 'xpro-addons'),
+                    'title'         => __('', 'xpro-bb-addons'),
                     'fields'        => array(
                         'display_date'         => array(
                             'type'       => 'select',
@@ -152,10 +152,10 @@ if (!class_exists('XPROPostMetaModule')) {
             )
         ),
         'typo'       => array(
-            'title'         => __('Typography', 'xpro-addons'),
+            'title'         => __('Typography', 'xpro-bb-addons'),
             'sections'      => array(
                 'title'       => array(
-                    'title'         => __('Typography', 'xpro-addons'),
+                    'title'         => __('Typography', 'xpro-bb-addons'),
                     'fields'        => array(
                         'meta_typography' => array(
                             'type'       => 'typography',

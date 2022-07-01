@@ -16,8 +16,8 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
         public function __construct()
         {
             parent::__construct(array(
-                'name'          => __('Post Navigation', 'xpro-addons'),
-                'description'   => __('An example for coding new modules.', 'xpro-addons'),
+                'name'          => __('Post Navigation', 'xpro-bb-addons'),
+                'description'   => __('An example for coding new modules.', 'xpro-bb-addons'),
                 'group'         => XPRO_Plugins_Helper::$branding_modules,
 				'category'      => XPRO_Plugins_Helper::$themer_modules,
                 'dir'           => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-post-navigation/',
@@ -46,18 +46,18 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
      */
     FLBuilder::register_module('XPROPostNavigationModule', array(
         'general'       => array(
-            'title'         => __('General', 'xpro-addons'),
+            'title'         => __('General', 'xpro-bb-addons'),
             'sections'      => array(
                 'post'       => array(
-                    'title'         => __('Post Navigation', 'xpro-addons'),
+                    'title'         => __('Post Navigation', 'xpro-bb-addons'),
                     'fields'        => array(
                         'show_label' => array(
                             'type'          => 'select',
-                            'label'         => __( 'Enable Label', 'xpro-addons' ),
+                            'label'         => __( 'Enable Label', 'xpro-bb-addons' ),
                             'default'       => 'yes',
                             'options'       => array(
-                                'yes'      => __( 'Show', 'xpro-addons' ),
-                                'no'      => __( 'Hide', 'xpro-addons' )
+                                'yes'      => __( 'Show', 'xpro-bb-addons' ),
+                                'no'      => __( 'Hide', 'xpro-bb-addons' )
                             ),
                             'toggle'        => array(
                                 'yes'      => array(
@@ -67,48 +67,48 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
                         ),
                         'prev_label' => array(
                             'type'          => 'text',
-                            'label'         => __( 'Prev Label', 'xpro-addons' ),
+                            'label'         => __( 'Prev Label', 'xpro-bb-addons' ),
                             'default'       => 'Prev Label',
-                            'placeholder'   => __( '', 'xpro-addons' ),
+                            'placeholder'   => __( '', 'xpro-bb-addons' ),
                         ),
                         'next_label' => array(
                             'type'          => 'text',
-                            'label'         => __( 'Next Label', 'xpro-addons' ),
+                            'label'         => __( 'Next Label', 'xpro-bb-addons' ),
                             'default'       => 'Next Label',
-                            'placeholder'   => __( '', 'xpro-addons' ),
+                            'placeholder'   => __( '', 'xpro-bb-addons' ),
                         ),
                         'show_arrow' => array(
                             'type'          => 'select',
-                            'label'         => __( 'Arrows Type', 'xpro-addons' ),
+                            'label'         => __( 'Arrows Type', 'xpro-bb-addons' ),
                             'default'       => 'fas fa-arrow-left',
                             'options'       => array(
-                                'none'      => __( 'Show', 'xpro-addons' ),
-                                'fas fa-arrow-left'      => __( 'Arrow', 'xpro-addons' ),
-                                'fas fa-arrow-circle-left'      => __( 'Arrow Circle', 'xpro-addons' ),
-                                'fas fa-angle-left'      => __( 'Angle', 'xpro-addons' ),
-                                'fas fa-angle-double-left'      => __( 'Angle Circle', 'xpro-addons' ),
-                                'fas fa-chevron-left'      => __( 'Chevron', 'xpro-addons' ),
-                                'fas fa-chevron-circle-left'      => __( 'Chevron Circle', 'xpro-addons' ),
-                                'fas fa-caret-left'      => __( 'Caret', 'xpro-addons' ),
-                                'xi xi-long-arrow-left'      => __( 'Long Arrow', 'xpro-addons' ),
+                                'none'      => __( 'Show', 'xpro-bb-addons' ),
+                                'fas fa-arrow-left'      => __( 'Arrow', 'xpro-bb-addons' ),
+                                'fas fa-arrow-circle-left'      => __( 'Arrow Circle', 'xpro-bb-addons' ),
+                                'fas fa-angle-left'      => __( 'Angle', 'xpro-bb-addons' ),
+                                'fas fa-angle-double-left'      => __( 'Angle Circle', 'xpro-bb-addons' ),
+                                'fas fa-chevron-left'      => __( 'Chevron', 'xpro-bb-addons' ),
+                                'fas fa-chevron-circle-left'      => __( 'Chevron Circle', 'xpro-bb-addons' ),
+                                'fas fa-caret-left'      => __( 'Caret', 'xpro-bb-addons' ),
+                                'xi xi-long-arrow-left'      => __( 'Long Arrow', 'xpro-bb-addons' ),
                             ),
                         ),
                         'show_title' => array(
                             'type'          => 'select',
-                            'label'         => __( 'Enable Post Title', 'xpro-addons' ),
+                            'label'         => __( 'Enable Post Title', 'xpro-bb-addons' ),
                             'default'       => 'yes',
                             'options'       => array(
-                                'yes'      => __( 'Show', 'xpro-addons' ),
-                                'no'      => __( 'Hide', 'xpro-addons' )
+                                'yes'      => __( 'Show', 'xpro-bb-addons' ),
+                                'no'      => __( 'Hide', 'xpro-bb-addons' )
                             ),
                         ),
                         'show_separator' => array(
                             'type'          => 'select',
-                            'label'         => __( 'Enable Separator', 'xpro-addons' ),
+                            'label'         => __( 'Enable Separator', 'xpro-bb-addons' ),
                             'default'       => 'yes',
                             'options'       => array(
-                                'yes'      => __( 'Show', 'xpro-addons' ),
-                                'no'      => __( 'Hide', 'xpro-addons' )
+                                'yes'      => __( 'Show', 'xpro-bb-addons' ),
+                                'no'      => __( 'Hide', 'xpro-bb-addons' )
                             ),
                         ),
                     )
@@ -116,10 +116,10 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
             )
         ),
         'style'       => array(
-            'title'         => __('Style', 'xpro-addons'),
+            'title'         => __('Style', 'xpro-bb-addons'),
             'sections'      => array(
                 'label'       => array(
-                    'title'         => __('Label', 'xpro-addons'),
+                    'title'         => __('Label', 'xpro-bb-addons'),
                     'fields'        => array(
                         'label_typography' => array(
                             'type'       => 'typography',
@@ -132,7 +132,7 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
                         ),
                         'label_color' => array(
                             'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-addons' ),
+                            'label'         => __( 'Color', 'xpro-bb-addons' ),
                             'default'       => '',
                             'show_reset'    => true,
                             'show_alpha'    => true,
@@ -144,7 +144,7 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
                         ),
                         'label_hv_color' => array(
                             'type'          => 'color',
-                            'label'         => __( 'Color Hover', 'xpro-addons' ),
+                            'label'         => __( 'Color Hover', 'xpro-bb-addons' ),
                             'default'       => '',
                             'show_reset'    => true,
                             'show_alpha'    => true,
@@ -157,7 +157,7 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
                     )
                 ),
                 'title'       => array(
-                    'title'         => __('Title', 'xpro-addons'),
+                    'title'         => __('Title', 'xpro-bb-addons'),
                     'collapsed' => true,
                     'fields'        => array(
                         'title_typography' => array(
@@ -171,7 +171,7 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
                         ),
                         'title_color' => array(
                             'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-addons' ),
+                            'label'         => __( 'Color', 'xpro-bb-addons' ),
                             'default'       => '',
                             'show_reset'    => true,
                             'show_alpha'    => true,
@@ -183,7 +183,7 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
                         ),
                         'title_hv_color' => array(
                             'type'          => 'color',
-                            'label'         => __( 'Color Hover', 'xpro-addons' ),
+                            'label'         => __( 'Color Hover', 'xpro-bb-addons' ),
                             'default'       => '',
                             'show_reset'    => true,
                             'show_alpha'    => true,
@@ -196,12 +196,12 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
                     )
                 ),
                 'arrow'       => array(
-                    'title'         => __('Arrow', 'xpro-addons'),
+                    'title'         => __('Arrow', 'xpro-bb-addons'),
                     'collapsed' => true,
                     'fields'        => array(
                         'arrow_color' => array(
                             'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-addons' ),
+                            'label'         => __( 'Color', 'xpro-bb-addons' ),
                             'default'       => '',
                             'show_reset'    => true,
                             'show_alpha'    => true,
@@ -213,7 +213,7 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
                         ),
                         'arrow_hv_color' => array(
                             'type'          => 'color',
-                            'label'         => __( 'Color Hover', 'xpro-addons' ),
+                            'label'         => __( 'Color Hover', 'xpro-bb-addons' ),
                             'default'       => '',
                             'show_reset'    => true,
                             'show_alpha'    => true,
@@ -260,12 +260,12 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
                     )
                 ),
                 'separator'       => array(
-                    'title'         => __('Separator', 'xpro-addons'),
+                    'title'         => __('Separator', 'xpro-bb-addons'),
                     'collapsed' => true,
                     'fields'        => array(
                         'separator_color' => array(
                             'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-addons' ),
+                            'label'         => __( 'Color', 'xpro-bb-addons' ),
                             'default'       => '',
                             'show_reset'    => true,
                             'show_alpha'    => true,

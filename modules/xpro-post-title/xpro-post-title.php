@@ -17,8 +17,8 @@ if (!class_exists('XPROPostTitleModule')) {
         public function __construct()
         {
             parent::__construct(array(
-                'name'          => __('Post Title', 'xpro-addons'),
-                'description'   => __('An example for coding new modules.', 'xpro-addons'),
+                'name'          => __('Post Title', 'xpro-bb-addons'),
+                'description'   => __('An example for coding new modules.', 'xpro-bb-addons'),
                 'group'         => XPRO_Plugins_Helper::$branding_modules,
                 'category'      => XPRO_Plugins_Helper::$themer_modules,
                 'dir'           => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-post-title/',
@@ -76,24 +76,24 @@ if (!class_exists('XPROPostTitleModule')) {
      */
     FLBuilder::register_module('XPROPostTitleModule', array(
         'general'       => array(
-            'title'         => __('General', 'xpro-addons'),
+            'title'         => __('General', 'xpro-bb-addons'),
             'sections'      => array(
                 'content'       => array(
-                    'title'         => __('General', 'xpro-addons'),
+                    'title'         => __('General', 'xpro-bb-addons'),
                     'fields'        => array(
                         'title_tag' => array(
                             'type'          => 'select',
-                            'label'         => __('HTML Tag', 'xpro-addons'),
+                            'label'         => __('HTML Tag', 'xpro-bb-addons'),
                             'default'       => 'h1',
                             'options'       => array(
-                                'h1'      => __('H1', 'xpro-addons'),
-                                'h2'      => __('H2', 'xpro-addons'),
-                                'h3'      => __('H3', 'xpro-addons'),
-                                'h4'      => __('H4', 'xpro-addons'),
-                                'h5'      => __('H5', 'xpro-addons'),
-                                'h6'      => __('H6', 'xpro-addons'),
-                                'span'      => __('Span', 'xpro-addons'),
-                                'div'      => __('Div', 'xpro-addons'),
+                                'h1'      => __('H1', 'xpro-bb-addons'),
+                                'h2'      => __('H2', 'xpro-bb-addons'),
+                                'h3'      => __('H3', 'xpro-bb-addons'),
+                                'h4'      => __('H4', 'xpro-bb-addons'),
+                                'h5'      => __('H5', 'xpro-bb-addons'),
+                                'h6'      => __('H6', 'xpro-bb-addons'),
+                                'span'      => __('Span', 'xpro-bb-addons'),
+                                'div'      => __('Div', 'xpro-bb-addons'),
                             ),
                         ),
                         'post_align' => array(
@@ -110,7 +110,7 @@ if (!class_exists('XPROPostTitleModule')) {
                         ),
                         'title_color' => array(
                             'type'          => 'color',
-                            'label'         => __('Color', 'xpro-addons'),
+                            'label'         => __('Color', 'xpro-bb-addons'),
                             'show_reset'    => true,
                             'show_alpha'    => true,
                             'preview'       => array(
@@ -156,10 +156,10 @@ if (!class_exists('XPROPostTitleModule')) {
             )
         ),
         'typo'       => array(
-            'title'         => __('Typography', 'xpro-addons'),
+            'title'         => __('Typography', 'xpro-bb-addons'),
             'sections'      => array(
                 'title'       => array(
-                    'title'         => __('Title', 'xpro-addons'),
+                    'title'         => __('Title', 'xpro-bb-addons'),
                     'fields'        => array(
                         'title_typography' => array(
                             'type'       => 'typography',
