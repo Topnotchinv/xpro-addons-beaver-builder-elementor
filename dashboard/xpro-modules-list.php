@@ -209,8 +209,8 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Dual Color Heading',
 			'package' => 'pro-disabled',
 		),
-		'tnit-hamburger'               => array(
-			'slug'    => 'tnit_hamburger',
+		'xpro-hamburger'               => array(
+			'slug'    => 'xpro-hamburger',
 			'title'   => 'Advanced Heading',
 			'package' => 'pro-disabled',
 		),
