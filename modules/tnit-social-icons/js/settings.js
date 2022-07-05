@@ -72,7 +72,7 @@
 				form.find( '#fl-builder-settings-section-colors' ).show();
 				form.find( '.fl-builder-settings-tabs a:nth-child(2)' ).css( "display", "inherit" );
 
-				// Remove photo required
+				// Remove photo required.
 				photo.rules( 'remove' );
 
 				if ( image_type === 'icon' ) {
@@ -81,7 +81,7 @@
 				}
 
 				if ( image_type === 'photo' ) {
-					// Add photo required
+					// Add photo required.
 					photo.rules( 'add', { required: true } );
 				}
 

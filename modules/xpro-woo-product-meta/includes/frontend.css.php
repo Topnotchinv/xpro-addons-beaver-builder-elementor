@@ -5,7 +5,7 @@
  *  @package xpro Woo Products Meta
  */
 
-//alignment
+// alignment.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -15,7 +15,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-//meta heading typo
+// meta heading typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -24,7 +24,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//meta txt typo
+// meta txt typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -33,7 +33,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//meta typo for link
+// meta typo for link.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -42,7 +42,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//show/hide sku
+// show/hide sku.
 if ( 'no' === $settings->show_sku ) :
 	FLBuilderCSS::rule(
 		array(
@@ -54,7 +54,7 @@ if ( 'no' === $settings->show_sku ) :
 	);
 endif;
 
-//show/hide taxonomy
+// show/hide taxonomy.
 if ( 'no' === $settings->show_taxonomy ) :
 	//display sky
 	FLBuilderCSS::rule(
@@ -67,7 +67,7 @@ if ( 'no' === $settings->show_taxonomy ) :
 	);
 endif;
 
-//meta title color
+// meta title color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .product_meta .sku_wrapper, .fl-node-$id .product_meta .posted_in",
@@ -77,7 +77,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//meta txt color
+// meta txt color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .product_meta .sku_wrapper .sku",
@@ -87,7 +87,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//link color
+// link color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .product_meta .posted_in a",
@@ -97,7 +97,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//padding
+// padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -113,7 +113,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//meta space between
+// meta space between.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .product_meta .posted_in",
@@ -123,7 +123,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//margin
+// margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -139,7 +139,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//border
+// border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,

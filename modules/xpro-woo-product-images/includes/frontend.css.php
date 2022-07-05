@@ -15,7 +15,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-//color/bg color
+// color/bg color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-product-img-cls .onsale",
@@ -26,7 +26,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//img border
+// img border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -35,7 +35,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//btn padding
+// btn padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -51,7 +51,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//btn margin
+// btn margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -67,7 +67,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//btn border
+// btn border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -76,7 +76,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-// group images border
+// group images border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -85,7 +85,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-// group images width
+// group images width.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -97,7 +97,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// group images padding
+// group images padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,

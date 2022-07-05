@@ -8,7 +8,7 @@
  * @since 1.0.9
 **/
 
-// General classes
+// General classes.
 $figure_classes = 'tnit-thumb';
 
 if ( '5' === $settings->team_style ) {

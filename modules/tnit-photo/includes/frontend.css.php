@@ -1,6 +1,6 @@
 <?php
 
-//Photo Alignment
+// Photo Alignment.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -10,7 +10,7 @@ FLBuilderCSS::responsive_rule(
 		'prop'         => 'text-align',
 	)
 );
-// Image Effects
+// Image Effects.
 $filter  = '';
 $filter .= ( '' !== $settings->photo_blur ) ? 'blur(' . $settings->photo_blur . 'px)' : '';
 $filter .= ( '' !== $settings->photo_brightness ) ? ' brightness(' . $settings->photo_brightness . '%)' : '';
@@ -30,7 +30,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Image Effects on Hover
+// Image Effects on Hover.
 $filter_hover  = '';
 $filter_hover .= ( '' !== $settings->photo_blur_hover ) ? 'blur(' . $settings->photo_blur_hover . 'px)' : '';
 $filter_hover .= ( '' !== $settings->photo_brightness_hover ) ? ' brightness(' . $settings->photo_brightness_hover . '%)' : '';
@@ -50,7 +50,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Overlay Color
+// Overlay Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-image-item_effect2:before, 
@@ -63,7 +63,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Gradient //
+// Gradient.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-image-item_effect2:before, 
@@ -76,7 +76,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Photo Width
+// Photo Width.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -87,7 +87,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Photo Height
+// Photo Height.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -99,7 +99,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Border
+// Border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -107,7 +107,7 @@ FLBuilderCSS::border_field_rule(
 		'selector'     => ".fl-node-$id .photo-custom-style",
 	)
 );
-// Border Hover
+// Border Hover.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -115,7 +115,7 @@ FLBuilderCSS::border_field_rule(
 		'selector'     => ".fl-node-$id .photo-custom-style:hover",
 	)
 );
-//Background Color
+// Background Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .photo-custom-style",
@@ -126,7 +126,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Content Padding Rule
+// Content Padding Rule.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -143,7 +143,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//Icon Font Size
+// Icon Font Size.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -153,7 +153,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-//Icon Font Size
+// Icon Font Size.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -163,7 +163,7 @@ FLBuilderCSS::responsive_rule(
 
 	)
 );
-// Icon Color
+// Icon Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-photo-icon",
@@ -172,7 +172,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Icon Color
+// Icon Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-photo-icon:hover",
@@ -181,7 +181,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Icon Color
+// Icon Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-photo-icon-circle,
@@ -192,7 +192,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Icon Color
+// Icon Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-photo-icon-circle:hover,
@@ -203,7 +203,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Icon background size (width)
+// Icon background size (width).
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -215,7 +215,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Icon background size (height)
+// Icon background size (height).
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -227,7 +227,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Icon border
+// Icon border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -235,7 +235,7 @@ FLBuilderCSS::border_field_rule(
 		'selector'     => ".fl-node-$id .tnit-photo-icon-custom",
 	)
 );
-// Icon border hover
+// Icon border hover.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,

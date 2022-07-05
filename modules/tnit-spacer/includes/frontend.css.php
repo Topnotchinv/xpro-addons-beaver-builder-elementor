@@ -13,7 +13,7 @@
  * @since 1.1.3
  */
 
-//Icon Font Size
+// Icon Font Size.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,

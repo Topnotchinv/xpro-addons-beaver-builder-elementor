@@ -30,7 +30,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 				<div class="xprowoo-themer-module-layout-cls">
 					<?php
-					//rating star layout
+					// rating star layout.
 					$rating_count = $product->get_rating_count();
 					$review_count = $product->get_review_count();
 					$average      = $product->get_average_rating();

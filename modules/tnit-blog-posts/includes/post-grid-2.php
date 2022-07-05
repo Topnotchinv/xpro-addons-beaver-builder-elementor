@@ -9,7 +9,6 @@
 					<li class="tnit-post-categories">
 						<span class="tnit-categories-list">
 							<?php
-
 							$result = '';
 							foreach ( $cat_list as $cat ) {
 								$result .= '<a href="' . get_term_link( $cat->term_id ) . '">';

@@ -12,7 +12,7 @@ if ( 'bg-color' === $settings->btn_bg_type ) {
 	$btn_background_gradient = FLBuilderColor::gradient( $settings->btn_background_gradient );
 }
 
-// btn color/gradient
+// btn color/gradient.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-btn-add-to-cart .woocommerce-variation-add-to-cart .single_add_to_cart_button.button, .fl-node-$id .xprowoo-product-action button.button, .fl-node-$id .woocommerce-variation-add-to-cart button",
@@ -30,7 +30,7 @@ if ( 'bg-color' === $settings->btn_bg_hv_type ) {
 	$btn_background_gradient_hover = FLBuilderColor::gradient( $settings->btn_hv_background_gradient );
 }
 
-// btn color/gradient
+// btn color/gradient.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-btn-add-to-cart .woocommerce-variation-add-to-cart .single_add_to_cart_button:hover.button:hover, .fl-node-$id .xprowoo-product-action button.button:hover, .fl-node-$id .woocommerce-variation-add-to-cart button:hover",
@@ -42,7 +42,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//btn padding
+// btn padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -58,7 +58,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//btn margin
+// btn margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -74,7 +74,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//btn border
+// btn border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -83,7 +83,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//color variation size
+// color variation size.
 if ( $settings->color_variation_size ) {
 	FLBuilderCSS::rule(
 		array(
@@ -98,7 +98,7 @@ if ( $settings->color_variation_size ) {
 	);
 }
 
-//color variation border
+// color variation border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -107,7 +107,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//size variation color/bg color
+// size variation color/bg color.
 if ( $settings->size_variation_bg_color ) {
 	FLBuilderCSS::rule(
 		array(
@@ -120,7 +120,7 @@ if ( $settings->size_variation_bg_color ) {
 	);
 }
 
-//size variation padding
+// size variation padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -136,7 +136,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//size variation border
+// size variation border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -145,7 +145,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//input color
+// input color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xprowoo-themer-module-wrapper .quantity .qty",
@@ -154,7 +154,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//input bg color
+// input bg color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xprowoo-themer-module-wrapper .quantity .qty",
@@ -163,7 +163,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//clear btn color
+// clear btn color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-custom-variation .xpro-woo-variation-inner-cls-2 .reset_variations",
@@ -172,7 +172,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//clear btn bg color
+// clear btn bg color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-custom-variation .xpro-woo-variation-inner-cls-2 .reset_variations",
@@ -182,7 +182,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//btn typo
+// btn typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -191,7 +191,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//label typo
+// label typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,

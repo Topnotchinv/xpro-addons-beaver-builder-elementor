@@ -1,6 +1,6 @@
 <?php
 
-//meta color
+// meta color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-meta-cls li",
@@ -10,7 +10,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//meta link color
+// meta link color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-meta-cls li a",
@@ -21,7 +21,7 @@ FLBuilderCSS::rule(
 );
 
 if ( 'yes' === $settings->display_border ) :
-	//border color
+	// border color.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-post-meta-cls > li::before",
@@ -32,7 +32,7 @@ if ( 'yes' === $settings->display_border ) :
 	);
 endif;
 
-//space btw
+// space btw.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-meta-cls li",
@@ -44,7 +44,7 @@ FLBuilderCSS::rule(
 );
 
 
-//typo
+// typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -53,7 +53,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//typo link
+// typo link.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,

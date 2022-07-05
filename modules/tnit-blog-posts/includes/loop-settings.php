@@ -283,4 +283,3 @@ do_action( 'tnit_loop_settings_before_form', $settings );
 
 <?php
 do_action( 'tnit_loop_settings_after_form', $settings );
-// e.g Add custom FLBuilder::render_settings_field().

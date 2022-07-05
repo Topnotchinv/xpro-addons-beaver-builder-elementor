@@ -30,7 +30,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 				<div class="xprowoo-themer-module-layout-cls">
 					<div class="xpro-woo-product-upsells-cls">
 						<?php
-						//woo upsells layout
+						// woo upsells layout.
 						woocommerce_upsell_display();
 						?>
 					</div>

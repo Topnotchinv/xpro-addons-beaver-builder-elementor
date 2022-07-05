@@ -8,7 +8,7 @@
  * @since 1.0.22
  */
 
-// Front background color
+// Front background color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flip-box-front",
@@ -19,7 +19,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Front background photo
+// Front background photo.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flip-box-front.flip-bgImg",
@@ -30,7 +30,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Front background overlay
+// Front background overlay.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flip-box-front.flip-bgImg:before",
@@ -42,7 +42,7 @@ FLBuilderCSS::rule(
 );
 
 if ( 'custom' === $settings->front_border_type ) {
-	// Front border
+	// Front border.
 	FLBuilderCSS::border_field_rule(
 		array(
 			'settings'     => $settings,
@@ -52,7 +52,7 @@ if ( 'custom' === $settings->front_border_type ) {
 	);
 }
 
-// Front border corners styles
+// Front border corners styles.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flipBorderStyle .flip-box-front:before,.fl-node-$id .flipBorderStyle .flip-box-front:after",
@@ -64,7 +64,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Front padding
+// Front padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -87,10 +87,10 @@ FLBuilderCSS::dimension_field_rule(
  * -----------------------------
  */
 
-// Get icon settings
+// Get icon settings.
 $icon_settings = $settings->icon_settings;
 
-// Front icon size
+// Front icon size.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $icon_settings,
@@ -101,7 +101,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Front icon background size
+// Front icon background size.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-flipbox .flipbox-icon",
@@ -133,7 +133,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Front icon border
+// Front icon border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $icon_settings,
@@ -142,7 +142,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-// Front icon colors
+// Front icon colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-flipbox .flipbox-icon",
@@ -153,7 +153,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Front icon margin top/bottom
+// Front icon margin top/bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $icon_settings,
@@ -173,7 +173,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Front title typography
+// Front title typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -182,7 +182,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Front title color
+// Front title color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flip-box-front .tnit-flipbox-title",
@@ -192,7 +192,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Front title margin top/bottom
+// Front title margin top/bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -212,7 +212,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Front description typography
+// Front description typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -221,7 +221,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Front description color
+// Front description color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flip-box-front .tnit-flipbox-text",
@@ -231,7 +231,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Front description margin top/bottom
+// Front description margin top/bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -251,7 +251,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Back background color
+// Back background color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flip-box-back",
@@ -262,7 +262,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Back background photo
+// Back background photo.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flip-box-back.flip-bgImg",
@@ -273,7 +273,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Back background overlay
+// Back background overlay.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flip-box-back.flip-bgImg:before",
@@ -284,7 +284,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Back border
+// Back border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -293,7 +293,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-// Back padding
+// Back padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -309,7 +309,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// Back title typography
+// Back title typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -318,7 +318,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Back title color
+// Back title color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flip-box-back .tnit-flipbox-title,.fl-node-$id .flip-box-back .tnit-flipbox-title a",
@@ -328,7 +328,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Back title margin top/bottom
+// Back title margin top/bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -348,7 +348,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Back description typography
+// Back description typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -357,7 +357,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Back description color
+// Back description color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .flip-box-back .tnit-flipbox-text,.fl-node-$id .flip-box-back .tnit-flipbox-text p",
@@ -367,7 +367,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Back description margin top/bottom
+// Back description margin top/bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -387,10 +387,10 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Get button settings
+// Get button settings.
 $button_settings = $settings->button_settings;
 
-// Back button typography
+// Back button typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $button_settings,
@@ -399,7 +399,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Back button width
+// Back button width.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-flipbox .tnit-btn-text",
@@ -419,7 +419,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Back button custom width
+// Back button custom width.
 if ( 'custom' === $button_settings->button_width ) {
 	FLBuilderCSS::responsive_rule(
 		array(
@@ -432,7 +432,7 @@ if ( 'custom' === $button_settings->button_width ) {
 	);
 }
 
-// Back button border
+// Back button border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $button_settings,
@@ -441,7 +441,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-// Back button padding
+// Back button padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $button_settings,
@@ -457,7 +457,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// Back button colors
+// Back button colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-flipbox .tnit-btn-text",
@@ -468,7 +468,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Back button hover colors
+// Back button hover colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-flipbox .tnit-btn-text:hover",
@@ -480,7 +480,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Back button icon size
+// Back button icon size.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $button_settings,
@@ -491,7 +491,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Back button icon color
+// Back button icon color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-flipbox .tnit-btn-icon",
@@ -501,7 +501,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Back button icon hover color
+// Back button icon hover color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-flipbox .tnit-btn-icon:hover",
@@ -511,7 +511,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Back button margin top/bottom
+// Back button margin top/bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $button_settings,

@@ -40,19 +40,16 @@
 
 		_initInfiniteScroll: function()
 		{
-			//alert('Before');
 			var isScroll = 'scroll' === this.settings.pagination || 'load_more' === this.settings.pagination,
 				pages	 = $( this.nodeClass + ' .tnit-pagination' ).find( 'li .page-numbers:not(.next)' );
 
 			if ( pages.length > 1) {
 				var total       = pages.last().text().replace( /\D/g, '' );
 				this.totalPages = parseInt( total );
-				//alert('Working 1...');
 			}
 
 			if ( isScroll && this.totalPages > 1 && 'undefined' === typeof FLBuilder ) {
 				this._infiniteScroll();
-				//alert('Working 2...');
 
 				if ( 'load_more' === this.settings.pagination ) {
 					this._infiniteScrollLoadMore();

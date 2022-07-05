@@ -30,7 +30,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 		 * @method enqueue_scripts
 		 */
 		public function enqueue_scripts() {
-			 // Already registered
+            // Already registered.
 			$this->add_css( 'font-awesome' );
 			$this->add_css( 'font-awesome-5' );
 			$this->add_css( 'foundation-icons' );
@@ -38,7 +38,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 		}
 
 		public function render_image() {
-			$settings = $this->settings;
+			$settings  = $this->settings;
 
 			$output    = '';
 			$alt       = '';
@@ -56,8 +56,8 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 				$alt = htmlspecialchars( $photo->title );
 			}
 
-			// get image from media library
-			if ( 'custom' == $settings->source && ! empty( $settings->author_avatar_src ) ) {
+			// get image from media library.
+			if ( 'custom' === $settings->source && ! empty( $settings->author_avatar_src ) ) {
 				$image_src = $settings->author_avatar_src;
 			} else {
 				$image_src = XPRO_ADDONS_FOR_BB_URL . 'assets/images/placeholder-sm.webp';
@@ -78,7 +78,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 			global $post;
 
 			$post_type = $post->post_type;
-			if ( $post_type == 'xpro-themer' ) {
+			if ( 'xpro-themer' === $post_type ) {
 				$type        = 'post';
 				$first_posts = $wpdb->get_results(
 					$wpdb->prepare(
@@ -95,7 +95,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 				}
 			}
 
-			if ( $post->post_type == 'xpro-themer' ) {
+			if ( 'xpro-themer' === $post->post_type ) {
 				$post_id = $f_post_id;
 			} else {
 				$post_id = $post->ID;

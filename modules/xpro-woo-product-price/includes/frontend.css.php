@@ -6,7 +6,7 @@
  *  @package XproWooProductPriceModule
  */
 
-//alignment
+// alignment.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -16,7 +16,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-//price typo
+// price typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -25,7 +25,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//sale price typo
+// sale price typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -34,7 +34,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//color
+// color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-product-price-cls .woocommerce-Price-amount",
@@ -44,7 +44,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//old price color
+// old price color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-product-price-cls del .woocommerce-Price-amount",
@@ -55,7 +55,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//padding
+// padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -72,7 +72,7 @@ FLBuilderCSS::dimension_field_rule(
 );
 
 if ( $settings->space_between ) {
-	//space btw
+	// space btw.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-product-price-cls ins",
@@ -83,7 +83,7 @@ if ( $settings->space_between ) {
 	);
 }
 
-//margin
+// margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,

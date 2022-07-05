@@ -5,7 +5,7 @@
  *  @package xpro Woo Products Description
  */
 
-//desc typo
+// desc typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -14,7 +14,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//desc alignment
+//desc alignment.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -24,7 +24,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-//desc color
+// desc color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-product-desc-cls",
@@ -34,7 +34,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//desc padding
+// desc padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -50,7 +50,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//desc margin
+// desc margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,

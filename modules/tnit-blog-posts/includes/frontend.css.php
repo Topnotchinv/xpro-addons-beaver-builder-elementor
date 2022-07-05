@@ -7,7 +7,7 @@
  * @since 1.0.29
  */
 
-// Set default values
+// Set default values.
 
 if ( '' === $settings->more_link_settings->button_padding_top ) {
 	$settings->more_link_settings->button_padding_top = 8;
@@ -43,7 +43,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Gallery grid numbers
+// Gallery grid numbers.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-post-grid .xpro-grid",
@@ -52,7 +52,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Gallery grid numbers
+// Gallery grid numbers.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-post-grid .xpro-grid .xpro-item",
@@ -93,7 +93,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// More Link Typography
+// More Link Typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings->more_link_settings,
@@ -104,7 +104,7 @@ FLBuilderCSS::typography_field_rule(
 							.fl-node-$id .tnit-blog-style-4 .tnit-post-content-footer .tnit-post-meta-list li",
 	)
 );
-// More Link Alignment
+// More Link Alignment.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-btn-outer",
@@ -132,7 +132,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// More Link Colors
+// More Link Colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog .tnit-blog-btn,
@@ -155,7 +155,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// More Link Background Colors
+// More Link Background Colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog .tnit-blog-btn",
@@ -176,7 +176,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// More Link Button Width
+// More Link Button Width.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog .tnit-blog-btn",
@@ -209,7 +209,7 @@ FLBuilderCSS::rule(
 );
 
 if ( 'button' === $settings->more_link_settings->link_type ) {
-	// More Link Border
+	// More Link Border.
 	FLBuilderCSS::border_field_rule(
 		array(
 			'settings'     => $settings->more_link_settings,
@@ -217,7 +217,7 @@ if ( 'button' === $settings->more_link_settings->link_type ) {
 			'selector'     => ".fl-node-$id .tnit-blog .tnit-blog-btn",
 		)
 	);
-	// More Link Padding
+	// More Link Padding.
 	FLBuilderCSS::dimension_field_rule(
 		array(
 			'settings'     => $settings->more_link_settings,
@@ -234,7 +234,7 @@ if ( 'button' === $settings->more_link_settings->link_type ) {
 	);
 }
 
-// More Link Margin top
+// More Link Margin top.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings->more_link_settings,
@@ -244,7 +244,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// More Link Margin Bottom
+// More Link Margin Bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings->more_link_settings,
@@ -255,7 +255,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Numbers Border
+// Numbers Border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -264,7 +264,7 @@ FLBuilderCSS::border_field_rule(
 							.fl-node-$id .tnit-pagination li span.page-numbers",
 	)
 );
-// Numbers Colors
+// Numbers Colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-pagination li a.page-numbers",
@@ -274,7 +274,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Numbers Active Colors
+// Numbers Active Colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-pagination li a.page-numbers:hover,
@@ -287,7 +287,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Title typography
+// Title typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -295,7 +295,7 @@ FLBuilderCSS::typography_field_rule(
 		'selector'     => ".fl-node-$id .tnit-blog-title",
 	)
 );
-// Title color
+// Title color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-title a",
@@ -304,7 +304,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Title hover color
+// Title hover color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-title a:hover",
@@ -313,7 +313,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Title margin-top
+// Title margin-top.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -323,7 +323,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Title margin-bottom
+// Title margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -334,7 +334,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Content typography
+// Content typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -342,7 +342,7 @@ FLBuilderCSS::typography_field_rule(
 		'selector'     => ".fl-node-$id .tnit-blog-content-text *",
 	)
 );
-// Content color
+// Content color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-content-text,.fl-node-$id .tnit-blog-content-text p",
@@ -351,7 +351,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Content hover color
+// Content hover color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-content-text:hover,.fl-node-$id .tnit-blog-content-text:hover p",
@@ -361,7 +361,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Content margin-top
+// Content margin-top.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -372,7 +372,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Content margin-bottom
+// Content margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -383,7 +383,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Post Info typography
+// Post Info typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -394,7 +394,7 @@ FLBuilderCSS::typography_field_rule(
 							.fl-node-$id .tnit-blog-style-1 .tnit-post-meta-list li span",
 	)
 );
-// Post Info color
+// Post Info color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-1 .tnit-post-meta-list li,
@@ -404,7 +404,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Post Info Link color
+// Post Info Link color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-1 .tnit-post-meta-list li a,
@@ -414,7 +414,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Post Info Link hover color
+// Post Info Link hover color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-1 .tnit-post-meta-list li a:hover,
@@ -424,7 +424,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Post Info margin-top
+// Post Info margin-top.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -435,7 +435,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Post Info margin-bottom
+// Post Info margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -447,7 +447,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Post Item height
+// Post Item height.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -457,7 +457,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Post Item Background color
+// Post Item Background color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-1 .tnit-blog-item,
@@ -470,7 +470,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Overall Alignment
+// Overall Alignment.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -480,7 +480,7 @@ FLBuilderCSS::responsive_rule(
 		'prop'         => 'text-align',
 	)
 );
-// Set default values
+// Set default values.
 if ( ! empty( $settings->post_bg_color ) ) {
 
 	if ( '' === $settings->content_padding_top ) {
@@ -496,7 +496,7 @@ if ( ! empty( $settings->post_bg_color ) ) {
 		$settings->content_padding_left = 30;
 	}
 }
-// Content Padding
+// Content Padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -511,7 +511,7 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
-// Overall Padding
+// Overall Padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -528,7 +528,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// Meta Categories typography
+// Meta Categories typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -537,7 +537,7 @@ FLBuilderCSS::typography_field_rule(
 							.fl-node-$id .tnit-blog-style-4 .tnit-blog-caption .tnit-post-categories a",
 	)
 );
-// Meta Categories border
+// Meta Categories border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -546,7 +546,7 @@ FLBuilderCSS::border_field_rule(
 							.fl-node-$id .tnit-blog-style-4 .tnit-blog-caption .tnit-post-categories a",
 	)
 );
-// Meta Categories color
+// Meta Categories color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-3 .tnit-blog-caption .tnit-post-categories a,
@@ -557,7 +557,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Meta Categories Hover color
+// Meta Categories Hover color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-3 .tnit-blog-caption .tnit-post-categories a:hover,
@@ -569,7 +569,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Meta Categories Padding
+// Meta Categories Padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -585,7 +585,7 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
-// Meta Categories margin-bottom
+// Meta Categories margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -597,7 +597,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Meta Author typography
+// Meta Author typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -606,7 +606,7 @@ FLBuilderCSS::typography_field_rule(
 							.fl-node-$id .tnit-blog-style-4 .tnit-post-author-outer .tnit-post-meta-list li",
 	)
 );
-// Meta Author colors
+// Meta Author colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-3 .tnit-post-author-outer .tnit-post-meta-list li a,
@@ -616,7 +616,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Meta Author Hover colors
+// Meta Author Hover colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-3 .tnit-post-author-outer .tnit-post-meta-list li a:hover,
@@ -626,7 +626,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Meta Author margin-bottom
+// Meta Author margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -638,7 +638,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Meta Separator typography
+// Meta Separator typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -646,7 +646,7 @@ FLBuilderCSS::typography_field_rule(
 		'selector'     => ".fl-node-$id .tnit-blog-style-3 .tnit-post-meta-separator .tnit-post-meta-list li",
 	)
 );
-// Meta Separator colors
+// Meta Separator colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-3 .tnit-post-meta-separator .tnit-post-meta-list li",
@@ -655,7 +655,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Meta Separator border
+// Meta Separator border.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-3 .tnit-post-meta-separator .tnit-post-meta-list::before",
@@ -667,7 +667,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Meta Separator margin-top
+// Meta Separator margin-top.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -677,7 +677,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Meta Separator margin-bottom
+// Meta Separator margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -687,7 +687,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Meta Date typography
+// Meta Date typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -695,7 +695,7 @@ FLBuilderCSS::typography_field_rule(
 		'selector'     => ".fl-node-$id .tnit-blog-style-4 .tnit-post-date-outer .tnit-post-date",
 	)
 );
-// Meta Date border
+// Meta Date border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -703,7 +703,7 @@ FLBuilderCSS::border_field_rule(
 		'selector'     => ".fl-node-$id .tnit-blog-style-4 .tnit-post-date-outer .tnit-post-meta-list",
 	)
 );
-// Meta Date colors
+// Meta Date colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-4 .tnit-post-date-outer .tnit-post-date",
@@ -712,7 +712,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Meta Date colors
+// Meta Date colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-4 .tnit-post-date-outer .tnit-post-meta-list",
@@ -723,7 +723,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Meta Date colors
+// Meta Date colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-blog-style-4 .tnit-post-date-outer",

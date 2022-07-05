@@ -15,7 +15,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//title margin
+// title margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -31,7 +31,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//alignment
+// alignment.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -48,7 +48,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//title color
+// title color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-title-text",

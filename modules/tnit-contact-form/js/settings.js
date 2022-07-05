@@ -6,7 +6,7 @@
 
 			init: function()
 		{
-				// Toggle reCAPTCHA display
+				// Toggle reCAPTCHA display.
 				this._toggleReCaptcha();
 
 				$( 'select[name=recaptcha_toggle]' ).on( 'change', $.proxy( this._toggleReCaptcha, this ) );
@@ -14,7 +14,7 @@
 				$( 'select[name=recaptcha_theme]' ).on( 'change', $.proxy( this._toggleReCaptcha, this ) );
 				$( 'input[name=btn_bg_color]' ).on( 'change', this._previewButtonBackground );
 
-				// Render reCAPTCHA after layout rendered via AJAX
+				// Render reCAPTCHA after layout rendered via AJAX.
 				if ( window.onLoadFLReCaptcha ) {
 					$( FLBuilder._contentClass ).on( 'fl-builder.layout-rendered', onLoadFLReCaptcha );
 				}
@@ -44,7 +44,7 @@
 				scriptTag 	= $( '<script>' ),
 				isRender 	= false;
 
-				// Add library if not exists
+				// Add library if not exists.
 				if ( 0 === $( 'script#g-recaptcha-api' ).length ) {
 					scriptTag
 					.attr( 'src', 'https://www.google.com/recaptcha/api.js?onload=onLoadFLReCaptcha&render=explicit' )
@@ -57,11 +57,11 @@
 
 				if ( 'show' === toggle.val() && captchaKey.length ) {
 
-					// reCAPTCHA is not yet exists
+					// reCAPTCHA is not yet exists.
 					if ( 0 === reCaptcha.length ) {
 						isRender = true;
 					}
-					// If reCAPTCHA element exists, then reset reCAPTCHA if existing key does not matched with the input value
+					// If reCAPTCHA element exists, then reset reCAPTCHA if existing key does not matched with the input value.
 					else if ( ( inputEvent || selectEvent || typeEvent || themeEvent ) && ( reCaptcha.data( 'sitekey' ) !== captchaKey || reCaptcha.data( 'validate' ) !== captType || reCaptcha.data( 'theme' ) !== theme )
 					) {
 						reCaptcha.parent().remove();
@@ -100,7 +100,7 @@
 				captchaElement.attr( 'data-validate', reCaptType );
 				captchaElement.attr( 'data-theme', theme );
 
-				// Append recaptcha element to an appended element
+				// Append recaptcha element to an appended element.
 				captchaField
 				.html( captchaElement )
 				.insertBefore( $( '.fl-node-' + nodeId ).find( '.tnit-contact-form > .tnit-btn-holder' ) );

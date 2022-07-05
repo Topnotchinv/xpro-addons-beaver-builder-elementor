@@ -14,7 +14,7 @@
  * @since 1.1.3
  */
 
-//Text Color
+// Text Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard .btn-text",
@@ -23,7 +23,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Text Hover Color
+// Text Hover Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard:hover .btn-text",
@@ -33,7 +33,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Background color
+// Background color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-bg-color",
@@ -62,7 +62,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Background Hover color
+// Background Hover color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-bg-hover-color:hover",
@@ -93,7 +93,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Background Gradient color
+// Background Gradient color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-bg-gradient",
@@ -122,7 +122,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Background Gradient Hover color
+// Background Gradient Hover color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-bg-hover-gradient:hover",
@@ -152,7 +152,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Button Alignment
+// Button Alignment.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -163,7 +163,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Button Alignment -- Icon Positon Outer Left/Right
+// Button Alignment -- Icon Positon Outer Left/Right.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard-IconBox",
@@ -246,7 +246,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Full Width
+// Full Width.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard",
@@ -258,7 +258,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Button custom width
+// Button custom width.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -270,7 +270,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-//Padding
+// Padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -286,7 +286,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// Button border
+// Button border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -295,7 +295,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-// Border radius - Effect Top-Bottom
+// Border radius - Effect Top-Bottom.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard-IconBox .tnit-btn-effect2:before",
@@ -357,7 +357,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Border radius - Effect Left-Right
+// Border radius - Effect Left-Right.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard-IconBox .tnit-btn-effect1:before",
@@ -419,7 +419,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Border Hover Color
+// Border Hover Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard:hover",
@@ -429,7 +429,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Icon Font Size
+// Icon Font Size.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -439,7 +439,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Icon Color
+// Icon Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-bb-icon i",
@@ -448,7 +448,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Icon Color
+// Icon Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard:hover .tnit-btn-bb-icon i",
@@ -457,7 +457,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Icon Color
+// Icon Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-button-icon-circle,
@@ -468,7 +468,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Icon Hover Color
+// Icon Hover Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard:hover .tnit-button-icon-circle,
@@ -479,7 +479,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Icon background size (width)
+// Icon background size (width).
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -491,7 +491,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// Icon background size (height)
+// Icon background size (height).
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -503,7 +503,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// IconBox left
+// IconBox left.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard .tnit-btn-bb-iconLeft",
@@ -534,7 +534,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// IconBox right
+// IconBox right.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard .tnit-btn-bb-iconRight",
@@ -566,7 +566,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Icon border
+// Icon border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -575,7 +575,7 @@ FLBuilderCSS::border_field_rule(
 		'enabled'      => 'custom' === $settings->icon_style,
 	)
 );
-// Icon Border Color
+// Icon Border Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard .tnit-button-icon-simple,
@@ -587,7 +587,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Icon Border Hover Color
+// Icon Border Hover Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-btn-standard:hover .tnit-btn-bb-icon",
@@ -597,7 +597,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Typography Rule
+// Typography Rule.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,

@@ -3,7 +3,7 @@
 $list_items_count = count( $settings->list_items );
 for ( $i = 0; $i < $list_items_count; $i++ ) {
 	$item = $settings->list_items[ $i ];
-	//media custom color
+	// media custom color.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xproinfo-repeater-item-$i .xpro-infolist-media-type-custom i",
@@ -12,7 +12,7 @@ for ( $i = 0; $i < $list_items_count; $i++ ) {
 			),
 		)
 	);
-	//media custom bg color/border color
+	// media custom bg color/border color.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xproinfo-repeater-item-$i .xpro-infolist-media-type-custom",
@@ -128,9 +128,9 @@ if ( 'right' === $settings->list_align_responsive ) :
 endif;
 
 
-//grid system
+// grid system.
 if ( $settings->list_item_per_row ) :
-	//resp rule
+	// resp rule.
 	FLBuilderCSS::responsive_rule(
 		array(
 			'settings'     => $settings,
@@ -141,7 +141,7 @@ if ( $settings->list_item_per_row ) :
 	);
 endif;
 
-//list item space
+// list item space.
 if ( $settings->list_item_space ) :
 	FLBuilderCSS::rule(
 		array(
@@ -153,7 +153,7 @@ if ( $settings->list_item_space ) :
 			),
 		)
 	);
-	//medium rule
+	// medium rule.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-infolist-layout-horizontal .xpro-infolist-item",
@@ -165,7 +165,7 @@ if ( $settings->list_item_space ) :
 			),
 		)
 	);
-	//resp rule
+	// resp rule.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-infolist-layout-horizontal .xpro-infolist-item",
@@ -179,7 +179,7 @@ if ( $settings->list_item_space ) :
 	);
 endif;
 
-//list item space bottom
+// list item space bottom.
 if ( $settings->list_item_space_bottom ) :
 	FLBuilderCSS::rule(
 		array(
@@ -191,7 +191,7 @@ if ( $settings->list_item_space_bottom ) :
 	);
 endif;
 
-//list item bg
+// list item bg.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-item",
@@ -201,7 +201,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//list item border
+// list item border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -210,13 +210,13 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//list item padding
+// list item padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'list_item_padding',
 		'selector'     => ".fl-node-$id .xpro-infolist-item",
-		'unit'         => 'px', //
+		'unit'         => 'px',
 		'props'        => array(
 			'padding-top'    => 'list_item_padding_top',
 			'padding-right'  => 'list_item_padding_right',
@@ -226,7 +226,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//media item color
+// media item color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media",
@@ -237,7 +237,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//media item border
+// media item border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -246,13 +246,13 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//media margin
+// media margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'media_margin',
 		'selector'     => ".fl-node-$id .xpro-infolist-media",
-		'unit'         => 'px', //
+		'unit'         => 'px',
 		'props'        => array(
 			'margin-top'    => 'media_margin_top',
 			'margin-right'  => 'media_margin_right',
@@ -262,13 +262,13 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//media padding
+// media padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'media_padding',
 		'selector'     => ".fl-node-$id .xpro-infolist-media",
-		'unit'         => 'px', //
+		'unit'         => 'px',
 		'props'        => array(
 			'padding-top'    => 'media_padding_top',
 			'padding-right'  => 'media_padding_right',
@@ -278,7 +278,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//media icon size
+// media icon size.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-icon",
@@ -289,7 +289,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//medium screen
+// medium screen.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-icon",
@@ -301,7 +301,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//resp screen
+// resp screen.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-icon",
@@ -314,7 +314,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//media icon bg size
+// media icon bg size.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-icon",
@@ -324,7 +324,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//medium screen
+// medium screen.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-icon",
@@ -335,7 +335,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//resp screen
+// resp screen.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-icon",
@@ -347,7 +347,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//seprator style
+// seprator style.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -356,7 +356,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//seprator width, height, color
+// seprator width, height, color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-icon::before",
@@ -368,7 +368,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//media img size -width, height
+// media img size -width, height.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-image img",
@@ -379,7 +379,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//medium screen
+// medium screen.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-image img",
@@ -391,7 +391,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//small screen
+// small screen.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-image img",
@@ -404,7 +404,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// media_custom_bg_size
+// media_custom_bg_size.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-custom",
@@ -414,7 +414,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//medium screen
+// medium screen.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-custom",
@@ -425,7 +425,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//small screen
+// small screen.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-media-type-custom",
@@ -437,7 +437,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//media custom padding
+// media custom padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -453,7 +453,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//title color
+// title color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-title",
@@ -463,7 +463,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//title hv color
+// title hv color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-item:hover .xpro-infolist-title",
@@ -473,7 +473,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//title margin
+// title margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -489,7 +489,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//title padding
+// title padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -505,7 +505,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//desc color
+// desc color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-desc",
@@ -515,7 +515,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//desc hv color
+// desc hv color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-infolist-item:hover .xpro-infolist-desc",
@@ -525,7 +525,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//desc margin
+// desc margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -541,7 +541,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//desc padding
+// desc padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -557,7 +557,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//title typo
+// title typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -566,7 +566,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//desc typo
+// desc typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -575,7 +575,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//countet typo
+// content typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,

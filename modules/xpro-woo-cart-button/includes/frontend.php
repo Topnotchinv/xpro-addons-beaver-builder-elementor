@@ -30,10 +30,10 @@ if ( class_exists( 'WooCommerce' ) ) {
 					<div class="xprowoo-product-action woocommerce-product-add-to-cart xpro-btn-add-to-cart">
 						<?php
 						if ( $product->is_type( 'variable' ) ) {
-							//custom variation template
+							// custom variation template.
 							include XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-cart-button/templates/variable-product-template.php';
 						} elseif ( $product->is_type( 'simple' ) ) {
-							//simple add to cart
+							// simple add to cart.
 							include XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-cart-button/templates/simple.php';
 						} else {
 							woocommerce_template_single_add_to_cart();

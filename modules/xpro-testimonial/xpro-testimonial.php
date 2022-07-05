@@ -254,24 +254,6 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'shadow'          => array(
-							'type'        => 'shadow',
-							'label'       => 'Shadow',
-							'show_spread' => true,
-							'preview'     => array(
-								'type'  => 'css',
-								'rules' => array(
-									array(
-										'selector' => '{node} .xpro-testimonial-layout-1 .xpro-testimonial-item,{node} .xpro-testimonial-layout-2 .xpro-testimonial-item,{node} .xpro-testimonial-layout-3 .xpro-testimonial-item,{node} .xpro-testimonial-layout-7 .xpro-testimonial-item,{node} .xpro-testimonial-layout-9 .xpro-testimonial-item, {node} .xpro-testimonial-layout-10 .xpro-testimonial-item',
-										'property' => 'box-shadow',
-									),
-									array(
-										'selector' => '{node} .xpro-testimonial-layout-4 .xpro-testimonial-inner-wrapper,{node} .xpro-testimonial-layout-5 .xpro-testimonial-inner-wrapper,{node} .xpro-testimonial-layout-6 .xpro-testimonial-content,{node} .xpro-testimonial-layout-8 .xpro-testimonial-content',
-										'property' => 'box-shadow',
-									),
-								),
-							),
-						),
 						'padding'         => array(
 							'type'       => 'dimension',
 							'label'      => 'Padding',

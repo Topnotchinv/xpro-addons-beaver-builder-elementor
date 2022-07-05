@@ -5,7 +5,7 @@
  *  @package xpro Woo Related Product
  */
 
-//heading typo
+// heading typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -14,7 +14,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//price typo
+// price typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -23,7 +23,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//sale price typo
+// sale price typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -32,7 +32,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//badge typo
+// badge typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -41,7 +41,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//btn typo
+// btn typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -50,7 +50,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//title typo
+// title typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -61,7 +61,7 @@ FLBuilderCSS::typography_field_rule(
 
 
 if ( 'no' === $settings->show_heading ) :
-	//show heading
+	// show heading.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .related h2:first-child",
@@ -73,7 +73,7 @@ if ( 'no' === $settings->show_heading ) :
 endif;
 
 if ( 'no' === $settings->show_title ) :
-	//show title
+	// show title.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .related .products .woocommerce-loop-product__title",
@@ -85,7 +85,7 @@ if ( 'no' === $settings->show_title ) :
 endif;
 
 if ( 'no' === $settings->show_img ) :
-	//show img
+	// show img.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .related .products .attachment-woocommerce_thumbnail",
@@ -97,7 +97,7 @@ if ( 'no' === $settings->show_img ) :
 endif;
 
 if ( $settings->img_width ) :
-	//img width
+	// img width.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .related .products .attachment-woocommerce_thumbnail",
@@ -108,7 +108,7 @@ if ( $settings->img_width ) :
 	);
 endif;
 
-//img width
+// img width.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -117,7 +117,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//img padding
+// img padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -148,7 +148,7 @@ FLBuilderCSS::dimension_field_rule(
 );
 
 if ( 'no' === $settings->show_price ) :
-	//show price
+	// show price.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .related .products .price",
@@ -160,7 +160,7 @@ if ( 'no' === $settings->show_price ) :
 endif;
 
 if ( 'no' === $settings->show_rating ) :
-	//show rating
+	// show rating.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .related .products .star-rating",
@@ -172,7 +172,7 @@ if ( 'no' === $settings->show_rating ) :
 endif;
 
 if ( 'no' === $settings->display_sale_badge ) :
-	//show add to cart
+	// show add to cart.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .related .products .onsale",
@@ -184,7 +184,7 @@ if ( 'no' === $settings->display_sale_badge ) :
 endif;
 
 if ( 'no' === $settings->show_add_to_cart ) :
-	//show add to cart
+	// show add to cart.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .related .products a.add_to_cart_button",
@@ -195,7 +195,7 @@ if ( 'no' === $settings->show_add_to_cart ) :
 	);
 endif;
 
-//heading color/bg color
+// heading color/bg color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-related-product-cls .related h2:first-child",
@@ -206,7 +206,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// heading padding
+// heading padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -222,7 +222,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// heading margin
+// heading margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -239,7 +239,7 @@ FLBuilderCSS::dimension_field_rule(
 );
 
 
-//heading btn border
+// heading btn border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -258,7 +258,7 @@ if ( 'left' === $settings->content_alignment ) :
 			),
 		)
 	);
-	//content alignment
+	// content alignment.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .up-sells .products h2.star-rating.price.button",
@@ -267,7 +267,7 @@ if ( 'left' === $settings->content_alignment ) :
 			),
 		)
 	);
-	//alignment left
+	// alignment left.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product .woocommerce-loop-product__title, .fl-node-$id .xpro-woo-related-product-cls .products .product .price, .fl-node-$id .xpro-woo-related-product-cls .products .product .price, .fl-node-$id .xpro-woo-related-product-cls .products .product a.button, .fl-node-$id .xpro-woo-related-product-cls .products .product a.add_to_cart_button",
@@ -300,7 +300,7 @@ if ( 'right' === $settings->content_alignment ) :
 			),
 		)
 	);
-	//alignment right
+	// alignment right.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product .woocommerce-loop-product__title, .fl-node-$id .xpro-woo-related-product-cls .products .product .price, .fl-node-$id .xpro-woo-related-product-cls .products .product .price, .fl-node-$id .xpro-woo-related-product-cls .products .product a.button, .fl-node-$id .xpro-woo-related-product-cls .products .product a.add_to_cart_button",
@@ -311,7 +311,7 @@ if ( 'right' === $settings->content_alignment ) :
 	);
 endif;
 
-//title color
+// title color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product .woocommerce-loop-product__title",
@@ -321,7 +321,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//title padding
+// title padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -337,7 +337,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//title margin
+// title margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -353,7 +353,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//Rating color
+// Rating color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product .star-rating span:before",
@@ -363,7 +363,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//rating bg color
+// rating bg color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product .star-rating:before",
@@ -373,7 +373,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Rating margin
+// Rating margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -389,7 +389,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//rating size
+// rating size.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product .star-rating",
@@ -399,7 +399,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//price color
+// price color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product .woocommerce-Price-amount",
@@ -409,7 +409,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//sale price color
+// sale price color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product del .woocommerce-Price-amount",
@@ -420,7 +420,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//price padding
+// price padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -436,7 +436,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//price margin
+// price margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -452,7 +452,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//badge color
+// badge color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product .onsale",
@@ -463,7 +463,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//badge padding
+// badge padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -479,7 +479,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//badge margin
+// badge margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -495,7 +495,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//badge border
+// badge border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -504,7 +504,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//button color
+// button color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product .button, .fl-node-$id .xpro-woo-related-product-cls .products .product a.add_to_cart_button",
@@ -516,7 +516,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//btn hover color
+// btn hover color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-woo-related-product-cls .products .product .button:hover, .fl-node-$id .xpro-woo-related-product-cls .products .product a.add_to_cart_button:hover",
@@ -527,7 +527,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//button padding
+// button padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -543,7 +543,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//button margin
+// button margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -559,7 +559,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//button border
+// button border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,

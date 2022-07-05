@@ -4,23 +4,24 @@
  * @class XproWooProductPriceModule
  */
 
-if (class_exists('WooCommerce')) {
-	class XproWooProductPriceModule extends FLBuilderModule
-	{
+if ( class_exists( 'WooCommerce' ) ) {
+	class XproWooProductPriceModule extends FLBuilderModule {
+
 		/**
 		 * @return void
 		 */
-		public function __construct()
-		{
-			parent::__construct(array(
-				'name'            => __('Woo Product Price', 'xpro-bb-addons'),
-				'description' 	  => __('Displays the price for the current product.', 'xpro-bb-addons'),
-				'group'           => XPRO_Plugins_Helper::$branding_modules,
-				'category'        => XPRO_Plugins_Helper::$themer_modules,
-				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-price/',
-				'url'             => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-price/',
-				'partial_refresh' 	=> true,
-			));
+		public function __construct() {
+			parent::__construct(
+				array(
+					'name'            => __( 'Woo Product Price', 'xpro-bb-addons' ),
+					'description'     => __( 'Displays the price for the current product.', 'xpro-bb-addons' ),
+					'group'           => XPRO_Plugins_Helper::$branding_modules,
+					'category'        => XPRO_Plugins_Helper::$themer_modules,
+					'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-price/',
+					'url'             => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-price/',
+					'partial_refresh' => true,
+				)
+			);
 		}
 
 
@@ -29,35 +30,44 @@ if (class_exists('WooCommerce')) {
 		 *
 		 * @method @get_product_id
 		 */
-		public static function get_product_id($i)
-		{
+		public static function get_product_id( $i ) {
 			global $woocommerce;
 			global $wpdb;
 			global $product;
 
-			$type = 'product';
+			$type         = 'product';
 			$product_name = $product;
 
 			// current post id
-			$current_post = $wpdb->get_results($wpdb->prepare("
+			$current_post = $wpdb->get_results(
+				$wpdb->prepare(
+					"
 			SELECT ID FROM {$wpdb->posts}
-			WHERE post_type = %s AND post_status = 'publish' AND post_name = '$product_name' limit 1", $type));
+			WHERE post_type = %s AND post_status = 'publish' AND post_name = '$product_name' limit 1",
+					$type
+				)
+			);
 
-			foreach ($current_post as $c_post) {
+			foreach ( $current_post as $c_post ) {
 				$curr_post_id = $c_post->ID;
 			}
 
 			// first post id
-			$first_posts = $wpdb->get_results($wpdb->prepare("
+			$first_posts = $wpdb->get_results(
+				$wpdb->prepare(
+					"
 			SELECT ID FROM {$wpdb->posts}
 			WHERE post_type = %s AND post_status = 'publish' 
-			ORDER BY post_date ASC limit 1", $type));
+			ORDER BY post_date ASC limit 1",
+					$type
+				)
+			);
 
-			foreach ($first_posts as $f_post) {
+			foreach ( $first_posts as $f_post ) {
 				$f_post_id = $f_post->ID;
 			}
 
-			if (!empty($product)) {
+			if ( ! empty( $product ) ) {
 				$post_id = $curr_post_id;
 			} else {
 				$post_id = $f_post_id;
@@ -67,150 +77,157 @@ if (class_exists('WooCommerce')) {
 		}
 	}
 } else {
-	class XproWooProductPriceModuleNotExist extends FLBuilderModule
-	{
+	class XproWooProductPriceModuleNotExist extends FLBuilderModule {
+
 		/**
 		 * @return void
 		 */
-		public function __construct()
-		{
-			parent::__construct(array(
-				'name'            => __('Woo Product Price', 'xpro-bb-addons'),
-				'description' 	  => __('Displays the price for the current product.', 'xpro-bb-addons'),
-				'group'           => XPRO_Plugins_Helper::$branding_modules,
-				'category'        => XPRO_Plugins_Helper::$themer_modules,
-				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-price/',
-				'url'             => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-price/',
-				'partial_refresh' 	=> true,
-			));
+		public function __construct() {
+			parent::__construct(
+				array(
+					'name'            => __( 'Woo Product Price', 'xpro-bb-addons' ),
+					'description'     => __( 'Displays the price for the current product.', 'xpro-bb-addons' ),
+					'group'           => XPRO_Plugins_Helper::$branding_modules,
+					'category'        => XPRO_Plugins_Helper::$themer_modules,
+					'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-price/',
+					'url'             => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-price/',
+					'partial_refresh' => true,
+				)
+			);
 		}
 	}
 }
 
-if (class_exists('WooCommerce')) {
-	FLBuilder::register_module('XproWooProductPriceModule', array(
-		'general' => array(
-			'title'    => __('General', 'xpro'),
-			'sections' => array(
-				'general' => array(
-					'title'  => '',
-					'fields' => array(
-						'align'      => array(
-							'type'    => 'align',
-							'label'   => __('Alignment', 'xpro'),
-							'default' => 'left',
-							'responsive'   => true,
-							'options' => array(
-								'left'   => __('Left', 'xpro'),
-								'center' => __('Center', 'xpro'),
-								'right'  => __('Right', 'xpro'),
+if ( class_exists( 'WooCommerce' ) ) {
+	FLBuilder::register_module(
+		'XproWooProductPriceModule',
+		array(
+			'general' => array(
+				'title'    => __( 'General', 'xpro' ),
+				'sections' => array(
+					'general' => array(
+						'title'  => '',
+						'fields' => array(
+							'align'           => array(
+								'type'       => 'align',
+								'label'      => __( 'Alignment', 'xpro' ),
+								'default'    => 'left',
+								'responsive' => true,
+								'options'    => array(
+									'left'   => __( 'Left', 'xpro' ),
+									'center' => __( 'Center', 'xpro' ),
+									'right'  => __( 'Right', 'xpro' ),
+								),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.fl-module-content',
+									'property' => 'text-align',
+								),
 							),
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '.fl-module-content',
-								'property' => 'text-align',
+							'price_color'     => array(
+								'type'       => 'color',
+								'label'      => __( 'Price Color', 'xpro' ),
+								'show_reset' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-woo-product-price-cls .woocommerce-Price-amount',
+									'property' => 'color',
+								),
 							),
-						),
-						'price_color' => array(
-							'type'       => 'color',
-							'label'      => __('Price Color', 'xpro'),
-							'show_reset' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-woo-product-price-cls .woocommerce-Price-amount',
-								'property' => 'color',
+							'old_price_color' => array(
+								'type'       => 'color',
+								'label'      => __( 'Sale Price Color', 'xpro' ),
+								'show_reset' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-woo-product-price-cls del .woocommerce-Price-amount',
+									'property' => 'color',
+								),
 							),
-						),
-						'old_price_color' => array(
-							'type'       => 'color',
-							'label'      => __('Sale Price Color', 'xpro'),
-							'show_reset' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-woo-product-price-cls del .woocommerce-Price-amount',
-								'property' => 'color',
+							'price_padding'   => array(
+								'type'       => 'dimension',
+								'label'      => __( 'Price Padding', 'xpro' ),
+								'slider'     => true,
+								'units'      => array( 'px' ),
+								'responsive' => true,
+								'preview'    => array(
+									'type'      => 'css',
+									'selector'  => '.xpro-woo-product-price-cls',
+									'property'  => 'padding',
+									'unit'      => 'px',
+									'important' => true,
+								),
 							),
-						),
-						'price_padding' => array(
-							'type'       => 'dimension',
-							'label'      => __('Price Padding', 'xpro'),
-							'slider'     => true,
-							'units'      => array('px'),
-							'responsive'            => true,
-							'preview'    => array(
-								'type'      => 'css',
-								'selector'  => '.xpro-woo-product-price-cls',
-								'property'  => 'padding',
-								'unit'      => 'px',
-								'important' => true,
+							'space_between'   => array(
+								'type'       => 'unit',
+								'label'      => __( 'Space Between', 'xpro' ),
+								'slider'     => true,
+								'units'      => array( 'px' ),
+								'responsive' => true,
+								'preview'    => array(
+									'type'      => 'css',
+									'selector'  => '.xpro-woo-product-price-cls ins',
+									'property'  => 'padding-left',
+									'unit'      => 'px',
+									'important' => true,
+								),
 							),
-						),
-						'space_between' => array(
-							'type'       => 'unit',
-							'label'      => __('Space Between', 'xpro'),
-							'slider'     => true,
-							'units'      => array('px'),
-							'responsive'            => true,
-							'preview'    => array(
-								'type'      => 'css',
-								'selector'  => '.xpro-woo-product-price-cls ins',
-								'property'  => 'padding-left',
-								'unit'      => 'px',
-								'important' => true,
-							),
-						),
-						'price_margin' => array(
-							'type'       => 'dimension',
-							'label'      => __('Price Margin', 'xpro'),
-							'slider'     => true,
-							'units'      => array('px'),
-							'responsive'            => true,
-							'preview'    => array(
-								'type'      => 'css',
-								'selector'  => '.xpro-woo-product-price-cls',
-								'property'  => 'margin',
-								'unit'      => 'px',
-								'important' => true,
+							'price_margin'    => array(
+								'type'       => 'dimension',
+								'label'      => __( 'Price Margin', 'xpro' ),
+								'slider'     => true,
+								'units'      => array( 'px' ),
+								'responsive' => true,
+								'preview'    => array(
+									'type'      => 'css',
+									'selector'  => '.xpro-woo-product-price-cls',
+									'property'  => 'margin',
+									'unit'      => 'px',
+									'important' => true,
+								),
 							),
 						),
 					),
 				),
 			),
-		),
-		'typo'       => array(
-			'title'         => __('Typography', 'xpro-bb-addons'),
-			'sections'      => array(
-				'title'       => array(
-					'title'         => __('Price', 'xpro-bb-addons'),
-					'fields'        => array(
-						'price_typography' => array(
-							'type'       => 'typography',
-							'label'      => 'Typography',
-							'responsive' => true,
-							'preview'    => array(
-								'type'      => 'css',
-								'selector'  => '.xpro-woo-product-price-cls .woocommerce-Price-amount',
+			'typo'    => array(
+				'title'    => __( 'Typography', 'xpro-bb-addons' ),
+				'sections' => array(
+					'title' => array(
+						'title'  => __( 'Price', 'xpro-bb-addons' ),
+						'fields' => array(
+							'price_typography'      => array(
+								'type'       => 'typography',
+								'label'      => 'Typography',
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-woo-product-price-cls .woocommerce-Price-amount',
+								),
+							),
+							'sale_price_typography' => array(
+								'type'       => 'typography',
+								'label'      => 'Sale Typography',
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-woo-product-price-cls del .woocommerce-Price-amount',
+								),
 							),
 						),
-						'sale_price_typography' => array(
-							'type'       => 'typography',
-							'label'      => 'Sale Typography',
-							'responsive' => true,
-							'preview'    => array(
-								'type'      => 'css',
-								'selector'  => '.xpro-woo-product-price-cls del .woocommerce-Price-amount',
-							),
-						),
-					)
+					),
 				),
-			)
-		),
-	));
+			),
+		)
+	);
 } else {
-	FLBuilder::register_module('XproWooProductPriceModuleNotExist', array(
-		'general-info' => array(
-			'title' => __('General', 'xpro'),
-			'description'	=> __('Please Install Woocommerce Plugin to use this Module.', 'xpro'),
-		),
-	));
+	FLBuilder::register_module(
+		'XproWooProductPriceModuleNotExist',
+		array(
+			'general-info' => array(
+				'title'       => __( 'General', 'xpro' ),
+				'description' => __( 'Please Install Woocommerce Plugin to use this Module.', 'xpro' ),
+			),
+		)
+	);
 }

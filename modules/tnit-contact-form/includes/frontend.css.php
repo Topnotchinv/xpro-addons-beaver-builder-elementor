@@ -1,6 +1,6 @@
 <?php
 
-//Form Background Color
+// Form Background Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box_v2, .fl-node-$id .tnit-form-box.tnit-form-box_v2.tnit-form-box-inline.tnit-form-style-2",
@@ -10,7 +10,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Outer Border Rule
+// Outer Border Rule.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -19,7 +19,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//Outer Padding Rule
+// Outer Padding Rule.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -35,7 +35,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// Title Top Bottom Margin
+// Title Top Bottom Margin.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-contact-title-holder",
@@ -45,7 +45,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Descrpition Bottom Margin
+// Descrpition Bottom Margin.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-contact-desc-holder",
@@ -55,7 +55,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Input Color and Background color
+// Input Color and Background color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .inner-holder .tnit-contact-name, .fl-node-$id .tnit-form-box .inner-holder .tnit-contact-name::placeholder, 
@@ -70,7 +70,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Input Color and Background color
+// Input Color and Background color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .inner-holder .tnit-contact-name::placeholder, 
@@ -83,7 +83,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Input Border Rule
+// Input Border Rule.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -94,7 +94,7 @@ FLBuilderCSS::border_field_rule(
 							.fl-node-$id .tnit-form-box .tnit-contact-form .inner-holder textarea",
 	)
 );
-// Input Border Hover Color
+// Input Border Hover Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-contact-form .inner-holder input[type='text']:focus,
@@ -106,7 +106,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Description and Title Alignment
+// Description and Title Alignment.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -115,7 +115,7 @@ FLBuilderCSS::responsive_rule(
 		'prop'         => 'text-align',
 	)
 );
-//Input Padding Rule
+// Input Padding Rule.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -134,7 +134,7 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
-//Input Field Margin Bottom
+// Input Field Margin Bottom.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .inner-holder:not(.tnit-btn-holder)",
@@ -143,7 +143,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Input Height
+// Input Height.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-contact-form .inner-holder input[type='text'],
@@ -154,7 +154,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Textarea Height
+// Textarea Height.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .tnit-contact-form .inner-holder textarea",
@@ -164,7 +164,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Button color and background color
+// Button color and background color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .inner-holder .btn-submit",
@@ -174,7 +174,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Button Hover color and background color
+// Button Hover color and background color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .inner-holder .btn-submit:hover",
@@ -185,7 +185,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Button Border Rule
+// Button Border Rule.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -194,7 +194,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-//Button Structure
+// Button Structure.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .inner-holder .btn-submit",
@@ -224,7 +224,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Button padding
+// Button padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -240,7 +240,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//Button Alignment
+// Button Alignment.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -250,7 +250,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-//Button Margin Top
+// Button Margin Top.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .inner-holder .btn-submit",
@@ -260,7 +260,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Title Typography
+// Title Typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -269,7 +269,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//Title Color
+// Title Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-contact-title-holder .tnit-title-contact",
@@ -279,7 +279,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Descrpition Typography
+// Descrpition Typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -288,7 +288,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Button color and background color
+// Button color and background color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-contact-desc-holder .tnit-desc-contactv1",
@@ -298,7 +298,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Input Typography
+// Input Typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -311,7 +311,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//Button Typography
+// Button Typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -320,10 +320,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-
-/* Error Css */
-
-// Error Color
+// Error Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-contact-error",
@@ -332,7 +329,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Error Border Color
+// Error Border Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .inner-holder.tnit-error input[type='text'],
@@ -344,7 +341,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Success Message Color
+// Success Message Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .tnit-success-msg",
@@ -354,7 +351,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// reCaptcha Alignment
+// reCaptcha Alignment.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-form-box .tnit-captcha .fl-grecaptcha > div",

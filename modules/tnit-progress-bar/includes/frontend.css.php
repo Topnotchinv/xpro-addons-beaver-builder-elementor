@@ -6,7 +6,7 @@
  * @since 1.1.3
  */
 
-// Items Css
+// Items Css.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item",
@@ -24,7 +24,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Items Padding
+// Items Padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -39,7 +39,7 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
-// Items border
+// Items border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -91,7 +91,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Height for style 1
+// Height for style 1.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-proggress",
@@ -112,7 +112,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Height for style 2
+// Height for style 2.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-proggress,
@@ -124,7 +124,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Height for style 3
+// Height for style 3.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item_v2 .tnit-progressbar .tnit-proggress, 
@@ -137,7 +137,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Height for style 4
+// Height for style 4.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item_v3 .tnit-progressbar .tnit-proggress",
@@ -149,7 +149,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Height for style 5
+// Height for style 5.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progress-item-flex .tnit-progressbar .tnit-proggress",
@@ -171,7 +171,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Spacing between title and bar
+// Spacing between title and bar.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item .tnit-progress-title",
@@ -181,7 +181,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Spacing title for style 5
+// Spacing title for style 5.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item.tnit-progress-item-flex .tnit-progress-title",
@@ -193,7 +193,7 @@ FLBuilderCSS::rule(
 );
 
 
-//Border Settings
+// Border Settings.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -214,7 +214,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Title Typography
+// Title Typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -223,7 +223,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//Title Color
+// Title Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item .tnit-progress-title",
@@ -233,7 +233,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//Value Typography
+// Value Typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -242,7 +242,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//Value Color
+// Value Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressBox .tnit-percentCount,
@@ -255,7 +255,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Value Color
+// Value Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item_v2 .tnit-progressbar .tnit-percentCount,
@@ -266,7 +266,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Value Color Top Border Tip
+// Value Color Top Border Tip.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progress-style_v2 .tnit-percentCount:before",
@@ -275,7 +275,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//Value Color Top Border Tip for style 3
+// Value Color Top Border Tip for style 3.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item_v2 .tnit-progressbar .tnit-percentCount:after",
@@ -284,7 +284,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-//descrpition Typography
+// Description Typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -293,7 +293,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//Title Color
+// Title Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item .tnit-text",
@@ -304,7 +304,7 @@ FLBuilderCSS::rule(
 );
 
 
-// Progress Color
+// Progress Color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item .tnit-proggress",
@@ -323,7 +323,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Progress Bar Base color
+// Progress Bar Base color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-progressbar-item .tnit-progressbar",
@@ -333,15 +333,14 @@ FLBuilderCSS::rule(
 	)
 );
 
-
-//Loop Start//
+// Loop Start.
 $progress_items_count = count( $settings->progressbar_items );
 for ( $i = 0; $i < $progress_items_count; $i++ ) {
 	$progressbar_item = $settings->progressbar_items[ $i ];
 
 	$progress_gradient_JSON = json_decode( json_encode( $progressbar_item->progress_gradient ), true );
 
-	// Progress Bar Background-Color
+	// Progress Bar Background-Color.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .tnit-progressbar-item-$i .tnit-progressbar",
@@ -350,7 +349,7 @@ for ( $i = 0; $i < $progress_items_count; $i++ ) {
 			),
 		)
 	);
-	// Progress Color
+	// Progress Color.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .tnit-progressbar-item-$i .tnit-proggress",

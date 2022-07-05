@@ -8,7 +8,7 @@
  * @since 1.1.3
  */
 
-// Background Size
+// Background Size.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -47,7 +47,7 @@ FLBuilderCSS::responsive_rule(
 		'unit'         => 'px',
 	)
 );
-// size
+// size.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -89,7 +89,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// spacing
+// Spacing.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -174,7 +174,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Border
+// Border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -192,7 +192,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Colors
+// Colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-social-icon-icon",
@@ -209,7 +209,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Background Colors
+// Background Colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-social-icon-circle .tnit-social-icon-icon,
@@ -256,7 +256,7 @@ for ( $i = 0; $i < $social_icons_count; $i++ ) {
 
 	$social_icon = $settings->social_icons[ $i ];
 
-	// Colors
+	// Colors.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .tnit-social-icon-$i .tnit-social-icon-icon",
@@ -273,7 +273,7 @@ for ( $i = 0; $i < $social_icons_count; $i++ ) {
 			),
 		)
 	);
-	// Background Colors
+	// Background Colors.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .tnit-social-icon-$i .tnit-social-icon-circle .tnit-social-icon-icon,
@@ -294,7 +294,7 @@ for ( $i = 0; $i < $social_icons_count; $i++ ) {
 			),
 		)
 	);
-	// Background Colors
+	// Background Colors.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .tnit-social-icon-$i .tnit-social-icon-custom .tnit-social-icon-icon",

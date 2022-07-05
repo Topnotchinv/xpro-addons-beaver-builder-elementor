@@ -1,6 +1,5 @@
 <?php
 
-// Style classes
 if ( 'style-1' === $settings->hover_card_style ) {
 	$fig_class   = 'tnit-card-item_effect1';
 	$figca_class = 'tnit-middleContent';
@@ -49,12 +48,12 @@ if ( 'style-1' === $settings->hover_card_style ) {
 	for ( $i = 0; $i < $hcard_items_count; $i++ ) {
 		$hcard_form_item = $settings->hcard_form_items[ $i ];
 
-		// button classes
+		// button classes.
 		$button_class  = '';
 		$button_class .= ( 'button' === $hcard_form_item->link_type ) ? 'tnit-card-btn_sequare' : '';
 		$button_class .= ( 'icon' === $hcard_form_item->link_type ) ? 'tnit-card-btn_arrow' : '';
 
-		// Button attributes
+		// Button attributes.
 		$buttonnofollow = ( 'yes' === $hcard_form_item->button_link_nofollow ) ? ' rel="nofollow"' : '';
 		?>
 		<div class="tnit-hover-card-grid-item">

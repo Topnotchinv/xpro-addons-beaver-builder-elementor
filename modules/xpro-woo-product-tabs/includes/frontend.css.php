@@ -5,7 +5,7 @@
  *  @package xpro Woo Products Tabs
  */
 
-//nav typo
+// nav typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -14,7 +14,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-//heading typo
+// heading typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -23,8 +23,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-
-//inner content typo
+// inner content typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -40,55 +39,55 @@ color: #<?php echo $settings->nav_tabs_color; ?>;
 background-color: #<?php echo $settings->nav_tabs_bg_color; ?>;
 }
 
-.fl-node-<?php echo $id; ?> .xpro-woo-product-tabs-cls .woocommerce-tabs ul.tabs.wc-tabs li.active a {
+.fl-node-<?php echo esc_attr( $id ); ?> .xpro-woo-product-tabs-cls .woocommerce-tabs ul.tabs.wc-tabs li.active a {
 color: #<?php echo $settings->nav_active_tab_color; ?>;
 background-color: #<?php echo $settings->nav_active_tab_bg_color; ?>;
 }
 
-.fl-node-<?php echo $id; ?> .xpro-woo-product-tabs-cls .woocommerce-tabs ul.tabs.wc-tabs li.active a {
+.fl-node-<?php echo esc_attr( $id ); ?> .xpro-woo-product-tabs-cls .woocommerce-tabs ul.tabs.wc-tabs li.active a {
 border-color: #<?php echo $settings->nav_active_tab_border_color; ?> !important;
 }
 
-.fl-node-<?php echo $id; ?> .xpro-woo-product-tabs-cls .panel.woocommerce-Tabs-panel.wc-tab {
+.fl-node-<?php echo esc_attr( $id ); ?> .xpro-woo-product-tabs-cls .panel.woocommerce-Tabs-panel.wc-tab {
 color: #<?php echo $settings->tabs_box_content_color; ?>;
 background-color: #<?php echo $settings->tabs_box_bg_color; ?>;
 }
 
-.fl-node-<?php echo  $id; ?> .xpro-woo-product-tabs-cls .panel.woocommerce-Tabs-panel.wc-tab h2 {
+.fl-node-<?php echo esc_attr( $id ); ?> .xpro-woo-product-tabs-cls .panel.woocommerce-Tabs-panel.wc-tab h2 {
 color: #<?php echo $settings->tabs_box_heading_color; ?>;
 }
 
-.fl-node-<?php echo $id; ?> .woocommerce-product-attributes-item th, .fl-node-<?php echo $id; ?> .woocommerce-product-attributes-item td {
+.fl-node-<?php echo esc_attr( $id ); ?> .woocommerce-product-attributes-item th, .fl-node-<?php echo esc_attr( $id ); ?> .woocommerce-product-attributes-item td {
 border-color: #<?php echo $settings->tabs_box_border_color; ?> !important;
 border-width: 1px !important;
 border-style: solid !important;
 }
 
-.fl-node-<?php echo $id; ?> .xpro-woo-product-tabs-cls .comment-text {
+.fl-node-<?php echo esc_attr( $id ); ?> .xpro-woo-product-tabs-cls .comment-text {
 border-color: #<?php echo $settings->tabs_comments_border_color; ?> !important;
 border-width: 1px !important;
 border-style: solid !important;
 }
 
-.fl-node-<?php echo $id; ?> .xpro-woo-product-tabs-cls .meta {
+.fl-node-<?php echo esc_attr( $id ); ?> .xpro-woo-product-tabs-cls .meta {
 color: #<?php echo $settings->author_color; ?> !important;
 }
 
-.fl-node-<?php echo $id; ?> .xpro-woo-product-tabs-cls .stars a {
+.fl-node-<?php echo esc_attr( $id ); ?> .xpro-woo-product-tabs-cls .stars a {
 color: #<?php echo $settings->rating_color; ?> !important;
 }
 
-.fl-node-<?php echo $id; ?> .xpro-woo-product-tabs-cls .submit#submit {
+.fl-node-<?php echo esc_attr( $id ); ?> .xpro-woo-product-tabs-cls .submit#submit {
 color: #<?php echo $settings->submit_btn_color; ?> !important;
 background-color: #<?php echo $settings->submit_btn_bg_color; ?> !important;
 }
 
-.fl-node-<?php echo $id; ?> .xpro-woo-product-tabs-cls .submit#submit:hover {
+.fl-node-<?php echo esc_attr( $id ); ?> .xpro-woo-product-tabs-cls .submit#submit:hover {
 color: #<?php echo $settings->submit_btn_hv_color; ?> !important;
 background-color: #<?php echo $settings->submit_btn_bg_hover_color; ?> !important;
 }
 
-.fl-node-<?php echo $id; ?> .xpro-woo-product-tabs-cls .submit#submit {
+.fl-node-<?php echo esc_attr( $id ); ?> .xpro-woo-product-tabs-cls .submit#submit {
 border-radius: <?php echo $settings->submit_btn_radius; ?>px !important;
 }
 

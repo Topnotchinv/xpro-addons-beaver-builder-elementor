@@ -19,7 +19,7 @@ if ( 'left' === $settings->team_alignment ) {
 	$team_margin_right = '0px';
 }
 
-//team alignment
+// team alignment.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-team-alignment",
@@ -29,7 +29,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//alignment classes
+// alignment classes.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-team-alignment .tnit-thumb, .fl-node-$id .tnit-team-alignment .tnit-separator",
@@ -40,7 +40,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Box colors, shadow
+// Box colors, shadow.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-team-Boxlayout,.fl-node-$id .tnit-team-BoxOverlay .tnit-text,.fl-node-$id .tnit-team-BoxCurve,.fl-node-$id .tnit-clipLayout",
@@ -51,7 +51,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Box padding
+// Box padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -67,7 +67,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// Box overlay color
+// Box overlay color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-team-BoxOverlay .tnit-text:before,.fl-node-$id .tnit-thumbFull .tnit-caption,.fl-node-$id .tnit-thumbOverlap .tnit-caption",
@@ -77,7 +77,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Box overlay color - Style 4
+// Box overlay color - Style 4.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-team-BoxCurve:before,.fl-node-$id .tnit-team-BoxCurve:after",
@@ -88,7 +88,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Box overlay border colors - Style 5
+// Box overlay border colors - Style 5.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-thumbFull .tnit-caption:before",
@@ -108,7 +108,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Box colors - Style 6
+// Box colors - Style 6.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-thumbOverlap .tnit-text:before",
@@ -117,7 +117,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Box Overall hover colors - Style 6
+// Box Overall hover colors - Style 6.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-team-item:hover .tnit-text .title,.fl-node-$id .tnit-team-item:hover .tnit-text p,.fl-node-$id .tnit-team-item:hover .tnit-text .desination",
@@ -137,7 +137,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Box padding - Style 6
+// Box padding - Style 6.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -153,7 +153,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// Photo size
+// Photo size.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-team-Boxlayout .tnit-thumb,.fl-node-$id .tnit-team-BoxCurve .tnit-thumb",
@@ -183,7 +183,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Photo margin-top
+// Photo margin-top.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -194,7 +194,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Photo margin-bottom
+// Photo margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -205,7 +205,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Name typography
+// Name typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -214,7 +214,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Name color
+// Name color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-team-item .tnit-text .title",
@@ -224,7 +224,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Name margin-top
+// Name margin-top.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -235,7 +235,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Name margin-bottom
+// Name margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -246,7 +246,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Name typography
+// Name typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -255,7 +255,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Name color
+// Name color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-team-item .tnit-text .desination",
@@ -265,7 +265,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Name margin-top
+// Name margin-top.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -276,7 +276,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Name margin-bottom
+// Name margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -287,7 +287,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Name typography
+// Name typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -296,7 +296,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Name color
+// Name color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-team-item .tnit-text p",
@@ -306,7 +306,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Name margin-top
+// Name margin-top.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -317,7 +317,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Name margin-bottom
+// Name margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -328,7 +328,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Social Links size - conditional
+// Social Links size - conditional.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-social-link-circle li a,.fl-node-$id .tnit-social-link-square li a",
@@ -341,7 +341,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Social Links size
+// Social Links size.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-social-link-custom li a",
@@ -354,7 +354,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Social Links spacing
+// Social Links spacing.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-social-links li+li",
@@ -364,7 +364,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Social Links border
+// Social Links border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -373,7 +373,7 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-// Social Links colors
+// Social Links colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-social-links li a",
@@ -384,7 +384,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Social Links hover colors
+// Social Links hover colors.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-social-links li a:hover",
@@ -402,7 +402,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Social Links before styles
+// Social Links before styles.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-social-radiusStyle li a:before",
@@ -416,7 +416,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Separator alignment
+// Separator alignment.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .tnit-separator",
@@ -440,7 +440,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Separator margin-top
+// Separator margin-top.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -451,7 +451,7 @@ FLBuilderCSS::responsive_rule(
 	)
 );
 
-// Separator margin-bottom
+// Separator margin-bottom.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,

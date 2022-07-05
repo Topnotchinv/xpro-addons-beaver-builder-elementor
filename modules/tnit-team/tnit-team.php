@@ -27,10 +27,10 @@ class TNITTeamModule extends FLBuilderModule {
 	 * @method enqueue_scripts
 	 */
 	public function enqueue_scripts() {
-		// Already registered
+		// Already registered.
 		$this->add_css( 'font-awesome' );
 
-		// Register and enqueue your own
+		// Register and enqueue your own.
 		$this->add_css( 'animate', XPRO_ADDONS_FOR_BB_URL . 'assets/css/animate.css' );
 	}
 
@@ -44,36 +44,36 @@ class TNITTeamModule extends FLBuilderModule {
 			$output        = '';
 			$thumb_classes = 'tnit-thumb';
 
-			// Add figure classes
+			// Add figure classes.
 			if ( '1' === $this->settings->team_style || '4' === $this->settings->team_style ) {
-				// image circle class
+				// image circle class.
 				if ( 'circle' === $this->settings->image_style ) {
 					$thumb_classes .= ' thumb-radius';
 				}
-				// image square class
+				// image square class.
 				elseif ( 'square' === $this->settings->image_style ) {
 					$thumb_classes .= ' thumb-square';
 				}
 			} elseif ( '3' === $this->settings->team_style ) {
-				// image clip class
+				// image clip class.
 				$thumb_classes .= ' tnit-clipImage';
 			}
 
-			// Start <figure>
+			// Start <figure>.
 			if ( '5' !== $this->settings->team_style && '6' !== $this->settings->team_style ) {
 				$output .= '<figure class="' . $thumb_classes . '">';
 			}
 
-			// get image from media library
+			// get image from media library.
 			if ( 'library' === $this->settings->photo_source ) {
 				$output .= '<img src="' . esc_url( $this->settings->photo_src ) . '" alt="">';
 			}
-			// get image external URL
+			// get image external URL.
 			elseif ( 'url' === $this->settings->photo_source ) {
 				$output .= '<img src="' . esc_url( $this->settings->photo_url ) . '" alt="">';
 			}
 
-			// Close <figure>
+			// Close <figure>.
 			if ( '5' !== $this->settings->team_style && '6' !== $this->settings->team_style ) {
 				$output .= '</figure>';
 			}

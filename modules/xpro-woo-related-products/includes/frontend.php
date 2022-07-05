@@ -30,7 +30,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 				<div class="xprowoo-themer-module-layout-cls">
 					<div class="xpro-woo-related-product-cls">
 						<?php
-						//woo related product
+						// woo related product.
 						woocommerce_output_related_products();
 						?>
 					</div>

@@ -13,7 +13,7 @@ if ( 'column' === $settings->select_layout ) :
 	elseif ( 'right' === $settings->align ) :
 		$align_p = 'end';
 	endif;
-	//layout type column
+	// layout type column.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xprowoo-product-rating-wrapper.woocommerce-product-rating",
@@ -27,7 +27,7 @@ if ( 'column' === $settings->select_layout ) :
 endif;
 
 if ( $settings->align ) :
-	//display
+	// display.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xprowoo-product-rating-wrapper.woocommerce-product-rating",
@@ -39,7 +39,7 @@ if ( $settings->align ) :
 	);
 endif;
 
-//count typo
+// count typo.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -61,7 +61,7 @@ if ( $settings->rating_stars_size ) {
 }
 
 if ( 'no' === $settings->show_stars ) :
-	//display stars
+	// display stars.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xprowoo-product-rating-wrapper .star-rating",
@@ -72,9 +72,9 @@ if ( 'no' === $settings->show_stars ) :
 	);
 endif;
 
-//display count
+// display count.
 if ( 'no' === $settings->show_count ) :
-	//display sky
+	// display sky.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xprowoo-product-rating-wrapper .woocommerce-rating-count",
@@ -94,7 +94,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//stars bg color
+// stars bg color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xprowoo-product-rating-wrapper .star-rating:before ",
@@ -104,7 +104,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//count color
+// count color.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .woocommerce-rating-count",
@@ -114,7 +114,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-//padding
+// padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -131,7 +131,7 @@ FLBuilderCSS::dimension_field_rule(
 );
 
 if ( $settings->rating_space_bw ) {
-	//space btw
+	// space btw.
 	FLBuilderCSS::rule(
 		array(
 			'selector' => ".fl-node-$id .xprowoo-product-rating-wrapper .woocommerce-rating-count",
@@ -142,7 +142,7 @@ if ( $settings->rating_space_bw ) {
 	);
 }
 
-//margin
+// margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -158,7 +158,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//stars margin
+// stars margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -174,7 +174,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//count margin
+// count margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,

@@ -11,7 +11,7 @@
 					attrWidget = self.attr( 'data-widgetid' ),
 					newID      = $( this ).attr( 'id' ) + '-' + i;
 
-					// Avoid re-rendering as it's throwing API error
+					// Avoid re-rendering as it's throwing API error.
 					if ( (typeof attrWidget !== typeof undefined && attrWidget !== false) ) {
 						return;
 					} else {
@@ -84,12 +84,12 @@
 
 			e.preventDefault();
 
-			// End if button is disabled (sent already)
+			// End if button is disabled (sent already).
 			if (submit.hasClass( 'tnit-disabled' )) {
 				return;
 			}
 
-			// validate the name
+			// validate the name.
 			if (name.length) {
 				if (name.val() === '') {
 					isValid = false;
@@ -99,7 +99,7 @@
 				}
 			}
 
-			// validate the email
+			// validate the email.
 			if (email.length) {
 				if (email.val() === '' || ! email_regex.test( email.val() )) {
 					isValid = false;
@@ -109,7 +109,7 @@
 				}
 			}
 
-			// validate the subject..just make sure it's there
+			// validate the subject..just make sure it's there.
 			if (subject.length) {
 				if (subject.val() === '') {
 					isValid = false;
@@ -119,7 +119,7 @@
 				}
 			}
 
-			// validate the phone..just make sure it's there
+			// validate the phone..just make sure it's there.
 			if (phone.length) {
 				if (phone.val() === '') {
 					isValid = false;
@@ -129,7 +129,7 @@
 				}
 			}
 
-			// validate the message..just make sure it's there
+			// validate the message..just make sure it's there.
 			if (message.val() === '') {
 				isValid = false;
 				message.parent().addClass( 'tnit-error' );
@@ -137,7 +137,7 @@
 				message.parent().removeClass( 'tnit-error' );
 			}
 
-			// validate if reCAPTCHA is enabled and checked
+			// validate if reCAPTCHA is enabled and checked.
 			if ( reCaptchaField.length > 0 && isValid ) {
 				if ( 'undefined' === typeof reCaptchaValue || reCaptchaValue === false ) {
 					if ( 'normal' == reCaptchaField.data( 'validate' ) ) {
@@ -155,7 +155,7 @@
 				return false;
 			} else {
 
-				// disable send button
+				// disable send button.
 				submit.addClass( 'tnit-disabled' );
 
 				ajaxData = {
@@ -176,7 +176,7 @@
 					ajaxData.recaptcha_response	= reCaptchaValue;
 				}
 
-				// post the form data
+				// post the form data.
 				$.post( ajaxurl, ajaxData, $.proxy( this._submitComplete, this ) );
 			}
 		},
@@ -188,7 +188,7 @@
 
 			console.log( response );
 
-			// On success show the success message
+			// On success show the success message.
 			if (typeof response.error !== 'undefined' && response.error === false) {
 
 				$( this.nodeClass + ' .tnit-send-error' ).fadeOut();
@@ -202,7 +202,7 @@
 					$( this.nodeClass + ' .tnit-success-msg' ).fadeIn();
 				}
 			}
-			// On failure show fail message and re-enable the send button
+			// On failure show fail message and re-enable the send button.
 			else {
 				$( this.nodeClass + ' .tnit-button' ).removeClass( 'tnit-disabled' );
 				if ( typeof response.message !== 'undefined' ) {

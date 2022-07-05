@@ -40,7 +40,7 @@ FLBuilderCSS::rule(
 );
 
 
-//Styling Tab
+// Styling Tab.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -117,24 +117,6 @@ FLBuilderCSS::border_field_rule(
 	)
 );
 
-FLBuilderCSS::rule(
-	array(
-		'selector' => ".fl-node-$id .xpro-testimonial-layout-1 .xpro-testimonial-item,.fl-node-$id .xpro-testimonial-layout-2 .xpro-testimonial-item,.fl-node-$id .xpro-testimonial-layout-3 .xpro-testimonial-item,.fl-node-$id .xpro-testimonial-layout-7 .xpro-testimonial-item,.fl-node-$id .xpro-testimonial-layout-9 .xpro-testimonial-item, .fl-node-$id .xpro-testimonial-layout-10 .xpro-testimonial-item",
-		'props'    => array(
-			'box-shadow' => FLBuilderColor::shadow( $settings->shadow ),
-		),
-	)
-);
-
-FLBuilderCSS::rule(
-	array(
-		'selector' => ".fl-node-$id .xpro-testimonial-layout-4 .xpro-testimonial-inner-wrapper,.fl-node-$id .xpro-testimonial-layout-5 .xpro-testimonial-inner-wrapper,.fl-node-$id .xpro-testimonial-layout-6 .xpro-testimonial-content,.fl-node-$id .xpro-testimonial-layout-8 .xpro-testimonial-content",
-		'props'    => array(
-			'box-shadow' => FLBuilderColor::shadow( $settings->shadow ),
-		),
-	)
-);
-
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -165,7 +147,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//Image Styling
+// Image Styling.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -227,7 +209,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//Author
+// Author.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-testimonial-title",
@@ -260,7 +242,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//Designation
+// Designation.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-testimonial-designation",
@@ -293,7 +275,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//Description
+// Description.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-testimonial-description",
@@ -326,7 +308,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//Rating
+// Rating.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
@@ -415,7 +397,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-//Quote
+// Quote.
 FLBuilderCSS::responsive_rule(
 	array(
 		'settings'     => $settings,
