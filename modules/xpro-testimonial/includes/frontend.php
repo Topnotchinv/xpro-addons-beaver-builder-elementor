@@ -10,7 +10,7 @@
 		<div class="xpro-testimonial-item">
 			<?php
 
-			$title_tag   = ( $item->author_link_url ) ? 'a' : 'h2';
+			$title_tag   = ( isset( $item->author_link_url ) ) ? 'a' : 'h2';
 			$title_attr  = $item->author_link_target ? ' target="_blank"' : '';
 			$title_attr .= $item->author_link_nofollow ? ' rel="nofollow"' : '';
 			$title_attr .= $item->author_link ? ' href="' . $item->author_link . '"' : '';

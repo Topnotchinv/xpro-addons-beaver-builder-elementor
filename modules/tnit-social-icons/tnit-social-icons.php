@@ -27,7 +27,7 @@ class TNITSocialIconsModule extends FLBuilderModule {
 	 * @method enqueue_scripts
 	 */
 	public function enqueue_scripts() {
-        // Already registered.
+		// Already registered.
 		$this->add_css( 'font-awesome' );
 		$this->add_css( 'font-awesome-5' );
 	}
@@ -59,7 +59,7 @@ class TNITSocialIconsModule extends FLBuilderModule {
 	 * @method render_social_photo
 	 */
 	public function render_social_photo( $i ) {
-        $settings    = $this->settings;
+		$settings    = $this->settings;
 		$social_icon = $settings->social_icons[ $i ];
 
 		/**
@@ -70,11 +70,11 @@ class TNITSocialIconsModule extends FLBuilderModule {
 		if ( ! empty( $social_icon->photo ) ) {
 			$photo = FLBuilderPhoto::get_attachment_data( $social_icon->photo );
 
-			// get src
+			// get src.
 			$src = $social_icon->photo_src;
 			$alt = '';
 
-			// get alt
+			// get alt.
 			if ( ! empty( $photo->alt ) ) {
 				$alt = htmlspecialchars( $photo->alt );
 			} elseif ( ! empty( $photo->description ) ) {
@@ -85,7 +85,7 @@ class TNITSocialIconsModule extends FLBuilderModule {
 				$alt = htmlspecialchars( $photo->title );
 			}
 
-			// get classes
+			// get classes.
 			$photo_classes = array( 'tnit-photo' );
 
 			if ( is_object( $photo ) ) {

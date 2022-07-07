@@ -210,8 +210,8 @@ class Xpro_Beaver_Modules_List {
 			'package' => 'pro-disabled',
 		),
 		'xpro-hamburger'               => array(
-			'slug'    => 'xpro-hamburger',
-			'title'   => 'Advanced Heading',
+			'slug'    => 'xpro_hamburger',
+			'title'   => 'Hamburger',
 			'package' => 'pro-disabled',
 		),
 		'tnit-image-scroll'            => array(
