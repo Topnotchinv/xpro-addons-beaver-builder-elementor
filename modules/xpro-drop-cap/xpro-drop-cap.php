@@ -12,7 +12,7 @@ class XPRODropCapModule extends FLBuilderModule {
 		parent::__construct(
 			array(
 				'name'            => __( 'Drop Cap', 'xpro-bb-addons' ),
-				'description'     => __( 'An example for coding new modules.', 'xpro-bb-addons' ),
+				'description'     => __( 'An awesome addition by Xpro team!', 'xpro-bb-addons' ),
 				'group'           => XPRO_Plugins_Helper::$branding_modules,
 				'category'        => XPRO_Plugins_Helper::$content_modules,
 				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-drop-cap/',

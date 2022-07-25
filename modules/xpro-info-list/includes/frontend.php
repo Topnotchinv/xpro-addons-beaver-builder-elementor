@@ -6,8 +6,8 @@
 		?>
 		<li class="xpro-infolist-item xproinfo-repeater-item-<?php echo esc_attr( $i ); ?>">
 			<?php
-			$target   = $item->link_target ? ' target="_blank"' : '';
-			$nofollow = $item->link_nofollow ? ' rel="nofollow"' : '';
+			$target   = $item->link_target ? ' target=_blank' : '';
+			$nofollow = $item->link_nofollow ? ' rel=nofollow' : '';
 			echo ( $item->link ) ? '<a href="' . esc_url( $item->link ) . '" ' . esc_attr( $target ) . esc_attr( $nofollow ) . '>' : '';
 			?>
 			<?php if ( 'none' !== $item->media_type ) : ?>

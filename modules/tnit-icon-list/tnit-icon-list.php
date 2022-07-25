@@ -12,7 +12,7 @@ class TNITIconListModule extends FLBuilderModule {
 		parent::__construct(
 			array(
 				'name'            => __( 'Icon List', 'xpro-bb-addons' ),
-				'description'     => __( 'Creative module for Xpro Addons.', 'xpro-bb-addons' ),
+				'description'     => __( 'An awesome addition by Xpro team!', 'xpro-bb-addons' ),
 				'group'           => XPRO_Plugins_Helper::$branding_modules,
 				'category'        => XPRO_Plugins_Helper::$creative_modules,
 				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/tnit-icon-list/',

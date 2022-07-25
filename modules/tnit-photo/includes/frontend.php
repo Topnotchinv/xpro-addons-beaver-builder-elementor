@@ -9,7 +9,7 @@
  */
 
 if ( 'yes' === $settings->image_link_nofollow ) {
-	$buttonnofollow = 'rel="nofollow"';
+	$buttonnofollow = 'rel=nofollow';
 } else {
 	$buttonnofollow = '';
 }

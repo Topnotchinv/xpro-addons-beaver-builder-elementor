@@ -5,11 +5,11 @@
 		$item      = $settings->logo_grid_form_field[ $i ];
 		$title_tag = ( $item->general_image_link ) ? 'a' : 'span';
 		if ( $item->general_image_link_target ) {
-			$title_attr = ' target= ' . "$item->general_image_link_target";
+			$title_attr = ' target= ' . $item->general_image_link_target;
 		}
-		$title_attr .= ( 'yes' === $item->general_image_link_nofollow ) ? ' rel="nofollow"' : '';
+		$title_attr .= ( 'yes' === $item->general_image_link_nofollow ) ? ' rel=nofollow' : '';
 
-		$title_attr .= $item->general_image_link ? ' href="' . $item->general_image_link . '"' : '';
+		$title_attr .= $item->general_image_link ? ' href=' . $item->general_image_link . '' : '';
 		?>
 		<<?php echo esc_attr( $title_tag ) . esc_attr( $title_attr ); ?> class="xpro-logo-grid-item xpro-logo-grid-link">
 

@@ -30,13 +30,13 @@ class Xpro_Beaver_Modules_List {
 			'package' => 'free',
 		),
 		'tnit-blog-posts'              => array(
-			'slug'    => 'tnit_blog+posts',
+			'slug'    => 'tnit_blog_posts',
 			'title'   => 'Posts',
 			'package' => 'free',
 		),
 		'tnit-button'                  => array(
 			'slug'    => 'tnit_button',
-			'title'   => 'Buttons',
+			'title'   => 'Button',
 			'package' => 'free',
 		),
 		'tnit-contact-form'            => array(
@@ -50,8 +50,8 @@ class Xpro_Beaver_Modules_List {
 			'package' => 'free',
 		),
 		'tnit-hover-card'              => array(
-			'slug'    => 'Hover Card',
-			'title'   => 'Lottie',
+			'slug'    => 'tnit_hover_card',
+			'title'   => 'Hover Card',
 			'package' => 'free',
 		),
 		'tnit-icon-list'               => array(
@@ -251,7 +251,17 @@ class Xpro_Beaver_Modules_List {
 		),
 		'xpro-advance-tabs'            => array(
 			'slug'    => 'xpro_advance_tabs',
-			'title'   => 'Dual Button',
+			'title'   => 'Advance Tabs',
+			'package' => 'pro-disabled',
+		),
+		'xpro-advance-heading'         => array(
+			'slug'    => 'xpro_advance_heading',
+			'title'   => 'Advance Heading',
+			'package' => 'pro-disabled',
+		),
+		'xpro-animated-heading'        => array(
+			'slug'    => 'xpro_animated_heading',
+			'title'   => 'Animated Heading',
 			'package' => 'pro-disabled',
 		),
 		'xpro-announcement-bar'        => array(
@@ -337,6 +347,11 @@ class Xpro_Beaver_Modules_List {
 		'xpro-one-page-navigation'     => array(
 			'slug'    => 'xpro_one_page_navigation',
 			'title'   => 'One Page Navigation',
+			'package' => 'pro-disabled',
+		),
+		'xpro-pricing-matrix'          => array(
+			'slug'    => 'xpro_pricing_matrix',
+			'title'   => 'Pricing Matrix',
 			'package' => 'pro-disabled',
 		),
 		'xpro-pricing-table'           => array(

@@ -43,7 +43,7 @@ $user_id   = $author_id;
 					$link_target = '';
 				endif;
 				if ( ! empty( $settings->posts_url_nofollow ) ) :
-					$link_follow = 'rel="nofollow"';
+					$link_follow = 'rel=nofollow';
 				else :
 					$link_follow = '';
 				endif;
@@ -93,7 +93,7 @@ $user_id   = $author_id;
 					$link_target = '';
 				endif;
 				if ( ! empty( $settings->posts_url_nofollow ) ) :
-					$link_follow = 'rel="nofollow"';
+					$link_follow = 'rel=nofollow';
 				else :
 					$link_follow = '';
 				endif;

@@ -99,7 +99,7 @@ class TNITFlipBoxModule extends FLBuilderModule {
 	public function get_back_nofollow() {
 		if ( 'title' === $this->settings->link_type || 'button' === $this->settings->link_type || 'title-button' === $this->settings->link_type ) {
 			if ( 'yes' === $this->settings->back_link_nofollow ) {
-				$nofollow = ' rel="nofollow"';
+				$nofollow = ' rel=nofollow';
 			} else {
 				$nofollow = '';
 			}

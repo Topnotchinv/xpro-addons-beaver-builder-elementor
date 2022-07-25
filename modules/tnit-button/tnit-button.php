@@ -11,8 +11,8 @@ class TNITCreativeButtonsModule extends FLBuilderModule {
 	public function __construct() {
 		parent::__construct(
 			array(
-				'name'            => __( 'Buttons', 'xpro-bb-addons' ),
-				'description'     => __( 'An awesome addition by Xpro Addons', 'xpro-bb-addons' ),
+				'name'            => __( 'Button', 'xpro-bb-addons' ),
+				'description'     => __( 'An awesome addition by Xpro team!', 'xpro-bb-addons' ),
 				'group'           => XPRO_Plugins_Helper::$branding_modules,
 				'category'        => XPRO_Plugins_Helper::$creative_modules,
 				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/tnit-button/',
@@ -107,22 +107,6 @@ FLBuilder::register_module(
 							),
 						),
 
-					),
-				),
-				'btn_html_element' => array(
-					'title'     => __( 'HTML Element', 'xpro-bb-addons' ),
-					'collapsed' => true,
-					'fields'    => array(
-						'button_custom_class' => array(
-							'type'  => 'text',
-							'label' => __( 'Custom Class', 'xpro-bb-addons' ),
-							'help'  => __( 'A class that will be applied to this modules HTML. Must start with a letter and only contain dashes, underscores, letters or numbers. Separate multiple', 'xpro-bb-addons' ),
-						),
-						'button_custom_id'    => array(
-							'type'  => 'text',
-							'label' => __( 'Custom ID', 'xpro-bb-addons' ),
-							'help'  => __( 'A unique ID that will be applied to this modules HTML. Must start with a letter and only contain dashes, underscores, letters or numbers. No spaces', 'xpro-bb-addons' ),
-						),
 					),
 				),
 			),

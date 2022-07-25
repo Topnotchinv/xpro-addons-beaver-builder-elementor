@@ -8,7 +8,7 @@
  */
 
 if ( 'yes' === $settings->button_link_nofollow ) {
-	$buttonnofollow = 'rel="nofollow"';
+	$buttonnofollow = 'rel=nofollow';
 } else {
 	$buttonnofollow = '';
 }
@@ -19,7 +19,6 @@ $button_classes .= ( 'effect-1' === $settings->hover_effect_style ) ? ' tnit-btn
 $button_classes .= ( 'effect-2' === $settings->hover_effect_style ) ? ' tnit-btn-effect2' : '';
 $button_classes .= ( 'effect-3' === $settings->hover_effect_style ) ? ' tnit-btn-effect1 tnit-btn-fill-effect1' : '';
 $button_classes .= ( 'effect-4' === $settings->hover_effect_style ) ? ' tnit-btn-effect2 tnit-btn-fill-effect2' : '';
-$button_classes .= ( '' !== $settings->button_custom_class ) ? ' ' . $settings->button_custom_class : '';
 $button_classes .= ' tnit-btn-bg-' . $settings->color_type;
 $button_classes .= ' tnit-btn-bg-hover-' . $settings->hover_color_type;
 
@@ -38,7 +37,7 @@ $icon_class .= ' tnit-button-icon-' . $settings->icon_style;
 		<div class="tnit-btn-standard-IconBox tnit-icon-bgBlueLight">
 	<?php } ?>
 
-		<a href="<?php echo esc_url( $settings->button_link ); ?>" target="<?php echo esc_attr( $settings->button_link_target ); ?>" <?php echo esc_attr( $buttonnofollow ); ?> id="<?php echo esc_attr( $settings->button_custom_id ); ?>" class="<?php echo esc_attr( $button_classes ); ?>">
+		<a href="<?php echo esc_url( $settings->button_link ); ?>" target="<?php echo esc_attr( $settings->button_link_target ); ?>" <?php echo esc_attr( $buttonnofollow ); ?> class="<?php echo esc_attr( $button_classes ); ?>">
 
 			<?php if ( 'yes' === $settings->icon_show && 'after' !== $settings->icon_position ) { ?>
 				<span class="<?php echo esc_attr( $icon_class ); ?>">

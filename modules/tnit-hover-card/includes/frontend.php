@@ -54,7 +54,7 @@ if ( 'style-1' === $settings->hover_card_style ) {
 		$button_class .= ( 'icon' === $hcard_form_item->link_type ) ? 'tnit-card-btn_arrow' : '';
 
 		// Button attributes.
-		$buttonnofollow = ( 'yes' === $hcard_form_item->button_link_nofollow ) ? ' rel="nofollow"' : '';
+		$buttonnofollow = ( 'yes' === $hcard_form_item->button_link_nofollow ) ? ' rel=nofollow' : '';
 		?>
 		<div class="tnit-hover-card-grid-item">
 			<figure class="tnit-card-item tnit-card-<?php echo esc_attr( $i ); ?> <?php echo esc_attr( $fig_class ); ?>">
