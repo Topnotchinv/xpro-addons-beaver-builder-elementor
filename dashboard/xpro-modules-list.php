@@ -24,11 +24,6 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Info Box',
 			'package' => 'free',
 		),
-		'xpro-simple-heading'          => array(
-			'slug'    => 'xpro_simple_heading',
-			'title'   => 'Heading',
-			'package' => 'free',
-		),
 		'tnit-blog-posts'              => array(
 			'slug'    => 'tnit_blog_posts',
 			'title'   => 'Posts',
@@ -79,14 +74,24 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Spacer',
 			'package' => 'free',
 		),
+		'tnit-team'                    => array(
+			'slug'    => 'tnit_team',
+			'title'   => 'Team',
+			'package' => 'free',
+		),
+		'xpro-author-bio'              => array(
+			'slug'    => 'xpro_author_bio',
+			'title'   => 'Author Bio',
+			'package' => 'free',
+		),
 		'xpro-drop-cap'                => array(
 			'slug'    => 'xpro_drop_cap',
 			'title'   => 'Drop Cap',
 			'package' => 'free',
 		),
-		'tnit-team'                    => array(
-			'slug'    => 'tnit_team',
-			'title'   => 'Team',
+		'xpro-featured-image'          => array(
+			'slug'    => 'xpro_featured_image',
+			'title'   => 'Featured Image',
 			'package' => 'free',
 		),
 		'xpro-info-list'               => array(
@@ -97,21 +102,6 @@ class Xpro_Beaver_Modules_List {
 		'xpro-logo-grid'               => array(
 			'slug'    => 'xpro_logo_grid',
 			'title'   => 'Logo Grid',
-			'package' => 'free',
-		),
-		'xpro-testimonial'             => array(
-			'slug'    => 'xpro_testimonial',
-			'title'   => 'Testimonial',
-			'package' => 'free',
-		),
-		'xpro-author-bio'              => array(
-			'slug'    => 'xpro_author_bio',
-			'title'   => 'Author Bio',
-			'package' => 'free',
-		),
-		'xpro-featured-image'          => array(
-			'slug'    => 'xpro_featured_image',
-			'title'   => 'Featured Image',
 			'package' => 'free',
 		),
 		'xpro-post-comments'           => array(
@@ -139,6 +129,16 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Post Title',
 			'package' => 'free',
 		),
+		'xpro-simple-heading'          => array(
+			'slug'    => 'xpro_simple_heading',
+			'title'   => 'Heading',
+			'package' => 'free',
+		),
+		'xpro-testimonial'             => array(
+			'slug'    => 'xpro_testimonial',
+			'title'   => 'Testimonial',
+			'package' => 'free',
+		),
 		'xpro-woo-cart-button'         => array(
 			'slug'    => 'xpro_woo_cart_button',
 			'title'   => 'Woo - Cart Button',
@@ -149,9 +149,19 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Woo - Product Description',
 			'package' => 'free',
 		),
+		'xpro-woo-product-images'      => array(
+			'slug'    => 'xpro_woo_product_images',
+			'title'   => 'Woo - Product Images',
+			'package' => 'free',
+		),
 		'xpro-woo-product-meta'        => array(
 			'slug'    => 'xpro_woo_product_meta',
 			'title'   => 'Woo - Product Meta',
+			'package' => 'free',
+		),
+		'xpro-woo-product-price'       => array(
+			'slug'    => 'xpro_woo_product_price',
+			'title'   => 'Woo - Product Price',
 			'package' => 'free',
 		),
 		'xpro-woo-product-rating'      => array(
@@ -174,16 +184,6 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Woo - Related Products',
 			'package' => 'free',
 		),
-		'xpro-woo-product-price'       => array(
-			'slug'    => 'xpro_woo_product_price',
-			'title'   => 'Woo - Product Price',
-			'package' => 'free',
-		),
-		'xpro-woo-product-images'      => array(
-			'slug'    => 'xpro_woo_product_images',
-			'title'   => 'Woo - Product Images',
-			'package' => 'free',
-		),
 		'tnit-accordion'               => array(
 			'slug'    => 'tnit_accordion',
 			'title'   => 'Accordion',
@@ -199,19 +199,9 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Counter',
 			'package' => 'pro-disabled',
 		),
-		'xpro-dual-button'             => array(
-			'slug'    => 'xpro_dual_button',
-			'title'   => 'Dual Button',
-			'package' => 'pro-disabled',
-		),
 		'tnit-dual-color-heading'      => array(
 			'slug'    => 'tnit_dual_color_heading',
 			'title'   => 'Dual Color Heading',
-			'package' => 'pro-disabled',
-		),
-		'xpro-hamburger'               => array(
-			'slug'    => 'xpro_hamburger',
-			'title'   => 'Hamburger',
 			'package' => 'pro-disabled',
 		),
 		'tnit-image-scroll'            => array(
@@ -249,14 +239,14 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Team Carousel',
 			'package' => 'pro-disabled',
 		),
-		'xpro-advance-tabs'            => array(
-			'slug'    => 'xpro_advance_tabs',
-			'title'   => 'Advance Tabs',
-			'package' => 'pro-disabled',
-		),
 		'xpro-advance-heading'         => array(
 			'slug'    => 'xpro_advance_heading',
 			'title'   => 'Advance Heading',
+			'package' => 'pro-disabled',
+		),
+		'xpro-advance-tabs'            => array(
+			'slug'    => 'xpro_advance_tabs',
+			'title'   => 'Advance Tabs',
 			'package' => 'pro-disabled',
 		),
 		'xpro-animated-heading'        => array(
@@ -292,6 +282,16 @@ class Xpro_Beaver_Modules_List {
 		'xpro-device-slider'           => array(
 			'slug'    => 'xpro_device_slider',
 			'title'   => 'Device Slider',
+			'package' => 'pro-disabled',
+		),
+		'xpro-dual-button'             => array(
+			'slug'    => 'xpro_dual_button',
+			'title'   => 'Dual Button',
+			'package' => 'pro-disabled',
+		),
+		'xpro-hamburger'               => array(
+			'slug'    => 'xpro_hamburger',
+			'title'   => 'Hamburger',
 			'package' => 'pro-disabled',
 		),
 		'xpro-horizontal-menu'         => array(
