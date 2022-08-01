@@ -63,7 +63,7 @@ class Xpro_Beaver_Features_List
         $all_list = self::$list;
 
         if (true === $filtered) {
-            $all_list = apply_filters('xpro_elementor_addons_widgets_list', self::$list);
+            $all_list = apply_filters('xpro_beaver_addons_widgets_list', self::$list);
         }
 
         if (did_action('xpro_addons_for_bb_pro_loaded')) {

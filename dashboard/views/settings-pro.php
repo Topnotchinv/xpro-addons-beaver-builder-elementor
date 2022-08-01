@@ -107,7 +107,7 @@
 							<p class="xpro-bb-dashboard-txt">
 								Professionally designed templates & sections to turn your raw ideas into stunning visuals. Just drag’n’drop your content to get your site live within minutes.
 							</p>
-							<a href="#" class="xpro-bb-dashboard-btn xpro-bb-btn-document">Get It Now</a>
+							<a href="https://beaver.wpxpro.com/bundle-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document">Get It Now</a>
 						</div>
 						<div class="xpro-bb-dashboard-pro-plugin-item">
 							<div class="xpro-bb-dashboard-pro-plugin-item-inner templates">
