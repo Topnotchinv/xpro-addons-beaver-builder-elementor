@@ -106,7 +106,7 @@ final class Xpro_Addons_for_BB {
 				$message = sprintf(
 				/* translators: 1: Plugin name 2: Beaver */
 					esc_html__( '"%1$s" requires "%2$s" to be activated. %3$s', 'xpro-bb-addons' ),
-					'<strong>' . esc_html__( 'Xpro Beaver Addons', 'xpro-bb-addons' ) . '</strong>',
+					'<strong>' . esc_html__( 'Xpro Addons For Beaver Builder', 'xpro-bb-addons' ) . '</strong>',
 					'<strong>' . esc_html__( 'Beaver Builder', 'xpro-bb-addons' ) . '</strong>',
 					'<p><a href="' . wp_nonce_url( 'plugins.php?action=activate&plugin=beaver-builder-lite-version/fl-builder.php', 'activate-plugin_beaver-builder-lite-version/fl-builder.php' ) . '" class="button-primary">' . esc_html__( 'Activate Beaver Builder', 'xpro-bb-addons' ) . '</a></p>'
 				);
@@ -114,7 +114,7 @@ final class Xpro_Addons_for_BB {
 				$message = sprintf(
 				/* translators: 1: Plugin name 2: Beaver */
 					esc_html__( '"%1$s" requires "%2$s" to be installed. %3$s', 'xpro-bb-addons' ),
-					'<strong>' . esc_html__( 'Xpro Beaver Addons', 'xpro-bb-addons' ) . '</strong>',
+					'<strong>' . esc_html__( 'Xpro Addons For Beaver Builder', 'xpro-bb-addons' ) . '</strong>',
 					'<strong>' . esc_html__( 'Beaver', 'xpro-bb-addons' ) . '</strong>',
 					'<p><a href="' . wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=beaver-builder-lite-version' ), 'install-plugin_beaver-builder-lite-version' ) . '" class="button-primary">' . esc_html__( 'Install Beaver Builder', 'xpro-bb-addons' ) . '</a></p>'
 				);
