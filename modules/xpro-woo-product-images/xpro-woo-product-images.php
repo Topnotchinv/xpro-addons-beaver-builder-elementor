@@ -32,7 +32,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 		 */
 
 		function load_custom_script() {
-            wp_enqueue_script( 'zoom' );
+			wp_enqueue_script( 'zoom' );
 			wp_enqueue_script( 'flexslider' );
 			wp_enqueue_script( 'photoswipe-ui-default' );
 			wp_enqueue_script( 'wc-single-product' );
@@ -92,29 +92,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 			return $post_id;
 		}
 	}
-} else {
-	class XproWooProductImagesModuleNotExist extends FLBuilderModule {
 
-		/**
-		 * @return void
-		 */
-		public function __construct() {
-			parent::__construct(
-				array(
-					'name'            => __( 'Woo Product Images', 'xpro-bb-addons' ),
-					'description'     => __( 'Displays a gallery of images for the current product.', 'xpro-bb-addons' ),
-					'group'           => XPRO_Plugins_Helper::$branding_modules,
-					'category'        => XPRO_Plugins_Helper::$themer_modules,
-					'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-images/',
-					'url'             => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-images/',
-					'partial_refresh' => true,
-				)
-			);
-		}
-	}
-}
-
-if ( class_exists( 'WooCommerce' ) ) {
 	FLBuilder::register_module(
 		'XproWooProductImagesModule',
 		array(
@@ -279,9 +257,30 @@ if ( class_exists( 'WooCommerce' ) ) {
 			),
 		)
 	);
+
 } else {
+	class XproWooProductImagesWooNotExist extends FLBuilderModule {
+
+		/**
+		 * @return void
+		 */
+		public function __construct() {
+			parent::__construct(
+				array(
+					'name'            => __( 'Woo Product Images', 'xpro-bb-addons' ),
+					'description'     => __( 'An awesome addition by Xpro team!', 'xpro-bb-addons' ),
+					'group'           => XPRO_Plugins_Helper::$branding_modules,
+					'category'        => XPRO_Plugins_Helper::$themer_modules,
+					'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-images/',
+					'url'             => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-images/',
+					'partial_refresh' => true,
+				)
+			);
+		}
+	}
+
 	FLBuilder::register_module(
-		'XproWooProductImagesModuleNotExist',
+		'XproWooProductImagesWooNotExist',
 		array(
 			'general-info' => array(
 				'title'       => __( 'General', 'xpro' ),
@@ -289,4 +288,5 @@ if ( class_exists( 'WooCommerce' ) ) {
 			),
 		)
 	);
+
 }

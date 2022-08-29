@@ -75,29 +75,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 			return $post_id;
 		}
 	}
-} else {
-	class XproWooProductRatingNotExist extends FLBuilderModule {
 
-		/**
-		 * @return void
-		 */
-		public function __construct() {
-			parent::__construct(
-				array(
-					'name'            => __( 'Woo Products Rating', 'xpro-bb-addons' ),
-					'description'     => __( 'Displays the star rating for the current product', 'xpro-bb-addons' ),
-					'group'           => XPRO_Plugins_Helper::$branding_modules,
-					'category'        => XPRO_Plugins_Helper::$themer_modules,
-					'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-rating/',
-					'url'             => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-rating/',
-					'partial_refresh' => true,
-				)
-			);
-		}
-	}
-}
-
-if ( class_exists( 'WooCommerce' ) ) {
 	FLBuilder::register_module(
 		'XproWooProductRating',
 		array(
@@ -295,9 +273,30 @@ if ( class_exists( 'WooCommerce' ) ) {
 			),
 		)
 	);
+
 } else {
+	class XproWooProductRatingWooNotExist extends FLBuilderModule {
+
+		/**
+		 * @return void
+		 */
+		public function __construct() {
+			parent::__construct(
+				array(
+					'name'            => __( 'Woo Products Rating', 'xpro-bb-addons' ),
+					'description'     => __( 'An awesome addition by Xpro team!', 'xpro-bb-addons' ),
+					'group'           => XPRO_Plugins_Helper::$branding_modules,
+					'category'        => XPRO_Plugins_Helper::$themer_modules,
+					'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-rating/',
+					'url'             => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-rating/',
+					'partial_refresh' => true,
+				)
+			);
+		}
+	}
+
 	FLBuilder::register_module(
-		'XproWooProductRatingNotExist',
+		'XproWooProductRatingWooNotExist',
 		array(
 			'general-info' => array(
 				'title'       => __( 'General', 'xpro' ),
@@ -305,4 +304,5 @@ if ( class_exists( 'WooCommerce' ) ) {
 			),
 		)
 	);
+
 }

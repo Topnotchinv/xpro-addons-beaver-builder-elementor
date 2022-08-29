@@ -43,7 +43,7 @@ if (!function_exists('xpro_dashboard_templates')) {
                     <?php
                     WP_Filesystem();
                     global $wp_filesystem;
-                    $json_theme =  $wp_filesystem->get_contents('https://bbdemos.wpxpro.com/json-data/themes.json');
+                    $json_theme =  $wp_filesystem->get_contents('https://bbdemos.wpxpro.com/json-data/themes-new.json');
                     $json_templates = $wp_filesystem->get_contents('https://bbdemos.wpxpro.com/json-data/layouts.json');
                     $json_sections = $wp_filesystem->get_contents('https://bbdemos.wpxpro.com/json-data/sections.json');
 
