@@ -1,5 +1,7 @@
 <?php
 
+$titleeffect = '';
+
 if ( 'style-1' === $settings->hover_card_style ) {
 	$fig_class   = 'tnit-card-item_effect1';
 	$figca_class = 'tnit-middleContent';

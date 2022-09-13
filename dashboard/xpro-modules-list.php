@@ -29,6 +29,11 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Posts',
 			'package' => 'free',
 		),
+		'xpro-blog-posts'              => array(
+			'slug'    => 'xpro_blog_posts',
+			'title'   => 'Blog Posts',
+			'package' => 'free',
+		),
 		'tnit-button'                  => array(
 			'slug'    => 'tnit_button',
 			'title'   => 'Button',
@@ -74,8 +79,8 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Spacer',
 			'package' => 'free',
 		),
-		'tnit-team'                    => array(
-			'slug'    => 'tnit_team',
+		'xpro-team'                    => array(
+			'slug'    => 'xpro_team',
 			'title'   => 'Team',
 			'package' => 'free',
 		),
@@ -134,9 +139,19 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Heading',
 			'package' => 'free',
 		),
+		'xpro-advance-heading'         => array(
+			'slug'    => 'xpro_advance_heading',
+			'title'   => 'Advance Heading',
+			'package' => 'free',
+		),
 		'xpro-testimonial'             => array(
 			'slug'    => 'xpro_testimonial',
 			'title'   => 'Testimonial',
+			'package' => 'free',
+		),
+		'tnit-search-form'             => array(
+			'slug'    => 'tnit_search_form',
+			'title'   => 'Search Form',
 			'package' => 'free',
 		),
 		'xpro-woo-cart-button'         => array(
@@ -214,11 +229,6 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Restaurant Menu',
 			'package' => 'pro-disabled',
 		),
-		'tnit-search-form'             => array(
-			'slug'    => 'tnit_search_form',
-			'title'   => 'Search Form',
-			'package' => 'pro-disabled',
-		),
 		'tnit-sticky-button'           => array(
 			'slug'    => 'tnit_sticky_button',
 			'title'   => 'Sticky Button',
@@ -234,14 +244,9 @@ class Xpro_Beaver_Modules_List {
 			'title'   => 'Table',
 			'package' => 'pro-disabled',
 		),
-		'tnit-team-carousel'           => array(
-			'slug'    => 'tnit_team_carousel',
+		'xpro-team-carousel'           => array(
+			'slug'    => 'xpro_team_carousel',
 			'title'   => 'Team Carousel',
-			'package' => 'pro-disabled',
-		),
-		'xpro-advance-heading'         => array(
-			'slug'    => 'xpro_advance_heading',
-			'title'   => 'Advance Heading',
 			'package' => 'pro-disabled',
 		),
 		'xpro-advance-tabs'            => array(
@@ -257,11 +262,6 @@ class Xpro_Beaver_Modules_List {
 		'xpro-announcement-bar'        => array(
 			'slug'    => 'xpro_announcement_bar',
 			'title'   => 'Announcement Bar',
-			'package' => 'pro-disabled',
-		),
-		'xpro-blog-posts'              => array(
-			'slug'    => 'xpro_blog_posts',
-			'title'   => 'Blog Posts',
 			'package' => 'pro-disabled',
 		),
 		'xpro-contact-form7'           => array(

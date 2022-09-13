@@ -14,7 +14,7 @@ class XPROLogoGridModule extends FLBuilderModule {
 				'name'            => __( 'Logo Grid', 'xpro-bb-addons' ),
 				'description'     => __( 'An awesome addition by Xpro team!', 'xpro-bb-addons' ),
 				'group'           => XPRO_Plugins_Helper::$branding_modules,
-				'category'        => XPRO_Plugins_Helper::$content_modules,
+				'category'        => XPRO_Plugins_Helper::$media_modules,
 				'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-logo-grid/',
 				'url'             => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-logo-grid/',
 				'partial_refresh' => true,

@@ -16,6 +16,7 @@
 				$title_attr .= $item->author_link_nofollow ? ' rel=nofollow' : '';
 				$title_attr .= $item->author_link ? ' href=' . $item->author_link . '' : '';
 			} else {
+                $title_attr = '';
 				$title_tag = 'h2';
 			}
 

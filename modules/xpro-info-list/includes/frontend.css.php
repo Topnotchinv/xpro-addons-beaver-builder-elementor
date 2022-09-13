@@ -127,6 +127,35 @@ if ( 'right' === $settings->list_align_responsive ) :
 	);
 endif;
 
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .xpro-infolist-layout-vertical .xpro-infolist-item",
+		'props'    => array(
+		    'align-items'  => $settings->vertical_align,
+		),
+	)
+);
+
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .xpro-infolist-layout-vertical .xpro-infolist-item",
+		'media' => 'medium',
+		'props'    => array(
+		    'align-items'  => $settings->vertical_align_medium,
+		),
+	)
+);
+
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .xpro-infolist-layout-vertical .xpro-infolist-item",
+		'media' => 'responsive',
+		'props'    => array(
+		    'align-items'  => $settings->vertical_align_responsive,
+		),
+	)
+);
+
 
 // grid system.
 if ( $settings->list_item_per_row ) :
