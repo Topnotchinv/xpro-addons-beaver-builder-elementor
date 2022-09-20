@@ -94,7 +94,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 					'collapsed'     => true,
 					'fields'        => array(
                         'adv_enable_sub_title' => array(
-                            'type'          => 'select',
+                            'type'          => 'button-group',
                             'label'         => __( 'Enable SubTitle', 'xpro-bb-addons' ),
                             'default'       => '1',
                             'options'       => array(
@@ -127,7 +127,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 						),
 						'adv_subtitle_position' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Position', 'xpro-bb-addons' ),
 							'default'       => 'before-title',
 							'options'       => array(
@@ -142,7 +142,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 					'collapsed'     => true,
 					'fields'        => array(
                         'adv_enable_general_desc' => array(
-                            'type'          => 'select',
+                            'type'          => 'button-group',
                             'label'         => __( 'Enable Description', 'xpro-bb-addons' ),
                             'default'       => '1',
                             'options'       => array(
@@ -161,6 +161,8 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'default'       => __( 'It is a long established fact that a reader will be distracted by the
 						readable content of a page when looking at its layout normal distribution of letters.', 'xpro-bb-addons' ),
                             'wpautop'       => false,
+                            'media_buttons' => false,
+                            'connections' => array( 'string', 'html' ),
 						),
 					)
 				),
@@ -235,7 +237,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'default'   => __( 'Separator Text Here', 'xpro-bb-addons' ),
 						),
 						'adv_separator_position' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Position', 'xpro-bb-addons' ),
 							'default'       => 'after-title',
 							'options'       => array(
@@ -250,7 +252,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 					'collapsed'     => true,
 					'fields'        => array(
                         'adv_enable_shadow' => array(
-                            'type'          => 'select',
+                            'type'          => 'button-group',
                             'label'         => __( 'Enable Shadow', 'xpro-bb-addons' ),
                             'default'       => '1',
                             'options'       => array(
@@ -298,7 +300,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'responsive'  => true,
 						),
 						'adv_vertical_alignment' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Vertical Align', 'xpro-bb-addons' ),
 							'default'       => 'flex-start',
 							'options'       => array(
@@ -357,7 +359,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
                             ),
                         ),
 						'adv_title_color_type' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Color Type', 'xpro-bb-addons' ),
 							'default'       => 'color',
 							'options'       => array(
@@ -435,7 +437,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 						),
 						'adv_title_background_type' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Background Type', 'xpro-bb-addons' ),
 							'default'       => 'color',
 							'options'       => array(
@@ -522,7 +524,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
                             ),
                         ),
 						'adv_center_title_color_type' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Color Type', 'xpro-bb-addons' ),
 							'default'       => 'color',
 							'options'       => array(
@@ -600,7 +602,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 						),
 						'adv_center_title_background_type' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Background Type', 'xpro-bb-addons' ),
 							'default'       => 'color',
 							'options'       => array(
@@ -674,7 +676,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
                             ),
                         ),
 						'adv_subtitle_color_type' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Color Type', 'xpro-bb-addons' ),
 							'default'       => 'color',
 							'options'       => array(
@@ -752,7 +754,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 						),
 						'adv_subtitle_background_type' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Background Type', 'xpro-bb-addons' ),
 							'default'       => 'color',
 							'options'       => array(
@@ -1099,7 +1101,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 						),
 						'adv_shadow_color_type' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Color Type', 'xpro-bb-addons' ),
 							'default'       => 'none',
 							'options'       => array(
@@ -1143,7 +1145,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 						),
 						'adv_shadow_background_type' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Background Type', 'xpro-bb-addons' ),
 							'default'       => 'none',
 							'options'       => array(
@@ -1181,7 +1183,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 						),
 						'adv_shadow_transform' => array(
-							'type'          => 'select',
+							'type'          => 'button-group',
 							'label'         => __( 'Transform', 'xpro-bb-addons' ),
 							'default'       => 'disable',
 							'options'       => array(

@@ -86,7 +86,7 @@ if ( ! class_exists( 'XPROPostContentModule' ) ) {
 						'title'  => __( 'General', 'xpro-bb-addons' ),
 						'fields' => array(
 							'content_type' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Content Type', 'xpro-bb-addons' ),
 								'default' => 'full',
 								'options' => array(
@@ -148,7 +148,7 @@ if ( ! class_exists( 'XPROPostContentModule' ) ) {
 								),
 							),
 							'link_content_type'  => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Color Type', 'xpro-bb-addons' ),
 								'default' => 'before-title',
 								'options' => array(

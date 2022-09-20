@@ -86,7 +86,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 						'title'  => '',
 						'fields' => array(
 							'select_layout'         => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Select Layout', 'xpro' ),
 								'default' => 'row',
 								'help'    => __( 'Select Layout', 'xpro' ),
@@ -106,7 +106,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 								),
 							),
 							'show_stars'            => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Display Starts?', 'xpro' ),
 								'default' => 'yes',
 								'help'    => __( 'Display Stars?', 'xpro' ),
@@ -116,7 +116,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 								),
 							),
 							'show_count'            => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Display Count?', 'xpro' ),
 								'default' => 'yes',
 								'help'    => __( 'Display Count?', 'xpro' ),

@@ -265,7 +265,7 @@ FLBuilder::register_module(
 							'help'        => __( 'The contact form will send to this e-mail. Defaults to the admin email.', 'xpro-bb-addons' ),
 						),
 						'tnit_form_layout' => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Layout', 'xpro-bb-addons' ),
 							'default' => 'stacked',
 							'options' => array(
@@ -298,7 +298,7 @@ FLBuilder::register_module(
 					'collapsed' => true,
 					'fields'    => array(
 						'tnit_name_toggle'         => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Name Field', 'xpro-bb-addons' ),
 							'default' => 'show',
 							'options' => array(
@@ -322,7 +322,7 @@ FLBuilder::register_module(
 							'default' => __( 'Your Email', 'xpro-bb-addons' ),
 						),
 						'tnit_phone_toggle'        => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Phone Field', 'xpro-bb-addons' ),
 							'default' => 'show',
 							'options' => array(
@@ -341,7 +341,7 @@ FLBuilder::register_module(
 							'default' => __( 'Your Phone', 'xpro-bb-addons' ),
 						),
 						'subject_toggle'           => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Subject Field', 'xpro-bb-addons' ),
 							'default' => 'hide',
 							'options' => array(
@@ -369,7 +369,7 @@ FLBuilder::register_module(
 							'help'    => __( 'You can choose the subject of the email. Defaults to Contact Form Submission.', 'xpro-bb-addons' ),
 						),
 						'tnit_message_toggle'      => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Message Field', 'xpro-bb-addons' ),
 							'default' => 'show',
 							'options' => array(
@@ -394,7 +394,7 @@ FLBuilder::register_module(
 					'collapsed' => true,
 					'fields'    => array(
 						'recaptcha_toggle'    => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => 'reCAPTCHA Field',
 							'default' => 'hide',
 							'options' => array(
@@ -408,7 +408,7 @@ FLBuilder::register_module(
 							),
 						),
 						'recaptcha_theme'     => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Theme', 'xpro-bb-addons' ),
 							'default' => 'light',
 							'options' => array(

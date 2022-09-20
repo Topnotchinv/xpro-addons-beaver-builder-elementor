@@ -102,7 +102,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 								),
 							),
 							'show_sku'             => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Display SKU?', 'xpro-bb-addons' ),
 								'default' => 'yes',
 								'options' => array(
@@ -111,7 +111,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 								),
 							),
 							'show_taxonomy'        => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Display Taxonomy?', 'xpro-bb-addons' ),
 								'default' => 'yes',
 								'options' => array(

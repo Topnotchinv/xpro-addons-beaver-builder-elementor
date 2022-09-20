@@ -27,7 +27,7 @@ class XproInfoListModule extends FLBuilderModule {
 	 * @method enqueue_scripts
 	 */
 	public function enqueue_scripts() {
-        $this->add_css( 'font-awesome' );
+		$this->add_css( 'font-awesome' );
 		$this->add_css( 'font-awesome-5' );
 	}
 }
@@ -62,7 +62,7 @@ FLBuilder::register_module(
 					'title'  => __( 'General', 'xpro-bb-addons' ),
 					'fields' => array(
 						'layout'                 => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Layout', 'xpro-bb-addons' ),
 							'default' => 'vertical',
 							'options' => array(
@@ -73,9 +73,9 @@ FLBuilder::register_module(
 								'horizontal' => array(
 									'fields' => array( 'list_item_per_row', 'list_item_space' ),
 								),
-                                'vertical' => array(
-                                    'fields' => array( 'vertical_align' ),
-                                ),
+								'vertical'   => array(
+									'fields' => array( 'vertical_align' ),
+								),
 							),
 						),
 						'list_align'             => array(
@@ -84,17 +84,17 @@ FLBuilder::register_module(
 							'default'    => 'left',
 							'responsive' => true,
 						),
-                        'vertical_align'            => array(
-                            'type'       => 'select',
-                            'label'      => __( 'Vertical Alignment', 'xpro-bb-addons' ),
-                            'responsive' => true,
-                            'default'    => 'center',
-                            'options'    => array(
-                                'flex-start'    => __( 'Top', 'xpro-bb-addons' ),
-                                'center'    => __( 'Center', 'xpro-bb-addons' ),
-                                'flex-end'   => __( 'Bottom', 'xpro-bb-addons' ),
-                            ),
-                        ),
+						'vertical_align'         => array(
+							'type'       => 'button-group',
+							'label'      => __( 'Vertical Alignment', 'xpro-bb-addons' ),
+							'responsive' => true,
+							'default'    => 'center',
+							'options'    => array(
+								'flex-start' => __( 'Top', 'xpro-bb-addons' ),
+								'center'     => __( 'Center', 'xpro-bb-addons' ),
+								'flex-end'   => __( 'Bottom', 'xpro-bb-addons' ),
+							),
+						),
 						'list_item_per_row'      => array(
 							'type'       => 'unit',
 							'label'      => __( 'List Items per row', 'xpro-bb-addons' ),
@@ -615,13 +615,13 @@ FLBuilder::register_settings_form(
 								'connections' => array( 'string', 'html' ),
 							),
 							'description'        => array(
-								'type'        => 'editor',
-								'label'       => __( 'Description', 'xpro-bb-addons' ),
-								'default'     => __( 'List description here', 'xpro-bb-addons' ),
-								'placeholder' => __( 'Type your description here', 'xpro-bb-addons' ),
-								'connections' => array( 'string', 'html' ),
-                                'wpautop'       => false
-
+								'type'          => 'editor',
+								'label'         => __( 'Description', 'xpro-bb-addons' ),
+								'default'       => __( 'List description here', 'xpro-bb-addons' ),
+								'placeholder'   => __( 'Type your description here', 'xpro-bb-addons' ),
+								'media_buttons' => false,
+								'connections'   => array( 'string', 'html' ),
+								'wpautop'       => false,
 							),
 							'link'               => array(
 								'type'          => 'link',

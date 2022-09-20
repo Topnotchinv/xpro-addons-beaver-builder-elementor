@@ -1,5 +1,6 @@
 <ul class="xpro-infolist-wrapper xpro-infolist-layout-<?php echo esc_attr( $settings->layout ); ?>">
 	<?php
+    global $wp_embed;
 	$list_items_count = count( $settings->list_items );
 	for ( $i = 0; $i < $list_items_count; $i++ ) {
 		$item = $settings->list_items[ $i ];
@@ -36,7 +37,7 @@
 					<h3 class="xpro-infolist-title"><?php echo esc_attr( $item->title ); ?></h3>
 				<?php endif; ?>
 				<?php if ( $item->description ) : ?>
-					<p class="xpro-infolist-desc"><?php echo esc_attr( $item->description ); ?></p>
+					<p class="xpro-infolist-desc"><?php echo wpautop( $wp_embed->autoembed( $item->description ) ); ?></p>
 				<?php endif; ?>
 			</div>
 			<?php echo ( $item->link ) ? '</a>' : ''; ?>

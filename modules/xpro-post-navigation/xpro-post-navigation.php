@@ -51,7 +51,7 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
 						'title'  => __( 'Post Navigation', 'xpro-bb-addons' ),
 						'fields' => array(
 							'show_label'     => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Enable Label', 'xpro-bb-addons' ),
 								'default' => 'yes',
 								'options' => array(
@@ -93,7 +93,7 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
 								),
 							),
 							'show_title'     => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Enable Post Title', 'xpro-bb-addons' ),
 								'default' => 'yes',
 								'options' => array(
@@ -102,7 +102,7 @@ if ( ! class_exists( 'XPROPostNavigationModule' ) ) {
 								),
 							),
 							'show_separator' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Enable Separator', 'xpro-bb-addons' ),
 								'default' => 'yes',
 								'options' => array(

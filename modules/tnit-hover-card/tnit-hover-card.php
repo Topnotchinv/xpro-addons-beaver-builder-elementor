@@ -516,7 +516,7 @@ FLBuilder::register_settings_form(
 						'title'  => __( 'Overlay', 'xpro-bb-addons' ),
 						'fields' => array(
 							'bg_overlay_color_type' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Overlay Type', 'xpro-bb-addons' ),
 								'default' => 'option-1',
 								'options' => array(
@@ -549,7 +549,7 @@ FLBuilder::register_settings_form(
 						'title'  => __( 'Hover Overlay', 'xpro-bb-addons' ),
 						'fields' => array(
 							'overlay_color_type' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Overlay Type', 'xpro-bb-addons' ),
 								'default' => 'option-1',
 								'options' => array(
@@ -621,7 +621,7 @@ FLBuilder::register_settings_form(
 						'title'  => 'Icon Basics',
 						'fields' => array(
 							'card_icon' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Show Icon', 'xpro-bb-addons' ),
 								'default' => 'no',
 								'options' => array(
@@ -761,7 +761,7 @@ FLBuilder::register_settings_form(
 						'title'  => __( 'Call to Action', 'xpro-bb-addons' ),
 						'fields' => array(
 							'link_type' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Link Type', 'xpro-bb-addons' ),
 								'default' => 'button',
 								'options' => array(

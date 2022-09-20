@@ -134,7 +134,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 								'content' => '<h2 class="xpro-widget-separator-class">Sale Flash Button</h2>',
 							),
 							'sale_flash'                  => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Sale Flash', 'xpro' ),
 								'default' => '1',
 								'options' => array(

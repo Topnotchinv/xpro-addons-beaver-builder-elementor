@@ -562,7 +562,7 @@ FLBuilder::register_module( 'TNITAdvancedMenuModuleLite', array(
                 'title'     => '',
                 'fields'    => array(
                     'menu_layout' => array(
-                        'type'          => 'select',
+                        'type'          => 'button-group',
                         'label'         => __( 'Layout', 'xpro-bb-addons' ),
                         'default'       => 'horizontal',
                         'options'       => array(
@@ -767,7 +767,7 @@ FLBuilder::register_module( 'TNITAdvancedMenuModuleLite', array(
                 'collapsed' 	=> true,
                 'fields'        => array(
                     'menu_icon_image_position'    => array(
-                        'type'        	=> 'select',
+                        'type'        	=> 'button-group',
                         'label'       	=> __( 'Icon/Image Position', 'xpro-bb-addons' ),
                         'default' 		=> 'before',
                         'options' 		=> array(
@@ -992,7 +992,7 @@ FLBuilder::register_module( 'TNITAdvancedMenuModuleLite', array(
                 'collapsed' 	=> true,
                 'fields'        => array(
                     'submenu_icon_image_position'    => array(
-                        'type'        	=> 'select',
+                        'type'        	=> 'button-group',
                         'label'       	=> __( 'Icon/Image Position', 'xpro-bb-addons' ),
                         'default' 		=> 'before',
                         'options' 		=> array(
@@ -1115,7 +1115,7 @@ FLBuilder::register_module( 'TNITAdvancedMenuModuleLite', array(
                 'collapsed'     => true,
                 'fields'    => array(
                     'submenu_outer_bg_type' => array(
-                        'type'          => 'select',
+                        'type'          => 'button-group',
                         'label'         => __( 'Background Type', 'xpro-bb-addons' ),
                         'default'       => 'color',
                         'options'       => array(
@@ -1187,7 +1187,7 @@ FLBuilder::register_module( 'TNITAdvancedMenuModuleLite', array(
                         ),
                     ),
                     'submenu_outer_bg_repeat'     => array(
-                        'type'      => 'select',
+                        'type'      => 'button-group',
                         'label'     => __('Background Repeat', 'xpro-bb-addons'),
                         'default'   => 'no-repeat',
                         'options'   => array(
@@ -1201,7 +1201,7 @@ FLBuilder::register_module( 'TNITAdvancedMenuModuleLite', array(
                         ),
                     ),
                     'submenu_outer_bg_size'     => array(
-                        'type'      => 'select',
+                        'type'      => 'button-group',
                         'label'     => __('Background Size', 'xpro-bb-addons'),
                         'default'   => 'cover',
                         'options'   => array(
@@ -1351,7 +1351,7 @@ FLBuilder::register_module( 'TNITAdvancedMenuModuleLite', array(
                         'default'       => 'fa fa-bars'
                     ),
                     'hamburger_button_icon_position'    => array(
-                        'type'        	=> 'select',
+                        'type'        	=> 'button-group',
                         'label'       	=> __( 'Icon Position', 'xpro-bb-addons' ),
                         'default' 		=> 'before',
                         'options' 		=> array(
@@ -1848,7 +1848,7 @@ FLBuilder::register_settings_form('menu_form', array(
                     'title'         => __('Advanced Properties', 'xpro-bb-addons'),
                     'fields'        => array(
                         'menu_link_target'   => array(
-                            'type'          => 'select',
+                            'type'          => 'button-group',
                             'label'         => __('Link Target', 'xpro-bb-addons'),
                             'default'       => '_self',
                             'options'       => array(
@@ -1857,7 +1857,7 @@ FLBuilder::register_settings_form('menu_form', array(
                             ),
                         ),
                         'link_nofollow'   => array(
-                            'type'          => 'select',
+                            'type'          => 'button-group',
                             'label'         => __('Link Nofollow', 'xpro-bb-addons'),
                             'default'       => '0',
                             'options'       => array(
@@ -1884,7 +1884,7 @@ FLBuilder::register_settings_form('menu_form', array(
                     'title'  	=> '',
                     'fields' 	=> array(
                         'image_type'    => array(
-                            'type'        	=> 'select',
+                            'type'        	=> 'button-group',
                             'label'       	=> __( 'Image Type', 'xpro-bb-addons' ),
                             'default' 		=> 'none',
                             'options' 		=> array(
@@ -1933,7 +1933,7 @@ FLBuilder::register_settings_form('menu_form', array(
                     'title'         => '',
                     'fields'        => array(
                         'add_submenu' => array(
-                            'type'    => 'select',
+                            'type'    => 'button-group',
                             'label'   => __( 'Submenu', 'xpro-bb-addons' ),
                             'default' => '0',
                             'options' => array(
@@ -2013,7 +2013,7 @@ FLBuilder::register_settings_form('submenu_form', array(
                     'title'         => __('Advanced Properties', 'xpro-bb-addons'),
                     'fields'        => array(
                         'submenu_link_target'   => array(
-                            'type'          => 'select',
+                            'type'          => 'button-group',
                             'label'         => __('Link Target', 'xpro-bb-addons'),
                             'default'       => '_self',
                             'options'       => array(
@@ -2022,7 +2022,7 @@ FLBuilder::register_settings_form('submenu_form', array(
                             ),
                         ),
                         'link_nofollow'   => array(
-                            'type'          => 'select',
+                            'type'          => 'button-group',
                             'label'         => __('Link Nofollow', 'xpro-bb-addons'),
                             'default'       => '0',
                             'options'       => array(
@@ -2049,7 +2049,7 @@ FLBuilder::register_settings_form('submenu_form', array(
                     'title'  	=> '',
                     'fields' 	=> array(
                         'image_type'    => array(
-                            'type'        	=> 'select',
+                            'type'        	=> 'button-group',
                             'label'       	=> __( 'Image Type', 'xpro-bb-addons' ),
                             'default' 		=> 'none',
                             'options' 		=> array(

@@ -146,7 +146,7 @@ FLBuilder::register_module(
 					'title'  => __( 'Structure', 'xpro-bb-addons' ),
 					'fields' => array(
 						'social_icon_layout'   => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Layout', 'xpro-bb-addons' ),
 							'default' => 'horizontal',
 							'options' => array(
@@ -273,7 +273,7 @@ FLBuilder::register_settings_form(
 								'default' => __( 'Facebook', 'xpro-bb-addons' ),
 							),
 							'image_type' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Image Type', 'xpro-bb-addons' ),
 								'default' => 'icon',
 								'options' => array(

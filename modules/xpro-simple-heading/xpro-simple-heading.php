@@ -110,13 +110,13 @@ FLBuilder::register_module(
 							),
 						),
 						'title_color_type'      => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Color Type', 'xpro-bb-addons' ),
 							'default' => 'none',
 							'options' => array(
-								'none'     => __( ' None', 'xpro-bb-addons' ),
-								'color'    => __( ' Color', 'xpro-bb-addons' ),
-								'gradient' => __( ' Gradient', 'xpro-bb-addons' ),
+								'none'     => __( 'None', 'xpro-bb-addons' ),
+								'color'    => __( 'Color', 'xpro-bb-addons' ),
+								'gradient' => __( 'Gradient', 'xpro-bb-addons' ),
 							),
 							'toggle'  => array(
 								'color'    => array(
@@ -148,12 +148,12 @@ FLBuilder::register_module(
 							),
 						),
 						'title_stroke_txt_type' => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Stroke Type', 'xpro-bb-addons' ),
 							'default' => 'none',
 							'options' => array(
-								'none'   => __( ' None', 'xpro-bb-addons' ),
-								'stroke' => __( ' Stroke Text', 'xpro-bb-addons' ),
+								'none'   => __( 'None', 'xpro-bb-addons' ),
+								'stroke' => __( 'Stroke Text', 'xpro-bb-addons' ),
 							),
 							'toggle'  => array(
 								'stroke' => array(
@@ -191,19 +191,19 @@ FLBuilder::register_module(
 							'label'   => __( 'Blend Mode', 'xpro-bb-addons' ),
 							'default' => 'normal',
 							'options' => array(
-								'normal'      => __( ' Normal', 'xpro-bb-addons' ),
-								'multiply'    => __( ' Multiply', 'xpro-bb-addons' ),
-								'screen'      => __( ' Screen', 'xpro-bb-addons' ),
-								'overlay'     => __( ' Overlay', 'xpro-bb-addons' ),
-								'darken'      => __( ' Darken', 'xpro-bb-addons' ),
-								'lighten'     => __( ' Lighten', 'xpro-bb-addons' ),
-								'color-dodge' => __( ' Color Dodge', 'xpro-bb-addons' ),
-								'saturation'  => __( ' Saturation', 'xpro-bb-addons' ),
-								'color'       => __( ' Color', 'xpro-bb-addons' ),
-								'difference'  => __( ' Difference', 'xpro-bb-addons' ),
-								'exclusion'   => __( ' Exclusion', 'xpro-bb-addons' ),
-								'hue'         => __( ' Hue', 'xpro-bb-addons' ),
-								'luminosity'  => __( ' Luminosity', 'xpro-bb-addons' ),
+								'normal'      => __( 'Normal', 'xpro-bb-addons' ),
+								'multiply'    => __( 'Multiply', 'xpro-bb-addons' ),
+								'screen'      => __( 'Screen', 'xpro-bb-addons' ),
+								'overlay'     => __( 'Overlay', 'xpro-bb-addons' ),
+								'darken'      => __( 'Darken', 'xpro-bb-addons' ),
+								'lighten'     => __( 'Lighten', 'xpro-bb-addons' ),
+								'color-dodge' => __( 'Color Dodge', 'xpro-bb-addons' ),
+								'saturation'  => __( 'Saturation', 'xpro-bb-addons' ),
+								'color'       => __( 'Color', 'xpro-bb-addons' ),
+								'difference'  => __( 'Difference', 'xpro-bb-addons' ),
+								'exclusion'   => __( 'Exclusion', 'xpro-bb-addons' ),
+								'hue'         => __( 'Hue', 'xpro-bb-addons' ),
+								'luminosity'  => __( 'Luminosity', 'xpro-bb-addons' ),
 							),
 							'preview' => array(
 								'type'     => 'css',
@@ -227,13 +227,13 @@ FLBuilder::register_module(
 							),
 						),
 						'center_title_color_type'      => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Color Type', 'xpro-bb-addons' ),
 							'default' => 'none',
 							'options' => array(
-								'none'     => __( ' None', 'xpro-bb-addons' ),
-								'color'    => __( ' Color', 'xpro-bb-addons' ),
-								'gradient' => __( ' Gradient', 'xpro-bb-addons' ),
+								'none'     => __( 'None', 'xpro-bb-addons' ),
+								'color'    => __( 'Color', 'xpro-bb-addons' ),
+								'gradient' => __( 'Gradient', 'xpro-bb-addons' ),
 							),
 							'toggle'  => array(
 								'color'    => array(
@@ -267,13 +267,13 @@ FLBuilder::register_module(
 							),
 						),
 						'center_title_bg_type'         => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Background Type', 'xpro-bb-addons' ),
 							'default' => 'none',
 							'options' => array(
-								'none'     => __( ' None', 'xpro-bb-addons' ),
-								'color'    => __( ' Color', 'xpro-bb-addons' ),
-								'gradient' => __( ' Gradient', 'xpro-bb-addons' ),
+								'none'     => __( 'None', 'xpro-bb-addons' ),
+								'color'    => __( 'Color', 'xpro-bb-addons' ),
+								'gradient' => __( 'Gradient', 'xpro-bb-addons' ),
 							),
 							'toggle'  => array(
 								'color'    => array(
@@ -307,12 +307,12 @@ FLBuilder::register_module(
 							),
 						),
 						'center_title_stroke_txt_type' => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Stroke Type', 'xpro-bb-addons' ),
 							'default' => 'none',
 							'options' => array(
-								'none'   => __( ' None', 'xpro-bb-addons' ),
-								'stroke' => __( ' Stroke Text', 'xpro-bb-addons' ),
+								'none'   => __( 'None', 'xpro-bb-addons' ),
+								'stroke' => __( 'Stroke Text', 'xpro-bb-addons' ),
 							),
 							'toggle'  => array(
 								'stroke' => array(
@@ -350,19 +350,19 @@ FLBuilder::register_module(
 							'label'   => __( 'Blend Mode', 'xpro-bb-addons' ),
 							'default' => 'normal',
 							'options' => array(
-								'normal'      => __( ' Normal', 'xpro-bb-addons' ),
-								'multiply'    => __( ' Multiply', 'xpro-bb-addons' ),
-								'screen'      => __( ' Screen', 'xpro-bb-addons' ),
-								'overlay'     => __( ' Overlay', 'xpro-bb-addons' ),
-								'darken'      => __( ' Darken', 'xpro-bb-addons' ),
-								'lighten'     => __( ' Lighten', 'xpro-bb-addons' ),
-								'color-dodge' => __( ' Color Dodge', 'xpro-bb-addons' ),
-								'saturation'  => __( ' Saturation', 'xpro-bb-addons' ),
-								'color'       => __( ' Color', 'xpro-bb-addons' ),
-								'difference'  => __( ' Difference', 'xpro-bb-addons' ),
-								'exclusion'   => __( ' Exclusion', 'xpro-bb-addons' ),
-								'hue'         => __( ' Hue', 'xpro-bb-addons' ),
-								'luminosity'  => __( ' Luminosity', 'xpro-bb-addons' ),
+								'normal'      => __( 'Normal', 'xpro-bb-addons' ),
+								'multiply'    => __( 'Multiply', 'xpro-bb-addons' ),
+								'screen'      => __( 'Screen', 'xpro-bb-addons' ),
+								'overlay'     => __( 'Overlay', 'xpro-bb-addons' ),
+								'darken'      => __( 'Darken', 'xpro-bb-addons' ),
+								'lighten'     => __( 'Lighten', 'xpro-bb-addons' ),
+								'color-dodge' => __( 'Color Dodge', 'xpro-bb-addons' ),
+								'saturation'  => __( 'Saturation', 'xpro-bb-addons' ),
+								'color'       => __( 'Color', 'xpro-bb-addons' ),
+								'difference'  => __( 'Difference', 'xpro-bb-addons' ),
+								'exclusion'   => __( 'Exclusion', 'xpro-bb-addons' ),
+								'hue'         => __( 'Hue', 'xpro-bb-addons' ),
+								'luminosity'  => __( 'Luminosity', 'xpro-bb-addons' ),
 							),
 							'preview' => array(
 								'type'     => 'css',

@@ -10,6 +10,8 @@
  * @since 1.1.3
  */
 
+global $wp_embed;
+
 if ( 'stacked' === $settings->tnit_form_layout ) {
 	$form_class       = 'tnit-form-box tnit-form-box_v2 tnit-form-style-1';
 	$form_inner_class = 'tnit-form';
@@ -131,7 +133,7 @@ if ( 'stacked' === $settings->tnit_form_layout ) {
 		</form>
 
 		<?php if ( 'show_message' === $settings->success_action ) : ?>
-			<div class="tnit-success-msg" style="display:none;"><?php echo esc_attr( $settings->success_message ); ?></div>
+			<div class="tnit-success-msg" style="display:none;"><?php echo wpautop( $wp_embed->autoembed( $settings->success_message ) ); ?></div>
 		<?php endif; ?>
 
 	</div>

@@ -118,7 +118,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 						'title'  => __( 'General', 'xpro-bb-addons' ),
 						'fields' => array(
 							'source'         => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Source', 'xpro-bb-addons' ),
 								'default' => 'current',
 								'options' => array(
@@ -141,7 +141,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 								),
 							),
 							'show_avatar'    => array(
-								'type'        => 'select',
+								'type'        => 'button-group',
 								'label'       => __( 'Avatar', 'xpro-bb-addons' ),
 								'default'     => '1',
 								'render_type' => 'template',
@@ -156,7 +156,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 								'show_remove' => true,
 							),
 							'show_name'      => array(
-								'type'        => 'select',
+								'type'        => 'button-group',
 								'label'       => __( 'Name', 'xpro-bb-addons' ),
 								'default'     => '1',
 								'render_type' => 'template',
@@ -185,7 +185,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 								),
 							),
 							'show_biography' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Biography', 'xpro-bb-addons' ),
 								'default' => '1',
 								'options' => array(
@@ -201,7 +201,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 								'rows'      => '3',
 							),
 							'show_link'      => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Archive Button', 'xpro-bb-addons' ),
 								'default' => '0',
 								'options' => array(
@@ -227,7 +227,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 								'placeholder'   => __( 'https://beaver.wpxpro.com', 'xpro-bb-addons' ),
 							),
 							'align'          => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Alignment', 'xpro-bb-addons' ),
 								'default' => 'left',
 								'options' => array(
@@ -406,7 +406,7 @@ if ( ! class_exists( 'XPROAuthorBioModule' ) ) {
 								),
 							),
 							'button_bg_type'         => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Background Type', 'xpro-bb-addons' ),
 								'default' => 'normal',
 								'options' => array(

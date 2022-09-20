@@ -92,7 +92,7 @@ FLBuilder::register_module(
 							),
 						),
 						'rating_style'  => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Rating Style', 'xpro-bb-addons' ),
 							'default' => 'star',
 							'options' => array(
@@ -180,7 +180,7 @@ FLBuilder::register_module(
 					'title'  => '',
 					'fields' => array(
 						'background_type' => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Background Type', 'xpro-bb-addons' ),
 							'default' => 'color',
 							'options' => array(

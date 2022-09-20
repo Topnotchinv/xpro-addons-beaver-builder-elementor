@@ -302,7 +302,7 @@ FLBuilder::register_module(
 					'title'  => 'Front Style',
 					'fields' => array(
 						'front_bg_type'          => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Background Type', 'xpro-bb-addons' ),
 							'default' => 'color',
 							'options' => array(
@@ -340,7 +340,7 @@ FLBuilder::register_module(
 							'connections' => array( 'color' ),
 						),
 						'front_border_type'      => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Border Type', 'xpro-bb-addons' ),
 							'default' => 'custom',
 							'options' => array(
@@ -502,7 +502,7 @@ FLBuilder::register_module(
 					'title'  => 'Back Style',
 					'fields' => array(
 						'back_bg_type'    => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Background Type', 'xpro-bb-addons' ),
 							'default' => 'color',
 							'options' => array(
@@ -753,7 +753,7 @@ FLBuilder::register_settings_form(
 						'title'  => __( 'Basics', 'xpro-bb-addons' ),
 						'fields' => array(
 							'button_type'      => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Button Type', 'xpro-bb-addons' ),
 								'default' => 'text',
 								'options' => array(

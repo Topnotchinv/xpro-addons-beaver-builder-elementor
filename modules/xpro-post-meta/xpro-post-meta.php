@@ -86,7 +86,7 @@ if ( ! class_exists( 'XPROPostMetaModule' ) ) {
 						'title'  => __( '', 'xpro-bb-addons' ),
 						'fields' => array(
 							'display_date'     => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Display Date?', 'xpro' ),
 								'default' => 'yes',
 								'options' => array(
@@ -95,7 +95,7 @@ if ( ! class_exists( 'XPROPostMetaModule' ) ) {
 								),
 							),
 							'display_taxonomy' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Display Taxonomy?', 'xpro' ),
 								'default' => 'yes',
 								'options' => array(
@@ -104,7 +104,7 @@ if ( ! class_exists( 'XPROPostMetaModule' ) ) {
 								),
 							),
 							'display_comment'  => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Display Comment?', 'xpro' ),
 								'default' => 'yes',
 								'options' => array(
@@ -113,7 +113,7 @@ if ( ! class_exists( 'XPROPostMetaModule' ) ) {
 								),
 							),
 							'display_author'   => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Display Author?', 'xpro' ),
 								'default' => 'yes',
 								'options' => array(

@@ -64,7 +64,7 @@ FLBuilder::register_module(
 							'show_nofollow' => true,
 						),
 						'icon_show'     => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Show Icon', 'xpro-bb-addons' ),
 							'default' => 'no',
 							'options' => array(
@@ -130,7 +130,7 @@ FLBuilder::register_module(
 							),
 						),
 						'cta_width'             => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => 'Width',
 							'default' => 'auto',
 							'options' => array(
@@ -174,7 +174,7 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 						),
 						'color_type'            => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Background Color Type', 'xpro-bb-addons' ),
 							'default' => 'color',
 							'options' => array(
@@ -207,7 +207,7 @@ FLBuilder::register_module(
 							),
 						),
 						'hover_color_type'      => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Background Hover Color Type', 'xpro-bb-addons' ),
 							'default' => 'color',
 							'options' => array(

@@ -196,7 +196,7 @@ FLBuilder::register_module(
 					'title'  => 'Colors',
 					'fields' => array(
 						'progress_color_type'    => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Progress Color Type', 'xpro-bb-addons' ),
 							'default' => 'color',
 							'options' => array(

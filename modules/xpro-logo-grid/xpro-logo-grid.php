@@ -209,7 +209,7 @@ FLBuilder::register_settings_form(
 						'title'  => 'Logo List',
 						'fields' => array(
 							'general_image_source' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Photo Source', 'xpro-bb-addons' ),
 								'default' => 'library',
 								'options' => array(

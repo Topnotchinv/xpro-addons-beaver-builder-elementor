@@ -182,7 +182,7 @@ if ( ! class_exists( 'TNITSearchModule' ) ) {
 						'title'  => __( 'Button Basics', 'tnit' ),
 						'fields' => array(
 							'button_type' => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Button Type', 'tnit' ),
 								'default' => 'icon',
 								'options' => array(

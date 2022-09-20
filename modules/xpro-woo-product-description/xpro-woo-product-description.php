@@ -86,12 +86,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 						'title'  => '',
 						'fields' => array(
 							'description_type'   => array(
-								'type'    => 'select',
+								'type'    => 'button-group',
 								'label'   => __( 'Type', 'xpro' ),
 								'default' => 'short',
 								'options' => array(
-									'short' => __( 'Short Description', 'xpro' ),
-									'full'  => __( 'Full Description', 'xpro' ),
+									'short' => __( 'Short', 'xpro' ),
+									'full'  => __( 'Full', 'xpro' ),
 								),
 							),
 							'align'              => array(

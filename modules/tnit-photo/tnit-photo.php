@@ -77,7 +77,7 @@ FLBuilder::register_module(
 					'title'  => __( '', 'xpro-bb-addons' ),
 					'fields' => array(
 						'image_type' => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Image Type', 'xpro-bb-addons' ),
 							'default' => 'icon',
 							'options' => array(
@@ -110,7 +110,7 @@ FLBuilder::register_module(
 					'title'  => __( 'Image Basics', 'xpro-bb-addons' ),
 					'fields' => array(
 						'photo_source' => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Photo Source', 'xpro-bb-addons' ),
 							'default' => 'library',
 							'options' => array(
@@ -626,7 +626,7 @@ FLBuilder::register_module(
 							'help'    => 'Select image overlay effect',
 						),
 						'overlay_color_type' => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Overlay Type', 'xpro-bb-addons' ),
 							'default' => 'option-1',
 							'options' => array(
