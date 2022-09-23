@@ -27,9 +27,6 @@ class TNITProgressBar extends FLBuilderModule {
 	 * @method enqueue_scripts
 	 */
 	public function enqueue_scripts() {
-        // Already registered.
-		$this->add_css( 'font-awesome' );
-		$this->add_css( 'font-awesome-5' );
 
 		// Register and enqueue your own.
 		$this->add_js( 'progressbar', $this->url . 'js/jQuery.progressbar.min.js', array(), '', true );

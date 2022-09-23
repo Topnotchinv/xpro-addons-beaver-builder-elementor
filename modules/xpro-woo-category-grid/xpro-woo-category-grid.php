@@ -29,15 +29,10 @@ if ( class_exists( 'WooCommerce' ) ) {
 		 * @method enqueue_scripts
 		 */
 		public function enqueue_scripts() {
-			// Already registered
-			$this->add_css( 'font-awesome' );
-			$this->add_css( 'font-awesome-5' );
-			$this->add_css( 'foundation-icons' );
-			$this->add_css( 'ultimate-icons' );
 
 			// Register and enqueue your own.
-			$this->add_css( 'cubeportfolio', XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-category-grid/css/cubeportfolio.min.css' );
-			$this->add_js( 'cubeportfolio', XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-category-grid/js/jquery.cubeportfolio.min.js', array( 'jquery' ), '4.4.0', true );
+            $this->add_css( 'cubeportfolio-css', XPRO_ADDONS_FOR_BB_URL . 'assets/css/cubeportfolio.min.css' );
+            $this->add_js( 'cubeportfolio-js', XPRO_ADDONS_FOR_BB_URL . 'assets/js/jquery.cubeportfolio.min.js', array( 'jquery' ), '4.4.0', true );
 		}
 
 		public static function taxonomies_exclude() {
@@ -411,9 +406,9 @@ if ( class_exists( 'WooCommerce' ) ) {
 								'responsive' => true,
 								'options'    => array(
 									'none'       => __( 'None', 'xpro-bb-addons' ),
-									'flex-start' => __( ' Left', 'xpro-bb-addons' ),
-									'center'     => __( ' Center', 'xpro-bb-addons' ),
-									'flex-end'   => __( ' Right', 'xpro-bb-addons' ),
+									'flex-start' => __( 'Left', 'xpro-bb-addons' ),
+									'center'     => __( 'Center', 'xpro-bb-addons' ),
+									'flex-end'   => __( 'Right', 'xpro-bb-addons' ),
 								),
 							),
 							'vertical_alignment'     => array(
@@ -423,8 +418,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 								'options'    => array(
 									'none'       => __( 'None', 'xpro-bb-addons' ),
 									'flex-start' => __( 'Top', 'xpro-bb-addons' ),
-									'center'     => __( ' Center', 'xpro-bb-addons' ),
-									'flex-end'   => __( ' Bottom', 'xpro-bb-addons' ),
+									'center'     => __( 'Center', 'xpro-bb-addons' ),
+									'flex-end'   => __( 'Bottom', 'xpro-bb-addons' ),
 								),
 							),
 							'content_height'         => array(
@@ -451,9 +446,9 @@ if ( class_exists( 'WooCommerce' ) ) {
 								'label'   => __( 'Background Type', 'xpro-bb-addons' ),
 								'default' => 'none',
 								'options' => array(
-									'none'     => __( ' None', 'xpro-bb-addons' ),
-									'color'    => __( ' Color', 'xpro-bb-addons' ),
-									'gradient' => __( ' Gradient', 'xpro-bb-addons' ),
+									'none'     => __( 'None', 'xpro-bb-addons' ),
+									'color'    => __( 'Color', 'xpro-bb-addons' ),
+									'gradient' => __( 'Gradient', 'xpro-bb-addons' ),
 								),
 								'toggle'  => array(
 									'color'    => array(
@@ -624,9 +619,9 @@ if ( class_exists( 'WooCommerce' ) ) {
 								'label'   => __( 'Background Type', 'xpro-bb-addons' ),
 								'default' => 'none',
 								'options' => array(
-									'none'   => __( ' None', 'xpro-bb-addons' ),
-									'normal' => __( ' Normal', 'xpro-bb-addons' ),
-									'hover'  => __( ' Hover', 'xpro-bb-addons' ),
+									'none'   => __( 'None', 'xpro-bb-addons' ),
+									'normal' => __( 'Normal', 'xpro-bb-addons' ),
+									'hover'  => __( 'Hover', 'xpro-bb-addons' ),
 								),
 								'toggle'  => array(
 									'normal' => array(

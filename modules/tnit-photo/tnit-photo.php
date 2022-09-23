@@ -23,16 +23,6 @@ class TNITPhoto extends FLBuilderModule {
 	}
 
 	/**
-	 * @method enqueue_scripts
-	 */
-	public function enqueue_scripts() {
-        // Already registered.
-		$this->add_css( 'font-awesome' );
-		$this->add_css( 'font-awesome-5' );
-
-	}
-
-	/**
 	 * Function that renders Image
 	 *
 	 * @method render_image

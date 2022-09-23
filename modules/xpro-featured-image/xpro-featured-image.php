@@ -25,15 +25,6 @@ if ( ! class_exists( 'XproFeaturedImageModule' ) ) {
 
 		}
 
-		/**
-		 * @method enqueue_scripts
-		 */
-		public function enqueue_scripts() {
-            // Already registered.
-			$this->add_css( 'font-awesome' );
-			$this->add_css( 'font-awesome-5' );
-		}
-
 	}
 
 	/**

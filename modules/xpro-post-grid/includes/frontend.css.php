@@ -383,12 +383,14 @@ FLBuilderCSS::rule(
  ==========================================
 	Style > Content
    ========================================== */
+
+
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-content",
-		'enabled'  => 'color' === $settings->content_bg_type,
+		'enabled'  => 'color' === $settings->content_styles->content_bg_type,
 		'props'    => array(
-			'background-color' => $settings->content_background,
+			'background-color' => $settings->content_styles->content_background,
 		),
 	)
 );
@@ -396,16 +398,16 @@ FLBuilderCSS::rule(
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-content",
-		'enabled'  => 'gradient' === $settings->content_bg_type,
+		'enabled'  => 'gradient' === $settings->content_styles->content_bg_type,
 		'props'    => array(
-			'background-image' => FLBuilderColor::gradient( $settings->content_gradient ),
+			'background-image' => FLBuilderColor::gradient( $settings->content_styles->content_gradient ),
 		),
 	)
 );
 
 FLBuilderCSS::border_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->content_styles,
 		'setting_name' => 'content_border',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-content",
 	)
@@ -413,7 +415,7 @@ FLBuilderCSS::border_field_rule(
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->content_styles,
 		'setting_name' => 'content_padding',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-content",
 		'units'        => 'px',
@@ -429,7 +431,7 @@ FLBuilderCSS::dimension_field_rule(
 /* Title */
 FLBuilderCSS::typography_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->content_styles,
 		'setting_name' => 'title_typography',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-title",
 	)
@@ -439,7 +441,7 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-title",
 		'props'    => array(
-			'color' => $settings->title_color,
+			'color' => $settings->content_styles->title_color,
 		),
 	)
 );
@@ -448,14 +450,14 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-title:hover",
 		'props'    => array(
-			'color' => $settings->title_hover_color,
+			'color' => $settings->content_styles->title_hover_color,
 		),
 	)
 );
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->content_styles,
 		'setting_name' => 'title_margin',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-title",
 		'units'        => 'px',
@@ -471,7 +473,7 @@ FLBuilderCSS::dimension_field_rule(
 /* Content */
 FLBuilderCSS::typography_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->content_styles,
 		'setting_name' => 'description_typography',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-excerpt",
 	)
@@ -481,14 +483,14 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-excerpt",
 		'props'    => array(
-			'color' => $settings->excerpt_color,
+			'color' => $settings->content_styles->excerpt_color,
 		),
 	)
 );
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->content_styles,
 		'setting_name' => 'excerpt_margin',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-excerpt",
 		'units'        => 'px',
@@ -507,7 +509,7 @@ FLBuilderCSS::dimension_field_rule(
    ========================================== */
 FLBuilderCSS::typography_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->meta_styles,
 		'setting_name' => 'meta_typography',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-meta-list > li",
 	)
@@ -515,7 +517,7 @@ FLBuilderCSS::typography_field_rule(
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->meta_styles,
 		'setting_name' => 'meta_space_between',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-meta-list",
 		'units'        => 'px',
@@ -527,7 +529,7 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-meta-list > li > i",
 		'props'    => array(
-			'color' => $settings->meta_icon_color,
+			'color' => $settings->meta_styles->meta_icon_color,
 		),
 	)
 );
@@ -536,7 +538,7 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-meta-list > li,.fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-meta-list > li a",
 		'props'    => array(
-			'color' => $settings->meta_color,
+			'color' => $settings->meta_styles->meta_color,
 		),
 	)
 );
@@ -545,14 +547,14 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-meta-list > li",
 		'props'    => array(
-			'background-color' => $settings->meta_bg_color,
+			'background-color' => $settings->meta_styles->meta_bg_color,
 		),
 	)
 );
 
 FLBuilderCSS::border_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->meta_styles,
 		'setting_name' => 'meta_border',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-meta-list > li",
 	)
@@ -560,7 +562,7 @@ FLBuilderCSS::border_field_rule(
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->meta_styles,
 		'setting_name' => 'meta_padding',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-meta-list > li",
 		'units'        => 'px',
@@ -575,7 +577,7 @@ FLBuilderCSS::dimension_field_rule(
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->meta_styles,
 		'setting_name' => 'meta_margin',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-meta-list > li",
 		'units'        => 'px',
@@ -591,7 +593,7 @@ FLBuilderCSS::dimension_field_rule(
 // Wrapper
 FLBuilderCSS::border_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->meta_styles,
 		'setting_name' => 'meta_wrapper_border',
 		'selector'     => ".fl-node-$id .xpro-post-grid-layout-7 .xpro-post-grid-meta-list",
 	)
@@ -599,7 +601,7 @@ FLBuilderCSS::border_field_rule(
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->meta_styles,
 		'setting_name' => 'meta_wrapper_padding',
 		'selector'     => ".fl-node-$id .xpro-post-grid-layout-7 .xpro-post-grid-meta-list",
 		'units'        => 'px',
@@ -614,7 +616,7 @@ FLBuilderCSS::dimension_field_rule(
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->meta_styles,
 		'setting_name' => 'meta_wrapper_margin',
 		'selector'     => ".fl-node-$id .xpro-post-grid-layout-7 .xpro-post-grid-meta-list",
 		'units'        => 'px',
@@ -635,8 +637,8 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-author img",
 		'props'    => array(
-			'width'  => $settings->avatar_size . 'px',
-			'height' => $settings->avatar_size . 'px',
+			'width'  => $settings->author_styles->avatar_size . 'px',
+			'height' => $settings->author_styles->avatar_size . 'px',
 		),
 	)
 );
@@ -645,7 +647,7 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-layout-4 .xpro-post-grid-content",
 		'props'    => array(
-			'margin-top' => 'calc(' . $settings->avatar_size . 'px / 2 )',
+			'margin-top' => 'calc(' . $settings->author_styles->avatar_size . 'px / 2 )',
 		),
 	)
 );
@@ -656,8 +658,8 @@ FLBuilderCSS::rule(
 		'selector' => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-author img",
 		'media'    => 'medium',
 		'props'    => array(
-			'width'  => $settings->avatar_size_medium . 'px',
-			'height' => $settings->avatar_size_medium . 'px',
+			'width'  => $settings->author_styles->avatar_size_medium . 'px',
+			'height' => $settings->author_styles->avatar_size_medium . 'px',
 		),
 	)
 );
@@ -667,7 +669,7 @@ FLBuilderCSS::rule(
 		'selector' => ".fl-node-$id .xpro-post-grid-layout-4 .xpro-post-grid-content",
 		'media'    => 'medium',
 		'props'    => array(
-			'margin-top' => 'calc(' . $settings->avatar_size_medium . 'px / 2 )',
+			'margin-top' => 'calc(' . $settings->author_styles->avatar_size_medium . 'px / 2 )',
 		),
 	)
 );
@@ -678,8 +680,8 @@ FLBuilderCSS::rule(
 		'selector' => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-author img",
 		'media'    => 'responsive',
 		'props'    => array(
-			'width'  => $settings->avatar_size_responsive . 'px',
-			'height' => $settings->avatar_size_responsive . 'px',
+			'width'  => $settings->author_styles->avatar_size_responsive . 'px',
+			'height' => $settings->author_styles->avatar_size_responsive . 'px',
 		),
 	)
 );
@@ -689,14 +691,14 @@ FLBuilderCSS::rule(
 		'selector' => ".fl-node-$id .xpro-post-grid-layout-4 .xpro-post-grid-content",
 		'media'    => 'responsive',
 		'props'    => array(
-			'margin-top' => 'calc(' . $settings->avatar_size_responsive . 'px / 2 )',
+			'margin-top' => 'calc(' . $settings->author_styles->avatar_size_responsive . 'px / 2 )',
 		),
 	)
 );
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->author_styles,
 		'setting_name' => 'author_space_between',
 		'selector'     => ".fl-node-$id .xpro-post-grid-author",
 		'units'        => 'px',
@@ -706,7 +708,7 @@ FLBuilderCSS::responsive_rule(
 
 FLBuilderCSS::border_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->author_styles,
 		'setting_name' => 'author_border',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-author img",
 	)
@@ -714,7 +716,7 @@ FLBuilderCSS::border_field_rule(
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->author_styles,
 		'setting_name' => 'author_wrapper_margin',
 		'selector'     => ".fl-node-$id .xpro-post-grid-wrapper .xpro-post-grid-author img",
 		'units'        => 'px',
@@ -730,7 +732,7 @@ FLBuilderCSS::dimension_field_rule(
 /* Title */
 FLBuilderCSS::typography_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->author_styles,
 		'setting_name' => 'author_title_typography',
 		'selector'     => ".fl-node-$id .xpro-post-grid-author-title",
 	)
@@ -740,14 +742,14 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-author-title",
 		'props'    => array(
-			'color' => $settings->author_title_color,
+			'color' => $settings->author_styles->author_title_color,
 		),
 	)
 );
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->author_styles,
 		'setting_name' => 'author_title_margin',
 		'selector'     => ".fl-node-$id .xpro-post-grid-author-title",
 		'units'        => 'px',
@@ -763,7 +765,7 @@ FLBuilderCSS::dimension_field_rule(
 /* Name */
 FLBuilderCSS::typography_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->author_styles,
 		'setting_name' => 'author_name_typography',
 		'selector'     => ".fl-node-$id .xpro-post-grid-author-name",
 	)
@@ -773,14 +775,14 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-post-grid-author-name",
 		'props'    => array(
-			'color' => $settings->author_name_color,
+			'color' => $settings->author_styles->author_name_color,
 		),
 	)
 );
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->author_styles,
 		'setting_name' => 'author_name_margin',
 		'selector'     => ".fl-node-$id .xpro-post-grid-author-name",
 		'units'        => 'px',
@@ -799,7 +801,7 @@ FLBuilderCSS::dimension_field_rule(
    ========================================== */
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->pagination_styles,
 		'setting_name' => 'pagination_alignment',
 		'selector'     => ".fl-node-$id .xpro-elementor-post-pagination",
 		'prop'         => 'justify-content',
@@ -808,7 +810,7 @@ FLBuilderCSS::responsive_rule(
 
 FLBuilderCSS::typography_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     =>$settings->pagination_styles,
 		'setting_name' => 'pagination_typography',
 		'selector'     => ".fl-node-$id .xpro-elementor-post-pagination .page-numbers",
 	)
@@ -816,7 +818,7 @@ FLBuilderCSS::typography_field_rule(
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->pagination_styles,
 		'setting_name' => 'pagination_space_between',
 		'selector'     => ".fl-node-$id .xpro-elementor-post-pagination",
 		'unit'         => 'px',
@@ -828,8 +830,8 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-elementor-post-pagination .page-numbers",
 		'props'    => array(
-			'color'            => $settings->pagination_color,
-			'background-color' => $settings->pagination_bg_color,
+			'color'            => $settings->pagination_styles->pagination_color,
+			'background-color' => $settings->pagination_styles->pagination_bg_color,
 		),
 	)
 );
@@ -838,8 +840,8 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-elementor-post-pagination .page-numbers:hover",
 		'props'    => array(
-			'color'            => $settings->pagination_hover_color,
-			'background-color' => $settings->pagination_bg_hover_color,
+			'color'            => $settings->pagination_styles->pagination_hover_color,
+			'background-color' => $settings->pagination_styles->pagination_bg_hover_color,
 		),
 	)
 );
@@ -848,15 +850,15 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-elementor-post-pagination .page-numbers.current",
 		'props'    => array(
-			'color'            => $settings->pagination_active_color,
-			'background-color' => $settings->pagination_bg_arctive_color,
+			'color'            => $settings->pagination_styles->pagination_active_color,
+			'background-color' => $settings->pagination_styles->pagination_bg_arctive_color,
 		),
 	)
 );
 
 FLBuilderCSS::border_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->pagination_styles,
 		'setting_name' => 'pagination_border',
 		'selector'     => ".fl-node-$id .xpro-elementor-post-pagination .page-numbers",
 	)
@@ -864,7 +866,7 @@ FLBuilderCSS::border_field_rule(
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->pagination_styles,
 		'setting_name' => 'pagination_padding',
 		'selector'     => ".fl-node-$id .xpro-elementor-post-pagination .page-numbers",
 		'units'        => 'px',
@@ -879,7 +881,7 @@ FLBuilderCSS::dimension_field_rule(
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->pagination_styles,
 		'setting_name' => 'pagination_margin',
 		'selector'     => ".fl-node-$id .xpro-elementor-post-pagination",
 		'units'        => 'px',

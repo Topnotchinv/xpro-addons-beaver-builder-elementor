@@ -27,8 +27,8 @@ class XproPostGridModule extends FLBuilderModule {
 	 */
 	public function enqueue_scripts() {
 
-		$this->add_css( 'post-grid-cubeportfolio', XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-post-grid/css/cubeportfolio.min.css' );
-		$this->add_js( 'post-grid-cubeportfolio', XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-post-grid/js/jquery.cubeportfolio.min.js', array( 'jquery' ), '', true );
+        $this->add_css( 'cubeportfolio-css', XPRO_ADDONS_FOR_BB_URL . 'assets/css/cubeportfolio.min.css' );
+        $this->add_js( 'cubeportfolio-js', XPRO_ADDONS_FOR_BB_URL . 'assets/js/jquery.cubeportfolio.min.js', array( 'jquery' ), '4.4.0', true );
 	}
 
 }
@@ -291,7 +291,7 @@ FLBuilder::register_module(
 							),
 							'toggle'  => array(
 								'yes' => array(
-									'fields'   => array( 'prev_label', 'next_label', 'posts_per_page', 'arrow' ),
+									'fields'   => array( 'prev_label', 'next_label', 'arrow' ),
 									'sections' => array( 'styl-pagination' ),
 								),
 								'no'  => array(
@@ -302,7 +302,7 @@ FLBuilder::register_module(
 						'posts_per_page'  => array(
 							'type'    => 'unit',
 							'label'   => __( 'Posts Per Page', 'xpro-bb-addons' ),
-							'default' => 5,
+							'default' => 10,
 							'slider'  => true,
 						),
 						'prev_label'      => array(
@@ -341,18 +341,18 @@ FLBuilder::register_module(
 		'style'         => array(
 			'title'    => __( 'Style', 'xpro-bb-addons' ),
 			'sections' => array(
-				'general'         => array(
+				'general'      => array(
 					'title'  => __( 'General', 'xpro-bb-addons' ),
 					'fields' => array(
 						'alignment'        => array(
-							'type'       => 'select',
+							'type'       => 'button-group',
 							'label'      => __( 'Alignment', 'xpro-bb-addons' ),
 							'responsive' => true,
 							'default'    => 'left',
 							'options'    => array(
-								'left'   => __( ' Left', 'xpro-bb-addons' ),
-								'center' => __( ' Center', 'xpro-bb-addons' ),
-								'right'  => __( ' Right', 'xpro-bb-addons' ),
+								'left'   => __( 'Left', 'xpro-bb-addons' ),
+								'center' => __( 'Center', 'xpro-bb-addons' ),
+								'right'  => __( 'Right', 'xpro-bb-addons' ),
 							),
 						),
 						'item_height'      => array(
@@ -409,13 +409,13 @@ FLBuilder::register_module(
 							),
 						),
 						'item_bg_type'     => array(
-							'type'    => 'select',
+							'type'    => 'button-group',
 							'label'   => __( 'Background Type', 'xpro-bb-addons' ),
 							'default' => 'none',
 							'options' => array(
-								'none'     => __( ' None', 'xpro-bb-addons' ),
-								'color'    => __( ' Color', 'xpro-bb-addons' ),
-								'gradient' => __( ' Gradient', 'xpro-bb-addons' ),
+								'none'     => __( 'None', 'xpro-bb-addons' ),
+								'color'    => __( 'Color', 'xpro-bb-addons' ),
+								'gradient' => __( 'Gradient', 'xpro-bb-addons' ),
 							),
 							'toggle'  => array(
 								'color'    => array(
@@ -481,7 +481,7 @@ FLBuilder::register_module(
 						),
 						'overlay_hcolor'   => array(
 							'type'       => 'color',
-							'label'      => __( 'Overlay Color', 'xpro-bb-addons' ),
+							'label'      => __( 'Overlay Hover Color', 'xpro-bb-addons' ),
 							'show_reset' => true,
 							'show_alpha' => true,
 							'preview'    => array(
@@ -492,591 +492,674 @@ FLBuilder::register_module(
 						),
 					),
 				),
-				'content'         => array(
-					'title'     => __( 'Content', 'xpro-bb-addons' ),
-					'collapsed' => true,
-					'fields'    => array(
-						'content_bg_type'        => array(
-							'type'    => 'select',
-							'label'   => __( 'Background Type', 'xpro-bb-addons' ),
-							'default' => 'none',
-							'options' => array(
-								'none'     => __( ' None', 'xpro-bb-addons' ),
-								'color'    => __( ' Color', 'xpro-bb-addons' ),
-								'gradient' => __( ' Gradient', 'xpro-bb-addons' ),
-							),
-							'toggle'  => array(
-								'color'    => array(
-									'fields' => array( 'content_background' ),
-								),
-								'gradient' => array(
-									'fields' => array( 'content_gradient' ),
-								),
-							),
+				'other_styles' => array(
+					'title'  => __( 'Other Styles', 'xpro-bb-addons' ),
+					'fields' => array(
+						'content_styles'    => array(
+							'type'         => 'form',
+							'label'        => __( 'Content Styles', 'xpro-bb-addons' ),
+							'form'         => 'xpro_post_grid_content_form',
+							'preview_text' => 'icon',
 						),
-						'content_background'     => array(
-							'type'       => 'color',
-							'label'      => __( 'Background Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-content',
-								'property' => 'background-color',
-							),
+						'meta_styles'       => array(
+							'type'         => 'form',
+							'label'        => __( 'Meta Styles', 'xpro-bb-addons' ),
+							'form'         => 'xpro_post_grid_meta_form',
+							'preview_text' => 'icon',
 						),
-						'content_gradient'       => array(
-							'type'    => 'gradient',
-							'label'   => 'Gradient Color',
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-content',
-								'property' => 'background-image',
-							),
+						'author_styles'     => array(
+							'type'         => 'form',
+							'label'        => __( 'Author Styles', 'xpro-bb-addons' ),
+							'form'         => 'xpro_post_grid_author_form',
+							'preview_text' => 'icon',
 						),
-						'content_border'         => array(
-							'type'       => 'border',
-							'label'      => 'Border',
-							'units'      => array( 'px', '%' ),
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-content',
-								'property' => 'border',
-							),
-						),
-						'content_padding'        => array(
-							'type'       => 'dimension',
-							'label'      => 'Padding',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-content',
-								'property' => 'padding',
-							),
-						),
-						'content_margin'         => array(
-							'type'       => 'dimension',
-							'label'      => 'Margin',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-content',
-								'property' => 'margin',
-							),
-						),
-						'xpro-widget-seprator1'  => array(
-							'type'    => 'raw',
-							'content' => '<h2 class="xpro-widget-separator-heading">Title<hr></h2>',
-						),
-						'title_color'            => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-title',
-								'property' => 'color',
-							),
-						),
-						'title_hover_color'      => array(
-							'type'       => 'color',
-							'label'      => __( 'Hover Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-title:hover',
-								'property' => 'color',
-							),
-						),
-						'title_margin'           => array(
-							'type'       => 'dimension',
-							'label'      => 'Margin',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-title',
-								'property' => 'margin',
-							),
-						),
-						'xpro-widget-seprator2'  => array(
-							'type'    => 'raw',
-							'content' => '<h2 class="xpro-widget-separator-heading">Description<hr></h2>',
-						),
-						'excerpt_color'          => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-excerpt',
-								'property' => 'color',
-							),
-						),
-						'excerpt_margin'         => array(
-							'type'       => 'dimension',
-							'label'      => 'Margin',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-excerpt',
-								'property' => 'margin',
-							),
+						'pagination_styles' => array(
+							'type'         => 'form',
+							'label'        => __( 'Pagination Styles', 'xpro-bb-addons' ),
+							'form'         => 'xpro_post_grid_pagination_form',
+							'preview_text' => 'icon',
 						),
 					),
 				),
-				'styl-meta'       => array(
-					'title'     => __( 'Meta', 'xpro-bb-addons' ),
-					'collapsed' => true,
-					'fields'    => array(
-						'meta_space_between'    => array(
-							'type'         => 'unit',
-							'label'        => 'Space Between',
-							'units'        => array( 'px', '%' ),
-							'default_unit' => 'px',
-							'responsive'   => true,
-							'slider'       => array(
-								'px' => array(
-									'min'  => 0,
-									'max'  => 1000,
-									'step' => 1,
+			),
+		),
+	)
+);
+
+/**
+ * Register a settings form for Content Styles.
+ */
+FLBuilder::register_settings_form(
+	'xpro_post_grid_content_form',
+	array(
+		'title' => __( 'Content Styles', 'xpro-bb-addons' ),
+		'tabs'  => array(
+			'general' => array(
+				'title'    => __( 'Content', 'xpro-bb-addons' ),
+				'sections' => array(
+					'content' => array(
+						'title'  => __( 'Content', 'xpro-bb-addons' ),
+						'fields' => array(
+							'content_bg_type'        => array(
+								'type'    => 'button-group',
+								'label'   => __( 'Background Type', 'xpro-bb-addons' ),
+								'default' => 'none',
+								'options' => array(
+									'none'     => __( 'None', 'xpro-bb-addons' ),
+									'color'    => __( 'Color', 'xpro-bb-addons' ),
+									'gradient' => __( 'Gradient', 'xpro-bb-addons' ),
+								),
+								'toggle'  => array(
+									'color'    => array(
+										'fields' => array( 'content_background' ),
+									),
+									'gradient' => array(
+										'fields' => array( 'content_gradient' ),
+									),
 								),
 							),
-							'preview'      => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-meta-list',
-								'property' => 'grid-gap',
-							),
-						),
-						'meta_icon_color'       => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li > i',
-								'property' => 'color',
-							),
-						),
-						'meta_color'            => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li, .xpro-post-grid-wrapper .xpro-post-grid-meta-list > li a',
-								'property' => 'color',
-							),
-						),
-						'meta_bg_color'         => array(
-							'type'       => 'color',
-							'label'      => __( 'Background Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li',
-								'property' => 'background-color',
-							),
-						),
-						'meta_border'           => array(
-							'type'       => 'border',
-							'label'      => 'Border',
-							'units'      => array( 'px', '%' ),
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li',
-								'property' => 'border',
-							),
-						),
-						'meta_padding'          => array(
-							'type'       => 'dimension',
-							'label'      => 'Padding',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li',
-								'property' => 'padding',
-							),
-						),
-						'meta_margin'           => array(
-							'type'       => 'dimension',
-							'label'      => 'Margin',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li',
-								'property' => 'margin',
-							),
-						),
-						'xpro-widget-seprator3' => array(
-							'type'    => 'raw',
-							'content' => '<h2 class="xpro-widget-separator-heading">Wrapper<hr></h2>',
-						),
-						'meta_wrapper_border'   => array(
-							'type'       => 'border',
-							'label'      => 'Border',
-							'units'      => array( 'px', '%' ),
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-layout-7 .xpro-post-grid-meta-list',
-								'property' => 'border',
-							),
-						),
-						'meta_wrapper_padding'  => array(
-							'type'       => 'dimension',
-							'label'      => 'Padding',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-layout-7 .xpro-post-grid-meta-list',
-								'property' => 'padding',
-							),
-						),
-						'meta_wrapper_margin'   => array(
-							'type'       => 'dimension',
-							'label'      => 'Margin',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-layout-7 .xpro-post-grid-meta-list',
-								'property' => 'margin',
-							),
-						),
-					),
-				),
-				'styl-author'     => array(
-					'title'     => __( 'Author', 'xpro-bb-addons' ),
-					'collapsed' => true,
-					'fields'    => array(
-						'avatar_size'             => array(
-							'type'         => 'unit',
-							'label'        => 'Avatar Size',
-							'units'        => array( 'px' ),
-							'default_unit' => 'px',
-							'responsive'   => true,
-							'slider'       => true,
-						),
-						'author_space_between'    => array(
-							'type'         => 'unit',
-							'label'        => 'Space Between',
-							'units'        => array( 'px' ),
-							'default_unit' => 'px',
-							'responsive'   => true,
-							'slider'       => true,
-							'preview'      => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-author',
-								'property' => 'grid-gap',
-							),
-						),
-						'author_border'           => array(
-							'type'       => 'border',
-							'label'      => 'Border',
-							'units'      => array( 'px', '%' ),
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-author',
-								'property' => 'border',
-							),
-						),
-						'author_wrapper_margin'   => array(
-							'type'       => 'dimension',
-							'label'      => 'Wrapper Margin',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-author',
-								'property' => 'margin',
-							),
-						),
-						'xpro-widget-seprator1'   => array(
-							'type'    => 'raw',
-							'content' => '<h2 class="xpro-widget-separator-heading">Title<hr></h2>',
-						),
-						'author_title_color'      => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-author-title',
-								'property' => 'color',
-							),
-						),
-						'author_title_margin'     => array(
-							'type'       => 'dimension',
-							'label'      => 'Margin',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-author-title',
-								'property' => 'margin',
-							),
-						),
-						'xpro-widget-seprator2'   => array(
-							'type'    => 'raw',
-							'content' => '<h2 class="xpro-widget-separator-heading">Name<hr></h2>',
-						),
-						'author_name_color'       => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-author-name',
-								'property' => 'color',
-							),
-						),
-						'author_name_margin'      => array(
-							'type'       => 'dimension',
-							'label'      => 'Margin',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-post-grid-author-name',
-								'property' => 'margin',
-							),
-						),
-					),
-				),
-				'styl-pagination' => array(
-					'title'     => __( 'Pagination', 'xpro-bb-addons' ),
-					'collapsed' => true,
-					'fields'    => array(
-						'text-align'                  => array(
-							'type'       => 'align',
-							'label'      => 'Alignment',
-							'default'    => 'center',
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-elementor-post-pagination',
-								'property' => 'justify-content',
-							),
-						),
-						'pagination_space_between'    => array(
-							'type'         => 'unit',
-							'label'        => 'Space Between',
-							'units'        => array( 'px' ),
-							'default_unit' => 'px',
-							'responsive'   => true,
-							'slider'       => true,
-							'preview'      => array(
-								'type'     => 'css',
-								'selector' => '.xpro-elementor-post-pagination',
-								'property' => 'grid-gap',
-							),
-						),
-						'pagination_bg_type'          => array(
-							'type'    => 'select',
-							'label'   => __( 'Background Type', 'xpro-bb-addons' ),
-							'default' => 'none',
-							'options' => array(
-								'none'   => __( ' None', 'xpro-bb-addons' ),
-								'normal' => __( ' Normal', 'xpro-bb-addons' ),
-								'hover'  => __( ' Hover', 'xpro-bb-addons' ),
-								'active' => __( ' Active', 'xpro-bb-addons' ),
-							),
-							'toggle'  => array(
-								'normal' => array(
-									'fields' => array( 'pagination_color', 'pagination_bg_color' ),
-								),
-								'hover'  => array(
-									'fields' => array( 'pagination_hover_color', 'pagination_bg_hover_color' ),
-								),
-								'active' => array(
-									'fields' => array( 'pagination_active_color', 'pagination_bg_arctive_color' ),
+							'content_background'     => array(
+								'type'       => 'color',
+								'label'      => __( 'Background Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-content',
+									'property' => 'background-color',
 								),
 							),
-						),
-						'pagination_color'            => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => ' .xpro-elementor-post-pagination .page-numbers',
-								'property' => 'color',
+							'content_gradient'       => array(
+								'type'    => 'gradient',
+								'label'   => 'Gradient Color',
+								'preview' => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-content',
+									'property' => 'background-image',
+								),
 							),
-						),
-						'pagination_bg_color'         => array(
-							'type'       => 'color',
-							'label'      => __( 'Background Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-elementor-post-pagination .page-numbers',
-								'property' => 'background-color',
+							'content_border'         => array(
+								'type'       => 'border',
+								'label'      => 'Border',
+								'units'      => array( 'px', '%' ),
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-content',
+									'property' => 'border',
+								),
 							),
-						),
-						'pagination_hover_color'      => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-elementor-post-pagination .page-numbers:hover',
-								'property' => 'color',
+							'content_padding'        => array(
+								'type'       => 'dimension',
+								'label'      => 'Padding',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-content',
+									'property' => 'padding',
+								),
 							),
-						),
-						'pagination_bg_hover_color'   => array(
-							'type'       => 'color',
-							'label'      => __( 'Background Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-elementor-post-pagination .page-numbers:hover',
-								'property' => 'background-color',
+							'content_margin'         => array(
+								'type'       => 'dimension',
+								'label'      => 'Margin',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-content',
+									'property' => 'margin',
+								),
 							),
-						),
-						'pagination_active_color'     => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-elementor-post-pagination .page-numbers.current',
-								'property' => 'color',
+							'xpro-widget-seprator1'  => array(
+								'type'    => 'raw',
+								'content' => '<h2 class="xpro-widget-separator-heading">Title<hr></h2>',
 							),
-						),
-						'pagination_bg_arctive_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Background Color', 'xpro-bb-addons' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-elementor-post-pagination .page-numbers.current',
-								'property' => 'background-color',
+							'title_typography'       => array(
+								'type'       => 'typography',
+								'label'      => 'Typography',
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-title',
+								),
 							),
-						),
-						'pagination_border'           => array(
-							'type'       => 'border',
-							'label'      => 'Border',
-							'units'      => array( 'px', '%' ),
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-elementor-post-pagination .page-numbers',
-								'property' => 'border',
+							'title_color'            => array(
+								'type'       => 'color',
+								'label'      => __( 'Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-title',
+									'property' => 'color',
+								),
 							),
-						),
-						'pagination_padding'          => array(
-							'type'       => 'dimension',
-							'label'      => 'Padding',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-elementor-post-pagination .page-numbers',
-								'property' => 'padding',
+							'title_hover_color'      => array(
+								'type'       => 'color',
+								'label'      => __( 'Hover Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-title:hover',
+									'property' => 'color',
+								),
 							),
-						),
-						'pagination_margin'           => array(
-							'type'       => 'dimension',
-							'label'      => 'Margin',
-							'responsive' => true,
-							'units'      => array( 'px', '%' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.xpro-elementor-post-pagination',
-								'property' => 'margin',
+							'title_margin'           => array(
+								'type'       => 'dimension',
+								'label'      => 'Margin',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-title',
+									'property' => 'margin',
+								),
+							),
+							'xpro-widget-seprator2'  => array(
+								'type'    => 'raw',
+								'content' => '<h2 class="xpro-widget-separator-heading">Description<hr></h2>',
+							),
+							'description_typography' => array(
+								'type'       => 'typography',
+								'label'      => 'Typography',
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-excerpt',
+								),
+							),
+							'excerpt_color'          => array(
+								'type'       => 'color',
+								'label'      => __( 'Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-excerpt',
+									'property' => 'color',
+								),
+							),
+							'excerpt_margin'         => array(
+								'type'       => 'dimension',
+								'label'      => 'Margin',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-excerpt',
+									'property' => 'margin',
+								),
 							),
 						),
 					),
 				),
 			),
 		),
-        'typography'         => array(
-            'title'    => __( 'Typography', 'xpro-bb-addons' ),
-            'sections' => array(
-                'content'         => array(
-                    'title'     => __( 'Content', 'xpro-bb-addons' ),
-                    'fields'    => array(
-                        'title_typography'       => array(
-                            'type'       => 'typography',
-                            'label'      => 'Title',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-title',
-                            ),
-                        ),
-                        'description_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Description',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-excerpt',
-                            ),
-                        ),
-                        'meta_typography'       => array(
-                            'type'       => 'typography',
-                            'label'      => 'Meta',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li',
-                            ),
-                        ),
-                        'author_title_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Author Title',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-post-grid-author-title',
-                            ),
-                        ),
-                        'author_name_typography'  => array(
-                            'type'       => 'typography',
-                            'label'      => 'Author Name',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-post-grid-author-name',
-                            ),
-                        ),
-                        'pagination_typography'       => array(
-                            'type'       => 'typography',
-                            'label'      => 'Pagination',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-elementor-post-pagination .page-numbers',
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        ),
+	)
+);
+
+/**
+ * Register a settings form for Meta Styles.
+ */
+FLBuilder::register_settings_form(
+	'xpro_post_grid_meta_form',
+	array(
+		'title' => __( 'Meta Styles', 'xpro-bb-addons' ),
+		'tabs'  => array(
+			'meta' => array(
+				'title'    => __( 'Meta', 'xpro-bb-addons' ),
+				'sections' => array(
+					'style_meta' => array(
+						'title'  => __( 'Meta', 'xpro-bb-addons' ),
+						'fields' => array(
+							'meta_typography'       => array(
+								'type'       => 'typography',
+								'label'      => 'Typography',
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li',
+								),
+							),
+							'meta_space_between'    => array(
+								'type'         => 'unit',
+								'label'        => 'Space Between',
+								'units'        => array( 'px', '%' ),
+								'default_unit' => 'px',
+								'responsive'   => true,
+								'slider'       => array(
+									'px' => array(
+										'min'  => 0,
+										'max'  => 1000,
+										'step' => 1,
+									),
+								),
+								'preview'      => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-meta-list',
+									'property' => 'grid-gap',
+								),
+							),
+							'meta_icon_color'       => array(
+								'type'       => 'color',
+								'label'      => __( 'Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li > i',
+									'property' => 'color',
+								),
+							),
+							'meta_color'            => array(
+								'type'       => 'color',
+								'label'      => __( 'Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li, .xpro-post-grid-wrapper .xpro-post-grid-meta-list > li a',
+									'property' => 'color',
+								),
+							),
+							'meta_bg_color'         => array(
+								'type'       => 'color',
+								'label'      => __( 'Background Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li',
+									'property' => 'background-color',
+								),
+							),
+							'meta_border'           => array(
+								'type'       => 'border',
+								'label'      => 'Border',
+								'units'      => array( 'px', '%' ),
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li',
+									'property' => 'border',
+								),
+							),
+							'meta_padding'          => array(
+								'type'       => 'dimension',
+								'label'      => 'Padding',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li',
+									'property' => 'padding',
+								),
+							),
+							'meta_margin'           => array(
+								'type'       => 'dimension',
+								'label'      => 'Margin',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-meta-list > li',
+									'property' => 'margin',
+								),
+							),
+							'xpro-widget-seprator3' => array(
+								'type'    => 'raw',
+								'content' => '<h2 class="xpro-widget-separator-heading">Wrapper<hr></h2>',
+							),
+							'meta_wrapper_border'   => array(
+								'type'       => 'border',
+								'label'      => 'Border',
+								'units'      => array( 'px', '%' ),
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-layout-7 .xpro-post-grid-meta-list',
+									'property' => 'border',
+								),
+							),
+							'meta_wrapper_padding'  => array(
+								'type'       => 'dimension',
+								'label'      => 'Padding',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-layout-7 .xpro-post-grid-meta-list',
+									'property' => 'padding',
+								),
+							),
+							'meta_wrapper_margin'   => array(
+								'type'       => 'dimension',
+								'label'      => 'Margin',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-layout-7 .xpro-post-grid-meta-list',
+									'property' => 'margin',
+								),
+							),
+						),
+					),
+				),
+			),
+		),
+	)
+);
+
+/**
+ * Register a settings form for Author Styles.
+ */
+FLBuilder::register_settings_form(
+	'xpro_post_grid_author_form',
+	array(
+		'title' => __( 'Author Styles', 'xpro-bb-addons' ),
+		'tabs'  => array(
+			'general' => array(
+				'title'    => __( 'Author', 'xpro-bb-addons' ),
+				'sections' => array(
+					'style_author' => array(
+						'title'     => __( 'Author', 'xpro-bb-addons' ),
+						'fields'    => array(
+							'avatar_size'             => array(
+								'type'         => 'unit',
+								'label'        => 'Avatar Size',
+								'units'        => array( 'px' ),
+								'default_unit' => 'px',
+								'responsive'   => true,
+								'slider'       => true,
+							),
+							'author_space_between'    => array(
+								'type'         => 'unit',
+								'label'        => 'Space Between',
+								'units'        => array( 'px' ),
+								'default_unit' => 'px',
+								'responsive'   => true,
+								'slider'       => true,
+								'preview'      => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-author',
+									'property' => 'grid-gap',
+								),
+							),
+							'author_border'           => array(
+								'type'       => 'border',
+								'label'      => 'Border',
+								'units'      => array( 'px', '%' ),
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-author',
+									'property' => 'border',
+								),
+							),
+							'author_wrapper_margin'   => array(
+								'type'       => 'dimension',
+								'label'      => 'Wrapper Margin',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-wrapper .xpro-post-grid-author',
+									'property' => 'margin',
+								),
+							),
+							'xpro-widget-seprator1'   => array(
+								'type'    => 'raw',
+								'content' => '<h2 class="xpro-widget-separator-heading">Title<hr></h2>',
+							),
+							'author_title_typography' => array(
+								'type'       => 'typography',
+								'label'      => 'Typography',
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-author-title',
+								),
+							),
+							'author_title_color'      => array(
+								'type'       => 'color',
+								'label'      => __( 'Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-author-title',
+									'property' => 'color',
+								),
+							),
+							'author_title_margin'     => array(
+								'type'       => 'dimension',
+								'label'      => 'Margin',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-author-title',
+									'property' => 'margin',
+								),
+							),
+							'xpro-widget-seprator2'   => array(
+								'type'    => 'raw',
+								'content' => '<h2 class="xpro-widget-separator-heading">Name<hr></h2>',
+							),
+							'author_name_typography'  => array(
+								'type'       => 'typography',
+								'label'      => 'Typography',
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-author-name',
+								),
+							),
+							'author_name_color'       => array(
+								'type'       => 'color',
+								'label'      => __( 'Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-author-name',
+									'property' => 'color',
+								),
+							),
+							'author_name_margin'      => array(
+								'type'       => 'dimension',
+								'label'      => 'Margin',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-post-grid-author-name',
+									'property' => 'margin',
+								),
+							),
+						),
+					),
+				),
+			),
+		),
+	)
+);
+
+/**
+ * Register a settings form for Meta Styles.
+ */
+FLBuilder::register_settings_form(
+	'xpro_post_grid_pagination_form',
+	array(
+		'title' => __( 'Pagination Styles', 'xpro-bb-addons' ),
+		'tabs'  => array(
+			'general' => array(
+				'title'    => __( 'Pagination', 'xpro-bb-addons' ),
+				'sections' => array(
+					'styl_pagination' => array(
+						'title'     => __( 'Pagination', 'xpro-bb-addons' ),
+						'fields'    => array(
+							'text-align'                  => array(
+								'type'       => 'align',
+								'label'      => 'Alignment',
+								'default'    => 'center',
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination',
+									'property' => 'justify-content',
+								),
+							),
+							'pagination_typography'       => array(
+								'type'       => 'typography',
+								'label'      => 'Typography',
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination .page-numbers',
+								),
+							),
+							'pagination_space_between'    => array(
+								'type'         => 'unit',
+								'label'        => 'Space Between',
+								'units'        => array( 'px' ),
+								'default_unit' => 'px',
+								'responsive'   => true,
+								'slider'       => true,
+								'preview'      => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination',
+									'property' => 'grid-gap',
+								),
+							),
+							'pagination_bg_type'          => array(
+								'type'    => 'button-group',
+								'label'   => __( 'Background Type', 'xpro-bb-addons' ),
+								'default' => 'none',
+								'options' => array(
+									'none'   => __( 'None', 'xpro-bb-addons' ),
+									'normal' => __( 'Normal', 'xpro-bb-addons' ),
+									'hover'  => __( 'Hover', 'xpro-bb-addons' ),
+									'active' => __( 'Active', 'xpro-bb-addons' ),
+								),
+								'toggle'  => array(
+									'normal' => array(
+										'fields' => array( 'pagination_color', 'pagination_bg_color' ),
+									),
+									'hover'  => array(
+										'fields' => array( 'pagination_hover_color', 'pagination_bg_hover_color' ),
+									),
+									'active' => array(
+										'fields' => array( 'pagination_active_color', 'pagination_bg_arctive_color' ),
+									),
+								),
+							),
+							'pagination_color'            => array(
+								'type'       => 'color',
+								'label'      => __( 'Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => ' .xpro-elementor-post-pagination .page-numbers',
+									'property' => 'color',
+								),
+							),
+							'pagination_bg_color'         => array(
+								'type'       => 'color',
+								'label'      => __( 'Background Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination .page-numbers',
+									'property' => 'background-color',
+								),
+							),
+							'pagination_hover_color'      => array(
+								'type'       => 'color',
+								'label'      => __( 'Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination .page-numbers:hover',
+									'property' => 'color',
+								),
+							),
+							'pagination_bg_hover_color'   => array(
+								'type'       => 'color',
+								'label'      => __( 'Background Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination .page-numbers:hover',
+									'property' => 'background-color',
+								),
+							),
+							'pagination_active_color'     => array(
+								'type'       => 'color',
+								'label'      => __( 'Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination .page-numbers.current',
+									'property' => 'color',
+								),
+							),
+							'pagination_bg_arctive_color' => array(
+								'type'       => 'color',
+								'label'      => __( 'Background Color', 'xpro-bb-addons' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination .page-numbers.current',
+									'property' => 'background-color',
+								),
+							),
+							'pagination_border'           => array(
+								'type'       => 'border',
+								'label'      => 'Border',
+								'units'      => array( 'px', '%' ),
+								'responsive' => true,
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination .page-numbers',
+									'property' => 'border',
+								),
+							),
+							'pagination_padding'          => array(
+								'type'       => 'dimension',
+								'label'      => 'Padding',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination .page-numbers',
+									'property' => 'padding',
+								),
+							),
+							'pagination_margin'           => array(
+								'type'       => 'dimension',
+								'label'      => 'Margin',
+								'responsive' => true,
+								'units'      => array( 'px', '%' ),
+								'preview'    => array(
+									'type'     => 'css',
+									'selector' => '.xpro-elementor-post-pagination',
+									'property' => 'margin',
+								),
+							),
+						),
+					),
+				),
+			),
+		),
 	)
 );

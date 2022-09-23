@@ -23,13 +23,6 @@ class XproInfoListModule extends FLBuilderModule {
 		);
 	}
 
-	/**
-	 * @method enqueue_scripts
-	 */
-	public function enqueue_scripts() {
-		$this->add_css( 'font-awesome' );
-		$this->add_css( 'font-awesome-5' );
-	}
 }
 
 /**

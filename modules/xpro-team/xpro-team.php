@@ -29,8 +29,6 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 		 */
 		public function enqueue_scripts() {
 			 // Already registered
-			$this->add_css( 'font-awesome' );
-			$this->add_css( 'font-awesome-5' );
 			$this->add_js( 'jquery-bxslider' );
 
 		}

@@ -1,7 +1,3 @@
-.fl-builder-xpro-woo-product-grid-settings .fl-button-group-field-option {
-	padding:0px 20px;
-}
-
 .fl-lightbox .fl-form-table #fl-field-xpro-widget-seprator1 td:first-child,
 .fl-lightbox .fl-form-table #fl-field-xpro-widget-seprator2 td:first-child,
 .fl-lightbox .fl-form-table #fl-field-xpro-widget-seprator3 td:first-child,
@@ -43,6 +39,9 @@
 	margin-top: 7px;
 }
 
+.fl-builder-xpro-woo-product-grid-settings .fl-button-group-field-options {
+	min-width: 250px;
+}
 
 .fl-builder-edit .xpro-box-icon-item{
 	transition: none;

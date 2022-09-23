@@ -32,9 +32,10 @@ if ( class_exists( 'WooCommerce' ) ) {
         public function enqueue_scripts()
         {
             // Register and enqueue your own.
-            $this->add_css( 'cubeportfolio-products', XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-grid/css/cubeportfolio.min.css' );
-            $this->add_js( 'cubeportfolio-products', XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-grid/js/jquery.cubeportfolio.min.js', array( 'jquery' ), '4.4.0', true );
+            $this->add_css( 'cubeportfolio-css', XPRO_ADDONS_FOR_BB_URL . 'assets/css/cubeportfolio.min.css' );
+            $this->add_js( 'cubeportfolio-js', XPRO_ADDONS_FOR_BB_URL . 'assets/js/jquery.cubeportfolio.min.js', array( 'jquery' ), '4.4.0', true );
         }
+
     }
 
     /**
@@ -109,7 +110,7 @@ if ( class_exists( 'WooCommerce' ) ) {
                         'show_content' => array(
                             'type'    => 'button-group',
                             'label'   => __('Show Description', 'xpro-bb-addons'),
-                            'default' => 'yes',
+                            'default' => 'no',
                             'options' => array(
                                 'yes' => __('Show', 'xpro-bb-addons'),
                                 'no' => __('Hide', 'xpro-bb-addons'),
@@ -159,21 +160,20 @@ if ( class_exists( 'WooCommerce' ) ) {
                             'toggle'        => array(
                                 'yes'      => array(
                                     'fields'      => array( 'show_qv_icon', 'show_cart_icon' ),
-                                    'tabs'      => array( 'quick-view' ),
                                 ),
                             )
                         ),
                         'show_qv_icon' => array(
                             'type'    => 'button-group',
                             'label'   => __('Show Quick View', 'xpro-bb-addons'),
-                            'default' => 'yes',
+                            'default' => 'no',
                             'options' => array(
                                 'yes' => __('Show', 'xpro-bb-addons'),
                                 'no' => __('Hide', 'xpro-bb-addons'),
                             ),
                             'toggle'        => array(
                                 'yes'      => array(
-                                    'tabs'      => array( 'quick-view' ),
+                                    'sections'      => array( 'quick-view' ),
                                 ),
                             )
                         ),
@@ -189,7 +189,7 @@ if ( class_exists( 'WooCommerce' ) ) {
                         'show_cta' => array(
                             'type'    => 'button-group',
                             'label'   => __('Show CTA Button', 'xpro-bb-addons'),
-                            'default' => 'yes',
+                            'default' => 'no',
                             'options' => array(
                                 'yes' => __('Show', 'xpro-bb-addons'),
                                 'no' => __('Hide', 'xpro-bb-addons'),
@@ -210,58 +210,16 @@ if ( class_exists( 'WooCommerce' ) ) {
                                 'no' => __('Hide', 'xpro-bb-addons'),
                             ),
                             'toggle'        => array(
-                                'custom'      => array(
-                                    'fields'    => array( 'woo_badges_style', 'badges_direction', 'sale_badge_type', 'show_sale_badge', 'show_featured_badge' ),
+                                'yes'      => array(
+                                    'fields'    => array( 'badges_styles' ),
                                 ),
                             )
                         ),
-                        'woo_badges_style' => array(
-                            'type'    => 'button-group',
-                            'label'   => __('Style', 'xpro-bb-addons'),
-                            'default' => 'square',
-                            'responsive' => true,
-                            'options' => array(
-                                'square' => __('Square', 'xpro-bb-addons'),
-                                'circle' => __('Circle', 'xpro-bb-addons'),
-                            ),
-                        ),
-                        'badges_direction' => array(
-                            'type'    => 'button-group',
-                            'label'   => __('Direction', 'xpro-bb-addons'),
-                            'default' => 'column',
-                            'responsive' => true,
-                            'options' => array(
-                                'column' => __('Column', 'xpro-bb-addons'),
-                                'row' => __('Row', 'xpro-bb-addons'),
-                            ),
-                        ),
-                        'sale_badge_type' => array(
-                            'type'    => 'button-group',
-                            'label'   => __('Sale Badge Type', 'xpro-bb-addons'),
-                            'default'   => 'text',
-                            'responsive' => true,
-                            'options'   => array(
-                                'text'       => __( 'Text', 'xpro-elementor-addons' ),
-                                'percentage' => __( 'Percentage', 'xpro-elementor-addons' ),
-                            ),
-                        ),
-                        'show_sale_badge' => array(
-                            'type'    => 'button-group',
-                            'label'   => __('Show Sale Type', 'xpro-bb-addons'),
-                            'default'   => 'yes',
-                            'options'   => array(
-                                'yes' => __('Show', 'xpro-bb-addons'),
-                                'no' => __('Hide', 'xpro-bb-addons'),
-                            ),
-                        ),
-                        'show_featured_badge' => array(
-                            'type'    => 'button-group',
-                            'label'   => __('Show Featured Type', 'xpro-bb-addons'),
-                            'default'   => 'yes',
-                            'options'   => array(
-                                'yes' => __('Show', 'xpro-bb-addons'),
-                                'no' => __('Hide', 'xpro-bb-addons'),
-                            ),
+                        'badges_styles'    => array(
+                            'type'         => 'form',
+                            'label'        => __( 'Badges Styles', 'xpro-bb-addons' ),
+                            'form'         => 'xpro_products_badges_form',
+                            'preview_text' => 'icon',
                         ),
                     )
                 ),
@@ -279,44 +237,15 @@ if ( class_exists( 'WooCommerce' ) ) {
                             ),
                             'toggle'        => array(
                                 'yes'      => array(
-                                    'fields'        => array( 'prev_label', 'next_label', 'arrow' ),
-                                    'sections'      => array( 'styl-pagination' ),
-                                ),
-                                'no'      => array(
-                                    'fields'        => array( 'offset' ),
+                                    'fields'        => array( 'pagination_styles' ),
                                 ),
                             )
                         ),
-                        'prev_label' => array(
-                            'type'          => 'text',
-                            'label'         => __( 'Prev Label', 'fl-builder' ),
-                            'default'       => 'Prev',
-                        ),
-                        'next_label' => array(
-                            'type'          => 'text',
-                            'label'         => __( 'Next Label', 'fl-builder' ),
-                            'default'       => 'Next',
-                        ),
-                        'posts_per_page'     => array(
-                            'type'    => 'unit',
-                            'label'   => __( 'Posts Per Page', 'xpro-bb-addons' ),
-                            'default' => 10,
-                            'slider'  => true,
-                        ),
-                        'arrow' => array(
-                            'type'    => 'select',
-                            'label'   => __('Arrows Type', 'xpro-bb-addons'),
-                            'default' => 'fas fa-arrow-left',
-                            'options' => array(
-                                'fas fa-arrow-left' => __('Arrow', 'xpro-bb-addons'),
-                                'fas fa-angle-left' => __('Angle', 'xpro-bb-addons'),
-                                'fas fa-angle-double-left' => __('Double Angle', 'xpro-bb-addons'),
-                                'fas fa-chevron-left' => __('Chevron', 'xpro-bb-addons'),
-                                'fas fa-chevron-circle-left' => __('Chevron Circle', 'xpro-bb-addons'),
-                                'fas fa-caret-left' => __('Caret', 'xpro-bb-addons'),
-                                'xi xi-long-arrow-left' => __('Long Arrow', 'xpro-bb-addons'),
-                                'fas fa-arrow-circle-left' => __('Arrow Circle', 'xpro-bb-addons'),
-                            ),
+                        'pagination_styles'    => array(
+                            'type'         => 'form',
+                            'label'        => __( 'Pagination Styles', 'xpro-bb-addons' ),
+                            'form'         => 'xpro_products_pagination_form',
+                            'preview_text' => 'icon',
                         ),
                     )
                 ),
@@ -986,186 +915,6 @@ if ( class_exists( 'WooCommerce' ) ) {
                         ),
                     )
                 ),
-                'badge'       => array(
-                    'title'         => __('Badge', 'xpro-bb-addons'),
-                    'collapsed' => true,
-                    'fields'        => array(
-                        'badges_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-woo-product-grid-item .xpro-woo-badges-btn',
-                            ),
-                        ),
-                        'badges_bg_size' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Background Size',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'rules'           => array(
-                                    array(
-                                        'selector'     => '.xpro-woo-product-grid-item .xpro-woo-sale-flash-btn, .xpro-woo-product-grid-item .xpro-woo-featured-flash-btn',
-                                        'property'     => 'width',
-                                    ),
-                                    array(
-                                        'selector'     => '.xpro-woo-product-grid-item .xpro-woo-sale-flash-btn, .xpro-woo-product-grid-item .xpro-woo-featured-flash-btn',
-                                        'property'     => 'height'
-                                    ),
-                                ),
-                            ),
-                        ),
-                        'badges_btn_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-badges-btn',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'badges_btn_padding' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-badges-btn',
-                                'property'     => 'padding'
-                            )
-                        ),
-                        'badges_btn_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Buttons Spacing',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-product-grid-badges-wrapper',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator17' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Sale<hr></h2>',
-                        ),
-                        'sale_btn_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-sale-flash-btn',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'sale_btn_background' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-sale-flash-btn',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'sale_btn_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Buttons Spacing',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-sale-flash-btn',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator18' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Featured<hr></h2>',
-                        ),
-                        'featured_btn_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-featured-flash-btn',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'featured_btn_background' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-featured-flash-btn',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'featured_btn_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Buttons Spacing',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-featured-flash-btn',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator19' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Out Of Stock<hr></h2>',
-                        ),
-                        'out_stock_btn_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-out-of-stock-btn',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'out_stock_background' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-out-of-stock-btn',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'out_stock_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Buttons Spacing',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-item .xpro-woo-out-of-stock-btn',
-                                'property'     => 'margin'
-                            )
-                        ),
-                    )
-                ),
                 'button'       => array(
                     'title'         => __('Button', 'xpro-bb-addons'),
                     'collapsed' => true,
@@ -1276,1486 +1025,1812 @@ if ( class_exists( 'WooCommerce' ) ) {
                         ),
                     )
                 ),
-                'styl-pagination'       => array(
-                    'title'         => __('Pagination', 'xpro-bb-addons'),
-                    'collapsed' => true,
-                    'fields'        => array(
-                        'text-align' => array(
-                            'type'    => 'align',
-                            'label'   => 'Alignment',
-                            'default' => 'center',
-                            'responsive' => true,
-                            'preview' => array(
-                                'type'       => 'css',
-                                'selector'   => '.xpro-elementor-post-pagination',
-                                'property'   => 'justify-content',
-                            ),
-                        ),
-                        'pagination_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-elementor-post-pagination .page-numbers',
-                            ),
-                        ),
-                        'pagination_space_between' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Space Between',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-elementor-post-pagination',
-                                'property'     => 'grid-gap',
-                            ),
-                        ),
-                        'pagination_bg_type' => array(
-                            'type'          => 'button-group',
-                            'label'         => __( 'Background Type', 'xpro-bb-addons' ),
-                            'default'       => 'none',
-                            'options'       => array(
-                                'none'      => __( 'None', 'xpro-bb-addons' ),
-                                'normal'      => __( 'Normal', 'xpro-bb-addons' ),
-                                'hover'      => __( 'Hover', 'xpro-bb-addons' ),
-                                'active'      => __( 'Active', 'xpro-bb-addons' ),
-                            ),
-                            'toggle'        => array(
-                                'normal'      => array(
-                                    'fields'        => array( 'pagination_color', 'pagination_bg_color' ),
-                                ),
-                                'hover'      => array(
-                                    'fields'        => array(  'pagination_hover_color', 'pagination_bg_hover_color' ),
-                                ),
-                                'active'      => array(
-                                    'fields'        => array(  'pagination_active_color', 'pagination_bg_arctive_color' ),
-                                ),
-                            )
-                        ),
-                        'pagination_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => ' .xpro-elementor-post-pagination .page-numbers',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'pagination_bg_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-elementor-post-pagination .page-numbers',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'pagination_hover_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-elementor-post-pagination .page-numbers:hover',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'pagination_bg_hover_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-elementor-post-pagination .page-numbers:hover',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'pagination_active_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-elementor-post-pagination .page-numbers.current',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'pagination_bg_arctive_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-elementor-post-pagination .page-numbers.current',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'pagination_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-elementor-post-pagination .page-numbers',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'pagination_padding' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-elementor-post-pagination .page-numbers',
-                                'property'     => 'padding'
-                            )
-                        ),
-                        'pagination_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-elementor-post-pagination',
-                                'property'     => 'margin'
-                            )
-                        ),
-                    )
-                ),
-            )
-        ),
-        'quick-view'       => array(
-            'title'         => __('Quick View', 'xpro-bb-addons'),
-            'sections'      => array(
-                'quick-view'       => array(
-                    'title'         => __('General', 'xpro-bb-addons'),
-                    'fields'        => array(
-                        'qv_layout' => array(
-                            'type'    => 'select',
-                            'label'   => __('Layout', 'xpro-bb-addons'),
-                            'default' => '1',
-                            'options' => array(
-                                '1' => __('1', 'xpro-bb-addons'),
-                                '2' => __('2', 'xpro-bb-addons'),
-                                '3' => __('3', 'xpro-bb-addons'),
-                                '4' => __('4', 'xpro-bb-addons'),
-                            ),
-                        ),
-                    )
-                ),
-                'popup-content'       => array(
-                    'title'         => __('Popup Content', 'xpro-bb-addons'),
-                    'collapsed' => true,
-                    'fields'        => array(
-                        'qv_main_content_bg_type' => array(
-                            'type'          => 'button-group',
-                            'label'         => __( 'Background Type', 'xpro-bb-addons' ),
-                            'default'       => 'none',
-                            'options'       => array(
-                                'none'      => __( 'None', 'xpro-bb-addons' ),
-                                'color'      => __( 'Color', 'xpro-bb-addons' ),
-                                'gradient'      => __( 'Gradient', 'xpro-bb-addons' ),
-                            ),
-                            'toggle'        => array(
-                                'color'      => array(
-                                    'fields'        => array( 'qv_main_content_background' ),
-                                ),
-                                'gradient'      => array(
-                                    'fields'        => array( 'qv_main_content_gradient' ),
-                                ),
-                            )
-                        ),
-                        'qv_main_content_background' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-inner',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'qv_main_content_gradient' => array(
-                            'type'    => 'gradient',
-                            'label'   => 'Gradient Color',
-                            'preview' => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-inner',
-                                'property' => 'background-image',
-                            ),
-                        ),
-                        'qv_overlay_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Overlay Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-overlay',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'qv_main_content_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-inner',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'qv_main_content_padding' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-inner',
-                                'property'     => 'padding'
-                            )
-                        ),
-                        'qv_main_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-inner',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator6' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">SKU<hr></h2>',
-                        ),
-                        'qv_meta_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-qv-main-wrapper .sku_wrapper',
-                            ),
-                        ),
-                        'qv_sku_color' => array(
-                            'type'          => 'Heading color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .sku_wrapper',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_sku_title_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Title Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .sku_wrapper .sku',
-                                'property'     => 'color',
-                            ),
-                        ),
-
-                        'xpro-widget-seprator7' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Taxonomy<hr></h2>',
-                        ),
-                        'qv_tax_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-qv-main-wrapper .product_meta .posted_in',
-                            ),
-                        ),
-                        'qv_tax_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .product_meta .posted_in',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_tax_link_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Link Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .product_meta .posted_in a',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_tax_link_hv_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Link Hover', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .product_meta .posted_in a:hover',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_tax_link_bg_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Link Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .product_meta .posted_in a',
-                                'property'     => 'Background-color',
-                            ),
-                        ),
-                        'qv_tax_seprator_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Separator Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .xpro-woo-qv-content-sec .sku_wrapper',
-                                'property'     => 'border-color',
-                            ),
-                        ),
-                        'qv_seprator_size' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Separator Size',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .xpro-woo-qv-content-sec .sku_wrapper',
-                                'property'     => 'border-width',
-                            ),
-                        ),
-                        'qv_sku_background' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .product_meta',
-                                'property'     => 'Background-color',
-                            ),
-                        ),
-                        'qv_meta_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .product_meta',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'qv_meta_link_padding' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Link Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .product_meta .posted_in a',
-                                'property'     => 'padding'
-                            )
-                        ),
-                        'qv_meta_padding' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .product_meta',
-                                'property'     => 'padding'
-                            )
-                        ),
-                        'qv_meta_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .product_meta',
-                                'property'     => 'padding'
-                            )
-                        ),
-                        'xpro-widget-seprator8' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Title<hr></h2>',
-                        ),
-                        'qv_title_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-qv-main-wrapper .product_title',
-                            ),
-                        ),
-                        'qv_title_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .product_title',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_title_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .product_title',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator9' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Description<hr></h2>',
-                        ),
-                        'qv_description_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-qv-main-wrapper .woocommerce-product-details__short-description',
-                            ),
-                        ),
-                        'qv_desc_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .woocommerce-product-details__short-description',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_desc_padding' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .woocommerce-product-details__short-description',
-                                'property'     => 'padding'
-                            )
-                        ),
-                        'qv_desc_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .woocommerce-product-details__short-description',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator10' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Rating<hr></h2>',
-                        ),
-                        'qv_rating_txt_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Text Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .woocommerce-review-link',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_rating_txt_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-qv-main-wrapper .woocommerce-review-link',
-                            ),
-                        ),
-                        'qv_rating_size' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Size',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => array(
-                                'px'    => array(
-                                    'min' => 10,
-                                    'max' => 100,
-                                    'step' => 1,
-                                ),
-                            ),
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .star-rating',
-                                'property'     => 'font-size',
-                            ),
-                        ),
-                        'qv_rating_front_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .star-rating span::before',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_rating_bg_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .star-rating span::before',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_rating_txt_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Text Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .woocommerce-review-link',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'qv_rating_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .woocommerce-product-rating',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator11' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Price<hr></h2>',
-                        ),
-                        'qv_price_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-qv-main-wrapper .price',
-                            ),
-                        ),
-                        'qv_price_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .price',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_space_between_price' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Space Between Sale Price',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .price ins',
-                                'property'     => 'padding-left',
-                            ),
-                        ),
-                        'qv_sale_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Sale Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-qv-main-wrapper .price del .woocommerce-Price-amount',
-                            ),
-                        ),
-                        'qv_sale_price_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Sale Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .price del .woocommerce-Price-amount',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_price_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .price',
-                                'property'     => 'margin'
-                            )
-                        ),
-                    )
-                ),
-                'popup-button'       => array(
-                    'title'         => __('Popup Button', 'xpro-bb-addons'),
-                    'collapsed' => true,
-                    'fields'        => array(
-                        'xpro-widget-seprator12' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Close Button<hr></h2>',
-                        ),
-                        'qv_close_icon_size' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Icon Size',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .xpro-woo-qv-cross i',
-                                'property'     => 'font-size',
-                            ),
-                        ),
-                        'qv_close_icon_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross i',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'qv_close_icon_hv_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Icon Hover Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross i:hover',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'qv_close_icon_bg_type' => array(
-                            'type'          => 'button-group',
-                            'label'         => __( 'Background Type', 'xpro-bb-addons' ),
-                            'default'       => 'none',
-                            'options'       => array(
-                                'none'      => __( ' None', 'xpro-bb-addons' ),
-                                'color'      => __( ' Color', 'xpro-bb-addons' ),
-                                'gradient'      => __( ' Gradient', 'xpro-bb-addons' ),
-                            ),
-                            'toggle'        => array(
-                                'color'      => array(
-                                    'fields'        => array( 'qv_main_content_background' ),
-                                ),
-                                'gradient'      => array(
-                                    'fields'        => array( 'qv_main_content_gradient' ),
-                                ),
-                            )
-                        ),
-                        'qv_close_icon_background' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'qv_close_icon_gradient' => array(
-                            'type'    => 'gradient',
-                            'label'   => 'Gradient Color',
-                            'preview' => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross',
-                                'property' => 'background-image',
-                            ),
-                        ),
-                        'qv_close_icon_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'qv_close_icon_padding' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross',
-                                'property'     => 'padding'
-                            )
-                        ),
-                        'qv_close_icon_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator13' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Quantity Buttons<hr></h2>',
-                        ),
-                        'qv_quantity_btn_bg_type' => array(
-                            'type'          => 'button-group',
-                            'label'         => __( 'Background Type', 'xpro-bb-addons' ),
-                            'default'       => 'none',
-                            'options'       => array(
-                                'none'      => __( ' None', 'xpro-bb-addons' ),
-                                'normal'      => __( ' Normal', 'xpro-bb-addons' ),
-                                'hover'      => __( ' Hover', 'xpro-bb-addons' ),
-                            ),
-                            'toggle'        => array(
-                                'normal'      => array(
-                                    'fields'        => array( 'qv_quantity_btn_color', 'qv_quantity_btn_bg_color' ),
-                                ),
-                                'hover'      => array(
-                                    'fields'        => array( 'qv_quantity_btn_hcolor', 'qv_quantity_btn_bg_hcolor', 'qv_quantity_btn_border_hcolor' ),
-                                ),
-                            )
-                        ),
-                        'qv_quantity_btn_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .xpro-minus, .xpro-qv-main-wrapper .xpro-plus',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_quantity_btn_bg_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .xpro-minus, .xpro-qv-main-wrapper .xpro-plus',
-                                'property'     => 'background-color',
-                            ),
-                        ),
-                        'qv_quantity_btn_hcolor' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .xpro-minus:hover, .xpro-qv-main-wrapper .xpro-plus:hover',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_quantity_btn_bg_hcolor' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .xpro-minus:hover, .xpro-qv-main-wrapper .xpro-plus:hover',
-                                'property'     => 'background-color',
-                            ),
-                        ),
-                        'qv_quantity_btn_border_hcolor' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .xpro-minus:hover, .xpro-qv-main-wrapper .xpro-plus:hover',
-                                'property'     => 'border-color',
-                            ),
-                        ),
-                        'qv_quantity_btn_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .xpro-minus, .xpro-qv-main-wrapper .xpro-plus',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'xpro-widget-seprator14' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Quantity Buttons Input<hr></h2>',
-                        ),
-                        'qv_quantity_btn_input_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-popup-wrapper input[type="number"]',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_quantity_btn_input_bg_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-woo-qv-content-sec .quantity, .xpro-qv-popup-wrapper input[type="number"]',
-                                'property'     => 'background-color',
-                            ),
-                        ),
-                        'qv_quantity_btn_input_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-qv-content-sec .quantity',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'xpro-widget-seprator15' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Button<hr></h2>',
-                        ),
-                        'qv_button_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-qv-main-wrapper .single_add_to_cart_button',
-                            ),
-                        ),
-                        'qv_button_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .single_add_to_cart_button',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_button_hcolor' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color Hover', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .single_add_to_cart_button:hover,.xpro-qv-main-wrapper .single_add_to_cart_button:focus',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'qv_button_bg' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .single_add_to_cart_button',
-                                'property'     => 'Background-color',
-                            ),
-                        ),
-                        'qv_button_hbg' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Hover Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .single_add_to_cart_button:hover,.xpro-qv-main-wrapper .single_add_to_cart_button:focus',
-                                'property'     => 'Background-color',
-                            ),
-                        ),
-                        'qv_button_hborder' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Border Hover Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-qv-main-wrapper .single_add_to_cart_button:hover,.xpro-qv-main-wrapper .single_add_to_cart_button:focus',
-                                'property'     => 'border-color',
-                            ),
-                        ),
-                        'qv_button_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .single_add_to_cart_button',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'qv_button_item_padding' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .single_add_to_cart_button',
-                                'property'     => 'padding'
-                            )
-                        ),
-                        'qv_button_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-qv-main-wrapper .single_add_to_cart_button',
-                                'property'     => 'padding'
-                            )
-                        ),
-                    )
-                ),
-                'popup-Variations'       => array(
-                    'title'         => __('Popup Variations', 'xpro-bb-addons'),
-                    'collapsed' => true,
-                    'fields'        => array(
-                        'variation_label_bg_type' => array(
-                            'type'          => 'button-group',
-                            'label'         => __( 'Background Type', 'xpro-bb-addons' ),
-                            'default'       => 'Label',
-                            'options'       => array(
-                                'Label'      => __( ' label', 'xpro-bb-addons' ),
-                                'description'      => __( 'Description', 'xpro-bb-addons' ),
-                                'price'      => __( ' Price', 'xpro-bb-addons' ),
-                            ),
-                            'toggle'        => array(
-                                'Label'      => array(
-                                    'fields'        => array( 'variation_label_typography', 'variation_label_color', 'variation_label_display_style', 'variation_inline_label_width' ),
-                                ),
-                                'description'      => array(
-                                    'fields'        => array( 'variation_description_typography', 'variation_description_color', 'variation_description_margin' ),
-                                ),
-                                'price'      => array(
-                                    'fields'        => array( 'variation_price_typography', 'variation_price_color', 'variation_sale_price_color', 'variation_price_discount_badge_color', 'variation_price_discount_badge_bg_color', 'variation_price_discount_badge_font_size', 'variation_price_margin' ),
-                                ),
-                            )
-                        ),
-                        'variation_label_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.variations label, .variations select',
-                            ),
-                        ),
-                        'variation_label_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.variations td label, .variations select',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'variation_inline_label_space_between' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Space Between',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'rules'           => array(
-                                    array(
-                                        'selector'     => '.variations td.value .xpro_swatches',
-                                        'property'     => 'grid-gap'
-                                    ),
-                                    array(
-                                        'selector'     => '.variations td.value .xpro_swatches .swatch',
-                                        'property'     => 'margin-right'
-                                    ),
-                                ),
-                            ),
-                        ),
-                        'variation_label_display_style' => array(
-                            'type'          => 'group-button',
-                            'label'         => __( 'Display Style', 'xpro-bb-addons' ),
-                            'default'       => 'row',
-                            'options'       => array(
-                                'row'      => __( 'Row', 'xpro-bb-addons' ),
-                                'column'      => __( 'Column', 'xpro-bb-addons' ),
-                            ),
-                            'toggle'        => array(
-                                'row'      => array(
-                                    'fields'        => array( 'variation_inline_label_width' ),
-                                ),
-                            ),
-                        ),
-                        'variation_inline_label_width' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Label Width',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.variations th.label, .variations td.value',
-                                'property'     => 'width',
-                            ),
-                        ),
-                        'variation_description_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.woocommerce-variation-description',
-                            ),
-                        ),
-                        'variation_description_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.woocommerce-variation-description p',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'variation_description_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.woocommerce-variation-description',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'variation_price_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => ':is(.price, .price del, .price ins )',
-                            ),
-                        ),
-                        'variation_price_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => ':is(.price, .price del, .price ins )',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'variation_sale_price_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.price ins .amount',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'variation_price_discount_badge_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Discount Badge Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-badge',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'variation_price_discount_badge_bg_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Discount Badge Background', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-badge',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'variation_price_discount_badge_font_size' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Badge Font Size',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-badge',
-                                'property'     => 'font-size',
-                            ),
-                        ),
-                        'variation_price_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.woocommerce-variation-price',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator15' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Dropdown<hr></h2>',
-                        ),
-                        'variation_dropdown_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Dropdown Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.variations select',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'variation_dropdown_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.variations select',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'xpro-widget-seprator16' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading"><hr></h2>',
-                        ),
-                        'variation_item_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Space Between',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.variations tr',
-                                'property'     => 'margin'
-                            )
-                        ),
-                    )
-                ),
-                'popup-swatches'       => array(
-                    'title'         => __('Popup Swatches', 'xpro-bb-addons'),
-                    'collapsed' => true,
-                    'fields'        => array(
-                        'variation_swatch_bg_type' => array(
-                            'type'          => 'button-group',
-                            'label'         => __( 'Background Type', 'xpro-bb-addons' ),
-                            'default'       => 'Label',
-                            'options'       => array(
-                                'color'      => __( 'Color', 'xpro-bb-addons' ),
-                                'image'      => __( 'Image', 'xpro-bb-addons' ),
-                                'label'      => __( 'Label', 'xpro-bb-addons' ),
-                            ),
-                            'toggle'        => array(
-                                'color'      => array(
-                                    'fields'        => array( 'variation_swatch_color_width', 'variation_swatch_color_height', 'variation_swatch_color_label_border', 'variation_swatch_color_selected_label_border', 'variation_swatch_color_border_radius' ),
-                                ),
-                                'image'      => array(
-                                    'fields'        => array( 'variation_swatch_image_width', 'variation_swatch_image_height', 'variation_swatch_image_border_radius', 'variation_swatch_image_label_border', 'variation_swatch_image_selected_label_border' ),
-                                ),
-                                'label'      => array(
-                                    'fields'        => array( 'variation_swatch_label_typography', 'variation_swatch_label_text_color', 'variation_swatch_label_background_color', 'variation_price_discount_badge_color', 'variation_swatch_label_label_border', 'variation_swatch_label_padding' ),
-                                ),
-                            )
-                        ),
-                        'variation_swatch_color_width' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Swatch Width',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro_swatches .swatch.swatch_color',
-                                'property'     => 'width',
-                            ),
-                        ),
-                        'variation_swatch_color_height' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Swatch Height',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro_swatches .swatch.swatch_color',
-                                'property'     => 'height',
-                            ),
-                        ),
-                        'variation_swatch_color_border_radius' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Border Radius',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro_swatches .swatch_color',
-                                'property'     => 'border-radius',
-                            ),
-                        ),
-                        'variation_swatch_color_label_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro_swatches .swatch_color',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'variation_swatch_color_selected_label_border' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Selected Border', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro_swatches .swatch_color.selected',
-                                'property'     => 'border-color'
-                            ),
-                        ),
-                        'variation_swatch_image_width' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Swatch Width',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro_swatches .swatch.swatch_image',
-                                'property'     => 'width',
-                            ),
-                        ),
-                        'variation_swatch_image_height' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Swatch Height',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro_swatches .swatch.swatch_image',
-                                'property'     => 'height',
-                            ),
-                        ),
-                        'variation_swatch_image_border_radius' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Border Radius',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro_swatches .swatch_image',
-                                'property'     => 'border-radius',
-                            ),
-                        ),
-                        'variation_swatch_image_label_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro_swatches .swatch_image',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'variation_swatch_image_selected_label_border' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Selected Border', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro_swatches .swatch_image.selected',
-                                'property'     => 'border-color'
-                            ),
-                        ),
-                        'variation_swatch_label_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro_swatches .swatch_label',
-                            ),
-                        ),
-                        'variation_swatch_label_text_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Text Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro_swatches .swatch_label',
-                                'property'     => 'color'
-                            ),
-                        ),
-                        'variation_swatch_label_background_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro_swatches .swatch_label',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'variation_price_discount_badge_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Selected Border', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro_swatches .swatch_label.selected',
-                                'property'     => 'border-color'
-                            ),
-                        ),
-                        'variation_swatch_label_label_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro_swatches .swatch_label',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'variation_swatch_label_padding' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro_swatches .swatch_label',
-                                'property'     => 'padding'
-                            )
-                        ),
-
-                    )
+                'quick-view' => array(
+                    'title'  => __( 'Quick View', 'xpro-bb-addons' ),
+                    'fields' => array(
+                        'quick_view_styles'    => array(
+                            'type'         => 'form',
+                            'label'        => __( 'Quick View Styles', 'xpro-bb-addons' ),
+                            'form'         => 'xpro_products_quick_view_form',
+                            'preview_text' => 'icon',
+                        ),
+                    ),
                 ),
             )
         ),
     ));
+
+    /**
+     * Register a settings form for Quick View Styles.
+     */
+    FLBuilder::register_settings_form(
+        'xpro_products_quick_view_form',
+        array(
+            'title' => __( 'Quick View Styles', 'xpro-bb-addons' ),
+            'tabs'  => array(
+                'quick-view'       => array(
+                    'title'         => __('Quick View', 'xpro-bb-addons'),
+                    'sections'      => array(
+                        'quick-view'       => array(
+                            'title'         => __('General', 'xpro-bb-addons'),
+                            'fields'        => array(
+                                'qv_layout' => array(
+                                    'type'    => 'select',
+                                    'label'   => __('Layout', 'xpro-bb-addons'),
+                                    'default' => '1',
+                                    'options' => array(
+                                        '1' => __('Layout 1', 'xpro-bb-addons'),
+                                        '2' => __('Layout 2', 'xpro-bb-addons'),
+                                        '3' => __('Layout 3', 'xpro-bb-addons'),
+                                        '4' => __('Layout 4', 'xpro-bb-addons'),
+                                    ),
+                                ),
+                            )
+                        ),
+                        'popup-content'       => array(
+                            'title'         => __('Popup Content', 'xpro-bb-addons'),
+                            'collapsed' => true,
+                            'fields'        => array(
+                                'qv_main_content_bg_type' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Background Type', 'xpro-bb-addons' ),
+                                    'default'       => 'none',
+                                    'options'       => array(
+                                        'none'      => __( 'None', 'xpro-bb-addons' ),
+                                        'color'      => __( 'Color', 'xpro-bb-addons' ),
+                                        'gradient'      => __( 'Gradient', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'color'      => array(
+                                            'fields'        => array( 'qv_main_content_background' ),
+                                        ),
+                                        'gradient'      => array(
+                                            'fields'        => array( 'qv_main_content_gradient' ),
+                                        ),
+                                    )
+                                ),
+                                'qv_main_content_background' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-inner',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'qv_main_content_gradient' => array(
+                                    'type'    => 'gradient',
+                                    'label'   => 'Gradient Color',
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-inner',
+                                        'property' => 'background-image',
+                                    ),
+                                ),
+                                'qv_overlay_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Overlay Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-overlay',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'qv_main_content_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-inner',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'qv_main_content_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-inner',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                                'qv_main_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-qv-popup-inner',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator6' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">SKU<hr></h2>',
+                                ),
+                                'qv_meta_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-qv-main-wrapper .sku_wrapper',
+                                    ),
+                                ),
+                                'qv_sku_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .sku_wrapper',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_sku_title_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Title Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .sku_wrapper .sku',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+
+                                'xpro-widget-seprator7' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Taxonomy<hr></h2>',
+                                ),
+                                'qv_tax_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-qv-main-wrapper .product_meta .posted_in',
+                                    ),
+                                ),
+                                'qv_tax_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .product_meta .posted_in',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_tax_link_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Link Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .product_meta .posted_in a',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_tax_link_hv_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Link Hover', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .product_meta .posted_in a:hover',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_tax_link_bg_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Link Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .product_meta .posted_in a',
+                                        'property'     => 'Background-color',
+                                    ),
+                                ),
+                                'qv_tax_seprator_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Separator Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .xpro-woo-qv-content-sec .sku_wrapper',
+                                        'property'     => 'border-color',
+                                    ),
+                                ),
+                                'qv_seprator_size' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Separator Size',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .xpro-woo-qv-content-sec .sku_wrapper',
+                                        'property'     => 'border-width',
+                                    ),
+                                ),
+                                'qv_sku_background' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .product_meta',
+                                        'property'     => 'Background-color',
+                                    ),
+                                ),
+                                'qv_meta_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .product_meta',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'qv_meta_link_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Link Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .product_meta .posted_in a',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                                'qv_meta_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .product_meta',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                                'qv_meta_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .product_meta',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                                'xpro-widget-seprator8' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Title<hr></h2>',
+                                ),
+                                'qv_title_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-qv-main-wrapper .product_title',
+                                    ),
+                                ),
+                                'qv_title_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .product_title',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_title_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .product_title',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator9' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Description<hr></h2>',
+                                ),
+                                'qv_description_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-qv-main-wrapper .woocommerce-product-details__short-description',
+                                    ),
+                                ),
+                                'qv_desc_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .woocommerce-product-details__short-description',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_desc_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .woocommerce-product-details__short-description',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                                'qv_desc_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .woocommerce-product-details__short-description',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator10' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Rating<hr></h2>',
+                                ),
+                                'qv_rating_txt_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Text Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .woocommerce-review-link',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_rating_txt_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-qv-main-wrapper .woocommerce-review-link',
+                                    ),
+                                ),
+                                'qv_rating_size' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Size',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => array(
+                                        'px'    => array(
+                                            'min' => 10,
+                                            'max' => 100,
+                                            'step' => 1,
+                                        ),
+                                    ),
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .star-rating',
+                                        'property'     => 'font-size',
+                                    ),
+                                ),
+                                'qv_rating_front_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .star-rating span::before',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_rating_bg_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .star-rating span::before',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_rating_txt_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Text Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .woocommerce-review-link',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'qv_rating_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .woocommerce-product-rating',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator11' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Price<hr></h2>',
+                                ),
+                                'qv_price_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-qv-main-wrapper .price',
+                                    ),
+                                ),
+                                'qv_price_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .price',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_space_between_price' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Space Between Sale Price',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .price ins',
+                                        'property'     => 'padding-left',
+                                    ),
+                                ),
+                                'qv_sale_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Sale Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-qv-main-wrapper .price del .woocommerce-Price-amount',
+                                    ),
+                                ),
+                                'qv_sale_price_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Sale Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .price del .woocommerce-Price-amount',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_price_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .price',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                            )
+                        ),
+                        'popup-button'       => array(
+                            'title'         => __('Popup Button', 'xpro-bb-addons'),
+                            'collapsed' => true,
+                            'fields'        => array(
+                                'xpro-widget-seprator12' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Close Button<hr></h2>',
+                                ),
+                                'qv_close_icon_size' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Icon Size',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .xpro-woo-qv-cross i',
+                                        'property'     => 'font-size',
+                                    ),
+                                ),
+                                'qv_close_icon_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross i',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'qv_close_icon_hv_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Icon Hover Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross i:hover',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'qv_close_icon_bg_type' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Background Type', 'xpro-bb-addons' ),
+                                    'default'       => 'none',
+                                    'options'       => array(
+                                        'none'      => __( 'None', 'xpro-bb-addons' ),
+                                        'color'      => __( 'Color', 'xpro-bb-addons' ),
+                                        'gradient'      => __( 'Gradient', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'color'      => array(
+                                            'fields'        => array( 'qv_main_content_background' ),
+                                        ),
+                                        'gradient'      => array(
+                                            'fields'        => array( 'qv_main_content_gradient' ),
+                                        ),
+                                    )
+                                ),
+                                'qv_close_icon_background' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'qv_close_icon_gradient' => array(
+                                    'type'    => 'gradient',
+                                    'label'   => 'Gradient Color',
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross',
+                                        'property' => 'background-image',
+                                    ),
+                                ),
+                                'qv_close_icon_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'qv_close_icon_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                                'qv_close_icon_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-woo-qv-cross',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator13' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Quantity Buttons<hr></h2>',
+                                ),
+                                'qv_quantity_btn_bg_type' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Background Type', 'xpro-bb-addons' ),
+                                    'default'       => 'none',
+                                    'options'       => array(
+                                        'none'      => __( 'None', 'xpro-bb-addons' ),
+                                        'normal'      => __( 'Normal', 'xpro-bb-addons' ),
+                                        'hover'      => __( 'Hover', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'normal'      => array(
+                                            'fields'        => array( 'qv_quantity_btn_color', 'qv_quantity_btn_bg_color' ),
+                                        ),
+                                        'hover'      => array(
+                                            'fields'        => array( 'qv_quantity_btn_hcolor', 'qv_quantity_btn_bg_hcolor', 'qv_quantity_btn_border_hcolor' ),
+                                        ),
+                                    )
+                                ),
+                                'qv_quantity_btn_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .xpro-minus, .xpro-qv-main-wrapper .xpro-plus',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_quantity_btn_bg_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .xpro-minus, .xpro-qv-main-wrapper .xpro-plus',
+                                        'property'     => 'background-color',
+                                    ),
+                                ),
+                                'qv_quantity_btn_hcolor' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .xpro-minus:hover, .xpro-qv-main-wrapper .xpro-plus:hover',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_quantity_btn_bg_hcolor' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .xpro-minus:hover, .xpro-qv-main-wrapper .xpro-plus:hover',
+                                        'property'     => 'background-color',
+                                    ),
+                                ),
+                                'qv_quantity_btn_border_hcolor' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .xpro-minus:hover, .xpro-qv-main-wrapper .xpro-plus:hover',
+                                        'property'     => 'border-color',
+                                    ),
+                                ),
+                                'qv_quantity_btn_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .xpro-minus, .xpro-qv-main-wrapper .xpro-plus',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'xpro-widget-seprator14' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Quantity Buttons Input<hr></h2>',
+                                ),
+                                'qv_quantity_btn_input_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-popup-wrapper input[type="number"]',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_quantity_btn_input_bg_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-woo-qv-content-sec .quantity, .xpro-qv-popup-wrapper input[type="number"]',
+                                        'property'     => 'background-color',
+                                    ),
+                                ),
+                                'qv_quantity_btn_input_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-qv-content-sec .quantity',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'xpro-widget-seprator15' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Button<hr></h2>',
+                                ),
+                                'qv_button_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-qv-main-wrapper .single_add_to_cart_button',
+                                    ),
+                                ),
+                                'qv_button_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .single_add_to_cart_button',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_button_hcolor' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color Hover', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .single_add_to_cart_button:hover,.xpro-qv-main-wrapper .single_add_to_cart_button:focus',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'qv_button_bg' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .single_add_to_cart_button',
+                                        'property'     => 'Background-color',
+                                    ),
+                                ),
+                                'qv_button_hbg' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Hover Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .single_add_to_cart_button:hover,.xpro-qv-main-wrapper .single_add_to_cart_button:focus',
+                                        'property'     => 'Background-color',
+                                    ),
+                                ),
+                                'qv_button_hborder' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Border Hover Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-qv-main-wrapper .single_add_to_cart_button:hover,.xpro-qv-main-wrapper .single_add_to_cart_button:focus',
+                                        'property'     => 'border-color',
+                                    ),
+                                ),
+                                'qv_button_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .single_add_to_cart_button',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'qv_button_item_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .single_add_to_cart_button',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                                'qv_button_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-qv-main-wrapper .single_add_to_cart_button',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                            )
+                        ),
+                        'popup-Variations'       => array(
+                            'title'         => __('Popup Variations', 'xpro-bb-addons'),
+                            'collapsed' => true,
+                            'fields'        => array(
+                                'variation_label_bg_type' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Background Type', 'xpro-bb-addons' ),
+                                    'default'       => 'Label',
+                                    'options'       => array(
+                                        'Label'      => __( 'label', 'xpro-bb-addons' ),
+                                        'description'      => __( 'Description', 'xpro-bb-addons' ),
+                                        'price'      => __( 'Price', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'Label'      => array(
+                                            'fields'        => array( 'variation_label_typography', 'variation_label_color', 'variation_label_display_style', 'variation_inline_label_width' ),
+                                        ),
+                                        'description'      => array(
+                                            'fields'        => array( 'variation_description_typography', 'variation_description_color', 'variation_description_margin' ),
+                                        ),
+                                        'price'      => array(
+                                            'fields'        => array( 'variation_price_typography', 'variation_price_color', 'variation_sale_price_color', 'variation_price_discount_badge_color', 'variation_price_discount_badge_bg_color', 'variation_price_discount_badge_font_size', 'variation_price_margin' ),
+                                        ),
+                                    )
+                                ),
+                                'variation_label_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.variations label, .variations select',
+                                    ),
+                                ),
+                                'variation_label_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.variations td label, .variations select',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'variation_inline_label_space_between' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Space Between',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'rules'           => array(
+                                            array(
+                                                'selector'     => '.variations td.value .xpro_swatches',
+                                                'property'     => 'grid-gap'
+                                            ),
+                                            array(
+                                                'selector'     => '.variations td.value .xpro_swatches .swatch',
+                                                'property'     => 'margin-right'
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                                'variation_label_display_style' => array(
+                                    'type'          => 'group-button',
+                                    'label'         => __( 'Display Style', 'xpro-bb-addons' ),
+                                    'default'       => 'row',
+                                    'options'       => array(
+                                        'row'      => __( 'Row', 'xpro-bb-addons' ),
+                                        'column'      => __( 'Column', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'row'      => array(
+                                            'fields'        => array( 'variation_inline_label_width' ),
+                                        ),
+                                    ),
+                                ),
+                                'variation_inline_label_width' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Label Width',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.variations th.label, .variations td.value',
+                                        'property'     => 'width',
+                                    ),
+                                ),
+                                'variation_description_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.woocommerce-variation-description',
+                                    ),
+                                ),
+                                'variation_description_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.woocommerce-variation-description p',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'variation_description_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.woocommerce-variation-description',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'variation_price_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => ':is(.price, .price del, .price ins )',
+                                    ),
+                                ),
+                                'variation_price_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => ':is(.price, .price del, .price ins )',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'variation_sale_price_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.price ins .amount',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'variation_price_discount_badge_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Discount Badge Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-badge',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'variation_price_discount_badge_bg_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Discount Badge Background', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-badge',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'variation_price_discount_badge_font_size' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Badge Font Size',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-badge',
+                                        'property'     => 'font-size',
+                                    ),
+                                ),
+                                'variation_price_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.woocommerce-variation-price',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator15' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Dropdown<hr></h2>',
+                                ),
+                                'variation_dropdown_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Dropdown Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.variations select',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'variation_dropdown_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.variations select',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'xpro-widget-seprator16' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading"><hr></h2>',
+                                ),
+                                'variation_item_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Space Between',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.variations tr',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                            )
+                        ),
+                        'popup-swatches'       => array(
+                            'title'         => __('Popup Swatches', 'xpro-bb-addons'),
+                            'collapsed' => true,
+                            'fields'        => array(
+                                'variation_swatch_bg_type' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Background Type', 'xpro-bb-addons' ),
+                                    'default'       => 'Label',
+                                    'options'       => array(
+                                        'color'      => __( 'Color', 'xpro-bb-addons' ),
+                                        'image'      => __( 'Image', 'xpro-bb-addons' ),
+                                        'label'      => __( 'Label', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'color'      => array(
+                                            'fields'        => array( 'variation_swatch_color_width', 'variation_swatch_color_height', 'variation_swatch_color_label_border', 'variation_swatch_color_selected_label_border', 'variation_swatch_color_border_radius' ),
+                                        ),
+                                        'image'      => array(
+                                            'fields'        => array( 'variation_swatch_image_width', 'variation_swatch_image_height', 'variation_swatch_image_border_radius', 'variation_swatch_image_label_border', 'variation_swatch_image_selected_label_border' ),
+                                        ),
+                                        'label'      => array(
+                                            'fields'        => array( 'variation_swatch_label_typography', 'variation_swatch_label_text_color', 'variation_swatch_label_background_color', 'variation_price_discount_badge_color', 'variation_swatch_label_label_border', 'variation_swatch_label_padding' ),
+                                        ),
+                                    )
+                                ),
+                                'variation_swatch_color_width' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Swatch Width',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro_swatches .swatch.swatch_color',
+                                        'property'     => 'width',
+                                    ),
+                                ),
+                                'variation_swatch_color_height' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Swatch Height',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro_swatches .swatch.swatch_color',
+                                        'property'     => 'height',
+                                    ),
+                                ),
+                                'variation_swatch_color_border_radius' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Border Radius',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro_swatches .swatch_color',
+                                        'property'     => 'border-radius',
+                                    ),
+                                ),
+                                'variation_swatch_color_label_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro_swatches .swatch_color',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'variation_swatch_color_selected_label_border' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Selected Border', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro_swatches .swatch_color.selected',
+                                        'property'     => 'border-color'
+                                    ),
+                                ),
+                                'variation_swatch_image_width' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Swatch Width',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro_swatches .swatch.swatch_image',
+                                        'property'     => 'width',
+                                    ),
+                                ),
+                                'variation_swatch_image_height' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Swatch Height',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro_swatches .swatch.swatch_image',
+                                        'property'     => 'height',
+                                    ),
+                                ),
+                                'variation_swatch_image_border_radius' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Border Radius',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro_swatches .swatch_image',
+                                        'property'     => 'border-radius',
+                                    ),
+                                ),
+                                'variation_swatch_image_label_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro_swatches .swatch_image',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'variation_swatch_image_selected_label_border' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Selected Border', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro_swatches .swatch_image.selected',
+                                        'property'     => 'border-color'
+                                    ),
+                                ),
+                                'variation_swatch_label_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro_swatches .swatch_label',
+                                    ),
+                                ),
+                                'variation_swatch_label_text_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Text Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro_swatches .swatch_label',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'variation_swatch_label_background_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro_swatches .swatch_label',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'variation_price_discount_badge_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Selected Border', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro_swatches .swatch_label.selected',
+                                        'property'     => 'border-color'
+                                    ),
+                                ),
+                                'variation_swatch_label_label_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro_swatches .swatch_label',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'variation_swatch_label_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro_swatches .swatch_label',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+
+                            )
+                        ),
+                    )
+                ),
+            ),
+        )
+    );
+
+    /**
+     * Register a settings form for Pagination Styles.
+     */
+    FLBuilder::register_settings_form(
+        'xpro_products_pagination_form',
+        array(
+            'title' => __( 'Pagination Styles', 'xpro-bb-addons' ),
+            'tabs'  => array(
+                'general' => array(
+                    'title'    => __( 'Content', 'xpro-bb-addons' ),
+                    'sections' => array(
+                        'general'       => array(
+                            'title'         => __('Pagination', 'xpro-bb-addons'),
+                            'fields'        => array(
+                                'prev_label' => array(
+                                    'type'          => 'text',
+                                    'label'         => __( 'Prev Label', 'fl-builder' ),
+                                    'default'       => 'Prev',
+                                ),
+                                'next_label' => array(
+                                    'type'          => 'text',
+                                    'label'         => __( 'Next Label', 'fl-builder' ),
+                                    'default'       => 'Next',
+                                ),
+                                'posts_per_page'     => array(
+                                    'type'    => 'unit',
+                                    'label'   => __( 'Posts Per Page', 'xpro-bb-addons' ),
+                                    'default' => 10,
+                                    'slider'  => true,
+                                ),
+                                'arrow' => array(
+                                    'type'    => 'select',
+                                    'label'   => __('Arrows Type', 'xpro-bb-addons'),
+                                    'default' => 'fas fa-arrow-left',
+                                    'options' => array(
+                                        'fas fa-arrow-left' => __('Arrow', 'xpro-bb-addons'),
+                                        'fas fa-angle-left' => __('Angle', 'xpro-bb-addons'),
+                                        'fas fa-angle-double-left' => __('Double Angle', 'xpro-bb-addons'),
+                                        'fas fa-chevron-left' => __('Chevron', 'xpro-bb-addons'),
+                                        'fas fa-chevron-circle-left' => __('Chevron Circle', 'xpro-bb-addons'),
+                                        'fas fa-caret-left' => __('Caret', 'xpro-bb-addons'),
+                                        'xi xi-long-arrow-left' => __('Long Arrow', 'xpro-bb-addons'),
+                                        'fas fa-arrow-circle-left' => __('Arrow Circle', 'xpro-bb-addons'),
+                                    ),
+                                ),
+                            )
+                        ),
+                        'styl-pagination'       => array(
+                            'title'         => __('Pagination', 'xpro-bb-addons'),
+                            'collapsed' => true,
+                            'fields'        => array(
+                                'text-align' => array(
+                                    'type'    => 'align',
+                                    'label'   => 'Alignment',
+                                    'default' => 'center',
+                                    'responsive' => true,
+                                    'preview' => array(
+                                        'type'       => 'css',
+                                        'selector'   => '.xpro-elementor-post-pagination',
+                                        'property'   => 'justify-content',
+                                    ),
+                                ),
+                                'pagination_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-elementor-post-pagination .page-numbers',
+                                    ),
+                                ),
+                                'pagination_space_between' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Space Between',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-elementor-post-pagination',
+                                        'property'     => 'grid-gap',
+                                    ),
+                                ),
+                                'pagination_bg_type' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Background Type', 'xpro-bb-addons' ),
+                                    'default'       => 'none',
+                                    'options'       => array(
+                                        'none'      => __( 'None', 'xpro-bb-addons' ),
+                                        'normal'      => __( 'Normal', 'xpro-bb-addons' ),
+                                        'hover'      => __( 'Hover', 'xpro-bb-addons' ),
+                                        'active'      => __( 'Active', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'normal'      => array(
+                                            'fields'        => array( 'pagination_color', 'pagination_bg_color' ),
+                                        ),
+                                        'hover'      => array(
+                                            'fields'        => array(  'pagination_hover_color', 'pagination_bg_hover_color' ),
+                                        ),
+                                        'active'      => array(
+                                            'fields'        => array(  'pagination_active_color', 'pagination_bg_arctive_color' ),
+                                        ),
+                                    )
+                                ),
+                                'pagination_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => ' .xpro-elementor-post-pagination .page-numbers',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'pagination_bg_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-elementor-post-pagination .page-numbers',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'pagination_hover_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-elementor-post-pagination .page-numbers:hover',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'pagination_bg_hover_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-elementor-post-pagination .page-numbers:hover',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'pagination_active_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-elementor-post-pagination .page-numbers.current',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'pagination_bg_arctive_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-elementor-post-pagination .page-numbers.current',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'pagination_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-elementor-post-pagination .page-numbers',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'pagination_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-elementor-post-pagination .page-numbers',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                                'pagination_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-elementor-post-pagination',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                            )
+                        ),
+                    ),
+                ),
+            ),
+        )
+    );
+
+    /**
+     * Register a settings form for Badge Styles.
+     */
+    FLBuilder::register_settings_form(
+        'xpro_products_badges_form',
+        array(
+            'title' => __( 'Badges Styles', 'xpro-bb-addons' ),
+            'tabs'  => array(
+                'general' => array(
+                    'title'    => __( 'Content', 'xpro-bb-addons' ),
+                    'sections' => array(
+                        'general'       => array(
+                            'title'         => __('Pagination', 'xpro-bb-addons'),
+                            'fields'        => array(
+                                'woo_badges_style' => array(
+                                    'type'    => 'button-group',
+                                    'label'   => __('Style', 'xpro-bb-addons'),
+                                    'default' => 'square',
+                                    'responsive' => true,
+                                    'options' => array(
+                                        'square' => __('Square', 'xpro-bb-addons'),
+                                        'circle' => __('Circle', 'xpro-bb-addons'),
+                                    ),
+                                ),
+                                'badges_direction' => array(
+                                    'type'    => 'button-group',
+                                    'label'   => __('Direction', 'xpro-bb-addons'),
+                                    'default' => 'column',
+                                    'responsive' => true,
+                                    'options' => array(
+                                        'column' => __('Column', 'xpro-bb-addons'),
+                                        'row' => __('Row', 'xpro-bb-addons'),
+                                    ),
+                                ),
+                                'sale_badge_type' => array(
+                                    'type'    => 'button-group',
+                                    'label'   => __('Sale Badge Type', 'xpro-bb-addons'),
+                                    'default'   => 'text',
+                                    'responsive' => true,
+                                    'options'   => array(
+                                        'text'       => __( 'Text', 'xpro-elementor-addons' ),
+                                        'percentage' => __( 'Percentage', 'xpro-elementor-addons' ),
+                                    ),
+                                ),
+                                'show_sale_badge' => array(
+                                    'type'    => 'button-group',
+                                    'label'   => __('Show Sale Type', 'xpro-bb-addons'),
+                                    'default'   => 'yes',
+                                    'options'   => array(
+                                        'yes' => __('Show', 'xpro-bb-addons'),
+                                        'no' => __('Hide', 'xpro-bb-addons'),
+                                    ),
+                                ),
+                                'show_featured_badge' => array(
+                                    'type'    => 'button-group',
+                                    'label'   => __('Show Featured Type', 'xpro-bb-addons'),
+                                    'default'   => 'yes',
+                                    'options'   => array(
+                                        'yes' => __('Show', 'xpro-bb-addons'),
+                                        'no' => __('Hide', 'xpro-bb-addons'),
+                                    ),
+                                ),
+                            )
+                        ),
+                        'badge'       => array(
+                            'title'         => __('Badge', 'xpro-bb-addons'),
+                            'collapsed' => true,
+                            'fields'        => array(
+                                'badges_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-woo-product-grid-item .xpro-woo-badges-btn',
+                                    ),
+                                ),
+                                'badges_bg_size' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Background Size',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'rules'           => array(
+                                            array(
+                                                'selector'     => '.xpro-woo-product-grid-item .xpro-woo-sale-flash-btn, .xpro-woo-product-grid-item .xpro-woo-featured-flash-btn',
+                                                'property'     => 'width',
+                                            ),
+                                            array(
+                                                'selector'     => '.xpro-woo-product-grid-item .xpro-woo-sale-flash-btn, .xpro-woo-product-grid-item .xpro-woo-featured-flash-btn',
+                                                'property'     => 'height'
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                                'badges_btn_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-badges-btn',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'badges_btn_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-badges-btn',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                                'badges_btn_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Buttons Spacing',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-product-grid-badges-wrapper',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator17' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Sale<hr></h2>',
+                                ),
+                                'sale_btn_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-sale-flash-btn',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'sale_btn_background' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-sale-flash-btn',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'sale_btn_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Buttons Spacing',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-sale-flash-btn',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator18' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Featured<hr></h2>',
+                                ),
+                                'featured_btn_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-featured-flash-btn',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'featured_btn_background' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-featured-flash-btn',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'featured_btn_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Buttons Spacing',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-featured-flash-btn',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator19' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Out Of Stock<hr></h2>',
+                                ),
+                                'out_stock_btn_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-out-of-stock-btn',
+                                        'property'     => 'color'
+                                    ),
+                                ),
+                                'out_stock_background' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-out-of-stock-btn',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'out_stock_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Buttons Spacing',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-item .xpro-woo-out-of-stock-btn',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                            )
+                        ),
+                    ),
+                ),
+            ),
+        )
+    );
 
 } else {
 

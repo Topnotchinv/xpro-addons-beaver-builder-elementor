@@ -27,16 +27,6 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 	
 		}
 	
-		/**
-		 * @method enqueue_scripts
-		 *
-		 */
-		public function enqueue_scripts()
-		{
-			// Already registered
-			$this->add_css('font-awesome');
-		}
-	
 	}
 	
 	/**

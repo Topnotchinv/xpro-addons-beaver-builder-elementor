@@ -22,18 +22,6 @@ class XPRODropCapModule extends FLBuilderModule {
 		);
 	}
 
-	/**
-	 * @method enqueue_scripts
-	 */
-	public function enqueue_scripts() {
-		// Already registered.
-		$this->add_css( 'font-awesome' );
-		$this->add_css( 'font-awesome-5' );
-		$this->add_css( 'foundation-icons' );
-		$this->add_css( 'ultimate-icons' );
-
-	}
-
 }
 
 /**

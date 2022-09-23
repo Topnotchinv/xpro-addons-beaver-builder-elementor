@@ -28,9 +28,6 @@ class TNITFlipBoxModule extends FLBuilderModule {
 	 * @method enqueue_scripts
 	 */
 	public function enqueue_scripts() {
-        // Already registered.
-		$this->add_css( 'font-awesome' );
-		$this->add_css( 'font-awesome-5' );
 
 		// Register and enqueue your own.
 		$this->add_css( 'xpro-default', XPRO_ADDONS_FOR_BB_URL . 'assets/css/default.css' );

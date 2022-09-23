@@ -28,17 +28,6 @@ if ( ! class_exists( 'XproPricingTable' ) ) {
         }
 
         /**
-         * @method enqueue_scripts
-         *
-         */
-        public function enqueue_scripts()
-        {
-            // Already registered
-            $this->add_css('font-awesome');
-            $this->add_css('font-awesome-5');
-        }
-
-        /**
          * Returns link rel based on settings
          * 
          */
