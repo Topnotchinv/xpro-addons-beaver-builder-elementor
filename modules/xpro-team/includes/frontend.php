@@ -15,7 +15,7 @@ $title_attr .= $settings->title_link ? ' href=' . $settings->title_link . '' : '
 	<?php endif; ?>
 
 	<div class="xpro-team-image">
-		<img src="<?php echo esc_url( $settings->image_src ? $settings->image_src : XPRO_ADDONS_FOR_BB_URL . 'assets/images/placeholder-sm.jpg' ); ?>" alt="image">
+		<img src="<?php echo esc_url( $settings->image_src ? $settings->image_src : XPRO_ADDONS_FOR_BB_URL . 'assets/images/placeholder-sm.webp' ); ?>" alt="image">
 
 		<?php if ( '8' === $settings->layout || '9' === $settings->layout ) { ?>
 			<div class="xpro-team-inner-content">

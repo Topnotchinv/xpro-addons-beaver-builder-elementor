@@ -1,3 +1,8 @@
+.fl-builder-xpro-post-grid-settings .fl-field[data-type="button-group"] .fl-button-group-field-option {padding:0px 20px;}
+.fl-builder-settings[data-type="xpro_post_grid_content_form"] .fl-field[data-type="button-group"] .fl-button-group-field-option {padding:0px 20px;}
+.fl-builder-settings[data-type="xpro_post_grid_meta_form"] .fl-field[data-type="button-group"] .fl-button-group-field-option {padding:0px 20px;}
+.fl-builder-settings[data-type="xpro_post_grid_author_form"] .fl-field[data-type="button-group"] .fl-button-group-field-option {padding:0px 20px;}
+.fl-builder-settings[data-type="xpro_post_grid_pagination_form"] .fl-field[data-type="button-group"] .fl-button-group-field-option {padding:0px 20px;}
 .fl-lightbox .fl-form-table #fl-field-xpro-widget-seprator1 td:first-child,
 .fl-lightbox .fl-form-table #fl-field-xpro-widget-seprator2 td:first-child,
 .fl-lightbox .fl-form-table #fl-field-xpro-widget-seprator3 td:first-child,

@@ -1048,9 +1048,9 @@ if ( class_exists( 'WooCommerce' ) ) {
         array(
             'title' => __( 'Quick View Styles', 'xpro-bb-addons' ),
             'tabs'  => array(
-                'quick-view'       => array(
-                    'title'         => __('Quick View', 'xpro-bb-addons'),
-                    'sections'      => array(
+                'general' => array(
+                    'title'    => __( 'Feature List', 'xpro-bb-addons' ),
+                    'sections' => array(
                         'quick-view'       => array(
                             'title'         => __('General', 'xpro-bb-addons'),
                             'fields'        => array(
@@ -2363,7 +2363,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 
                             )
                         ),
-                    )
+                    ),
                 ),
             ),
         )
