@@ -37,12 +37,12 @@ FLBuilder::register_module(
 					'title'  => __( 'General', 'xpro-bb-addons' ),
 					'fields' => array(
 						'dropcap_description' => array(
-							'type'        => 'textarea',
-							'label'       => __( 'Content', 'xpro-bb-addons' ),
-							'maxlength'   => '255',
-							'rows'        => '6',
-							'default'     => 'Dorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-							'placeholder' => __( 'Type your description here', 'xpro-bb-addons' ),
+							'type'          => 'editor',
+							'label'         => __( 'Content', 'xpro-bb-addons' ),
+							'media_buttons' => true,
+							'rows'          => 6,
+							'wpautop'       => false,
+							'connections'   => array( 'string' ),
 						),
 					),
 				),

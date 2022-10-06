@@ -122,7 +122,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'default'       => 'before-title',
 							'options'       => array(
 								'before-title'      => __( 'Before Title', 'xpro-bb-addons' ),
-								'after-title'      => __( 'After Title', 'xpro-addonsr' ),
+								'after-title'      => __( 'After Title', 'xpro-bb-addons' ),
 							),
 						),
 					)
@@ -167,13 +167,13 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'options'       => array(
 								'none'      => __( 'None', 'xpro-bb-addons' ),
 								'text'      => __( 'Text', 'xpro-bb-addons' ),
-								'icon'      => __( 'Icon', 'xpro-addonsr' ),
+								'icon'      => __( 'Icon', 'xpro-bb-addons' ),
 								'simple'      => __( 'Simple', 'xpro-bb-addons' ),
-								'double'      => __( 'Double', 'xpro-addonsr' ),
+								'double'      => __( 'Double', 'xpro-bb-addons' ),
 								'shape-1'      => __( 'Shape 1', 'xpro-bb-addons' ),
-								'shape-2'      => __( 'Shape 2', 'xpro-addonsr' ),
+								'shape-2'      => __( 'Shape 2', 'xpro-bb-addons' ),
 								'shape-3'      => __( 'Shape 3', 'xpro-bb-addons' ),
-								'shape-4'      => __( 'Shape 4', 'xpro-addonsr' ),
+								'shape-4'      => __( 'Shape 4', 'xpro-bb-addons' ),
 							),
 							'toggle'        => array(
 								'text'      => array(

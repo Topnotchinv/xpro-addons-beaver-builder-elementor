@@ -231,7 +231,7 @@ FLBuilder::register_module(
 						),
 						'date_meta_icon'     => array(
 							'type'        => 'icon',
-							'label'       => __( 'Date Icon', 'xpro-addons' ),
+							'label'       => __( 'Date Icon', 'xpro-bb-addons' ),
 							'default'     => 'far fa-calendar',
 							'show_remove' => true,
 						),
@@ -251,7 +251,7 @@ FLBuilder::register_module(
 						),
 						'category_meta_icon' => array(
 							'type'        => 'icon',
-							'label'       => __( 'Category Icon', 'xpro-addons' ),
+							'label'       => __( 'Category Icon', 'xpro-bb-addons' ),
 							'default'     => 'far fa-folder',
 							'show_remove' => true,
 						),
@@ -271,7 +271,7 @@ FLBuilder::register_module(
 						),
 						'comments_meta_icon' => array(
 							'type'        => 'icon',
-							'label'       => __( 'Comment Icon', 'xpro-addons' ),
+							'label'       => __( 'Comment Icon', 'xpro-bb-addons' ),
 							'default'     => 'far fa-comment-alt',
 							'show_remove' => true,
 						),

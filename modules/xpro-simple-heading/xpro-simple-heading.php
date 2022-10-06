@@ -40,19 +40,19 @@ FLBuilder::register_module(
 							'type'        => 'text',
 							'label'       => __( 'Title Before', 'xpro-bb-addons' ),
 							'default'     => __( 'Your', 'xpro-bb-addons' ),
-							'placeholder' => __( 'Icon Box', 'xpro-bb-addons' ),
+							'placeholder' => __( 'Before Title', 'xpro-bb-addons' ),
 						),
 						'center_title' => array(
 							'type'        => 'text',
 							'label'       => __( 'Title Center', 'xpro-bb-addons' ),
 							'default'     => __( 'Simple', 'xpro-bb-addons' ),
-							'placeholder' => __( 'Icon Box', 'xpro-bb-addons' ),
+							'placeholder' => __( 'Center Title', 'xpro-bb-addons' ),
 						),
 						'after_title'  => array(
 							'type'        => 'text',
 							'label'       => __( 'Title After', 'xpro-bb-addons' ),
 							'default'     => __( 'Heading', 'xpro-bb-addons' ),
-							'placeholder' => __( 'Icon Box', 'xpro-bb-addons' ),
+							'placeholder' => __( 'After Title', 'xpro-bb-addons' ),
 						),
 						'title_tag'    => array(
 							'type'    => 'select',

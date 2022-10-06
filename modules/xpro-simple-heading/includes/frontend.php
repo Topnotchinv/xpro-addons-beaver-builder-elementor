@@ -7,7 +7,7 @@ $attr .= $settings->box_link ? ' href=' . $settings->box_link . '' : '';
 ?>
 
 <div class="xpro-simple-heading-wrapper">
-	<<?php echo esc_attr( $tag ); ?> <?php echo esc_attr( $attr ); ?>>
+	<<?php echo esc_attr( $tag ); ?> <?php echo isset( $settings->box_link ) ? esc_attr( $attr ) : ''; ?>>
 		<<?php echo esc_attr( $settings->title_tag ); ?> class="xpro-heading-title">
 			<?php if ( $settings->before_title ) : ?>
 				<span class=""><?php echo esc_attr( $settings->before_title ); ?></span>

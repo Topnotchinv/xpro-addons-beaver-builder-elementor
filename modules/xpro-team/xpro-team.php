@@ -13,8 +13,8 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 		public function __construct() {
 			parent::__construct(
 				array(
-					'name'            => __( 'Xpro Team', 'xpro-addons' ),
-					'description'     => __( 'An awesome addition by Xpro team!', 'xpro-addons' ),
+					'name'            => __( 'Xpro Team', 'xpro-bb-addons' ),
+					'description'     => __( 'An awesome addition by Xpro team!', 'xpro-bb-addons' ),
 					'group'           => XPRO_Plugins_Helper::$branding_modules,
 					'category'        => XPRO_Plugins_Helper::$content_modules,
 					'dir'             => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-team/',
@@ -130,10 +130,10 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 							),
 							'title_link'  => array(
 								'type'          => 'link',
-								'label'         => __( 'Link', 'xpro-addons' ),
+								'label'         => __( 'Link', 'xpro-bb-addons' ),
 								'show_target'   => true,
 								'show_nofollow' => true,
-								'placeholder'   => __( 'https://your-link.com', 'xpro-addons' ),
+								'placeholder'   => __( 'https://your-link.com', 'xpro-bb-addons' ),
 							),
 							'designation' => array(
 								'type'        => 'text',
@@ -168,7 +168,7 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 						'fields' => array(
 							'social_icon_list' => array(
 								'type'     => 'form',
-								'label'    => __( 'Social Item', 'xpro-addons' ),
+								'label'    => __( 'Social Item', 'xpro-bb-addons' ),
 								'form'     => 'xpro_team_social_icon_form', // ID of a registered form.
 			// 'preview_text' => 'member_name', // ID of a field to use for the preview text.
 								'multiple' => true,
@@ -721,26 +721,26 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 	FLBuilder::register_settings_form(
 		'xpro_team_social_icon_form',
 		array(
-			'title' => __( 'Add Icon', 'xpro-addons' ),
+			'title' => __( 'Add Icon', 'xpro-bb-addons' ),
 			'tabs'  => array(
 				'general' => array(
-					'title'    => __( 'General', 'xpro-addons' ),
+					'title'    => __( 'General', 'xpro-bb-addons' ),
 					'sections' => array(
 						'general' => array(
 							'title'  => 'Social Icon',
 							'fields' => array(
 								'social_icon'             => array(
 									'type'        => 'icon',
-									'label'       => __( 'Icon', 'xpro-addons' ),
+									'label'       => __( 'Icon', 'xpro-bb-addons' ),
 									'default'     => 'fab fa-facebook-f',
 									'show_remove' => true,
 								),
 								'icon_link'               => array(
 									'type'          => 'link',
-									'label'         => __( 'Link', 'xpro-addons' ),
+									'label'         => __( 'Link', 'xpro-bb-addons' ),
 									'show_target'   => true,
 									'show_nofollow' => true,
-									'placeholder'   => __( 'https://your-link.com', 'xpro-addons' ),
+									'placeholder'   => __( 'https://your-link.com', 'xpro-bb-addons' ),
 								),
 								'social_icon_inline_type' => array(
 									'type'    => 'button-group',

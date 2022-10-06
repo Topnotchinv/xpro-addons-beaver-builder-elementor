@@ -345,7 +345,7 @@ if ( 'yes' === $settings->show_pagination && $query->have_posts() && $query->max
 
 	$links = paginate_links( $pagination_args );
 	?>
-	<nav class="xpro-elementor-post-pagination" role="navigation" aria-label="<?php esc_attr_e( 'Pagination', 'xpro-addons' ); ?>">
+	<nav class="xpro-elementor-post-pagination" role="navigation" aria-label="<?php esc_attr_e( 'Pagination', 'xpro-bb-addons' ); ?>">
 		<?php echo implode( PHP_EOL, $links ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	</nav>
 

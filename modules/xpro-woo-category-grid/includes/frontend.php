@@ -111,8 +111,8 @@ if ( 'yes' === $settings->cat_only_image ) {
 		} else {
 			?>
 			<p class="xpro-alert xpro-alert-warning">
-				<span class="xpro-alert-title"><?php esc_html__( 'No Category Found!', 'Xpro-Addons' ); ?></span>
-				<span class="xpro-alert-description"><?php echo esc_html__( 'Sorry, but nothing matched your selection. Please try again with some different keywords.', 'Xpro-Addons' ); ?></span>
+				<span class="xpro-alert-title"><?php esc_html__( 'No Category Found!', 'xpro-bb-addons' ); ?></span>
+				<span class="xpro-alert-description"><?php echo esc_html__( 'Sorry, but nothing matched your selection. Please try again with some different keywords.', 'xpro-bb-addons' ); ?></span>
 			</p>
 
 		<?php } ?>

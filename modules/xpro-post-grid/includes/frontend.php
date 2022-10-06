@@ -74,7 +74,7 @@ if ( $query->have_posts() ) {
 							<?php if ( 'yes' === $settings->show_comments_meta ) : ?>
 								<li class="xpro-post-grid-meta-comments">
 									<i class="<?php echo esc_attr( $settings->comments_meta_icon ); ?>" aria-hidden="true"> </i>
-									<?php comments_number( esc_html__( 'No Comments', 'xpro-addons' ), esc_html__( '1 Comment', 'xpro-addons' ), esc_html__( '% Comments', 'xpro-addons' ) ); ?>
+									<?php comments_number( esc_html__( 'No Comments', 'xpro-bb-addons' ), esc_html__( '1 Comment', 'xpro-bb-addons' ), esc_html__( '% Comments', 'xpro-bb-addons' ) ); ?>
 								</li>
 							<?php endif; ?>
 						</ul>
@@ -101,7 +101,7 @@ if ( $query->have_posts() ) {
 							<?php if ( 'yes' === $settings->show_comments_meta ) : ?>
 								<li class="xpro-post-grid-meta-comments">
 									<i class="<?php echo esc_attr( $settings->comments_meta_icon ); ?>" aria-hidden="true"> </i>
-									<?php comments_number( esc_html__( 'No Comments', 'xpro-addons' ), esc_html__( '1 Comment', 'xpro-addons' ), esc_html__( '% Comments', 'xpro-addons' ) ); ?>
+									<?php comments_number( esc_html__( 'No Comments', 'xpro-bb-addons' ), esc_html__( '1 Comment', 'xpro-bb-addons' ), esc_html__( '% Comments', 'xpro-bb-addons' ) ); ?>
 								</li>
 							<?php endif; ?>
 						</ul>
@@ -164,7 +164,7 @@ if ( $query->have_posts() ) {
 							<?php if ( 'yes' === $settings->show_comments_meta ) : ?>
 								<li class="xpro-post-grid-meta-comments">
 									<i class="<?php echo esc_attr( $settings->comments_meta_icon ); ?>" aria-hidden="true"> </i>
-									<?php comments_number( esc_html__( 'No Comments', 'xpro-addons' ), esc_html__( '1 Comment', 'xpro-addons' ), esc_html__( '% Comments', 'xpro-addons' ) ); ?>
+									<?php comments_number( esc_html__( 'No Comments', 'xpro-bb-addons' ), esc_html__( '1 Comment', 'xpro-bb-addons' ), esc_html__( '% Comments', 'xpro-bb-addons' ) ); ?>
 								</li>
 							<?php endif; ?>
 						</ul>
@@ -213,7 +213,7 @@ if ( 'yes' === $settings->show_pagination && $query->have_posts() && $query->max
 
 	$links = paginate_links( $pagination_args );
 	?>
-	<nav class="xpro-elementor-post-pagination" role="navigation" aria-label="<?php esc_attr_e( 'Pagination', 'xpro-addons' ); ?>">
+	<nav class="xpro-elementor-post-pagination" role="navigation" aria-label="<?php esc_attr_e( 'Pagination', 'xpro-bb-addons' ); ?>">
 		<?php echo implode( PHP_EOL, $links ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	</nav>
 

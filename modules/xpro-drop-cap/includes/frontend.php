@@ -1,5 +1,7 @@
-<?php if ( $settings->dropcap_description ) : ?>
+<?php if ( $settings->dropcap_description ) :
+	global $wp_embed;
+	?>
 <div class="xpro-dropcap-wrapper">
-	<p><?php echo esc_attr( $settings->dropcap_description ); ?></p>
+	<?php echo wpautop( $wp_embed->autoembed( $settings->dropcap_description ) ); ?>
 </div>
 <?php endif; ?>
