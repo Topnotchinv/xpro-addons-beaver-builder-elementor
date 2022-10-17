@@ -30,8 +30,8 @@ class TNITFlipBoxModule extends FLBuilderModule {
 	public function enqueue_scripts() {
 
 		// Register and enqueue your own.
-		$this->add_css( 'xpro-default', XPRO_ADDONS_FOR_BB_URL . 'assets/css/default.css' );
-		$this->add_css( 'animate', XPRO_ADDONS_FOR_BB_URL . 'assets/css/animate.css' );
+		$this->add_css( 'xpro-default', XPRO_ADDONS_FOR_BB_URL . 'assets/css/default.css', '', '1.5.1' );
+		$this->add_css( 'xpro-animate', XPRO_ADDONS_FOR_BB_URL . 'assets/css/animate.css', '', '1.0.0' );
 	}
 
 	/**

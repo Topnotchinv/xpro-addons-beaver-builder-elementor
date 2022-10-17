@@ -27,8 +27,8 @@ class XproPostGridModule extends FLBuilderModule {
 	 */
 	public function enqueue_scripts() {
 
-        $this->add_css( 'cubeportfolio-css', XPRO_ADDONS_FOR_BB_URL . 'assets/css/cubeportfolio.min.css' );
-        $this->add_js( 'cubeportfolio-js', XPRO_ADDONS_FOR_BB_URL . 'assets/js/jquery.cubeportfolio.min.js', array( 'jquery' ), '4.4.0', true );
+        $this->add_css( 'xpro-cubeportfolio', XPRO_ADDONS_FOR_BB_URL . 'assets/css/cubeportfolio.min.css', '', '4.4.0' );
+        $this->add_js( 'xpro-cubeportfolio', XPRO_ADDONS_FOR_BB_URL . 'assets/js/jquery.cubeportfolio.min.js', array( 'jquery' ), '4.4.0', true );
 	}
 
 }

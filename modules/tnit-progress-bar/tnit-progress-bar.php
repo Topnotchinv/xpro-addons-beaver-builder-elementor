@@ -29,7 +29,7 @@ class TNITProgressBar extends FLBuilderModule {
 	public function enqueue_scripts() {
 
 		// Register and enqueue your own.
-		$this->add_js( 'progressbar', $this->url . 'js/jQuery.progressbar.min.js', array(), '', true );
+		$this->add_js( 'progressbar', $this->url . 'js/jQuery.progressbar.min.js', array(), '1.0.0', true );
 	}
 
 	/**

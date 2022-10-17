@@ -33,7 +33,7 @@ class TNITAdvanceInfoBoxModule extends FLBuilderModule {
 		$this->add_css( 'font-awesome-5' );
 
 		// Register and enqueue your own
-		$this->add_css( 'animate-css', XPRO_ADDONS_FOR_BB_URL . 'assets/css/animate.css' );
+		$this->add_css( 'xpro-animate', XPRO_ADDONS_FOR_BB_URL . 'assets/css/animate.css', '', '1.0.0' );
 	}
 
 	/**
