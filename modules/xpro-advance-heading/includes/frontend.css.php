@@ -828,10 +828,10 @@ FLBuilderCSS::dimension_field_rule(
 		'selector'     => ".fl-node-$id .xpro-title-focus",
 		'unit'         => 'px',
 		'props'        => array(
-			'padding-top'    => 'center_title_padding_top',
-			'padding-right'  => 'center_title_padding_right',
-			'padding-bottom' => 'center_title_padding_bottom',
-			'padding-left'   => 'center_title_padding_left',
+			'padding-top'    => 'adv_center_title_padding_top',
+			'padding-right'  => 'adv_center_title_padding_right',
+			'padding-bottom' => 'adv_center_title_padding_bottom',
+			'padding-left'   => 'adv_center_title_padding_left',
 		),
 	)
 );

@@ -66,7 +66,7 @@ $title_attr .= $settings->title_link ? ' href=' . $settings->title_link . '' : '
 		<?php endif; ?>
 
 		<?php if ( $settings->description ) : ?>
-			<p class="xpro-team-description"><?php echo wpautop( $wp_embed->autoembed( $settings->description ) ); ?></p>
+			<div class="xpro-team-description"><?php echo wpautop( $wp_embed->autoembed( $settings->description ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( '2' !== $settings->layout && '3' !== $settings->layout && '5' !== $settings->layout && '8' !== $settings->layout && '12' !== $settings->layout && '13' !== $settings->layout && '15' !== $settings->layout ) { ?>

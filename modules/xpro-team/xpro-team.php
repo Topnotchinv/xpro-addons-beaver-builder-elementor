@@ -161,7 +161,7 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 				),
 			),
 			'social'  => array(
-				'title'    => __( 'social', 'xpro-bb-addons' ),
+				'title'    => __( 'Social', 'xpro-bb-addons' ),
 				'sections' => array(
 					'social-list' => array(
 						'title'  => __( 'Social Item', 'xpro-bb-addons' ),
@@ -170,7 +170,6 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 								'type'     => 'form',
 								'label'    => __( 'Social Item', 'xpro-bb-addons' ),
 								'form'     => 'xpro_team_social_icon_form', // ID of a registered form.
-			// 'preview_text' => 'member_name', // ID of a field to use for the preview text.
 								'multiple' => true,
 								'default'  => array(
 									array(

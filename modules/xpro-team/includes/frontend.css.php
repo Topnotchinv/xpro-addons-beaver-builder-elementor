@@ -7,6 +7,7 @@
 	    array(
 		    'settings'		=> $settings,
 		    'setting_name'	=> 'align',
+		    'enabled'  =>  ('8' !== $settings->layout && '9' !== $settings->layout  ),
 		    'selector'		=> ".fl-node-$id .xpro-team-wrapper",
 		    'prop'			=> 'text-align',
 		)
