@@ -77,6 +77,20 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 								'h6'      => __( 'H6', 'xpro-bb-addons' ),
 							),
 						),
+                        'adv_title_separator_toggle' => array(
+                            'type'          => 'button-group',
+                            'label'         => __( 'Separator', 'xpro-bb-addons' ),
+                            'default'       => 'enable',
+                            'options'       => array(
+                                'enable'      => __( 'Enable', 'xpro-bb-addons' ),
+                                'disable'      => __( 'Disable', 'xpro-bb-addons' ),
+                            ),
+                            'toggle'        => array(
+                                'enable'      => array(
+                                    'sections'        => array( 'adv_separator' ),
+                                ),
+                            )
+                        ),
 					)
 				),
 				'adv_subtitle'       => array(
@@ -156,87 +170,6 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 						),
 					)
 				),
-				'adv_separator'       => array(
-					'title'         => __('Separator', 'xpro-bb-addons'),
-					'collapsed'     => true,
-					'fields'        => array(
-						'adv_separator_style' => array(
-							'type'          => 'select',
-							'label'         => __( 'Style', 'xpro-bb-addons' ),
-							'default'       => 'text',
-							'options'       => array(
-								'none'      => __( 'None', 'xpro-bb-addons' ),
-								'text'      => __( 'Text', 'xpro-bb-addons' ),
-								'icon'      => __( 'Icon', 'xpro-bb-addons' ),
-								'simple'      => __( 'Simple', 'xpro-bb-addons' ),
-								'double'      => __( 'Double', 'xpro-bb-addons' ),
-								'shape-1'      => __( 'Shape 1', 'xpro-bb-addons' ),
-								'shape-2'      => __( 'Shape 2', 'xpro-bb-addons' ),
-								'shape-3'      => __( 'Shape 3', 'xpro-bb-addons' ),
-								'shape-4'      => __( 'Shape 4', 'xpro-bb-addons' ),
-							),
-							'toggle'        => array(
-								'text'      => array(
-									'fields'        => array( 'adv_separator_title', 'adv_separator_text_typography',
-										'adv_separator_text_color', 'adv_separator_after_before_color', 'adv_separator_width',
-                                        'adv_separator_height', 'adv_separator_border_radius', 'adv_separator_margin'),
-								),
-								'icon'      => array(
-									'fields'        => array( 'adv_separator_icon', 'adv_separator_icon_size', 'adv_separator_icon_background_size',
-										'adv_separator_icon_color', 'adv_separator_icon_background_color', 'adv_separator_icon_border',
-										'adv_separator_after_before_color', 'adv_separator_width', 'adv_separator_height', 'separator_border',
-										'adv_separator_border_radius', 'adv_separator_margin'),
-								),
-								'simple'      => array(
-									'fields'        => array( 'adv_separator_width', 'adv_separator_height',
-										'adv_separator_border_radius', 'adv_separator_margin'),
-								),
-								'double'      => array(
-									'fields'        => array( 'adv_separator_width', 'adv_separator_height',
-										'adv_separator_border_radius', 'adv_separator_margin'),
-								),
-								'shape-1'      => array(
-									'fields'        => array( 'adv_separator_shape_color', 'adv_separator_shape_background_size',
-										'adv_separator_shape_margin'),
-								),
-								'shape-2'      => array(
-									'fields'        => array( 'adv_separator_shape_color', 'adv_separator_shape_background_size',
-										'adv_separator_shape_margin'),
-								),
-								'shape-3'      => array(
-									'fields'        => array( 'adv_separator_shape_color', 'adv_separator_shape_background_size',
-										'adv_separator_shape_margin'),
-								),
-								'shape-4'      => array(
-									'fields'        => array( 'adv_separator_shape_color', 'adv_separator_shape_background_size',
-										'adv_separator_shape_margin'),
-								),
-							)
-						),
-						'adv_separator_icon' => array(
-							'type'          => 'icon',
-							'label'         => __( 'Icon', 'xpro-bb-addons' ),
-							'show_remove'   => true,
-							'default' => 'fas fa-gem',
-	
-						),
-						'adv_separator_title' => array(
-							'type'          => 'text',
-							'label'         => __( 'Title', 'xpro-bb-addons' ),
-							'placeholder'   => __( 'Separator Text Here', 'xpro-bb-addons' ),
-							'default'   => __( 'Separator Text Here', 'xpro-bb-addons' ),
-						),
-						'adv_separator_position' => array(
-							'type'          => 'button-group',
-							'label'         => __( 'Position', 'xpro-bb-addons' ),
-							'default'       => 'after-title',
-							'options'       => array(
-								'before-title'      => __( 'Before Title', 'xpro-bb-addons' ),
-								'after-title'      => __( 'After Title', 'xpro-bb-addons' ),
-							),
-						),
-					)
-				),
 				'adv_shadow'       => array(
 					'title'         => __('Shadow', 'xpro-bb-addons'),
 					'collapsed'     => true,
@@ -288,19 +221,24 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'type'    => 'align',
 							'label'   => __( 'Alignment', 'xpro-bb-addons' ),
 							'responsive'  => true,
+                            'preview' => array(
+                                'type'       => 'css',
+                                'selector'   => '{node} .xpro-heading-wrapper',
+                                'property'   => 'text-align',
+                            ),
 						),
 						'adv_vertical_alignment' => array(
 							'type'          => 'button-group',
 							'label'         => __( 'Vertical Align', 'xpro-bb-addons' ),
 							'default'       => 'flex-start',
 							'options'       => array(
-								'flex-start'      => __( 'Left', 'xpro-bb-addons' ),
+								'flex-start'      => __( 'Top', 'xpro-bb-addons' ),
 								'center'      => __( 'Center', 'xpro-bb-addons' ),
-								'flex-end'      => __( 'Right', 'xpro-bb-addons' )
+								'flex-end'      => __( 'Bottom', 'xpro-bb-addons' )
 							),
 							'preview' => array(
 								'type'       => 'css',
-								'selector'   => '{node} .xpro-heading-wrapper-inner, .xpro-heading-wrapper .xpro-heading-top',
+								'selector'   => '{node} .xpro-heading-wrapper-inner, {node} .xpro-heading-wrapper .xpro-heading-top',
 								'property'   => 'align-items',
 							),
 						),
@@ -345,7 +283,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
                             'responsive' => true,
                             'preview'    => array(
                                 'type'      => 'css',
-                                'selector'  => '{node} .xpro-heading-title',
+                                'selector'  => '{node} .xpro-heading-wrapper .xpro-heading-title',
                             ),
                         ),
 						'adv_title_color_type' => array(
@@ -376,7 +314,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'show_alpha'    => true,
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-title',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-title',
 								'property' => 'color',
 							),
 						),
@@ -391,7 +329,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-title',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-title',
 								'property' => 'background-image',
 							),
 						),
@@ -401,7 +339,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'show_remove'   => false,
 							'preview'    => array(
 								'type'      => 'css',
-								'selector'  => '{node} .xpro-heading-title',
+								'selector'  => '{node} .xpro-heading-wrapper .xpro-heading-title',
 								'property' => 'background-image',
 							),
 						),
@@ -422,7 +360,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-title',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-title',
 								'property' => 'background-position'
 							),
 						),
@@ -450,7 +388,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'show_alpha'    => true,
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-title',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-title',
 								'property' => 'background-color',
 							),
 						),
@@ -459,7 +397,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'label'   => ' ',
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-title',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-title',
 								'property' => 'background-image',
 							),
 						),
@@ -469,7 +407,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'responsive' => true,
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-title',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-title',
 							),
 						),
 						'adv_title_padding' => array(
@@ -481,7 +419,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'default_unit' => 'px',
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-title',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-title',
 								'property' => 'padding',
 							),
 						),
@@ -494,7 +432,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'default_unit' => 'px',
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-title',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-title',
 								'property' => 'margin',
 							),
 						),
@@ -510,7 +448,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
                             'responsive' => true,
                             'preview'    => array(
                                 'type'      => 'css',
-                                'selector'  => '{node} .xpro-title-focus',
+                                'selector'  => '{node} .xpro-heading-wrapper .xpro-title-focus',
                             ),
                         ),
 						'adv_center_title_color_type' => array(
@@ -541,7 +479,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'show_alpha'    => true,
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-title-focus',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-title-focus',
 								'property' => 'color',
 							),
 						),
@@ -556,7 +494,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-title',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-title',
 								'property' => 'background-image',
 							),
 						),
@@ -566,7 +504,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'show_remove'   => false,
 							'preview'    => array(
 								'type'      => 'css',
-								'selector'  => '{node} .xpro-title-focus',
+								'selector'  => '{node} .xpro-heading-wrapper .xpro-title-focus',
 								'property' => 'background-image',
 							),
 						),
@@ -587,7 +525,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-title-focus',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-title-focus',
 								'property' => 'background-position'
 							),
 						),
@@ -615,7 +553,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'show_alpha'    => true,
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-title-focus',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-title-focus',
 								'property' => 'background-color',
 							),
 						),
@@ -624,7 +562,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'label'   => ' ',
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-title-focus',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-title-focus',
 								'property' => 'background-image',
 							),
 						),
@@ -634,7 +572,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'responsive' => true,
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-title-focus',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-title-focus',
 							),
 						),
 						'adv_center_title_padding' => array(
@@ -646,7 +584,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'default_unit' => 'px',
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-title-focus',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-title-focus',
 								'property' => 'padding',
 							),
 						),
@@ -662,7 +600,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
                             'responsive' => true,
                             'preview'    => array(
                                 'type'      => 'css',
-                                'selector'  => '{node} .xpro-heading-subtitle',
+                                'selector'  => '{node} .xpro-heading-wrapper .xpro-heading-subtitle',
                             ),
                         ),
 						'adv_subtitle_color_type' => array(
@@ -693,7 +631,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'show_alpha'    => true,
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-subtitle',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-subtitle',
 								'property' => 'color',
 							),
 						),
@@ -708,7 +646,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-subtitle',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-subtitle',
 								'property' => 'background-image',
 							),
 						),
@@ -718,7 +656,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'show_remove'   => false,
 							'preview'    => array(
 								'type'      => 'css',
-								'selector'  => '{node} .xpro-heading-subtitle',
+								'selector'  => '{node} .xpro-heading-wrapper .xpro-heading-subtitle',
 								'property' => 'background-image',
 							),
 						),
@@ -739,7 +677,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							),
 							'preview'    => array(
 								'type'      => 'css',
-								'selector'  => '{node} .xpro-heading-subtitle',
+								'selector'  => '{node} .xpro-heading-wrapper .xpro-heading-subtitle',
 								'property' => 'background-position',
 							),
 						),
@@ -767,7 +705,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'show_alpha'    => true,
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-subtitle',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-subtitle',
 								'property' => 'background-color',
 							),
 						),
@@ -776,7 +714,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'label'   => ' ',
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-subtitle',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-subtitle',
 								'property' => 'background-image',
 							),
 						),
@@ -786,7 +724,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'responsive' => true,
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-subtitle',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-subtitle',
 							),
 						),
                         'adv_subtitle_padding' => array(
@@ -798,7 +736,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
                             'default_unit' => 'px',
                             'preview'    => array(
                                 'type'     => 'css',
-                                'selector' => '{node} .xpro-heading-subtitle',
+                                'selector' => '{node} .xpro-heading-wrapper .xpro-heading-subtitle',
                                 'property' => 'padding',
                             ),
                         ),
@@ -811,7 +749,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'default_unit' => 'px',
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-subtitle',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-subtitle',
 								'property' => 'margin',
 							),
 						),
@@ -827,7 +765,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
                             'responsive' => true,
                             'preview'    => array(
                                 'type'      => 'css',
-                                'selector'  => '{node} .xpro-heading-description',
+                                'selector'  => '{node} .xpro-heading-wrapper .xpro-heading-description',
                             ),
                         ),
 						'adv_description_color' => array(
@@ -837,7 +775,7 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'show_alpha'    => true,
 							'preview' => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-description',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-description',
 								'property' => 'color',
 							),
 						),
@@ -850,467 +788,546 @@ if ( ! class_exists( 'XPROAdvanceHeading' ) ) {
 							'default_unit' => 'px',
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-description',
+								'selector' => '{node} .xpro-heading-wrapper .xpro-heading-description',
 								'property' => 'margin',
 							),
 						),
 					)
 				),
-				'adv_separator'       => array(
-					'title'         => __('Separator', 'xpro-bb-addons'),
-					'collapsed'     => true,
-					'fields'        => array(
-                        'adv_separator_text_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '{node} .xpro-heading-separator-text',
-                            ),
+                'adv_separator'       => array(
+                    'title'         => __('Separator', 'xpro-bb-addons'),
+                    'collapsed'     => true,
+                    'fields'        => array(
+                        'adv_separator_styles' => array(
+                            'type'         => 'form',
+                            'label'        => __( 'Separator Text', 'xpro-bb-addons' ),
+                            'form'         => 'xpro_adv_heading_separator_form',
+                            'preview_text' => 'Style Separator Text',
                         ),
-						'adv_separator_text_color' => array(
-							'type'          => 'color',
-							'label'         => __( 'Text Color', 'xpro-bb-addons' ),
-							'show_reset'    => true,
-							'show_alpha'    => true,
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-separator-text',
-								'property' => 'color',
-							),
-						),
-						'adv_separator_icon_size' => array(
-							'type'        => 'unit',
-							'label'       => 'Icon Size',
-							'units'          => array( 'px', 'vw', '%' ),
-							'slider'  => true,
-							'responsive' => true ,
-							'default_unit' => 'px',
-							'preview'    => array(
-								'type'          => 'css',
-								'selector'      => '{node} .xpro-heading-separator-icon > i',
-								'property'      => 'font-size',
-							),
-						),
-						'adv_separator_icon_background_size' => array(
-							'type'        => 'unit',
-							'label'       => 'Background Size',
-							'units'          => array( 'px', 'vw', '%' ),
-							'slider'  => true,
-							'responsive' => true ,
-							'default_unit' => 'px',
-							'preview'       => array(
-								'type'          => 'css',
-								'rules'           => array(
-									array(
-										'selector'      => '{node} .xpro-heading-separator-icon > i',
-										'property'      => 'width',
-										'unit'          => 'px'
-									),
-									array(
-										'selector'      => '{node} .xpro-heading-separator-icon > i',
-										'property'      => 'height',
-										'unit'          => 'px'
-									),
-								),
-							),
-						),
-						'adv_separator_icon_color' => array(
-							'type'          => 'color',
-							'label'         => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset'    => true,
-							'show_alpha'    => true,
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-separator-icon > i',
-								'property' => 'color',
-							),
-						),
-						'adv_separator_icon_background_color' => array(
-							'type'          => 'color',
-							'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-							'show_reset'    => true,
-							'show_alpha'    => true,
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-separator-icon > i',
-								'property' => 'background-color',
-							),
-						),
-						'adv_separator_icon_border' => array(
-							'type'       => 'border',
-							'label'      => 'My Border',
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-separator-icon > i',
-							),
-						),
-						'adv_separator_shape_color' => array(
-							'type'          => 'color',
-							'label'         => __( 'Color', 'xpro-bb-addons' ),
-							'show_reset'    => true,
-							'show_alpha'    => true,
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '{node} [class*=xpro-heading-separator-shape] > svg',
-								'property' => 'fill',
-							),
-						),
-						'adv_separator_shape_background_size' => array(
-							'type'        => 'unit',
-							'label'       => 'Shape Width',
-							'units'          => array( 'px', 'vw', '%' ),
-							'slider'  => true,
-							'responsive' => true ,
-							'default_unit' => 'px',
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '{node} [class*=xpro-heading-separator-shape] > svg ',
-								'property' => 'width',
-							),
-						),
-						'adv_separator_shape_margin' => array(
-							'type'        => 'dimension',
-							'label'       =>  __( 'Margin', 'xpro-bb-addons' ),
-							'units'          => array( 'px', 'vw', '%' ),
-							'slider'  => true,
-                            'responsive'  => true,
-							'default_unit' => 'px',
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '{node} [class*=xpro-heading-separator-shape] > svg',
-								'property' => 'margin',
-							),
-						),
-						'adv_separator_after_before_color' => array(
-							'type'          => 'color',
-							'label'         => __( 'Separator Color', 'xpro-bb-addons' ),
-							'show_reset'    => true,
-							'show_alpha'    => true,
-						),
-						'adv_separator_width' => array(
-							'type'         => 'unit',
-							'label'        => 'Width',
-							'slider'  =>  'ture',
-							'units'          => array( 'px', 'vw', '%' ),
-							'default_unit' => 'px',
-							'default' => 60,
-							'responsive'   => true,
-						),
-						'adv_separator_height' => array(
-							'type'         => 'unit',
-							'label'        => 'Height',
-							'slider'  =>  true,
-							'units'          => array( 'px'),
-                            'default_unit' => 'px',
-                            'default' => 1,
-                            'responsive'   => true,
-						),
-						'adv_separator_border_radius' => array(
-							'type'         => 'unit',
-							'label'        => 'Border Radius',
-							'slider'  =>  'ture',
-							'units'          => array( 'px'),
-							'default_unit' => 'px',
-							'preview'    => array(
-								'type'          => 'css',
-								'selector'      => '{node} .xpro-heading-separator-simple::before, .xpro-heading-separator-double:before, .xpro-heading-separator-double:after, .xpro-heading-separator-text::before, .xpro-heading-separator-text::after, .xpro-heading-separator-icon::before, .xpro-heading-separator-icon::after',
-								'property'      => 'border-radius',
-							),
-						),
-						'adv_separator_margin' => array(
-							'type'        => 'dimension',
-							'label'       =>  __( 'Margin', 'xpro-bb-addons' ),
-							'units'          => array( 'px', 'vw', '%' ),
-							'slider'  => true,
-                            'responsive'  => true,
-							'default_unit' => 'px',
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '{node} [class*=xpro-heading-separator]',
-								'property' => 'margin',
-							),
-						),
-					)
-				),
-				'adv_shadow'       => array(
-					'title'         => __('Shadow Text', 'xpro-bb-addons'),
-					'collapsed'     => true,
-					'fields'        => array(
-                        'adv_shadow_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => __( 'Typography', 'xpro-bb-addons' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-                            ),
+                    )
+                ),
+                'adv_shadow'       => array(
+                    'title'     => __( 'Shadow Text', 'xpro-bb-addons' ),
+                    'collapsed' => true,
+                    'fields'    => array(
+                        'shadow_styles' => array(
+                            'type'         => 'form',
+                            'label'        => __( 'Shadow Text', 'xpro-bb-addons' ),
+                            'form'         => 'xpro_adv_heading_shadow_form',
+                            'preview_text' => 'Style Shadow Text',
                         ),
-						'adv_shadow_outline_type' => array(
-							'type'          => 'button-group',
-							'label'         => __( 'Outline Text', 'xpro-bb-addons' ),
-							'default'       => 'disable',
-							'options'       => array(
-								'enable'      => __( 'Enable', 'xpro-bb-addons' ),
-								'disable'      => __( 'Disable', 'xpro-bb-addons' ),
-							),
-							'toggle'        => array(
-								'enable'      => array(
-									'fields'        => array( 'adv_shadow_outline_text', 'adv_shadow_outline_width' ),
-								),
-                                'disable'      => array(
-                                    'fields'        => array( 'adv_shadow_color_type', 'adv_shadow_background_type'),
-                                ),
-							)
-						),
-						'adv_shadow_outline_text' => array(
-							'type'         => 'color',
-							'label'        => __( 'Stroke Color', 'xpro-bb-addons' ),
-							'show_reset'    => true,
-							'show_alpha'    => true,
-							'default'    => '#2b2b2b',
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property' => '-webkit-text-stroke-color',
-							),
-						),
-						'adv_shadow_outline_width' => array(
-							'type'        => 'unit',
-							'label'       =>  __( 'Stroke Width', 'xpro-bb-addons' ),
-							'units'          => array( 'px', '%' ),
-							'slider'  => true,
-							'default' => 1,
-							'default_unit' => 'px',
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property' => '-webkit-text-stroke-width',
-							),
-						),
-						'adv_shadow_color_type' => array(
-							'type'          => 'button-group',
-							'label'         => __( 'Color Type', 'xpro-bb-addons' ),
-							'default'       => 'none',
-							'options'       => array(
-                                'none'      => __( 'None', 'xpro-bb-addons' ),
-								'color'      => __( 'Color', 'xpro-bb-addons' ),
-								'gradient'      => __( 'Gradient', 'xpro-bb-addons' ),
-							),
-							'toggle'        => array(
-								'color'      => array(
-									'fields'        => array( 'adv_shadow_color' ),
-								),
-								'gradient'      => array(
-									'fields'        => array( 'adv_shadow_gradient' ),
-								),
-							)
-						),
-						'adv_shadow_color' => array(
-							'type'          => 'color',
-							'label'         => 'Color ',
-							'show_reset'    => true,
-							'show_alpha'    => true,
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property' => 'color',
-							),
-						),
-						'adv_shadow_gradient' => array(
-							'type'    => 'gradient',
-							'label'   => ' ',
-							'default'    => array(
-								'colors'    => array(
-									'0'            => '83c4b1',
-									'1'            => '6d9a8d',
-								),
-							),
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property' => 'background-image',
-							),
-						),
-						'adv_shadow_background_type' => array(
-							'type'          => 'button-group',
-							'label'         => __( 'Background Type', 'xpro-bb-addons' ),
-							'default'       => 'none',
-							'options'       => array(
-								'none'      => __( 'None', 'xpro-bb-addons' ),
-								'color'      => __( 'Color', 'xpro-bb-addons' ),
-								'gradient'      => __( 'Gradient', 'xpro-bb-addons' ),
-							),
-							'toggle'        => array(
-								'color'      => array(
-									'fields'        => array( 'adv_shadow_background' ),
-								),
-								'gradient'      => array(
-									'fields'        => array( 'adv_shadow_background_gradient' ),
-								),
-							)
-						),
-						'adv_shadow_background' => array(
-							'type'          => 'color',
-							'label'         => ' ',
-							'show_reset'    => true,
-							'show_alpha'    => true,
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property' => 'background-color',
-							),
-						),
-						'adv_shadow_background_gradient' => array(
-							'type'    => 'gradient',
-							'label'   => ' ',
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property' => 'background-image',
-							),
-						),
-						'adv_shadow_transform' => array(
-							'type'          => 'button-group',
-							'label'         => __( 'Transform', 'xpro-bb-addons' ),
-							'default'       => 'disable',
-							'options'       => array(
-								'enable'      => __( 'Enable', 'xpro-bb-addons' ),
-								'disable'      => __( 'Disable', 'xpro-bb-addons' ),
-							),
-							'toggle'        => array(
-								'enable'      => array(
-									'fields'        => array( 'adv_shadow_horizontal_offset', 'adv_shadow_vertical_offset',
-										'adv_shadow_rotate', 'adv_shadow_origin'),
-								),
-							),
-						),
-						'adv_shadow_horizontal_offset' => array(
-							'type'         => 'unit',
-							'label'        => 'Horizontal Offset',
-							'units'          => array( 'px', '%', 'em' ),
-							'responsive' => 'true',
-							'slider' => array(
-								'px'    => array(
-									'min' => -1000,
-									'max' => 1000,
-									'step'    => 1,
-								),
-								'%'    => array(
-									'min' => -1000,
-									'max' => 1000,
-									'step'    => 1,
-								),
-								'em'    => array(
-									'min' => -1000,
-									'max' => 1000,
-									'step'    => 1,
-								),
-							),
-							'default_unit' => 'px',
-							'preview'    => array(
-								'type'          => 'css',
-								'selector'      => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property'      => '--xpro-shadow-translate-x',
-							),
-						),
-						'adv_shadow_vertical_offset' => array(
-							'type'         => 'unit',
-							'label'        => 'Vertical Offset',
-							'units'          => array( 'px', '%', 'em' ),
-							'responsive' => 'true',
-							'slider' => array(
-								'px'    => array(
-									'min' => -1000,
-									'max' => 1000,
-									'step'    => 1,
-								),
-								'%'    => array(
-									'min' => -1000,
-									'max' => 1000,
-									'step'    => 1,
-								),
-								'em'    => array(
-									'min' => -1000,
-									'max' => 1000,
-									'step'    => 1,
-								),
-							),
-							'default_unit' => 'px',
-							'preview'    => array(
-								'type'          => 'css',
-								'selector'      => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property'      => '--xpro-shadow-translate-y',
-							),
-						),
-						'adv_shadow_rotate' => array(
-							'type'         => 'unit',
-							'label'        => 'Rotate',
-							'units'          => array( 'deg'),
-							'responsive' => 'true',
-							'slider' => array(
-								'deg'    => array(
-									'min' => -360,
-									'max' => 360,
-									'step'    => 1,
-								)
-							),
-							'default_unit' => 'deg',
-							'preview'    => array(
-								'type'          => 'css',
-								'selector'      => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property'      => '--xpro-shadow-rotate',
-							),
-						),
-						'adv_shadow_origin' => array(
-							'type'          => 'select',
-							'label'         => __( 'Transform Origin', 'xpro-bb-addons' ),
-							'default'       => 'center center',
-							'options'       => array(
-								'center center'      => __( 'Center Center', 'xpro-bb-addons' ),
-								'center left'      => __( 'Center Left', 'xpro-bb-addons' ),
-								'center right'      => __( 'Center Right', 'xpro-bb-addons' ),
-								'top center'      => __( 'Top Center', 'xpro-bb-addons' ),
-								'top left'      => __( 'Top Left', 'xpro-bb-addons' ),
-								'top right'      => __( 'Top Right', 'xpro-bb-addons' ),
-								'bottom center'      => __( 'Bottom Center', 'xpro-bb-addons' ),
-								'bottom left'      => __( 'Bottom Left', 'xpro-bb-addons' ),
-								'bottom right'      => __( 'Bottom Right', 'xpro-bb-addons' ),
-							),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property' => 'transform-origin'
-							),
-						),
-						'adv_shadow_border' => array(
-							'type'       => 'border',
-							'label'      => 'Border',
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-							),
-						),
-						'adv_shadow_padding' => array(
-							'type'        => 'dimension',
-							'label'       =>  __( 'Padding', 'xpro-bb-addons' ),
-							'units'          => array( 'px', 'vw', '%' ),
-							'slider'  => true,
-                            'responsive'  => true,
-							'default_unit' => 'px',
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
-								'property' => 'padding',
-							),
-						),
-					)
-				),
+                    ),
+                ),
 			)
 		),
 	));
+
+    /**
+     * Register a settings form to use in the "form" field type above.
+     */
+    FLBuilder::register_settings_form(
+        'xpro_adv_heading_separator_form',
+        array(
+            'title' => __( 'Separator Text', 'xpro-bb-addons' ),
+            'tabs'  => array(
+                'general' => array(
+                    'title'    => __( 'Separator Text', 'xpro-bb-addons' ),
+                    'sections' => array(
+                        'adv_separator_settings'       => array(
+                            'title'         => __('Separator', 'xpro-bb-addons'),
+                            'fields'        => array(
+                                'adv_separator_style' => array(
+                                    'type'          => 'select',
+                                    'label'         => __( 'Style', 'xpro-bb-addons' ),
+                                    'default'       => 'text',
+                                    'options'       => array(
+                                        'text'      => __( 'Text', 'xpro-bb-addons' ),
+                                        'icon'      => __( 'Icon', 'xpro-bb-addons' ),
+                                        'simple'      => __( 'Simple', 'xpro-bb-addons' ),
+                                        'double'      => __( 'Double', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'text'      => array(
+                                            'fields'        => array( 'adv_separator_title', 'adv_separator_text_typography',
+                                                'adv_separator_text_color', 'adv_separator_after_before_color', 'adv_separator_width',
+                                                'adv_separator_height', 'adv_separator_border_radius', 'adv_separator_margin'),
+                                        ),
+                                        'icon'      => array(
+                                            'fields'        => array( 'adv_separator_icon', 'adv_separator_icon_size', 'adv_separator_icon_background_size',
+                                                'adv_separator_icon_color', 'adv_separator_icon_background_color', 'adv_separator_icon_border',
+                                                'adv_separator_after_before_color', 'adv_separator_width', 'adv_separator_height', 'separator_border',
+                                                'adv_separator_border_radius', 'adv_separator_margin'),
+                                        ),
+                                        'simple'      => array(
+                                            'fields'        => array( 'adv_separator_width', 'adv_separator_height', 'adv_separator_after_before_color',
+                                                'adv_separator_border_radius', 'adv_separator_margin'),
+                                        ),
+                                        'double'      => array(
+                                            'fields'        => array( 'adv_separator_width', 'adv_separator_height', 'adv_separator_after_before_color',
+                                                'adv_separator_border_radius', 'adv_separator_margin'),
+                                        ),
+                                    )
+                                ),
+                                'adv_separator_icon' => array(
+                                    'type'          => 'icon',
+                                    'label'         => __( 'Icon', 'xpro-bb-addons' ),
+                                    'show_remove'   => true,
+                                    'default' => 'fas fa-gem',
+
+                                ),
+                                'adv_separator_title' => array(
+                                    'type'          => 'text',
+                                    'label'         => __( 'Title', 'xpro-bb-addons' ),
+                                    'placeholder'   => __( 'Separator Text Here', 'xpro-bb-addons' ),
+                                    'default'   => __( 'Separator Text Here', 'xpro-bb-addons' ),
+                                ),
+                                'adv_separator_position' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Position', 'xpro-bb-addons' ),
+                                    'default'       => 'after-title',
+                                    'options'       => array(
+                                        'before-title'      => __( 'Before Title', 'xpro-bb-addons' ),
+                                        'after-title'      => __( 'After Title', 'xpro-bb-addons' ),
+                                    ),
+                                ),
+                            )
+                        ),
+                        'adv_separator_style'       => array(
+                            'title'         => __('Separator', 'xpro-bb-addons'),
+                            'collapsed'     => true,
+                            'fields'        => array(
+                                'adv_separator_text_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '{node} .xpro-heading-separator-text',
+                                    ),
+                                ),
+                                'adv_separator_text_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Text Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-separator-text',
+                                        'property' => 'color',
+                                    ),
+                                ),
+                                'adv_separator_icon_size' => array(
+                                    'type'        => 'unit',
+                                    'label'       => 'Icon Size',
+                                    'units'          => array( 'px', 'vw', '%' ),
+                                    'slider'  => true,
+                                    'responsive' => true ,
+                                    'default_unit' => 'px',
+                                    'preview'    => array(
+                                        'type'          => 'css',
+                                        'selector'      => '{node} .xpro-heading-separator-icon > i',
+                                        'property'      => 'font-size',
+                                    ),
+                                ),
+                                'adv_separator_icon_background_size' => array(
+                                    'type'        => 'unit',
+                                    'label'       => 'Background Size',
+                                    'units'          => array( 'px', 'vw', '%' ),
+                                    'slider'  => true,
+                                    'responsive' => true ,
+                                    'default_unit' => 'px',
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'rules'           => array(
+                                            array(
+                                                'selector'      => '{node} .xpro-heading-separator-icon > i',
+                                                'property'      => 'width',
+                                                'unit'          => 'px'
+                                            ),
+                                            array(
+                                                'selector'      => '{node} .xpro-heading-separator-icon > i',
+                                                'property'      => 'height',
+                                                'unit'          => 'px'
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                                'adv_separator_icon_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-separator-icon > i',
+                                        'property' => 'color',
+                                    ),
+                                ),
+                                'adv_separator_icon_background_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-separator-icon > i',
+                                        'property' => 'background-color',
+                                    ),
+                                ),
+                                'adv_separator_icon_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'My Border',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-separator-icon > i',
+                                    ),
+                                ),
+                                'adv_separator_after_before_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Separator Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                ),
+                                'adv_separator_width' => array(
+                                    'type'         => 'unit',
+                                    'label'        => 'Width',
+                                    'slider'  =>  'ture',
+                                    'units'          => array( 'px', 'vw', '%' ),
+                                    'default_unit' => 'px',
+                                    'default' => 60,
+                                    'responsive'   => true,
+                                ),
+                                'adv_separator_height' => array(
+                                    'type'         => 'unit',
+                                    'label'        => 'Height',
+                                    'slider'  =>  true,
+                                    'units'          => array( 'px'),
+                                    'default_unit' => 'px',
+                                    'default' => 1,
+                                    'responsive'   => true,
+                                ),
+                                'adv_separator_border_radius' => array(
+                                    'type'         => 'unit',
+                                    'label'        => 'Border Radius',
+                                    'slider'  =>  'ture',
+                                    'units'          => array( 'px'),
+                                    'default_unit' => 'px',
+                                    'preview'    => array(
+                                        'type'          => 'css',
+                                        'selector'      => '{node} .xpro-heading-separator-simple::before, .xpro-heading-separator-double:before, .xpro-heading-separator-double:after, .xpro-heading-separator-text::before, .xpro-heading-separator-text::after, .xpro-heading-separator-icon::before, .xpro-heading-separator-icon::after',
+                                        'property'      => 'border-radius',
+                                    ),
+                                ),
+                                'adv_separator_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       =>  __( 'Margin', 'xpro-bb-addons' ),
+                                    'units'          => array( 'px', 'vw', '%' ),
+                                    'slider'  => true,
+                                    'responsive'  => true,
+                                    'default_unit' => 'px',
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} [class*=xpro-heading-separator]',
+                                        'property' => 'margin',
+                                    ),
+                                ),
+                            )
+                        ),
+                    ),
+                ),
+            ),
+        )
+    );
+
+    /**
+     * Register a settings form to use in the "form" field type above.
+     */
+    FLBuilder::register_settings_form(
+        'xpro_adv_heading_shadow_form',
+        array(
+            'title' => __( 'Shadow Text', 'xpro-bb-addons' ),
+            'tabs'  => array(
+                'general' => array(
+                    'title'    => __( 'Shadow Text', 'xpro-bb-addons' ),
+                    'sections' => array(
+                        'adv_shadow'       => array(
+                            'title'         => __('Shadow Text', 'xpro-bb-addons'),
+                            'fields'        => array(
+                                'adv_shadow_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => __( 'Typography', 'xpro-bb-addons' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                    ),
+                                ),
+                                'adv_shadow_outline_type' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Outline Text', 'xpro-bb-addons' ),
+                                    'default'       => 'disable',
+                                    'options'       => array(
+                                        'enable'      => __( 'Enable', 'xpro-bb-addons' ),
+                                        'disable'      => __( 'Disable', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'enable'      => array(
+                                            'fields'        => array( 'adv_shadow_outline_text', 'adv_shadow_outline_width' ),
+                                        ),
+                                        'disable'      => array(
+                                            'fields'        => array( 'adv_shadow_color_type', 'adv_shadow_background_type'),
+                                        ),
+                                    )
+                                ),
+                                'adv_shadow_outline_text' => array(
+                                    'type'         => 'color',
+                                    'label'        => __( 'Stroke Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'default'    => '#2b2b2b',
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property' => '-webkit-text-stroke-color',
+                                    ),
+                                ),
+                                'adv_shadow_outline_width' => array(
+                                    'type'        => 'unit',
+                                    'label'       =>  __( 'Stroke Width', 'xpro-bb-addons' ),
+                                    'units'          => array( 'px', '%' ),
+                                    'slider'  => true,
+                                    'default' => 1,
+                                    'default_unit' => 'px',
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property' => '-webkit-text-stroke-width',
+                                    ),
+                                ),
+                                'adv_shadow_color_type' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Color Type', 'xpro-bb-addons' ),
+                                    'default'       => 'none',
+                                    'options'       => array(
+                                        'none'      => __( 'None', 'xpro-bb-addons' ),
+                                        'color'      => __( 'Color', 'xpro-bb-addons' ),
+                                        'gradient'      => __( 'Gradient', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'color'      => array(
+                                            'fields'        => array( 'adv_shadow_color' ),
+                                        ),
+                                        'gradient'      => array(
+                                            'fields'        => array( 'adv_shadow_gradient' ),
+                                        ),
+                                    )
+                                ),
+                                'adv_shadow_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => 'Color ',
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property' => 'color',
+                                    ),
+                                ),
+                                'adv_shadow_gradient' => array(
+                                    'type'    => 'gradient',
+                                    'label'   => ' ',
+                                    'default'    => array(
+                                        'colors'    => array(
+                                            '0'            => '83c4b1',
+                                            '1'            => '6d9a8d',
+                                        ),
+                                    ),
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property' => 'background-image',
+                                    ),
+                                ),
+                                'adv_shadow_background_type' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Background Type', 'xpro-bb-addons' ),
+                                    'default'       => 'none',
+                                    'options'       => array(
+                                        'none'      => __( 'None', 'xpro-bb-addons' ),
+                                        'color'      => __( 'Color', 'xpro-bb-addons' ),
+                                        'gradient'      => __( 'Gradient', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'color'      => array(
+                                            'fields'        => array( 'adv_shadow_background' ),
+                                        ),
+                                        'gradient'      => array(
+                                            'fields'        => array( 'adv_shadow_background_gradient' ),
+                                        ),
+                                    )
+                                ),
+                                'adv_shadow_background' => array(
+                                    'type'          => 'color',
+                                    'label'         => ' ',
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property' => 'background-color',
+                                    ),
+                                ),
+                                'adv_shadow_background_gradient' => array(
+                                    'type'    => 'gradient',
+                                    'label'   => ' ',
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property' => 'background-image',
+                                    ),
+                                ),
+                                'adv_shadow_transform' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Transform', 'xpro-bb-addons' ),
+                                    'default'       => 'disable',
+                                    'options'       => array(
+                                        'enable'      => __( 'Enable', 'xpro-bb-addons' ),
+                                        'disable'      => __( 'Disable', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'enable'      => array(
+                                            'fields'        => array( 'adv_shadow_horizontal_offset', 'adv_shadow_vertical_offset',
+                                                'adv_shadow_rotate', 'adv_shadow_origin'),
+                                        ),
+                                    ),
+                                ),
+                                'adv_shadow_horizontal_offset' => array(
+                                    'type'         => 'unit',
+                                    'label'        => 'Horizontal Offset',
+                                    'units'          => array( 'px', '%', 'em' ),
+                                    'responsive' => 'true',
+                                    'slider' => array(
+                                        'px'    => array(
+                                            'min' => -1000,
+                                            'max' => 1000,
+                                            'step'    => 1,
+                                        ),
+                                        '%'    => array(
+                                            'min' => -1000,
+                                            'max' => 1000,
+                                            'step'    => 1,
+                                        ),
+                                        'em'    => array(
+                                            'min' => -1000,
+                                            'max' => 1000,
+                                            'step'    => 1,
+                                        ),
+                                    ),
+                                    'default_unit' => 'px',
+                                    'preview'    => array(
+                                        'type'          => 'css',
+                                        'selector'      => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property'      => '--xpro-shadow-translate-x',
+                                    ),
+                                ),
+                                'adv_shadow_vertical_offset' => array(
+                                    'type'         => 'unit',
+                                    'label'        => 'Vertical Offset',
+                                    'units'          => array( 'px', '%', 'em' ),
+                                    'responsive' => 'true',
+                                    'slider' => array(
+                                        'px'    => array(
+                                            'min' => -1000,
+                                            'max' => 1000,
+                                            'step'    => 1,
+                                        ),
+                                        '%'    => array(
+                                            'min' => -1000,
+                                            'max' => 1000,
+                                            'step'    => 1,
+                                        ),
+                                        'em'    => array(
+                                            'min' => -1000,
+                                            'max' => 1000,
+                                            'step'    => 1,
+                                        ),
+                                    ),
+                                    'default_unit' => 'px',
+                                    'preview'    => array(
+                                        'type'          => 'css',
+                                        'selector'      => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property'      => '--xpro-shadow-translate-y',
+                                    ),
+                                ),
+                                'adv_shadow_rotate' => array(
+                                    'type'         => 'unit',
+                                    'label'        => 'Rotate',
+                                    'units'          => array( 'deg'),
+                                    'responsive' => 'true',
+                                    'slider' => array(
+                                        'deg'    => array(
+                                            'min' => -360,
+                                            'max' => 360,
+                                            'step'    => 1,
+                                        )
+                                    ),
+                                    'default_unit' => 'deg',
+                                    'preview'    => array(
+                                        'type'          => 'css',
+                                        'selector'      => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property'      => '--xpro-shadow-rotate',
+                                    ),
+                                ),
+                                'adv_shadow_origin' => array(
+                                    'type'          => 'select',
+                                    'label'         => __( 'Transform Origin', 'xpro-bb-addons' ),
+                                    'default'       => 'center center',
+                                    'options'       => array(
+                                        'center center'      => __( 'Center Center', 'xpro-bb-addons' ),
+                                        'center left'      => __( 'Center Left', 'xpro-bb-addons' ),
+                                        'center right'      => __( 'Center Right', 'xpro-bb-addons' ),
+                                        'top center'      => __( 'Top Center', 'xpro-bb-addons' ),
+                                        'top left'      => __( 'Top Left', 'xpro-bb-addons' ),
+                                        'top right'      => __( 'Top Right', 'xpro-bb-addons' ),
+                                        'bottom center'      => __( 'Bottom Center', 'xpro-bb-addons' ),
+                                        'bottom left'      => __( 'Bottom Left', 'xpro-bb-addons' ),
+                                        'bottom right'      => __( 'Bottom Right', 'xpro-bb-addons' ),
+                                    ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property' => 'transform-origin'
+                                    ),
+                                ),
+                                'adv_shadow_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                    ),
+                                ),
+                                'adv_shadow_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       =>  __( 'Padding', 'xpro-bb-addons' ),
+                                    'units'          => array( 'px', 'vw', '%' ),
+                                    'slider'  => true,
+                                    'responsive'  => true,
+                                    'default_unit' => 'px',
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '{node} .xpro-heading-wrapper .xpro-shadow-text',
+                                        'property' => 'padding',
+                                    ),
+                                ),
+                            )
+                        ),
+                    ),
+                ),
+            ),
+        )
+    );
 	
 }

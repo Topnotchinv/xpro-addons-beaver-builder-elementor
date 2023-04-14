@@ -650,13 +650,13 @@ FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_title_typography',
-		'selector'     => ".fl-node-$id .xpro-heading-title",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-title",
 	)
 );
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-title",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-title",
 		'props'    => array(
 			'color' => $settings->adv_title_color,
 		),
@@ -665,7 +665,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-title",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-title",
 		'enabled'  => 'gradient' === $settings->adv_title_color_type,
 		'props'    => array(
 			'background-image'        => FLBuilderColor::gradient( $settings->adv_title_gradient ),
@@ -678,7 +678,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-title",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-title",
 		'enabled'  => 'photo' === $settings->adv_title_color_type,
 		'props'    => array(
 			'background-image'        => $settings->title_image_masking_src,
@@ -692,7 +692,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-title",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-title",
 		'props'    => array(
 			'background-color' => $settings->adv_title_background,
 		),
@@ -701,7 +701,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-title",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-title",
 		'enabled'  => 'gradient' === $settings->adv_title_background_type,
 		'props'    => array(
 			'background-image' => FLBuilderColor::gradient( $settings->adv_title_background_gradient ),
@@ -713,7 +713,7 @@ FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_title_border',
-		'selector'     => ".fl-node-$id .xpro-heading-title",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-title",
 	)
 );
 
@@ -721,7 +721,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_title_margin',
-		'selector'     => ".fl-node-$id .xpro-heading-title",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-title",
 		'unit'         => 'px',
 		'props'        => array(
 			'margin-top'    => 'title_margin_top',
@@ -736,7 +736,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_title_padding',
-		'selector'     => ".fl-node-$id .xpro-heading-title",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-title",
 		'unit'         => 'px',
 		'props'        => array(
 			'padding-top'    => 'title_padding_top',
@@ -754,13 +754,13 @@ FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_center_title_typography',
-		'selector'     => ".fl-node-$id .xpro-title-focus",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-title-focus",
 	)
 );
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-title-focus",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-title-focus",
 		'props'    => array(
 			'color' => $settings->adv_center_title_color,
 		),
@@ -769,7 +769,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-title-focus",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-title-focus",
 		'enabled'  => 'gradient' === $settings->adv_center_title_color_type,
 		'props'    => array(
 			'background-image'        => FLBuilderColor::gradient( $settings->adv_center_title_gradient ),
@@ -782,7 +782,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-title-focus",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-title-focus",
 		'enabled'  => 'photo' === $settings->adv_center_title_color_type,
 		'props'    => array(
 			'background-image'        => $settings->center_title_image_masking_src,
@@ -796,7 +796,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-title-focus",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-title-focus",
 		'props'    => array(
 			'background-color' => $settings->adv_center_title_background,
 		),
@@ -805,7 +805,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-title-focus",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-title-focus",
 		'enabled'  => 'gradient' === $settings->adv_center_title_background_type,
 		'props'    => array(
 			'background-image' => FLBuilderColor::gradient( $settings->adv_center_title_background_gradient ),
@@ -817,7 +817,7 @@ FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_center_title_border',
-		'selector'     => ".fl-node-$id .xpro-title-focus",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-title-focus",
 	)
 );
 
@@ -825,7 +825,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_center_title_padding',
-		'selector'     => ".fl-node-$id .xpro-title-focus",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-title-focus",
 		'unit'         => 'px',
 		'props'        => array(
 			'padding-top'    => 'adv_center_title_padding_top',
@@ -843,13 +843,13 @@ FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_subtitle_typography',
-		'selector'     => ".fl-node-$id .xpro-heading-subtitle",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-subtitle",
 	)
 );
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-subtitle",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-subtitle",
 		'props'    => array(
 			'color' => $settings->adv_subtitle_color,
 		),
@@ -858,7 +858,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-subtitle",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-subtitle",
 		'enabled'  => 'gradient' === $settings->adv_subtitle_color_type,
 		'props'    => array(
 			'background-image'        => FLBuilderColor::gradient( $settings->adv_subtitle_gradient ),
@@ -871,7 +871,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-subtitle",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-subtitle",
 		'enabled'  => 'photo' === $settings->adv_subtitle_color_type,
 		'props'    => array(
 			'background-image'        => $settings->subtitle_image_masking_src,
@@ -886,7 +886,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-subtitle",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-subtitle",
 		'props'    => array(
 			'background-color' => $settings->adv_subtitle_background,
 		),
@@ -895,7 +895,7 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-subtitle",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-subtitle",
 		'enabled'  => 'gradient' === $settings->adv_subtitle_background_type,
 		'props'    => array(
 			'background-image' => FLBuilderColor::gradient( $settings->adv_title_background_gradient ),
@@ -907,7 +907,7 @@ FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_subtitle_border',
-		'selector'     => ".fl-node-$id .xpro-heading-subtitle",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-subtitle",
 	)
 );
 
@@ -915,7 +915,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_subtitle_margin',
-		'selector'     => ".fl-node-$id .xpro-heading-subtitle",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-subtitle",
 		'unit'         => 'px',
 		'props'        => array(
 			'margin-top'    => 'subtitle_margin_top',
@@ -930,7 +930,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_subtitle_padding',
-		'selector'     => ".fl-node-$id .xpro-heading-subtitle",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-subtitle",
 		'unit'         => 'px',
 		'props'        => array(
 			'padding-top'    => 'subtitle_padding_top',
@@ -948,13 +948,13 @@ FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_description_typography',
-		'selector'     => ".fl-node-$id .xpro-heading-description",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-description",
 	)
 );
 
 FLBuilderCSS::rule(
 	array(
-		'selector' => ".fl-node-$id .xpro-heading-description",
+		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-description",
 		'props'    => array(
 			'color' => $settings->adv_description_color,
 		),
@@ -965,7 +965,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'adv_description_margin',
-		'selector'     => ".fl-node-$id .xpro-heading-description",
+		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-heading-description",
 		'unit'         => 'px',
 		'props'        => array(
 			'margin-top'    => 'description_margin_top',
@@ -980,7 +980,7 @@ FLBuilderCSS::dimension_field_rule(
    ================================ */
 FLBuilderCSS::typography_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->adv_separator_styles,
 		'setting_name' => 'adv_separator_text_typography',
 		'selector'     => ".fl-node-$id .xpro-heading-separator-text",
 	)
@@ -990,7 +990,7 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-heading-separator-text",
 		'props'    => array(
-			'color' => $settings->adv_separator_text_color,
+			'color' => $settings->adv_separator_styles->adv_separator_text_color,
 		),
 	)
 );
@@ -999,14 +999,14 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-heading-separator-simple::before,.fl-node-$id .xpro-heading-separator-double:before,.fl-node-$id .xpro-heading-separator-double:after,.fl-node-$id .xpro-heading-separator-text::before,.fl-node-$id .xpro-heading-separator-text::after,.fl-node-$id .xpro-heading-separator-icon::before,.fl-node-$id .xpro-heading-separator-icon::after",
 		'props'    => array(
-			'border-color' => $settings->adv_separator_after_before_color,
+			'border-color' => $settings->adv_separator_styles->adv_separator_after_before_color,
 		),
 	)
 );
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->adv_separator_styles,
 		'setting_name' => 'adv_separator_width',
 		'selector'     => ".fl-node-$id .xpro-heading-separator-simple::before,.fl-node-$id .xpro-heading-separator-double:before,.fl-node-$id .xpro-heading-separator-double:after,.fl-node-$id .xpro-heading-separator-text::before,.fl-node-$id .xpro-heading-separator-text::after,.fl-node-$id .xpro-heading-separator-icon::before,.fl-node-$id .xpro-heading-separator-icon::after",
 		'unit'         => 'px',
@@ -1017,19 +1017,19 @@ FLBuilderCSS::responsive_rule(
 // separator width
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->adv_separator_styles,
 		'setting_name' => 'adv_separator_width',
 		'selector'     => ".fl-node-$id .xpro-heading-separator-simple,.fl-node-$id .xpro-heading-separator-double,.fl-node-$id .xpro-heading-separator-text,.fl-node-$id .xpro-heading-separator-icon",
 		'props'        => array(
-			'padding-right' => ( $settings->adv_separator_width ) ? $settings->adv_separator_width . 'px' : '',
-			'padding-left'  => ( $settings->adv_separator_width ) ? $settings->adv_separator_width . 'px' : '',
+			'padding-right' => ( $settings->adv_separator_styles->adv_separator_width ) ? $settings->adv_separator_styles->adv_separator_width . 'px' : '',
+			'padding-left'  => ( $settings->adv_separator_styles->adv_separator_width ) ? $settings->adv_separator_styles->adv_separator_width . 'px' : '',
 		),
 	)
 );
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->adv_separator_styles,
 		'setting_name' => 'adv_separator_height',
 		'selector'     => ".fl-node-$id .xpro-heading-separator-simple::before,.fl-node-$id .xpro-heading-separator-double:before,.fl-node-$id .xpro-heading-separator-double:after,.fl-node-$id .xpro-heading-separator-text::before,.fl-node-$id .xpro-heading-separator-text::after,.fl-node-$id .xpro-heading-separator-icon::before,.fl-node-$id .xpro-heading-separator-icon::after",
 		'unit'         => 'px',
@@ -1039,7 +1039,7 @@ FLBuilderCSS::responsive_rule(
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->adv_separator_styles,
 		'setting_name' => 'adv_separator_border_radius',
 		'selector'     => ".fl-node-$id .xpro-heading-separator-simple::before,.fl-node-$id .xpro-heading-separator-double:before,.fl-node-$id .xpro-heading-separator-double:after,.fl-node-$id .xpro-heading-separator-text::before,.fl-node-$id .xpro-heading-separator-text::after,.fl-node-$id .xpro-heading-separator-icon::before,.fl-node-$id .xpro-heading-separator-icon::after",
 		'prop'         => 'border-radius',
@@ -1048,7 +1048,7 @@ FLBuilderCSS::responsive_rule(
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->adv_separator_styles,
 		'setting_name' => 'adv_separator_margin',
 		'selector'     => ".fl-node-$id [class*=xpro-heading-separator]",
 		'unit'         => 'px',
@@ -1063,7 +1063,7 @@ FLBuilderCSS::dimension_field_rule(
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->adv_separator_styles,
 		'setting_name' => 'adv_separator_icon_size',
 		'selector'     => ".fl-node-$id .xpro-heading-separator-icon > i",
 		'prop'         => 'font-size',
@@ -1072,7 +1072,7 @@ FLBuilderCSS::responsive_rule(
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->adv_separator_styles,
 		'setting_name' => 'adv_separator_icon_background_size',
 		'selector'     => ".fl-node-$id .xpro-heading-separator-icon > i",
 		'prop'         => 'width',
@@ -1081,7 +1081,7 @@ FLBuilderCSS::responsive_rule(
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->adv_separator_styles,
 		'setting_name' => 'adv_separator_icon_background_size',
 		'selector'     => ".fl-node-$id .xpro-heading-separator-icon > i",
 		'prop'         => 'height',
@@ -1092,7 +1092,7 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-heading-separator-icon > i",
 		'props'    => array(
-			'color' => $settings->adv_separator_icon_color,
+			'color' => $settings->adv_separator_styles->adv_separator_icon_color,
 		),
 	)
 );
@@ -1101,58 +1101,58 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-heading-separator-icon > i",
 		'props'    => array(
-			'background-color' => $settings->adv_separator_icon_background_color,
+			'background-color' => $settings->adv_separator_styles->adv_separator_icon_background_color,
 		),
 	)
 );
 
 FLBuilderCSS::border_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->adv_separator_styles,
 		'setting_name' => 'adv_separator_icon_border',
 		'selector'     => ".fl-node-$id .xpro-heading-separator-icon > i",
 	)
 );
 
-FLBuilderCSS::rule(
-	array(
-		'selector' => ".fl-node-$id [class*=xpro-heading-separator-shape] > svg",
-		'props'    => array(
-			'fill' => $settings->adv_separator_shape_color,
-		),
-	)
-);
-
-FLBuilderCSS::responsive_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'adv_separator_shape_background_size',
-		'selector'     => ".fl-node-$id [class*=xpro-heading-separator-shape] > svg ",
-		'prop'         => 'width',
-	)
-);
-
-FLBuilderCSS::dimension_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'adv_separator_shape_margin',
-		'selector'     => ".fl-node-$id [class*=xpro-heading-separator-shape] > svg",
-		'unit'         => 'px',
-		'props'        => array(
-			'margin-top'    => 'separator_shape_margin_top',
-			'margin-right'  => 'separator_shape_margin_right',
-			'margin-bottom' => 'separator_shape_margin_bottom',
-			'margin-left'   => 'separator_shape_margin_left',
-		),
-	)
-);
+//FLBuilderCSS::rule(
+//	array(
+//		'selector' => ".fl-node-$id [class*=xpro-heading-separator-shape] > svg",
+//		'props'    => array(
+//			'fill' => $settings->adv_separator_styles->adv_separator_shape_color,
+//		),
+//	)
+//);
+//
+//FLBuilderCSS::responsive_rule(
+//	array(
+//		'settings'     => $settings->adv_separator_styles,
+//		'setting_name' => 'adv_separator_shape_background_size',
+//		'selector'     => ".fl-node-$id [class*=xpro-heading-separator-shape] > svg ",
+//		'prop'         => 'width',
+//	)
+//);
+//
+//FLBuilderCSS::dimension_field_rule(
+//	array(
+//		'settings'     => $settings->adv_separator_styles,
+//		'setting_name' => 'adv_separator_shape_margin',
+//		'selector'     => ".fl-node-$id [class*=xpro-heading-separator-shape] > svg",
+//		'unit'         => 'px',
+//		'props'        => array(
+//			'margin-top'    => 'separator_shape_margin_top',
+//			'margin-right'  => 'separator_shape_margin_right',
+//			'margin-bottom' => 'separator_shape_margin_bottom',
+//			'margin-left'   => 'separator_shape_margin_left',
+//		),
+//	)
+//);
 
 /* ================================
 	Style > Shadow
    ================================ */
 FLBuilderCSS::typography_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->shadow_styles,
 		'setting_name' => 'adv_shadow_typography',
 		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
 	)
@@ -1162,7 +1162,7 @@ FLBuilderCSS::rule(
 	array(
 		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
 		'setting_name' => 'adv_shadow_outline_text',
-		'enabled'      => 'enable' === $settings->adv_shadow_outline_type,
+		'enabled'      => 'enable' === $settings->shadow_styles->adv_shadow_outline_type,
 		'props'        => array(
 			'-webkit-text-fill-color' => '00000000',
 		),
@@ -1171,10 +1171,10 @@ FLBuilderCSS::rule(
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->shadow_styles,
 		'setting_name' => 'adv_shadow_outline_width',
 		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
-		'enabled'      => 'enable' === $settings->adv_shadow_outline_type,
+		'enabled'      => 'enable' === $settings->shadow_styles->adv_shadow_outline_type,
 		'prop'         => '-webkit-text-stroke-width',
 	)
 );
@@ -1182,9 +1182,9 @@ FLBuilderCSS::responsive_rule(
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
-		'enabled'  => 'enable' === $settings->adv_shadow_outline_type,
+		'enabled'  => 'enable' === $settings->shadow_styles->adv_shadow_outline_type,
 		'props'    => array(
-			'-webkit-text-stroke-color' => $settings->adv_shadow_outline_text,
+			'-webkit-text-stroke-color' => $settings->shadow_styles->adv_shadow_outline_text,
 		),
 	)
 );
@@ -1193,7 +1193,7 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
 		'props'    => array(
-			'color' => $settings->adv_shadow_color,
+			'color' => $settings->shadow_styles->adv_shadow_color,
 		),
 	)
 );
@@ -1201,9 +1201,9 @@ FLBuilderCSS::rule(
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
-		'enabled'  => 'gradient' === $settings->adv_shadow_color_type,
+		'enabled'  => 'gradient' === $settings->shadow_styles->adv_shadow_color_type,
 		'props'    => array(
-			'background-image'        => FLBuilderColor::gradient( $settings->adv_shadow_gradient ),
+			'background-image'        => FLBuilderColor::gradient( $settings->shadow_styles->adv_shadow_gradient ),
 			'-webkit-background-clip' => 'text',
 			'-webkit-text-fill-color' => 'ff000000',
 			'background-color'        => 'ff000000',
@@ -1215,7 +1215,7 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
 		'props'    => array(
-			'background-color' => $settings->adv_shadow_background,
+			'background-color' => $settings->shadow_styles->adv_shadow_background,
 		),
 	)
 );
@@ -1223,16 +1223,16 @@ FLBuilderCSS::rule(
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
-		'enabled'  => 'gradient' === $settings->adv_shadow_background_type,
+		'enabled'  => 'gradient' === $settings->shadow_styles->adv_shadow_background_type,
 		'props'    => array(
-			'background-image' => FLBuilderColor::gradient( $settings->adv_shadow_background_gradient ),
+			'background-image' => FLBuilderColor::gradient( $settings->shadow_styles->adv_shadow_background_gradient ),
 		),
 	)
 );
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->shadow_styles,
 		'setting_name' => 'adv_shadow_vertical_offset',
 		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
 		'prop'         => '--xpro-shadow-translate-y',
@@ -1242,7 +1242,7 @@ FLBuilderCSS::responsive_rule(
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->shadow_styles,
 		'setting_name' => 'adv_shadow_horizontal_offset',
 		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
 		'prop'         => '--xpro-shadow-translate-x',
@@ -1252,7 +1252,7 @@ FLBuilderCSS::responsive_rule(
 
 FLBuilderCSS::responsive_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->shadow_styles,
 		'setting_name' => 'adv_shadow_rotate',
 		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
 		'prop'         => '--xpro-shadow-rotate',
@@ -1264,14 +1264,14 @@ FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
 		'props'    => array(
-			'transform-origin' => $settings->adv_shadow_origin,
+			'transform-origin' => $settings->shadow_styles->adv_shadow_origin,
 		),
 	)
 );
 
 FLBuilderCSS::border_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->shadow_styles,
 		'setting_name' => 'adv_shadow_border',
 		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
 	)
@@ -1279,7 +1279,7 @@ FLBuilderCSS::border_field_rule(
 
 FLBuilderCSS::dimension_field_rule(
 	array(
-		'settings'     => $settings,
+		'settings'     => $settings->shadow_styles,
 		'setting_name' => 'adv_shadow_padding',
 		'selector'     => ".fl-node-$id .xpro-heading-wrapper .xpro-shadow-text",
 		'unit'         => 'px',

@@ -63,7 +63,6 @@ if (!function_exists('xpro_dashboard_templates')) {
                     $data = json_decode($json_merge,true);
 
                     $themeCount = 0;
-                    $slierCount = 0;
                     $galleryCount = 0;
                     $portfolioCount = 0;
                     $blocksCount = 0;
@@ -85,10 +84,6 @@ if (!function_exists('xpro_dashboard_templates')) {
                                 $tags = array_unique(explode(' ', $d['tags']));
                                 foreach ($tags as $f){ $templatesTags[] = $f; }
                             }
-                            if($d['category'] == 'slider'){
-                                $tags = array_unique(explode(' ', $d['tags']));
-                                foreach ($tags as $f){ $sliderTags[] = $f; }
-                            }
                             if($d['category'] == 'gallery'){
                                 $tags = array_unique(explode(' ', $d['tags']));
                                 foreach ($tags as $f){ $galleryTags[] = $f; }
@@ -103,7 +98,6 @@ if (!function_exists('xpro_dashboard_templates')) {
                             }
 
                             if($d['category'] == 'themes'){$themeCount++;}
-                            if($d['category'] == 'slider'){$slierCount++;}
                             if($d['category'] == 'gallery'){$galleryCount++;}
                             if($d['category'] == 'portfolio'){$portfolioCount++;}
                             if($d['category'] == 'sections'){$blocksCount++;}
@@ -158,16 +152,6 @@ if (!function_exists('xpro_dashboard_templates')) {
                                                 <span class="active" data-tag-filter="all">All</span>
                                                 <?php
                                                 foreach (array_unique($templatesTags) as $tag){ ?>
-                                                    <span data-tag-filter="<?php echo $tag; ?>"><?php echo str_replace('-', ' ', $tag); ?></span>
-                                                <?php }
-                                                ?>
-                                            </div>
-                                        </li>
-                                        <li><a class="slider" href="#xpro-slider"> <?php esc_attr_e( 'Slider', 'xpro-bb-addons' ); ?> <span class="xpro-count"></span></a>
-                                            <div class="xpro-demo-theme-tags owl-carousel">
-                                                <span class="active" data-tag-filter="all">All</span>
-                                                <?php
-                                                foreach (array_unique($sliderTags) as $tag){ ?>
                                                     <span data-tag-filter="<?php echo $tag; ?>"><?php echo str_replace('-', ' ', $tag); ?></span>
                                                 <?php }
                                                 ?>
@@ -308,14 +292,6 @@ if (!function_exists('xpro_dashboard_templates')) {
                                     ?>
                                 </div>
 
-                                <div id="xpro-slider" class="xpro-dashboad-tab-content">
-                                    <?php
-                                    // Print Templates HTML.
-                                    XPRO_Cloud_Templates::template_html( 'slider' );
-
-                                    ?>
-                                </div>
-
                                 <div id="xpro-gallery" class="xpro-dashboad-tab-content">
                                     <?php
                                     // Print Templates HTML.
@@ -394,32 +370,7 @@ if (!function_exists('xpro_dashboard_templates')) {
             </form>
         </div>
 
-        <!-- Slider Popup Pro -->
-        <div class="xpro-bb-popup-wrapper" data-popup-type="slider-pro">
-            <div class="xpro-bb-popup">
-                <span class="xpro-bb-popup-close-btn">
-                    <i class="dashicons dashicons-no-alt"></i>
-                </span>
-                <h3>XPRO SLIDER REQUIRED</h3>
-                <h4>For Pro Slider Templates you have to download and install Xpro Slider Pro For Beaver Builder.</h4>
-                <a href="https://www.wpxpro.com/downloads/xpro-slider-for-beaver-builder/" class="xpro-bb-popup-button" target="_blank">CLICK HERE TO GET</a>
-                <p>No thanks! I would rather go the hard way <br/> and design my own template</p>
-            </div>
-        </div>
-        <!-- Slider Popup Pro -->
-        <!-- Slider Popup Lite -->
-        <div class="xpro-bb-popup-wrapper" data-popup-type="slider-lite">
-            <div class="xpro-bb-popup">
-                <span class="xpro-bb-popup-close-btn">
-                    <i class="dashicons dashicons-no-alt"></i>
-                </span>
-                <h3>XPRO SLIDER REQUIRED</h3>
-                <h4>For Free Slider Templates you have to download and install Xpro Slider For Beaver Builder from WordPress.</h4>
-                <a href="https://wordpress.org/plugins/multi-layer-slider-beaver-builder-elementor/" class="xpro-bb-popup-button" target="_blank">CLICK HERE TO GET</a>
-                <p>No thanks! I would rather go the hard way <br/> and design my own template</p>
-            </div>
-        </div>
-        <!-- Slider Popup Lite -->
+
         <!-- Theme Import Popup -->
         <div class="xpro-bb-popup-wrapper" data-popup-type="xpro-themes">
             <div class="xpro-bb-popup">

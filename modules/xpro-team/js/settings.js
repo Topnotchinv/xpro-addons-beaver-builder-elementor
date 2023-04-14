@@ -79,14 +79,14 @@
         {
             var form = $('.fl-builder-settings');
 			
-			if (team_style_global == '7') 
+			if (team_style_global === '7')
 			{
 				form.find('#fl-field-photo_position').show();
 			} else {
 				form.find('#fl-field-photo_position').hide();
 			}
 			
-            if (enable_social_icons_global == 'yes') 
+            if (enable_social_icons_global === 'yes')
 			{
             	form.find('a[href="#fl-builder-settings-tab-social_links"]').show();
             } else {

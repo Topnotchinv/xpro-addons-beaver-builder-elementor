@@ -1,4 +1,6 @@
 .fl-builder-xpro-advance-heading-settings .fl-field[data-type="button-group"] .fl-button-group-field-option {padding:0px 20px;}
+.fl-builder-settings[data-type="xpro_adv_heading_separator_form"] .fl-field[data-type="button-group"] .fl-button-group-field-option {padding:0px 20px;}
+.fl-builder-settings[data-type="xpro_adv_heading_shadow_form"] .fl-field[data-type="button-group"] .fl-button-group-field-option {padding:0px 20px;}
 .fl-lightbox .fl-form-table #fl-field-xpro-widget-seprator td:first-child {
 	padding-left: 5px !important;
 }
@@ -15,7 +17,6 @@
 	font-family: var(--e-global-typography-primary-font-family);
 	position: relative;
 	width: 100%;
-	max-width: 600px;
 	display: inline-block;
 }
 .xpro-heading-wrapper .xpro-title-focus {
@@ -69,15 +70,6 @@
 	width: 100%;
 	border-top: 1px solid #2b2b2b;
 	margin: 6px 0;
-}
-.xpro-heading-wrapper [class*="xpro-heading-separator-shape"] svg {
-	display: inline-block;
-	width: 250px;
-	height: 100%;
-}
-.xpro-heading-wrapper [class*="xpro-heading-separator-shape"] {
-	display: block;
-	margin: 5px 0;
 }
 .xpro-heading-top {
 	position: relative;

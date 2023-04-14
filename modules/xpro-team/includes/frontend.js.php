@@ -1,4 +1,3 @@
-
 (function($) {
 
     <?php if ( $settings->layout === '3' ) { ?>

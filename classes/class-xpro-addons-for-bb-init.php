@@ -16,7 +16,8 @@ if ( ! class_exists( 'Xpro_Bundle_Lite_For_WP_Init' ) ) {
 
 			add_action( 'admin_menu', __CLASS__ . '::xpro_addons_for_bb_dashboard_menu' );
 			add_action( 'init', __CLASS__ . '::load_modules' );
-			add_filter( 'plugin_action_links_' . XPRO_ADDONS_FOR_BB_BASE, __CLASS__ . '::plugin_action_links' );
+            add_action( 'fl_builder_after_save_layout', __CLASS__ . '::clear_cache_for_all_sites' );
+            add_filter( 'plugin_action_links_' . XPRO_ADDONS_FOR_BB_BASE, __CLASS__ . '::plugin_action_links' );
 			add_filter( 'upload_mimes', __CLASS__ . '::xpro_add_custom_upload_mimes' );
 
 			if ( isset( $_GET['page'] ) == 'xpro_dashboard_welcome' || isset( $_GET['page'] ) == 'xpro_settings_for_beaver' || isset( $_GET['page'] ) == 'xpro_dashboard_templates' ) {
@@ -44,6 +45,17 @@ if ( ! class_exists( 'Xpro_Bundle_Lite_For_WP_Init' ) ) {
 			}
 
 		}
+
+        public static function clear_cache_for_all_sites() {
+
+            // Clear builder cache.
+            FLBuilderModel::delete_asset_cache_for_all_posts();
+
+            // Clear theme cache.
+            if ( class_exists( 'FLCustomizer' ) && method_exists( 'FLCustomizer', 'clear_all_css_cache' ) ) {
+                FLCustomizer::clear_all_css_cache();
+            }
+        }
 
 		public static function xpro_addons_for_bb_dashboard_menu() {
 			add_menu_page( 'Xpro Addons BB', 'Xpro Addons', 'manage_options', 'xpro_dashboard_welcome', 'xpro_dashboard_welcome', plugins_url( 'xpro-addons-beaver-builder-elementor/assets/images/XproX.svg' ), 66 );
@@ -78,6 +90,7 @@ if ( ! class_exists( 'Xpro_Bundle_Lite_For_WP_Init' ) ) {
 		public static function includes() {
             require_once XPRO_ADDONS_FOR_BB_DIR . 'dashboard/dashboard.php';
 			require_once XPRO_ADDONS_FOR_BB_DIR . 'classes/class-xpro-plugins-helper.php';
+            require_once XPRO_ADDONS_FOR_BB_DIR . 'classes/class-custom-post-type.php';
 			require_once XPRO_ADDONS_FOR_BB_DIR . 'dashboard/xpro-dashboard-setting.php';
 			require_once XPRO_ADDONS_FOR_BB_DIR . 'dashboard/xpro-modules-list.php';
 			require_once XPRO_ADDONS_FOR_BB_DIR . 'dashboard/xpro-features-list.php';

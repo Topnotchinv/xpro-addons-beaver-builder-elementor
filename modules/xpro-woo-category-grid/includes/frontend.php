@@ -56,7 +56,7 @@ if ( 'yes' === $settings->cat_only_image ) {
 					<div class="xpro-woo-product-img-section">
 						<?php
 						$image_id = get_term_meta( $term_id, 'thumbnail_id', true );
-						$img_url  = wp_get_attachment_image_src( $image_id, $settings->thumbnail_size, true );
+						$img_url  = wp_get_attachment_image_src( $image_id, '', true );
 						if ( ( ! empty( $image_id ) ) && 0 !== $image_id && $image_id > 0 ) {
 							$img_src = $img_url[0];
 						} else {

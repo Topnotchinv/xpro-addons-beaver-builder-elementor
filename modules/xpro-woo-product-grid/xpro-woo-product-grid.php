@@ -23,7 +23,9 @@ if ( class_exists( 'WooCommerce' ) ) {
                 'url'           => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-grid/',
                 'partial_refresh' 	=> true,
             ));
+
         }
+
 
         /**
          * @method enqueue_scripts
@@ -34,6 +36,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             // Register and enqueue your own.
             $this->add_css( 'cubeportfolio-css', XPRO_ADDONS_FOR_BB_URL . 'assets/css/cubeportfolio.min.css' );
             $this->add_js( 'cubeportfolio-js', XPRO_ADDONS_FOR_BB_URL . 'assets/js/jquery.cubeportfolio.min.js', array( 'jquery' ), '4.4.0', true );
+            $this->add_js('wc-add-to-cart-variation');
         }
 
     }
@@ -410,355 +413,11 @@ if ( class_exists( 'WooCommerce' ) ) {
                     'title'         => __('Content', 'xpro-bb-addons'),
                     'collapsed' => true,
                     'fields'        => array(
-                        'alignment' => array(
-                            'type'          => 'button-group',
-                            'label'         => __( 'Alignment', 'xpro-bb-addons' ),
-                            'responsive'    => true,
-                            'default'    => 'none',
-                            'options'       => array(
-                                'none'      => __( 'None', 'xpro-bb-addons' ),
-                                'left'      => __( 'Left', 'xpro-bb-addons' ),
-                                'center'      => __( 'Center', 'xpro-bb-addons' ),
-                                'right'      => __( 'Right', 'xpro-bb-addons' ),
-                            ),
-                        ),
-                        'content_bg_type' => array(
-                            'type'          => 'button-group',
-                            'label'         => __( 'Background Type', 'xpro-bb-addons' ),
-                            'default'       => 'none',
-                            'options'       => array(
-                                'none'      => __( 'None', 'xpro-bb-addons' ),
-                                'color'      => __( 'Color', 'xpro-bb-addons' ),
-                                'gradient'      => __( 'Gradient', 'xpro-bb-addons' ),
-                            ),
-                            'toggle'        => array(
-                                'color'      => array(
-                                    'fields'        => array( 'content_background' ),
-                                ),
-                                'gradient'      => array(
-                                    'fields'        => array( 'content_gradient' ),
-                                ),
-                            )
-                        ),
-                        'content_background' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-content-sec',
-                                'property'     => 'background-color'
-                            ),
-                        ),
-                        'content_gradient' => array(
-                            'type'    => 'gradient',
-                            'label'   => 'Gradient Color',
-                            'preview' => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-woo-product-grid-content-sec',
-                                'property' => 'background-image',
-                            ),
-                        ),
-                        'content_border' => array(
-                            'type'       => 'border',
-                            'label'      => 'Border',
-                            'units'          => array( 'px', '%' ),
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-content-sec',
-                                'property' => 'border'
-                            ),
-                        ),
-                        'content_padding' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Padding',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-content-sec',
-                                'property'     => 'padding'
-                            )
-                        ),
-                        'content_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-content-sec',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator1' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Category<hr></h2>',
-                        ),
-                        'category_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-product-grid-wrapper .xpro_elementor_category_term_name',
-                            ),
-                        ),
-                        'category_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'rules'           => array(
-                                    array(
-                                        'selector'     => '.xpro-product-grid-wrapper .xpro_elementor_category_term_name',
-                                        'property'     => 'color'
-                                    ),
-                                    array(
-                                        'selector'     => '.xpro-woo-product-grid-category-wrapper::before',
-                                        'property'     => 'background-color'
-                                    ),
-                                ),
-                            ),
-                        ),
-                        'category_hover_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Hover Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'rules'           => array(
-                                    array(
-                                        'selector'     => '.xpro-product-grid-wrapper .xpro_elementor_category_term_name:hover',
-                                        'property'     => 'color'
-                                    ),
-                                    array(
-                                        'selector'     => '.xpro-product-grid-wrapper .xpro_elementor_category_term_name:hover .xpro-woo-product-grid-category-wrapper::before',
-                                        'property'     => 'background-color'
-                                    ),
-                                ),
-                            ),
-                        ),
-                        'category_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-category-wrapper',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator2' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Title<hr></h2>',
-                        ),
-                        'title_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-product-grid-wrapper .xpro-woo-product-grid-title',
-                            ),
-                        ),
-                        'title_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-product-grid-wrapper .xpro-woo-product-grid-title',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'title_hover_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Hover Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-product-grid-wrapper .xpro-woo-product-grid-title:hover',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'title_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-title',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator3' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Description<hr></h2>',
-                        ),
-                        'description_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-product-grid-wrapper .xpro-woo-product-grid-excerpt',
-                            ),
-                        ),
-                        'excerpt_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-product-grid-wrapper .xpro-woo-product-grid-excerpt',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'excerpt_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-excerpt',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator4' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Rating<hr></h2>',
-                        ),
-                        'rating_size' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Size',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => array(
-                                'px'    => array(
-                                    'min' => 10,
-                                    'max' => 100,
-                                    'step' => 1,
-                                ),
-                            ),
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-product-grid-wrapper .xpro-woo-product-grid-star-rating-wrapper .star-rating',
-                                'property'     => 'font-size',
-                            ),
-                        ),
-                        'rating_front_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-product-grid-wrapper .star-rating span::before',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'rating_bg_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Background Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-product-grid-wrapper .star-rating::before',
-                                'property'     => 'background-color',
-                            ),
-                        ),
-                        'rating_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-star-rating-wrapper',
-                                'property'     => 'margin'
-                            )
-                        ),
-                        'xpro-widget-seprator5' => array(
-                            'type'    => 'raw',
-                            'content' => '<h2 class="xpro-widget-separator-heading">Price<hr></h2>',
-                        ),
-                        'price_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-woo-product-grid-price-wrapper .price',
-                            ),
-                        ),
-                        'price_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-woo-product-grid-price-wrapper .price',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'space_between_price' => array(
-                            'type'   => 'unit',
-                            'label'  => 'Size',
-                            'units'  => array( 'px' ),
-                            'default_unit' => 'px',
-                            'responsive' => true,
-                            'slider' => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-woo-product-grid-price-wrapper ins',
-                                'property'     => 'padding-left',
-                            ),
-                        ),
-                        'sale_typography' => array(
-                            'type'       => 'typography',
-                            'label'      => 'Typography',
-                            'responsive' => true,
-                            'preview'    => array(
-                                'type'      => 'css',
-                                'selector'  => '.xpro-woo-product-grid-price-wrapper del .woocommerce-Price-amount',
-                            ),
-                        ),
-                        'sale_price_color' => array(
-                            'type'          => 'color',
-                            'label'         => __( 'Color', 'xpro-bb-addons' ),
-                            'show_reset'    => true,
-                            'show_alpha'    => true,
-                            'preview'       => array(
-                                'type'          => 'css',
-                                'selector'     => '.xpro-woo-product-grid-price-wrapper del, .xpro-woo-product-grid-price-wrapper del .woocommerce-Price-amount',
-                                'property'     => 'color',
-                            ),
-                        ),
-                        'price_margin' => array(
-                            'type'        => 'dimension',
-                            'label'       => 'Margin',
-                            'responsive' => true,
-                            'units'          => array( 'px', '%' ),
-                            'preview'    => array(
-                                'type'     => 'css',
-                                'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-price-wrapper',
-                                'property'     => 'margin'
-                            )
+                        'quick_view_styles'    => array(
+                            'type'         => 'form',
+                            'label'        => __( 'Quick View Styles', 'xpro-bb-addons' ),
+                            'form'         => 'xpro_products_quick_view_form',
+                            'preview_text' => 'icon',
                         ),
                     )
                 ),
@@ -1039,6 +698,379 @@ if ( class_exists( 'WooCommerce' ) ) {
             )
         ),
     ));
+
+    /**
+     * Register a settings form for Quick View Styles.
+     */
+    FLBuilder::register_settings_form(
+        'xpro_products_content_style_form',
+        array(
+            'title' => __( 'Content Styles', 'xpro-bb-addons' ),
+            'tabs'  => array(
+                'general' => array(
+                    'title'    => __( 'Content Styles', 'xpro-bb-addons' ),
+                    'sections' => array(
+                        'content'       => array(
+                            'title'         => __('Content', 'xpro-bb-addons'),
+                            'collapsed' => true,
+                            'fields'        => array(
+                                'alignment' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Alignment', 'xpro-bb-addons' ),
+                                    'responsive'    => true,
+                                    'default'    => 'none',
+                                    'options'       => array(
+                                        'none'      => __( 'None', 'xpro-bb-addons' ),
+                                        'left'      => __( 'Left', 'xpro-bb-addons' ),
+                                        'center'      => __( 'Center', 'xpro-bb-addons' ),
+                                        'right'      => __( 'Right', 'xpro-bb-addons' ),
+                                    ),
+                                ),
+                                'content_bg_type' => array(
+                                    'type'          => 'button-group',
+                                    'label'         => __( 'Background Type', 'xpro-bb-addons' ),
+                                    'default'       => 'none',
+                                    'options'       => array(
+                                        'none'      => __( 'None', 'xpro-bb-addons' ),
+                                        'color'      => __( 'Color', 'xpro-bb-addons' ),
+                                        'gradient'      => __( 'Gradient', 'xpro-bb-addons' ),
+                                    ),
+                                    'toggle'        => array(
+                                        'color'      => array(
+                                            'fields'        => array( 'content_background' ),
+                                        ),
+                                        'gradient'      => array(
+                                            'fields'        => array( 'content_gradient' ),
+                                        ),
+                                    )
+                                ),
+                                'content_background' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-content-sec',
+                                        'property'     => 'background-color'
+                                    ),
+                                ),
+                                'content_gradient' => array(
+                                    'type'    => 'gradient',
+                                    'label'   => 'Gradient Color',
+                                    'preview' => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-woo-product-grid-content-sec',
+                                        'property' => 'background-image',
+                                    ),
+                                ),
+                                'content_border' => array(
+                                    'type'       => 'border',
+                                    'label'      => 'Border',
+                                    'units'          => array( 'px', '%' ),
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-content-sec',
+                                        'property' => 'border'
+                                    ),
+                                ),
+                                'content_padding' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Padding',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-content-sec',
+                                        'property'     => 'padding'
+                                    )
+                                ),
+                                'content_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-content-sec',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator1' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Category<hr></h2>',
+                                ),
+                                'category_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-product-grid-wrapper .xpro_elementor_category_term_name',
+                                    ),
+                                ),
+                                'category_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'rules'           => array(
+                                            array(
+                                                'selector'     => '.xpro-product-grid-wrapper .xpro_elementor_category_term_name',
+                                                'property'     => 'color'
+                                            ),
+                                            array(
+                                                'selector'     => '.xpro-woo-product-grid-category-wrapper::before',
+                                                'property'     => 'background-color'
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                                'category_hover_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Hover Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'rules'           => array(
+                                            array(
+                                                'selector'     => '.xpro-product-grid-wrapper .xpro_elementor_category_term_name:hover',
+                                                'property'     => 'color'
+                                            ),
+                                            array(
+                                                'selector'     => '.xpro-product-grid-wrapper .xpro_elementor_category_term_name:hover .xpro-woo-product-grid-category-wrapper::before',
+                                                'property'     => 'background-color'
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                                'category_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-category-wrapper',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator2' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Title<hr></h2>',
+                                ),
+                                'title_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-product-grid-wrapper .xpro-woo-product-grid-title',
+                                    ),
+                                ),
+                                'title_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-product-grid-wrapper .xpro-woo-product-grid-title',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'title_hover_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Hover Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-product-grid-wrapper .xpro-woo-product-grid-title:hover',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'title_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-title',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator3' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Description<hr></h2>',
+                                ),
+                                'description_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-product-grid-wrapper .xpro-woo-product-grid-excerpt',
+                                    ),
+                                ),
+                                'excerpt_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-product-grid-wrapper .xpro-woo-product-grid-excerpt',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'excerpt_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-excerpt',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator4' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Rating<hr></h2>',
+                                ),
+                                'rating_size' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Size',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => array(
+                                        'px'    => array(
+                                            'min' => 10,
+                                            'max' => 100,
+                                            'step' => 1,
+                                        ),
+                                    ),
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-product-grid-wrapper .xpro-woo-product-grid-star-rating-wrapper .star-rating',
+                                        'property'     => 'font-size',
+                                    ),
+                                ),
+                                'rating_front_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-product-grid-wrapper .star-rating span::before',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'rating_bg_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Background Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-product-grid-wrapper .star-rating::before',
+                                        'property'     => 'background-color',
+                                    ),
+                                ),
+                                'rating_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-star-rating-wrapper',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                                'xpro-widget-seprator5' => array(
+                                    'type'    => 'raw',
+                                    'content' => '<h2 class="xpro-widget-separator-heading">Price<hr></h2>',
+                                ),
+                                'price_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-woo-product-grid-price-wrapper .price',
+                                    ),
+                                ),
+                                'price_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-woo-product-grid-price-wrapper .price',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'space_between_price' => array(
+                                    'type'   => 'unit',
+                                    'label'  => 'Size',
+                                    'units'  => array( 'px' ),
+                                    'default_unit' => 'px',
+                                    'responsive' => true,
+                                    'slider' => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-woo-product-grid-price-wrapper ins',
+                                        'property'     => 'padding-left',
+                                    ),
+                                ),
+                                'sale_typography' => array(
+                                    'type'       => 'typography',
+                                    'label'      => 'Typography',
+                                    'responsive' => true,
+                                    'preview'    => array(
+                                        'type'      => 'css',
+                                        'selector'  => '.xpro-woo-product-grid-price-wrapper del .woocommerce-Price-amount',
+                                    ),
+                                ),
+                                'sale_price_color' => array(
+                                    'type'          => 'color',
+                                    'label'         => __( 'Color', 'xpro-bb-addons' ),
+                                    'show_reset'    => true,
+                                    'show_alpha'    => true,
+                                    'preview'       => array(
+                                        'type'          => 'css',
+                                        'selector'     => '.xpro-woo-product-grid-price-wrapper del, .xpro-woo-product-grid-price-wrapper del .woocommerce-Price-amount',
+                                        'property'     => 'color',
+                                    ),
+                                ),
+                                'price_margin' => array(
+                                    'type'        => 'dimension',
+                                    'label'       => 'Margin',
+                                    'responsive' => true,
+                                    'units'          => array( 'px', '%' ),
+                                    'preview'    => array(
+                                        'type'     => 'css',
+                                        'selector' => '.xpro-product-grid-wrapper .xpro-woo-product-grid-price-wrapper',
+                                        'property'     => 'margin'
+                                    )
+                                ),
+                            )
+                        ),
+                    ),
+                ),
+            ),
+        )
+    );
 
     /**
      * Register a settings form for Quick View Styles.
@@ -2845,7 +2877,7 @@ if ( class_exists( 'WooCommerce' ) ) {
                     'name'          => __('Woo Product Grid', 'xpro-bb-addons'),
                     'description'   => __('An awesome addition by Xpro team!', 'xpro-bb-addons'),
                     'group'         => XPRO_Plugins_Helper::$branding_modules,
-                    'category'      => XPRO_Plugins_Helper::$content_modules,
+                    'category'      => XPRO_Plugins_Helper::$woo_modules,
                     'dir'           => XPRO_ADDONS_FOR_BB_DIR . 'modules/xpro-woo-product-grid/',
                     'url'           => XPRO_ADDONS_FOR_BB_URL . 'modules/xpro-woo-product-grid/',
                     'partial_refresh' 	=> true,

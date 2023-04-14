@@ -395,15 +395,7 @@ if (!class_exists('XPRO_Cloud_Templates')) {
 
                     } elseif ('sections' === $dat_file_type) {
 
-                        if ('slider' === $dat_category && 'pro' === $dat_version) {
-
-                            $xpro_dat_url = 'https://bbdemos.wpxpro.com/sections/slider/slider-' . strtolower(preg_replace('/[[:space:]]+/', '-', $dat_name)) . '.dat';
-
-                        } elseif ('slider' === $dat_category && 'lite' === $dat_version) {
-
-                            $xpro_dat_url = 'https://bbdemos.wpxpro.com/sections/slider/slider-lite-' . strtolower(preg_replace('/[[:space:]]+/', '-', $dat_name)) . '.dat';
-
-                        } elseif ('gallery' === $dat_category && 'pro' === $dat_version) {
+                        if ('gallery' === $dat_category && 'pro' === $dat_version) {
 
                             $xpro_dat_url = 'https://bbdemos.wpxpro.com/sections/gallery/gallery-' . strtolower(preg_replace('/[[:space:]]+/', '-', $dat_name)) . '.dat';
 
@@ -589,7 +581,7 @@ if (!class_exists('XPRO_Cloud_Templates')) {
                         <h3> <?php printf( /* translators: %s: search term */ esc_attr__('Welcome to %s Template Cloud!', 'xpro-bb-addons'), esc_attr('Xpro Addons For Beaver Builder')); ?> </h3>
                         <p> <?php printf( /* translators: %s: search term */ esc_attr__('%s Template Cloud would allow you to browse through our growing library of 150+ professionally designed templates and download the only ones that you need.', 'xpro-bb-addons'), esc_attr('Xpro Addons For Beaver Builder')); ?></p>
                         <button class="xpro-bb-btn-gradient" data-operation="fetch"><i
-                                class="dashicons dashicons-image-rotate"></i> <?php esc_html_e("Let's get started", 'xpro-bb-addons'); ?>
+                                    class="dashicons dashicons-image-rotate"></i> <?php esc_html_e("Let's get started", 'xpro-bb-addons'); ?>
                             &rarr;
                         </button>
 
@@ -622,108 +614,7 @@ if (!class_exists('XPRO_Cloud_Templates')) {
         public static function template_html($type = 'page-templates')
         {
 
-            if ('slider' === $type) {
-
-                $type = 'sections';
-
-                $templates = self::get_cloud_templates($type);
-
-                if (is_array($templates) && count($templates) > 0) {
-                    ?>
-
-                    <div class="xpro-templates-showcase-<?php echo esc_attr($type); ?>">
-
-                        <div id="xpro-templates-<?php echo esc_attr($type); ?>"
-                             class="xpro-templates-grid xpro-templates-<?php echo esc_attr($type); ?>">
-
-                            <?php
-                            foreach ($templates as $template_id => $single_post) {
-
-                                $data['id'] = (isset($single_post['id'])) ? $single_post['id'] : '';
-                                $data['name'] = (isset($single_post['name'])) ? $single_post['name'] : '';
-                                $data['image'] = (isset($single_post['image'])) ? $single_post['image'] : '';
-                                $data['type'] = (isset($single_post['type'])) ? $single_post['type'] : '';
-                                $data['status'] = (isset($single_post['status'])) ? $single_post['status'] : '';
-                                $data['count'] = (isset($single_post['count'])) ? $single_post['count'] : '';
-                                $data['preview_url'] = (isset($single_post['preview_url'])) ? $single_post['preview_url'] : '';
-                                $data['version'] = (isset($single_post['version'])) ? $single_post['version'] : '';
-                                $data['category'] = (isset($single_post['category'])) ? $single_post['category'] : '';
-                                $data['tags'] = (isset($single_post['tags'])) ? $single_post['tags'] : '';
-                                $data['industry'] = (isset($single_post['industry'])) ? $single_post['industry'] : '';
-
-                                $template_class = '';
-                                $template_class .= ' ' . $data['tags'];
-                                $template_class .= ' ' . $data['industry'];
-
-                                if ('slider' === $data['category']) {
-
-                                    ?>
-                                    <div id="<?php echo esc_attr($data['id']); ?>"
-                                         class="xpro-template-block xpro-single-<?php echo esc_attr($type); ?> <?php echo esc_attr($template_class); ?> <?php echo esc_attr($data['version']); ?>"
-                                         data-is-downloaded="<?php echo esc_attr($data['status']); ?>">
-                                        <div class="xpro-template">
-
-                                            <figure class="xpro-template-screenshot lazy-load post__image"
-                                                    data-template-name="<?php echo esc_attr($data['name']); ?>"
-                                                    data-preview-url="<?php echo esc_url($data['preview_url']); ?>"
-                                                    data-template-id='<?php echo esc_attr($data['id']); ?>'
-                                                    data-template-type='<?php echo esc_attr($type); ?>'>
-                                                <img data-src="<?php echo esc_url($data['image']); ?>" alt="">
-                                            </figure>
-                                            <div class="xpro-template-item-overlay">
-												<span data-src-preview="<?php echo esc_attr($data['preview_url']); ?>"
-                                                      class="xpro-template-item-preview">
-													<i class="xi xi-eye"></i>
-												</span>
-                                            </div>
-
-                                            <div class="xpro-template-info">
-                                                <h2 class="xpro-template-name"> <?php echo esc_attr($data['name']); ?> </h2>
-                                                <div class="xpro-template-actions">
-                                                    <?php if ('pro' === $data['version']) { ?>
-                                                        <span class="xpro-demo-item-preview" data-popup-id="slider-pro">
-																<?php echo esc_html__('Download'); ?>
-														</span>
-                                                        <?php
-                                                    } else {
-                                                        ?>
-                                                        <span class="xpro-demo-item-preview"
-                                                              data-popup-id="xpro-themes">
-															<?php echo esc_html__('Download'); ?>
-														</span>
-                                                    <?php } ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <?php
-                                }
-                            }
-                            ?>
-
-                        </div><!-- #xpro-templates-list -->
-
-                    </div><!-- #xpro-templates -->
-
-                    <?php
-
-                    /**
-                     * Debugging
-                     */
-                    if (isset($_GET['debug']) && isset($_REQUEST['xpro_setting_nonce']) && wp_verify_nonce($_REQUEST['xpro_setting_nonce'], 'xpro_setting_nonce')) {
-                        if (count($templates) < 1) {
-                            ?>
-                            <h2> <?php esc_html_e('Templates are disabled from RestAPI.', 'xpro-bb-addons'); ?> </h2>
-                            <?php
-                        }
-                    }
-                } else {
-
-                    // Message for no templates found.
-                    self::message('not-found');
-                }
-            } elseif ('gallery' === $type) {
+            if ('gallery' === $type) {
 
                 $type = 'sections';
 
@@ -954,7 +845,7 @@ if (!class_exists('XPRO_Cloud_Templates')) {
                                 $template_class .= ' ' . $data['tags'];
                                 $template_class .= ' ' . $data['industry'];
 
-                                if ('slider' !== $data['category'] && 'gallery' !== $data['category'] && 'portfolio' !== $data['category']) {
+                                if ('gallery' !== $data['category'] && 'portfolio' !== $data['category']) {
 
                                     ?>
                                     <div id="<?php echo esc_attr($data['id']); ?>"

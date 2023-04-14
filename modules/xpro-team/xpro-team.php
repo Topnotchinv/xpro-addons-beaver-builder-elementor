@@ -169,7 +169,7 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 							'social_icon_list' => array(
 								'type'     => 'form',
 								'label'    => __( 'Social Item', 'xpro-bb-addons' ),
-								'form'     => 'xpro_team_social_icon_form', // ID of a registered form.
+								'form'     => 'xpro_team_social_icon_form',
 								'multiple' => true,
 								'default'  => array(
 									array(
@@ -197,7 +197,7 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 								'type'         => 'unit',
 								'label'        => 'Width',
 								'units'        => array( 'px', 'vw', '%' ),
-								'default_unit' => 'px', // Optional
+								'default_unit' => 'px',
 								'responsive'   => true,
 								'slider'       => true,
 								'preview'      => array(
@@ -210,7 +210,7 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 								'type'         => 'unit',
 								'label'        => 'Height',
 								'units'        => array( 'px', 'vh' ),
-								'default_unit' => 'px', // Optional
+								'default_unit' => 'px',
 								'responsive'   => true,
 								'slider'       => true,
 								'preview'      => array(
@@ -338,7 +338,7 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 								'type'         => 'unit',
 								'label'        => 'Height',
 								'units'        => array( 'px', 'vh' ),
-								'default_unit' => 'px', // Optional
+								'default_unit' => 'px',
 								'responsive'   => true,
 								'slider'       => true,
 								'preview'      => array(
@@ -351,7 +351,7 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 								'type'         => 'unit',
 								'label'        => 'Backdrop Blur',
 								'units'        => array( 'px', 'vh' ),
-								'default_unit' => 'px', // Optional
+								'default_unit' => 'px',
 								'responsive'   => true,
 								'slider'       => true,
 							),
@@ -516,7 +516,7 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 								'type'         => 'unit',
 								'label'        => 'Size',
 								'units'        => array( 'px' ),
-								'default_unit' => 'px', // Optional
+								'default_unit' => 'px',
 								'responsive'   => true,
 								'slider'       => true,
 								'preview'      => array(
@@ -529,7 +529,7 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 								'type'         => 'unit',
 								'label'        => 'Background Size',
 								'units'        => array( 'px', 'vh' ),
-								'default_unit' => 'px', // Optional
+								'default_unit' => 'px',
 								'responsive'   => true,
 								'slider'       => true,
 								'preview'      => array(
@@ -550,7 +550,7 @@ if ( ! class_exists( 'XPROTeamModule' ) ) {
 								'type'         => 'unit',
 								'label'        => 'Space Between',
 								'units'        => array( 'px' ),
-								'default_unit' => 'px', // Optional
+								'default_unit' => 'px',
 								'responsive'   => true,
 								'slider'       => true,
 								'preview'      => array(

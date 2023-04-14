@@ -40,7 +40,6 @@
 	line-height: 1.2;
 	color: #2b2b2b;
 	position: relative;
-	/* z-index: 2; */
 }
 
 .xpro-team-designation {
@@ -169,7 +168,6 @@
 .xpro-team-image {
 	position: relative;
 	overflow: hidden;
-	/*display: inline-table;*/
 	max-width: 100%;
 	-webkit-box-flex: 0;
 	-ms-flex: none;
@@ -182,7 +180,6 @@
 }
 
 /*Layout 1*/
-
 .xpro-team-layout-1 .xpro-team-image > img {
 	-webkit-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
@@ -198,7 +195,6 @@
 }
 
 /*Layout 2*/
-
 .xpro-team-layout-2 {
 	text-align: center;
 }
@@ -256,7 +252,6 @@
 }
 
 /*Layout 3*/
-
 .xpro-team-layout-3 .xpro-team-social-list {
 	position: absolute;
 	bottom: 0;
@@ -308,7 +303,6 @@
 }
 
 /*Layout 4*/
-
 .xpro-team-layout-4 .xpro-team-image > img {
 	-webkit-transition: -webkit-transform .3s ease-in-out;
 	transition: -webkit-transform .3s ease-in-out;
@@ -367,7 +361,6 @@
 }
 
 /*Layout 5*/
-
 .xpro-team-layout-5{
 	text-align: center;
 }
@@ -419,7 +412,6 @@
 }
 
 /*Layout 6*/
-
 .xpro-team-layout-6 .xpro-team-content{
 	padding: 50px;
 	position: absolute;
@@ -484,7 +476,6 @@
 }
 
 /*Layout 7*/
-
 .xpro-team-layout-7 .xpro-team-content{
 	padding: 30px;
 	border: 1px solid #f3f3f3;
@@ -505,7 +496,6 @@
 }
 
 /*Layout 8*/
-
 .xpro-team-layout-8 {
 	text-align: center;
 }
@@ -553,7 +543,6 @@
 }
 
 /*Layout 9*/
-
 .xpro-team-layout-9 .xpro-team-image {
 	position: relative;
 	overflow: hidden;
@@ -666,7 +655,6 @@
 }
 
 /*Layout 10*/
-
 .xpro-team-layout-10 {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -700,7 +688,6 @@
 }
 
 /*Layout 11*/
-
 .xpro-team-layout-11 {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -727,7 +714,6 @@
 }
 
 /*Layout 12*/
-
 .xpro-team-layout-12 {
 	text-align: center;
 }
@@ -797,7 +783,6 @@
 }
 
 /*Layout 13*/
-
 .xpro-team-layout-13::after {
 	content: '';
 	position: absolute;
@@ -891,7 +876,6 @@
 
 
 /*Layout 14*/
-
 .xpro-team-layout-14 {
 	text-align: center;
 }
@@ -914,7 +898,6 @@
 }
 
 /*Layout 15*/
-
 .xpro-team-layout-15 {
 	border: 1px solid #efefef;
 	padding: 20px 0 20px 20px;
