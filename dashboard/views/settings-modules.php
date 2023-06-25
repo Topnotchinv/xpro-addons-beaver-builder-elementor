@@ -83,34 +83,34 @@ $modules_active = ( ! isset( $modules_active[0] ) ? array_keys( $modules_active 
 								<i class="xi xi-lottie"></i>
 								<h4 class="xpro-bb-dashboard-title xpro-bb-dashboard-widget-count-title"><span class="xpro-pink">Lottie</span></h4>
 								<p class="xpro-bb-dashboard-txt">Enhance your site’s engagement & user experience by adding ‘wow’ effects.</p>
-								<a href="https://beaver.wpxpro.com/modules/lottie/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">View All</a>
+								<a href="https://beaver.wpxpro.com/modules/lottie/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">View All</a>
 							</div>
 							<div class="xpro-bb-dashboard-modules-item">
 								<i class="xi xi-image-slider"></i>
 								<h4 class="xpro-bb-dashboard-title xpro-bb-dashboard-widget-count-title"><span class="xpro-pink">Flip Box</span></h4>
 								<p class="xpro-bb-dashboard-txt">An amazing addon that offers dual side content with animated touch.</p>
-								<a href="https://beaver.wpxpro.com/modules/flip-box/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">View All</a>
+								<a href="https://beaver.wpxpro.com/modules/flip-box/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">View All</a>
 							</div>
 							<div class="xpro-bb-dashboard-modules-item">
 								<i class="xi xi-model-popup"></i>
 								<h4 class="xpro-bb-dashboard-title xpro-bb-dashboard-widget-count-title"><span class="xpro-pink">Modal Popup</span></h4>
 								<p class="xpro-bb-dashboard-txt">Design intuitive modal popups & display them on click of image, button, text, etc.
 								</p>
-								<a href="https://beaver.wpxpro.com/modules/modal-popup/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">View All</a>
+								<a href="https://beaver.wpxpro.com/modules/modal-popup/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">View All</a>
 							</div>
 							<div class="xpro-bb-dashboard-modules-item">
 								<i class="xi xi-model-popup"></i>
 								<h4 class="xpro-bb-dashboard-title xpro-bb-dashboard-widget-count-title"><span class="xpro-pink">News Ticker</span></h4>
 								<p class="xpro-bb-dashboard-txt">Create beautiful custom tickers to display trending news, special offers & more.
 								</p>
-								<a href="https://beaver.wpxpro.com/modules/news-ticker/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">View All</a>
+								<a href="https://beaver.wpxpro.com/modules/news-ticker/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">View All</a>
 							</div>
 							<div class="xpro-bb-dashboard-modules-item">
 								<i class="xi xi-model-popup"></i>
 								<h4 class="xpro-bb-dashboard-title xpro-bb-dashboard-widget-count-title"><span class="xpro-pink">Image Masking</span></h4>
 								<p class="xpro-bb-dashboard-txt">Add out-of-the-box & attractive masking to your images with 55+ options.
 								</p>
-								<a href="https://beaver.wpxpro.com/modules/image-masking/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">View All</a>
+								<a href="https://beaver.wpxpro.com/modules/image-masking/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">View All</a>
 							</div>
 						</div>
 					</div>
@@ -122,7 +122,7 @@ $modules_active = ( ! isset( $modules_active[0] ) ? array_keys( $modules_active 
 						<p class="xpro-bb-dashboard-txt">
 							Xpro Addons makes web design and development process super easy and exceptionally fast.
 						</p>
-						<a href="https://beaver.wpxpro.com/contact-us/" class="xpro-bb-dashboard-btn xpro-bb-btn-document">Get Started</a>
+						<a href="https://beaver.wpxpro.com/contact-us/" class="xpro-bb-dashboard-btn xpro-bb-btn-document" target="_blank">Get Started</a>
 					</div>
 				</div>
 			</div>

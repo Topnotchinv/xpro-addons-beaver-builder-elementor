@@ -649,6 +649,16 @@ if (!class_exists('XPRO_Cloud_Templates')) {
 
                                 if ('gallery' === $data['category']) {
 
+                                    if ($data['version'] === 'pro') {
+
+                                        $xpro_dat_url = 'https://bbdemos.wpxpro.com/sections/gallery/gallery-' . strtolower(preg_replace('/[[:space:]]+/', '-', $data['name'])) . '.dat';
+
+                                    } elseif ($data['version'] === 'lite') {
+
+                                        $xpro_dat_url = 'https://bbdemos.wpxpro.com/sections/gallery/gallery-lite-' . strtolower(preg_replace('/[[:space:]]+/', '-', $data['name'])) . '.dat';
+
+                                    }
+
                                     ?>
                                     <div id="<?php echo esc_attr($data['id']); ?>"
                                          class="xpro-template-block xpro-single-<?php echo esc_attr($type); ?> <?php echo esc_attr($template_class); ?> <?php echo esc_attr($data['version']); ?>"
@@ -672,19 +682,49 @@ if (!class_exists('XPRO_Cloud_Templates')) {
                                             <div class="xpro-template-info">
                                                 <h2 class="xpro-template-name"> <?php echo esc_attr($data['name']); ?> </h2>
                                                 <div class="xpro-template-actions">
-                                                    <?php if ('pro' === $data['version']) { ?>
+                                                    <?php if ('true' === $data['status']) { ?>
+
+                                                        <span class="xpro-cloud-process xpro-demo-item-preview" data-operation="remove">
+                                                            <?php esc_html_e('Remove', 'xpro-bb-addons'); ?>
+                                                            <input type="hidden" class="template-dat-meta-id"
+                                                                   value='<?php echo esc_attr($data['id']); ?>'/>
+                                                            <input type="hidden" class="template-dat-meta-type"
+                                                                   value='<?php echo esc_attr($type); ?>'/>
+                                                            <input type="hidden" class="template-dat-meta-dat_url_local"
+                                                                   value='<?php echo $data['dat_url_local'];  //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>'/>
+                                                        </span>
+
+                                                        <?php
+                                                    } else {
+                                                        if ('pro' === $data['version']) { ?>
                                                         <span class="xpro-demo-item-preview"
                                                               data-popup-id="gallery-pro">
 																<?php echo esc_html__('Download'); ?>
 														</span>
                                                         <?php
-                                                    } else {
+                                                    } elseif ( did_action( 'xpro_gallery_for_bb_loaded' ) ) {
                                                         ?>
-                                                        <span class="xpro-demo-item-preview"
-                                                              data-popup-id="xpro-themes">
-															<?php echo esc_html__('Download'); ?>
-														</span>
-                                                    <?php } ?>
+                                                        <span class="xpro-cloud-process xpro-demo-item-preview"
+                                                              data-operation="download">
+                                                            <?php echo esc_html__('Download'); ?>
+                                                            <input type="hidden" class="template-dat-meta-id"
+                                                                   value='<?php echo esc_attr($data['id']); ?>'/>
+                                                            <input type="hidden" class="template-dat-meta-type"
+                                                                   value='<?php echo esc_attr($type); ?>'/>
+                                                            <input type="hidden"
+                                                                   class="template-dat-meta-dat_url"
+                                                                   value='<?php echo esc_url($xpro_dat_url); ?>'/>
+                                                        </span>
+                                                        <?php
+                                                        } else {
+                                                        ?>
+                                                        <span class="xpro-demo-item-preview" data-popup-id="gallery-lite">
+                                                            <?php echo esc_html__('Download'); ?>
+                                                        </span>
+                                                        <?php
+
+                                                        }
+                                                    } ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -750,6 +790,16 @@ if (!class_exists('XPRO_Cloud_Templates')) {
 
                                 if ('portfolio' === $data['category']) {
 
+                                    if ($data['version'] === 'pro') {
+
+                                        $xpro_dat_url = 'https://bbdemos.wpxpro.com/sections/portfolio/portfolio-' . strtolower(preg_replace('/[[:space:]]+/', '-', $data['name'])) . '.dat';
+
+                                    } elseif ($data['version'] === 'lite') {
+
+                                        $xpro_dat_url = 'https://bbdemos.wpxpro.com/sections/portfolio/portfolio-lite-' . strtolower(preg_replace('/[[:space:]]+/', '-', $data['name'])) . '.dat';
+
+                                    }
+
                                     ?>
                                     <div id="<?php echo esc_attr($data['id']); ?>"
                                          class="xpro-template-block xpro-single-<?php echo esc_attr($type); ?> <?php echo esc_attr($template_class); ?> <?php echo esc_attr($data['version']); ?>"
@@ -773,19 +823,48 @@ if (!class_exists('XPRO_Cloud_Templates')) {
                                             <div class="xpro-template-info">
                                                 <h2 class="xpro-template-name"> <?php echo esc_attr($data['name']); ?> </h2>
                                                 <div class="xpro-template-actions">
-                                                    <?php if ('pro' === $data['version']) { ?>
-                                                        <span class="xpro-demo-item-preview"
-                                                              data-popup-id="portfolio-pro">
-															<?php echo esc_html__('Download'); ?>
-														</span>
+                                                    <?php if ('true' === $data['status']) { ?>
+                                                        <span class="xpro-cloud-process xpro-demo-item-preview" data-operation="remove">
+                                                            <?php esc_html_e('Remove', 'xpro-bb-addons'); ?>
+                                                            <input type="hidden" class="template-dat-meta-id"
+                                                                   value='<?php echo esc_attr($data['id']); ?>'/>
+                                                            <input type="hidden" class="template-dat-meta-type"
+                                                                   value='<?php echo esc_attr($type); ?>'/>
+                                                            <input type="hidden" class="template-dat-meta-dat_url_local"
+                                                                   value='<?php echo $data['dat_url_local'];  //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>'/>
+                                                        </span>
                                                         <?php
                                                     } else {
-                                                        ?>
-                                                        <span class="xpro-demo-item-preview"
-                                                              data-popup-id="xpro-themes">
-															<?php echo esc_html__('Download'); ?>
+                                                        if ('pro' === $data['version']) { ?>
+                                                            <span class="xpro-demo-item-preview"
+                                                                  data-popup-id="portfolio-pro">
+																<?php echo esc_html__('Download'); ?>
 														</span>
-                                                    <?php } ?>
+                                                            <?php
+                                                        } elseif ( did_action( 'xpro_portfolio_for_bb_loaded' ) ) {
+                                                            ?>
+                                                            <span class="xpro-cloud-process xpro-demo-item-preview"
+                                                                  data-operation="download">
+                                                                <?php echo esc_html__('Download'); ?>
+                                                                <input type="hidden" class="template-dat-meta-id"
+                                                                       value='<?php echo esc_attr($data['id']); ?>'/>
+                                                                <input type="hidden" class="template-dat-meta-type"
+                                                                       value='<?php echo esc_attr($type); ?>'/>
+                                                                <input type="hidden"
+                                                                       class="template-dat-meta-dat_url"
+                                                                       value='<?php echo esc_url($xpro_dat_url); ?>'/>
+                                                            </span>
+                                                            <?php
+                                                        }
+                                                        else {
+                                                            ?>
+                                                            <span class="xpro-demo-item-preview" data-popup-id="portfolio-lite">
+                                                                <?php echo esc_html__('Download'); ?>
+                                                            </span>
+                                                            <?php
+
+                                                        }
+                                                    } ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -847,6 +926,25 @@ if (!class_exists('XPRO_Cloud_Templates')) {
 
                                 if ('gallery' !== $data['category'] && 'portfolio' !== $data['category']) {
 
+                                    $xpro_dat_url = '';
+
+                                    if ($type == 'page-templates' && $data['version'] === 'pro') {
+
+                                        $xpro_dat_url = 'https://bbdemos.wpxpro.com/page-templates/template-' . strtolower(preg_replace('/[[:space:]]+/', '-', $data['name'])) . '.dat';
+
+                                    } elseif ($type == 'page-templates' && $data['version'] === 'lite') {
+
+                                        $xpro_dat_url = 'https://bbdemos.wpxpro.com/page-templates/template-lite-' . strtolower(preg_replace('/[[:space:]]+/', '-', $data['name'])) . '.dat';
+
+                                    } elseif ('sections' && $data['version'] === 'pro') {
+
+                                        $xpro_dat_url = 'https://bbdemos.wpxpro.com/sections/section-' . strtolower(preg_replace('/[[:space:]]+/', '-', $data['name'])) . '.dat';
+
+                                    } elseif ('sections' && $data['version'] === 'lite') {
+                                        $xpro_dat_url = 'https://bbdemos.wpxpro.com/sections/section-lite-' . strtolower(preg_replace('/[[:space:]]+/', '-', $data['name'])) . '.dat';
+
+                                    }
+
                                     ?>
                                     <div id="<?php echo esc_attr($data['id']); ?>"
                                          class="xpro-template-block xpro-single-<?php echo esc_attr($type); ?> <?php echo esc_attr($template_class); ?> <?php echo esc_attr($data['version']); ?>"
@@ -870,18 +968,48 @@ if (!class_exists('XPRO_Cloud_Templates')) {
                                             <div class="xpro-template-info">
                                                 <h2 class="xpro-template-name"> <?php echo esc_attr($data['name']); ?> </h2>
                                                 <div class="xpro-template-actions">
-                                                    <?php if ('pro' === $data['version']) { ?>
-                                                        <span class="xpro-demo-item-preview" data-popup-id="addons-pro">
-															<?php echo esc_html__('Download'); ?>
-														</span>
+                                                    <?php if ('true' === $data['status']) { ?>
+                                                        <span class="xpro-cloud-process xpro-demo-item-preview" data-operation="remove">
+                                                                <?php esc_html_e('Remove', 'xpro-bb-addons'); ?>
+                                                                <input type="hidden" class="template-dat-meta-id"
+                                                                       value='<?php echo esc_attr($data['id']); ?>'/>
+                                                                <input type="hidden" class="template-dat-meta-type"
+                                                                       value='<?php echo esc_attr($type); ?>'/>
+                                                                <input type="hidden" class="template-dat-meta-dat_url_local"
+                                                                       value='<?php echo $data['dat_url_local'];  //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>'/>
+                                                            </span>
                                                         <?php
                                                     } else {
-                                                        ?>
-                                                        <span class="xpro-demo-item-preview"
-                                                              data-popup-id="xpro-themes">
-															<?php echo esc_html__('Download'); ?>
+                                                        if ('pro' === $data['version']) { ?>
+                                                            <span class="xpro-demo-item-preview"
+                                                                  data-popup-id="addons-pro">
+																<?php echo esc_html__('Download'); ?>
 														</span>
-                                                    <?php } ?>
+                                                            <?php
+                                                        } elseif ( did_action( 'xpro_addons_for_bb_loaded' ) ) {
+                                                            ?>
+                                                            <span class="xpro-cloud-process xpro-demo-item-preview"
+                                                                  data-operation="download">
+                                                                <?php echo esc_html__('Download'); ?>
+                                                                <input type="hidden" class="template-dat-meta-id"
+                                                                       value='<?php echo esc_attr($data['id']); ?>'/>
+                                                                <input type="hidden" class="template-dat-meta-type"
+                                                                       value='<?php echo esc_attr($type); ?>'/>
+                                                                <input type="hidden"
+                                                                       class="template-dat-meta-dat_url"
+                                                                       value='<?php echo esc_url($xpro_dat_url); ?>'/>
+                                                            </span>
+                                                            <?php
+                                                        }
+                                                        else {
+                                                            ?>
+                                                            <span class="xpro-demo-item-preview" data-popup-id="xpro-themes">
+                                                                <?php echo esc_html__('Download'); ?>
+                                                            </span>
+                                                            <?php
+
+                                                        }
+                                                    } ?>
                                                 </div>
                                             </div>
                                         </div>

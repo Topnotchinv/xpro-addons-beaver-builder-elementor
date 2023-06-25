@@ -10,7 +10,7 @@
 							<p class="xpro-bb-dashboard-txt">
 								Xpro Beaver Builder Addons make your web design process super easy. Our highly functional modules enhance your overall Beaver Builder experience with simple drag’n’drop professional features.
 							</p>
-							<a href="https://beaver.wpxpro.com/bundle-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document">Get started</a>
+							<a href="https://beaver.wpxpro.com/bundle-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document" target="_blank">Get started</a>
 						</div>
 						<div class="xpro-bb-dashboard-intro-image">
 							<img src="https://bbdemos.wpxpro.com/lottie/product-lunch.gif" alt="">
@@ -26,7 +26,7 @@
 							<p class="xpro-bb-dashboard-txt">
 								All-in-one slider plugin to stand out from the competition. Simply drag’n’drop your elements to create amazing slides for your website.
 							</p>
-							<a href="https://beaver.wpxpro.com/multi-layer-slider/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">Get started</a>
+							<a href="https://beaver.wpxpro.com/multi-layer-slider/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">Get started</a>
 						</div>
 						<div class="xpro-bb-dashboard-sidebar xpro-bb-dashboard-sidebar-slider">
 							<div class="xpro-bb-dashboard-modules-wrapper">
@@ -85,7 +85,7 @@
 							<p class="xpro-bb-dashboard-txt">
 								A world-class multipurpose plugin built to showcase amazing portfolios, photo galleries, catalogs, website sections & more.
 							</p>
-							<a href="https://beaver.wpxpro.com/creative-portfolio/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">Get started</a>
+							<a href="https://beaver.wpxpro.com/creative-portfolio/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">Get started</a>
 						</div>
 						<div class="xpro-bb-dashboard-intro-image xpro-bb-dashboard-portfolio-image">
 							<img src="<?php echo esc_url( XPRO_ADDONS_FOR_BB_URL . 'assets/images/portfolio-section.png' ); ?>" alt="">
@@ -131,34 +131,34 @@
 								<i class="xi xi-lottie"></i>
 								<h4 class="xpro-bb-dashboard-title xpro-bb-dashboard-widget-count-title"><span class="xpro-pink">Lottie</span></h4>
 								<p class="xpro-bb-dashboard-txt">Enhance your site’s engagement & user experience by adding ‘wow’ effects.</p>
-								<a href="https://beaver.wpxpro.com/modules/lottie/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">View All</a>
+								<a href="https://beaver.wpxpro.com/modules/lottie/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">View All</a>
 							</div>
 							<div class="xpro-bb-dashboard-modules-item">
 								<i class="xi xi-image-slider"></i>
 								<h4 class="xpro-bb-dashboard-title xpro-bb-dashboard-widget-count-title"><span class="xpro-pink">Flip Box</span></h4>
 								<p class="xpro-bb-dashboard-txt">An amazing addon that offers dual side content with animated touch.</p>
-								<a href="https://beaver.wpxpro.com/modules/flip-box/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">View All</a>
+								<a href="https://beaver.wpxpro.com/modules/flip-box/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">View All</a>
 							</div>
 							<div class="xpro-bb-dashboard-modules-item">
 								<i class="xi xi-model-popup"></i>
 								<h4 class="xpro-bb-dashboard-title xpro-bb-dashboard-widget-count-title"><span class="xpro-pink">Modal Popup</span></h4>
 								<p class="xpro-bb-dashboard-txt">Design intuitive modal popups & display them on click of image, button, text, etc.
 								</p>
-								<a href="https://beaver.wpxpro.com/modules/modal-popup/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">View All</a>
+								<a href="https://beaver.wpxpro.com/modules/modal-popup/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">View All</a>
 							</div>
 							<div class="xpro-bb-dashboard-modules-item">
 								<i class="xi xi-model-popup"></i>
 								<h4 class="xpro-bb-dashboard-title xpro-bb-dashboard-widget-count-title"><span class="xpro-pink">News Ticker</span></h4>
 								<p class="xpro-bb-dashboard-txt">Create beautiful custom tickers to display trending news, special offers & more.
 								</p>
-								<a href="https://beaver.wpxpro.com/modules/news-ticker/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">View All</a>
+								<a href="https://beaver.wpxpro.com/modules/news-ticker/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">View All</a>
 							</div>
 							<div class="xpro-bb-dashboard-modules-item">
 								<i class="xi xi-model-popup"></i>
 								<h4 class="xpro-bb-dashboard-title xpro-bb-dashboard-widget-count-title"><span class="xpro-pink">Image Masking</span></h4>
 								<p class="xpro-bb-dashboard-txt">Add out-of-the-box & attractive masking to your images with 55+ options.
 								</p>
-								<a href="https://beaver.wpxpro.com/modules/image-masking/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">View All</a>
+								<a href="https://beaver.wpxpro.com/modules/image-masking/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">View All</a>
 							</div>
 						</div>
 					</div>
@@ -170,7 +170,7 @@
 						<p class="xpro-bb-dashboard-txt">
 							Xpro Addons makes web design and development process super easy and exceptionally fast.
 						</p>
-						<a href="https://beaver.wpxpro.com/contact-us/" class="xpro-bb-dashboard-btn xpro-bb-btn-document">Get Started</a>
+						<a href="https://beaver.wpxpro.com/contact-us/" class="xpro-bb-dashboard-btn xpro-bb-btn-document" target="_blank">Get Started</a>
 					</div>
 				</div>
 			</div>
@@ -184,7 +184,7 @@
 							<p class="xpro-bb-dashboard-txt">
 								Do you love Xpro Beaver Builder Addons? If our plugin made web designing easy for you then please give us a 5-star rating on WordPress.
 							</p>
-							<a href="https://wordpress.org/plugins/xpro-addons-beaver-builder-elementor/#reviews" class="xpro-bb-dashboard-btn xpro-bb-btn-document">Rate Us<i class="xi xi-cursor"></i></a>
+							<a href="https://wordpress.org/plugins/xpro-addons-beaver-builder-elementor/#reviews" class="xpro-bb-dashboard-btn xpro-bb-btn-document" target="_blank">Rate Us<i class="xi xi-cursor"></i></a>
 						</div>
 					</div>
 				</div>

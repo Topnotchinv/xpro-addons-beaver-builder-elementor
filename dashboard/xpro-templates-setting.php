@@ -380,7 +380,7 @@ if (!function_exists('xpro_dashboard_templates')) {
                 <h3>XPRO THEME IMPORTER PLUGIN REQUIRED</h3>
                 <h4>Just One More Step to Go!</h4>
                 <h4>To download our amazing templates you need to Install Xpro Theme Plugin. It’s 100% free – no strings attached.</h4>
-                <a href="https://beaver.wpxpro.com/free-premium-addons-for-beaver-builder#xpro-free-themes-iframe" class="xpro-bb-popup-button" target="_blank">Let’s Get It</a>
+                <a href="https://beaver.wpxpro.com/free-premium-addons-for-beaver-builder/" class="xpro-bb-popup-button" target="_blank">Let’s Get It</a>
                 <p>No thanks! I would rather go the hard way <br/> and design my own template</p>
             </div>
         </div>
@@ -407,7 +407,7 @@ if (!function_exists('xpro_dashboard_templates')) {
                 </span>
                 <h3>XPRO GALLARY REQUIRED</h3>
                 <h4>For Pro Gallery Templates you have to download and install Xpro Gallery Pro For Beaver Builder.</h4>
-                <a href="https://www.wpxpro.com/downloads/xpro-gallery-for-beaver-builder/" class="xpro-bb-popup-button" target="_blank">CLICK HERE TO GET</a>
+                <a href="https://beaver.wpxpro.com/filterable-gallery-for-beaver-builder/#pricing" class="xpro-bb-popup-button" target="_blank">CLICK HERE TO GET</a>
                 <p>No thanks! I would rather go the hard way <br/> and design my own template</p>
             </div>
         </div>
@@ -433,7 +433,7 @@ if (!function_exists('xpro_dashboard_templates')) {
                 </span>
                 <h3>XPRO PORTFOLIO REQUIRED</h3>
                 <h4>For Pro Portfolio Templates you have to download and install Xpro Portfolio Pro For Beaver Builder.</h4>
-                <a href="https://www.wpxpro.com/downloads/xpro-portfolio-for-beaver-builder/" class="xpro-bb-popup-button" target="_blank">CLICK HERE TO GET</a>
+                <a href="https://beaver.wpxpro.com/creative-portfolio/#pricing" class="xpro-bb-popup-button" target="_blank">CLICK HERE TO GET</a>
                 <p>No thanks! I would rather go the hard way <br/> and design my own template</p>
             </div>
         </div>
@@ -459,7 +459,7 @@ if (!function_exists('xpro_dashboard_templates')) {
                 </span>
                 <h3>XPRO ADDONS REQUIRED</h3>
                 <h4>For Pro Templates and Sections you have to download and install Xpro Addons For Beaver Builder.</h4>
-                <a href="https://www.wpxpro.com/downloads/xpro-addons-for-beaver-builder/" class="xpro-bb-popup-button" target="_blank">CLICK HERE TO GET</a>
+                <a href="https://beaver.wpxpro.com/modules/#addons-pricing" class="xpro-bb-popup-button" target="_blank">CLICK HERE TO GET</a>
                 <p>No thanks! I would rather go the hard way <br/> and design my own template</p>
             </div>
         </div>

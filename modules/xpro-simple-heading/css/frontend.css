@@ -17,5 +17,11 @@
     display: inline-block;
 }
 .xpro-simple-heading-wrapper .xpro-title-focus {
+    position: relative;
+    line-height: 1.2;
+    font-size: 3rem;
+    margin: 5px 0;
+    font-weight: 500;
+    z-index: 2;
     display: inline;
 }

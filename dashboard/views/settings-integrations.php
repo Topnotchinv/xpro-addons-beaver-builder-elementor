@@ -120,7 +120,7 @@ $user_data = Xpro_Beaver_Dashboard_Utils::instance()->get_option( 'xpro_beaver_u
 						<p class="xpro-bb-dashboard-txt">
 							Xpro Addons makes web design and development process super easy and exceptionally fast.
 						</p>
-						<a href="https://beaver.wpxpro.com/contact-us/" class="xpro-bb-dashboard-btn xpro-bb-btn-document">Get Started</a>
+						<a href="https://beaver.wpxpro.com/contact-us/" class="xpro-bb-dashboard-btn xpro-bb-btn-document" target="_blank">Get Started</a>
 					</div>
 				</div>
 			</div>

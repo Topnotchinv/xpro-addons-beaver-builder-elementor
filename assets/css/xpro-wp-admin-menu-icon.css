@@ -30,6 +30,10 @@ body.post-type-xpro_bb_templates .fl-enable-editor {
     display: none !important;
 }
 
+body.post-type-xpro_bb_templates .fl-builder-admin-ui {
+    display: none !important;
+}
+
 body.post-type-xpro_bb_templates .fl-builder-admin {
     margin-bottom: 50px;
     height: 300px;
@@ -51,7 +55,7 @@ body.post-type-xpro_bb_templates .fl-enable-builder {
     padding: 0 36px;
     background: #2271b1;
     border-color: #2271b1;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     text-shadow: none;
 }

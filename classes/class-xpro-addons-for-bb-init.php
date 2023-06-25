@@ -68,22 +68,72 @@ if ( ! class_exists( 'Xpro_Bundle_Lite_For_WP_Init' ) ) {
 		}
 
 		public static function enqueue_xpro_admin_styles() {
-			wp_enqueue_style( 'xpro-grid', XPRO_ADDONS_FOR_BB_URL . 'assets/css/xpro-grid.min.css', array() );
-			wp_enqueue_style( 'xpro-admin-style-lite', XPRO_ADDONS_FOR_BB_URL . 'assets/css/xpro-admin-style-lite.css', array() );
-			wp_enqueue_style( 'xpro-icons-min', XPRO_ADDONS_FOR_BB_URL . 'assets/css/xpro-icons.min.css', array() );
-			wp_enqueue_style( 'owl-theme-default', XPRO_ADDONS_FOR_BB_URL . 'assets/css/owl.theme.default.css', array() );
-			wp_enqueue_style( 'owl-carousel', XPRO_ADDONS_FOR_BB_URL . 'assets/css/owl.carousel.min.css', array() );
+			wp_enqueue_style( 'xpro-grid', XPRO_ADDONS_FOR_BB_URL . 'assets/css/xpro-grid.min.css', array(), XPRO_ADDONS_FOR_BB_VERSION );
+			wp_enqueue_style( 'xpro-admin-style-lite', XPRO_ADDONS_FOR_BB_URL . 'assets/css/xpro-admin-style-lite.css', array(), XPRO_ADDONS_FOR_BB_VERSION );
+			wp_enqueue_style( 'xpro-icons-min', XPRO_ADDONS_FOR_BB_URL . 'assets/css/xpro-icons.min.css', array(), XPRO_ADDONS_FOR_BB_VERSION );
+			wp_enqueue_style( 'owl-theme-default', XPRO_ADDONS_FOR_BB_URL . 'assets/css/owl.theme.default.css', array(), XPRO_ADDONS_FOR_BB_VERSION );
+			wp_enqueue_style( 'owl-carousel', XPRO_ADDONS_FOR_BB_URL . 'assets/css/owl.carousel.min.css', array(), XPRO_ADDONS_FOR_BB_VERSION );
 
-			wp_enqueue_script( 'xpro-admin-script-lite', XPRO_ADDONS_FOR_BB_URL . 'assets/js/xpro-admin-script-lite.js', array( 'jquery' ), null, true );
-			wp_enqueue_script( 'isotope-pkgd-min', XPRO_ADDONS_FOR_BB_URL . 'assets/js/isotope.pkgd.min.js', array( 'jquery' ), null, true );
+			wp_enqueue_script( 'xpro-admin-script-lite', XPRO_ADDONS_FOR_BB_URL . 'assets/js/xpro-admin-script-lite.js', array( 'jquery' ), XPRO_ADDONS_FOR_BB_VERSION, true );
+			wp_enqueue_script( 'isotope-pkgd-min', XPRO_ADDONS_FOR_BB_URL . 'assets/js/isotope.pkgd.min.js', array( 'jquery' ), XPRO_ADDONS_FOR_BB_VERSION, true );
 			wp_enqueue_script( 'owlcarousel-filter', XPRO_ADDONS_FOR_BB_URL . 'assets/js/owlcarousel-filter.min.js', array( 'jquery' ), '2.3.4', true );
 			wp_enqueue_script( 'owl-carousel', XPRO_ADDONS_FOR_BB_URL . 'assets/js/owl.carousel.min.js', array( 'jquery' ), '2.3.4', true );
-			wp_enqueue_script( 'in-view', XPRO_ADDONS_FOR_BB_URL . 'assets/js/in-view.min.js', array( 'jquery' ), null, true );
+			wp_enqueue_script( 'in-view', XPRO_ADDONS_FOR_BB_URL . 'assets/js/in-view.min.js', array( 'jquery' ), XPRO_ADDONS_FOR_BB_VERSION, true );
+            wp_enqueue_script( 'lazyload-min', XPRO_ADDONS_FOR_BB_URL . 'assets/js/jquery.lazyload.min.js', array( 'jquery' ), XPRO_ADDONS_FOR_BB_VERSION, true );
+            wp_enqueue_script('xpro-cloud-template', XPRO_ADDONS_FOR_BB_URL . 'assets/js/xpro-cloud-template.js', array('jquery'), null, true);
+            $xprocloudtemplates = array(
+                'ajaxurl'                => admin_url( 'admin-ajax.php' ),
+                'errorMessage'           => __( 'Something went wrong!', 'xpro' ),
+                'successMessage'         => __( 'Complete', 'xpro' ),
+                'successMessageFetch'    => __( 'Refreshed!', 'xpro' ),
+                'errorMessageTryAgain'   => __( 'Try Again!', 'xpro' ),
+                'successMessageDownload' => __( 'Installed!', 'xpro' ),
+                'btnTextDownload'        => __( 'Install', 'xpro' ),
+                'btnTextInstall'         => __( 'Installed', 'xpro' ),
+                'successMessageRemove'   => __( 'Removed!', 'xpro' ),
+                'text'    => array(
+                    'failed'        => esc_html__( 'Failed', 'xpro-import' ),
+                    'error'         => esc_html__( 'Error', 'xpro-import' ),
+                    'skip'          => esc_html__( 'Skipping', 'xpro-import' ),
+                    'confirmImport' => array(
+                        'title'             => esc_html__( 'Xpro Import! Just a step away', 'xpro-import' ),
+                        'html'              => sprintf(
+                        /* translators: 1: message 1, 2: message 2., 3: message 3., 4: message 4. */
+                            __( 'Importing demo data is the easiest way to setup your theme. It will allow you to quickly edit everything instead of creating content from scratch. Also, read following points before importing the demo: %1$s %2$s %3$s %4$s', 'xpro-import' ),
+                            '<ol><li class="warning">' . __( 'It is highly recommended to import demo on fresh WordPress installation to exactly replicate the theme demo. If no important data on your site, you can reset it from Reset Wizard at the top', 'xpro-import' ) . '</li>',
+                            '<li>' . __( 'No existing posts, pages, categories, images, custom post types or any other data will be deleted or modified.', 'xpro-import' ) . '</li>',
+                            '<li>' . __( 'It will install the plugins required for demo and activate them. Also posts, pages, images, widgets, & other data will get imported.', 'xpro-import' ) . '</li>',
+                            '<li>' . __( 'Please click on the Import button and wait, it will take some time to import the data.', 'xpro-import' ) . '</li></ol>'
+                        ),
+                        'confirmButtonText' => esc_html__( 'Yes, Import Demo!', 'xpro-import' ),
+                        'cancelButtonText'  => esc_html__( 'Cancel', 'xpro-import' ),
+                    ),
+                    'confirmReset'  => array(
+                        'title'             => esc_html__( 'Are you sure?', 'xpro-import' ),
+                        'text'              => __( "You won't be able to revert this!", 'xpro-import' ),
+                        'confirmButtonText' => esc_html__( 'Yes, Reset', 'xpro-import' ),
+                        'cancelButtonText'  => esc_html__( 'Cancel', 'xpro-import' ),
+                    ),
+                    'resetSuccess'  => array(
+                        'title'             => esc_html__( 'Reset Successful', 'xpro-import' ),
+                        'confirmButtonText' => esc_html__( 'Ok', 'xpro-import' ),
+                    ),
+                    'failedImport'  => array(
+                        'code' => __( 'Error Code:', 'xpro-import' ),
+                        'text' => __( 'Contact theme author or try again', 'xpro-import' ),
+                    ),
+                    'successImport' => array(
+                        'confirmButtonText' => esc_html__( 'Visit My Site', 'xpro-import' ),
+                        'cancelButtonText'  => esc_html__( 'Okay', 'xpro-import' ),
+                    ),
+                ),
+            );
+            wp_localize_script( 'xpro-cloud-template', 'XPROCloudTemplates ', $xprocloudtemplates );
 		}
 
 		public static function enqueue_xpro_wp_admin_icon_styles() {
 
-			wp_enqueue_style( 'xpro-wp-admin-menu-icon', XPRO_ADDONS_FOR_BB_URL . 'assets/css/xpro-wp-admin-menu-icon.css', array() );
+			wp_enqueue_style( 'xpro-wp-admin-menu-icon', XPRO_ADDONS_FOR_BB_URL . 'assets/css/xpro-wp-admin-menu-icon.css', array(), XPRO_ADDONS_FOR_BB_VERSION );
 
 		}
 
@@ -94,6 +144,7 @@ if ( ! class_exists( 'Xpro_Bundle_Lite_For_WP_Init' ) ) {
 			require_once XPRO_ADDONS_FOR_BB_DIR . 'dashboard/xpro-dashboard-setting.php';
 			require_once XPRO_ADDONS_FOR_BB_DIR . 'dashboard/xpro-modules-list.php';
 			require_once XPRO_ADDONS_FOR_BB_DIR . 'dashboard/xpro-features-list.php';
+            require_once XPRO_ADDONS_FOR_BB_DIR . 'classes/class-xpro-ui-panels.php';
 			if ( ! did_action( 'xpro_themes_for_bb_pro_loaded' ) ) {
 				require_once XPRO_ADDONS_FOR_BB_DIR . 'dashboard/xpro-templates-setting.php';
 			}

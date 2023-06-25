@@ -163,7 +163,6 @@ if ( ! class_exists( 'XPRO_Plugins_Helper' ) ) {
                 $options = array();
 
                 if ( count( $page_templates ) ) {
-                    $options['no_template'] = __('Select','xpro-bb-addons');
                     foreach ( $page_templates as $page_template ) {
                         $options[ $page_template['id'] ] = $page_template['name'];
                     }
@@ -187,14 +186,12 @@ if ( ! class_exists( 'XPRO_Plugins_Helper' ) ) {
                 $saved_rows = self::get_post_template( 'row' );
 
                 $options = array();
-
                 if ( count( $saved_rows ) ) {
-                    $options['no_template'] = __('Select','xpro-bb-addons');
                     foreach ( $saved_rows as $saved_row ) {
                         $options[ $saved_row['id'] ] = $saved_row['name'];
                     }
                 } else {
-                    $options['no_template'] = __('It seems that, you have not saved any template yet.','xpro-bb-addons');
+                    $options['no_template'] = 'It seems that, you have not saved any template yet.';
                 }
                 return $options;
             }
@@ -214,15 +211,39 @@ if ( ! class_exists( 'XPRO_Plugins_Helper' ) ) {
 
                 $options = array();
                 if ( count( $saved_modules ) ) {
-                    $options['no_template'] = __('Select','xpro-bb-addons');
                     foreach ( $saved_modules as $saved_module ) {
                         $options[ $saved_module['id'] ] = $saved_module['name'];
                     }
                 } else {
-                    $options['no_template'] = __('It seems that, you have not saved any template yet.','xpro-bb-addons');
+                    $options['no_template'] = 'It seems that, you have not saved any template yet.';
                 }
                 return $options;
             }
+        }
+
+        public static function get_xpro_saved_templates (){
+            $templates_select = array();
+
+            // Get All Templates
+            $templates = get_posts(
+                array(
+                    'post_type'   => array( 'xpro_bb_templates' ),
+                    'post_status' => array( 'publish' ),
+                    'numberposts' => -1,
+                )
+            );
+
+            if ( ! empty( $templates ) ) {
+                $templates_select['no_template'] = 'Select';
+                foreach ( $templates as $template ) {
+                    $templates_select[ $template->ID ] = $template->post_title;
+                }
+            }else{
+                $templates_select['no_template'] = 'It seems that, you have not saved any template yet.';
+            }
+
+            return $templates_select;
+
         }
 
     }

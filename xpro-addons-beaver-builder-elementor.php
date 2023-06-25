@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Xpro Addons For Beaver Builder - Lite
  * Plugin URI: https://beaver.wpxpro.com/
- * Description: It is a simple drag-and-drop creative module pack that lets you create stunning websites within minutes.
+ * Description: Extend your Beaver builder functionality with several creative, content, media, social, and woo-commerce modules.
  * Version: 1.5.1
  * Author: Xpro
  * Author URI: https://www.wpxpro.com/
@@ -13,6 +13,7 @@
 define( 'XPRO_ADDONS_FOR_BB_BASE', plugin_basename( __FILE__ ) );
 define( 'XPRO_ADDONS_FOR_BB_DIR', plugin_dir_path( __FILE__ ) );
 define( 'XPRO_ADDONS_FOR_BB_URL', plugins_url( '/', __FILE__ ) );
+define( 'XPRO_ADDONS_FOR_BB_VERSION', '1.5.1' );
 
 final class Xpro_Addons_for_BB {
 

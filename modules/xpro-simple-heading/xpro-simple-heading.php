@@ -282,7 +282,7 @@ FLBuilder::register_module(
 							'preview'    => array(
 								'type'     => 'css',
 								'selector' => '.xpro-title-focus',
-								'property' => 'color',
+								'property' => 'background-color',
 							),
 						),
 						'center_title_bg_gradient'     => array(

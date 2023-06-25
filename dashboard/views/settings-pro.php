@@ -41,7 +41,7 @@
 									</div>
 								</div>
 							</div>
-							<a href="https://beaver.wpxpro.com/bundle-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document">Get Xpro Addons Pro</a>
+							<a href="https://beaver.wpxpro.com/bundle-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document" target="_blank">Get Xpro Addons Pro</a>
 						</div>
 						<div class="xpro-bb-dashboard-intro-image">
 							<img src="https://bbdemos.wpxpro.com/lottie/rocket-launch.gif" alt="">
@@ -60,7 +60,7 @@
 							<div class="xpro-bb-dashboard-intro-image">
 								<img src="https://bbdemos.wpxpro.com/lottie/slider-animation.gif" alt="">
 							</div>
-							<a href="https://beaver.wpxpro.com/multi-layer-slider-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">Get It Now</a>
+							<a href="https://beaver.wpxpro.com/multi-layer-slider-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">Get It Now</a>
 						</div>
 					</div>
 				</div>
@@ -76,7 +76,7 @@
 							<div class="xpro-bb-dashboard-intro-image">
 								<img src="https://bbdemos.wpxpro.com/lottie/preminum-addons.gif" alt="">
 							</div>
-							<a href="https://beaver.wpxpro.com/filterable-gallery-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">Get It Now</a>
+							<a href="https://beaver.wpxpro.com/filterable-gallery-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">Get It Now</a>
 						</div>
 					</div>
 				</div>
@@ -92,7 +92,7 @@
 							<div class="xpro-bb-dashboard-intro-image">
 								<img src="https://bbdemos.wpxpro.com/lottie/slider-animation.gif" alt="">
 							</div>
-							<a href="https://beaver.wpxpro.com/creative-portfolio-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline">Get It Now</a>
+							<a href="https://beaver.wpxpro.com/creative-portfolio-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document xpro-btn-underline" target="_blank">Get It Now</a>
 						</div>
 					</div>
 				</div>
@@ -107,7 +107,7 @@
 							<p class="xpro-bb-dashboard-txt">
 								Professionally designed templates & sections to turn your raw ideas into stunning visuals. Just drag’n’drop your content to get your site live within minutes.
 							</p>
-							<a href="https://beaver.wpxpro.com/bundle-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document">Get It Now</a>
+							<a href="https://beaver.wpxpro.com/bundle-pricing/" class="xpro-bb-dashboard-btn xpro-bb-btn-document" target="_blank">Get It Now</a>
 						</div>
 						<div class="xpro-bb-dashboard-pro-plugin-item">
 							<div class="xpro-bb-dashboard-pro-plugin-item-inner templates">
@@ -148,7 +148,7 @@
 							<p class="xpro-bb-dashboard-txt">
 								Feel like consulting our experts? We’ll more than happy to assist you any time of the day!
 							</p>
-							<a href="https://beaver.wpxpro.com/contact-us/" class="xpro-bb-dashboard-btn xpro-bb-btn-document">Get in Touch<i class="xi xi-cursor"></i></a>
+							<a href="https://beaver.wpxpro.com/contact-us/" class="xpro-bb-dashboard-btn xpro-bb-btn-document" target="_blank">Get in Touch<i class="xi xi-cursor"></i></a>
 						</div>
 					</div>
 				</div>
